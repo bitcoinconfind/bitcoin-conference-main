@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Button from './Button';
-import ConferenceForm from './ConferenceForm';
 
 const MainPromotionalSection = () => {
-  const [showForm, setShowForm] = useState(false);
+  const handleWinFreeTickets = () => {
+    // Get referral code from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('referralCode');
+    
+    // Direct redirect to dashboard with referral code
+    const dashboardUrl = 'http://localhost:4174';
+    const params = new URLSearchParams({
+      ...(referralCode && { referralCode: referralCode })
+    });
+    
+    window.location.href = `${dashboardUrl}?${params.toString()}`;
+  };
 
   return (
     <section className="pt-2 pb-2 px-4 bg-black">
@@ -25,7 +36,7 @@ const MainPromotionalSection = () => {
           label="Win Free Tickets"
           variant="primary"
           className="hidden md:inline-block px-8 py-4 text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
-          onClick={() => setShowForm(true)}
+          onClick={handleWinFreeTickets}
         />
         
         {/* Mobile Win Free Tickets Button */}
@@ -33,17 +44,10 @@ const MainPromotionalSection = () => {
           label="Win Free Tickets"
           variant="primary"
           className="md:hidden px-6 py-3 text-base font-bold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-xl w-auto max-w-[200px]"
-          onClick={() => setShowForm(true)}
+          onClick={handleWinFreeTickets}
         />
       </div>
       
-      {/* Registration Form Modal */}
-      {showForm && (
-        <ConferenceForm
-          isModal={true}
-          onClose={() => setShowForm(false)}
-        />
-      )}
     </section>
   );
 };

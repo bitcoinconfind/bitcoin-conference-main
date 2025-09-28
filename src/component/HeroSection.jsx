@@ -1,14 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import BitcoinIcon from "../assets/imgs/logo/bitcoin_icon.png";
 import MeetingDetails from "../assets/imgs/herosection/conference_details.png";
 import SideLineItem from "../assets/imgs/herosection/sideline_item.png";
 import LeftSplashImg from "../assets/imgs/herosection/left_hero_splash_image.png";
 import RightSplashImg from "../assets/imgs/herosection/right_hero_splash_image.png";
 import Button from "./Button";
-import ConferenceForm from "./ConferenceForm";
 
 const HeroSection = () => {
-  const [showForm, setShowForm] = useState(false);
+  const handleWinFreeTickets = () => {
+    // Get referral code from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('referralCode');
+    
+    // Direct redirect to dashboard with referral code
+    const dashboardUrl = 'http://localhost:4174';
+    const params = new URLSearchParams({
+      ...(referralCode && { referralCode: referralCode })
+    });
+    
+    window.location.href = `${dashboardUrl}?${params.toString()}`;
+  };
 
   return (
     <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[30px] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] pb-0 md:pb-8">
@@ -66,13 +77,6 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Registration Form Modal */}
-      {showForm && (
-        <ConferenceForm
-          isModal={true}
-          onClose={() => setShowForm(false)}
-        />
-      )}
     </div>
   );
 };

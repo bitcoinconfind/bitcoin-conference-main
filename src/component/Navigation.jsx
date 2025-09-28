@@ -2,12 +2,25 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/imgs/logo/BitLogo.png";
 import Button from "./Button";
-import ConferenceForm from "./ConferenceForm";
 
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [showForm, setShowForm] = useState(false);
+
+  const handleWinFreeTickets = () => {
+    // Get referral code from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('referralCode');
+    
+    // Direct redirect to dashboard with referral code
+    const dashboardUrl = 'http://localhost:4174';
+    const params = new URLSearchParams({
+      ...(referralCode && { referralCode: referralCode })
+    });
+    
+    window.location.href = `${dashboardUrl}?${params.toString()}`;
+  };
 
   const goHomeAndScrollTop = (e) => {
     e.preventDefault();
@@ -53,7 +66,7 @@ const Navigation = () => {
           <Button
             label="Win Free Tickets"
             className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base"
-            onClick={() => setShowForm(true)}
+            onClick={handleWinFreeTickets}
           />
         </div>
 
@@ -63,17 +76,11 @@ const Navigation = () => {
             label="Win Free Tickets"
             variant="primary"
             className="px-3 py-1.5 text-xs font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
-            onClick={() => setShowForm(true)}
+            onClick={handleWinFreeTickets}
           />
           <Hamburger showForm={showForm} setShowForm={setShowForm} />
         </div>
       </div>
-      {showForm && (
-        <ConferenceForm
-          isModal={true}
-          onClose={() => setShowForm(false)}
-        />
-      )}
     </header>
   );
 };

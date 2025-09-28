@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import footLogo from "../assets/imgs/logo/BitLogo.png";
 import Button from "../component/Button";
-import ConferenceForm from "../component/ConferenceForm";
 import {
   FaInstagram,
   FaTelegram,
@@ -10,7 +9,19 @@ import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const [showForm, setShowForm] = useState(false);
+  const handleWinFreeTickets = () => {
+    // Get referral code from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('referralCode');
+    
+    // Direct redirect to dashboard with referral code
+    const dashboardUrl = 'http://localhost:4174';
+    const params = new URLSearchParams({
+      ...(referralCode && { referralCode: referralCode })
+    });
+    
+    window.location.href = `${dashboardUrl}?${params.toString()}`;
+  };
 
   return (
     <section>
@@ -33,7 +44,7 @@ const Footer = () => {
             label="Win Free Tickets"
             variant="primary"
             className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md w-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px]"
-            onClick={() => setShowForm(true)}
+            onClick={handleWinFreeTickets}
           />
         </div>
       </div>
@@ -103,13 +114,6 @@ const Footer = () => {
         </div>
       </footer>
       
-      {/* Registration Form Modal */}
-      {showForm && (
-        <ConferenceForm
-          isModal={true}
-          onClose={() => setShowForm(false)}
-        />
-      )}
     </section>
   );
 };
