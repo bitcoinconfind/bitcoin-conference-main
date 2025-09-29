@@ -11,12 +11,12 @@ const ApplySponsor = () => {
           Let's create something unforgettable together.
         </p>
         <div className="mt-10">
-          <Link
-            to="/contact"
+          <a
+            href="mailto:contact@btcindia.media?subject=Sponsorship%20Enquiry"
             className="inline-block px-8 py-4 rounded-xl bg-[#FFBF00] text-black font-familjen border border-2 border-[#585858] hover:bg-[#CB7608] hover:text-white transition text-lg"
           >
             Contact Sponsorship Team
-          </Link>
+          </a>
         </div>
         <p className="mt-6 text-sm text-[#FFFFFF80]">Custom opportunities available. Limited inventory.</p>
       </div>

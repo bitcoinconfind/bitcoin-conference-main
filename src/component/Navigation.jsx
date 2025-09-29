@@ -56,7 +56,7 @@ const Navigation = () => {
 
         {/* Nav Links (desktop, centered, bold, white) */}
         <nav className="flex-1 hidden md:flex items-center justify-center gap-10 font-inter-semiBold uppercase tracking-wide">
-          <a href="/" onClick={goHomeAndScrollTop} className="text-white font-bold hover:opacity-90">Home</a>
+          <a href="/#tickets" onClick={(e) => goToId(e, 'tickets')} className="text-white font-bold hover:opacity-90">Tickets</a>
           <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="text-white font-bold hover:opacity-90">Speakers</a>
           <Link to="/apply/sponsor" className="text-white font-bold hover:opacity-90">Sponsor</Link>
           <Link to="/contact" className="text-white font-bold hover:opacity-90">Contact Us</Link>
@@ -103,7 +103,7 @@ const Hamburger = ({ showForm, setShowForm }) => {
       {open && (
         <div className="absolute right-0 mt-2 w-64 bg-[#1F1F1F] border border-[#2a2a2a] rounded-lg shadow-lg z-50">
           <div className="py-2 text-sm font-inter-semiBold uppercase tracking-wide">
-            <Link onClick={() => setOpen(false)} to="/" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Home</Link>
+            <a onClick={() => setOpen(false)} href="/#tickets" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Tickets</a>
             <a onClick={() => setOpen(false)} href="/#speakers" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Speakers</a>
             <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Sponsor</Link>
             <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Contact Us</Link>

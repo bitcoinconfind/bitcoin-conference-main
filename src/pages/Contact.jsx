@@ -10,11 +10,9 @@ const Contact = () => {
         </p>
         <a
           className="inline-block px-6 py-3 rounded-lg bg-[#FFBF00] text-black font-familjen border border-2 border-[#585858] hover:bg-[#CB7608] hover:text-white transition"
-          href="https://forms.gle/placeholder-contact"
-          target="_blank"
-          rel="noreferrer"
+          href="mailto:contact@btcindia.media?subject=Contact%20Request"
         >
-          Open Contact/Feedback Form
+          Email Us
         </a>
       </div>
     </section>

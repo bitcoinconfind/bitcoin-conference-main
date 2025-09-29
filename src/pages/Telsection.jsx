@@ -1,65 +1,61 @@
 import React from "react";
-import teleGramBg from "../assets/imgs/others/joining_bg.jpg";
 import Button from "../component/Button";
-import { FaTelegram } from "react-icons/fa";
+import { FaTelegram, FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const Telsection = () => {
   return (
-    <>
-      <section className="py-16 md:py-24 lg:py-32 px-4 bg-black">
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-2xl overflow-hidden border border-[#FFBF00]/30 shadow-xl">
-            {/* Background Image */}
-            <img
-              src={teleGramBg}
-              alt="Bitcoin Conference Community"
-              className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] object-cover"
-            />
+    <section className="py-16 md:py-20 px-4 bg-black">
+      <div className="max-w-5xl mx-auto">
+        <div className="rounded-2xl border border-[#2a2a2a] bg-[#101010] p-6 sm:p-8 shadow-xl">
+          <div className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-familjen font-bold text-white">Join Our Community</h2>
+            <p className="text-gray-300 mt-2">Follow us across platforms for updates and announcements</p>
+          </div>
 
-            {/* Gradient Overlay */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 191, 0, 0.1) 50%, rgba(0, 0, 0, 0.85) 100%)",
-              }}
-            ></div>
-
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6 md:px-12">
-              {/* Telegram Icon */}
-              <div className="mb-6">
-                <div className="w-16 h-16 md:w-20 md:h-20 bg-[#FFBF00] rounded-full flex items-center justify-center">
-                  <FaTelegram className="text-3xl md:text-4xl text-black" />
-                </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {/* Telegram */}
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-[#2a2a2a] bg-black p-5">
+              <div className="w-12 h-12 bg-[#FFBF00] rounded-full flex items-center justify-center">
+                <FaTelegram className="text-black text-2xl" />
               </div>
-
-              {/* Main Heading */}
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-familjen font-bold leading-tight mb-6">
-                Join Our
-                <br />
-                <span className="text-[#FFBF00]">Telegram Channel</span>
-              </h1>
-
-              {/* Simple Quote */}
-              <p className="text-lg md:text-xl font-inter text-gray-200 mb-8 max-w-2xl">
-                Stay updated with the latest news, announcements, and exclusive content
-              </p>
-
-              {/* CTA Button */}
+              <div className="text-white font-semibold">Telegram</div>
               <Button
-                label="Join Telegram"
-                variant="primary"
-                className="px-8 py-4 text-lg font-bold bg-[#FFBF00] text-black hover:bg-[#FF9F1E] transform hover:scale-105 transition-all duration-300"
-                onClick={() => {
-                  window.open("https://t.me/BitcoinConfIND", "_blank");
-                }}
+                label="Join"
+                onClick={() => window.open("https://t.me/BitcoinConfIND", "_blank")}
+                className="w-full"
+              />
+            </div>
+
+            {/* Instagram */}
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-[#2a2a2a] bg-black p-5">
+              <div className="w-12 h-12 bg-[#FFBF00] rounded-full flex items-center justify-center">
+                <FaInstagram className="text-black text-2xl" />
+              </div>
+              <div className="text-white font-semibold">Instagram</div>
+              <Button
+                label="Follow"
+                onClick={() => window.open("https://instagram.com/bitcoinconfindia", "_blank")}
+                className="w-full"
+              />
+            </div>
+
+            {/* X (Twitter) */}
+            <div className="flex flex-col items-center gap-3 rounded-xl border border-[#2a2a2a] bg-black p-5">
+              <div className="w-12 h-12 bg-[#FFBF00] rounded-full flex items-center justify-center">
+                <FaXTwitter className="text-black text-2xl" />
+              </div>
+              <div className="text-white font-semibold">X (Twitter)</div>
+              <Button
+                label="Follow"
+                onClick={() => window.open("https://x.com/BitcoinConfIND", "_blank")}
+                className="w-full"
               />
             </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

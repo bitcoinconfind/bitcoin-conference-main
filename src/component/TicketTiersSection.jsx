@@ -1,5 +1,8 @@
 import React from 'react';
 import Button from './Button';
+import GAImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - GA.png';
+import ProImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - PRO.png';
+import WhaleImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.png';
 
 const TicketTiersSection = () => {
   const handleWinFreeTickets = () => {
@@ -21,6 +24,7 @@ const TicketTiersSection = () => {
       title: "General Admission",
       price: "50",
       currency: "USD",
+      image: GAImg,
       features: [
         "General admission to Bitcoin INDIA 2026",
         "Full access to the Expo Hall – India's largest Bitcoin showcase",
@@ -33,6 +37,7 @@ const TicketTiersSection = () => {
       title: "Pro Pass",
       price: "250",
       currency: "USD",
+      image: ProImg,
       features: [
         "Everything included in the General Admission Pass",
         "Dedicated check-in lines for faster entry",
@@ -46,6 +51,7 @@ const TicketTiersSection = () => {
       title: "Whale Pass",
       price: "2500",
       currency: "USD",
+      image: WhaleImg,
       features: [
         "VIP access with a dedicated registration concierge",
         "Access to The Deep – an exclusive backstage Whale Lounge",
@@ -59,32 +65,20 @@ const TicketTiersSection = () => {
   ];
 
   return (
-    <div className="py-16 px-4 sm:px-8 lg:px-20 bg-black">
-      {/* Header Section */}
-      <div className="text-center mb-16">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FFBF00] mb-6 font-familjen">
-          Coming Soon
-        </h1>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl text-white mb-8 font-semibold">
-          Bitcoin Conference India 2026
+    <div id="tickets" className="py-16 px-4 sm:px-8 lg:px-20 bg-black">
+      {/* Header Section (removed Coming Soon per request) */}
+      <div className="text-center mb-8">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 font-familjen">
+          Ticket Tiers
         </h2>
-        <p className="text-lg sm:text-xl text-gray-300 mb-6 max-w-2xl mx-auto leading-relaxed">
-          Get ready for the most exciting Bitcoin conference in India. 
-          Stay updated with the latest announcements and be the first to know when tickets go live.
+        <p className="text-lg text-gray-300">
+          Choose your experience level for Bitcoin Conference India 2026
         </p>
-        
       </div>
 
       {/* Ticket Tiers Section */}
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h3 className="text-3xl sm:text-4xl font-bold text-white mb-4 font-familjen">
-            Ticket Tiers
-          </h3>
-          <p className="text-lg text-gray-300">
-            Choose your experience level for Bitcoin Conference India 2026
-          </p>
-        </div>
+        
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ticketTiers.map((tier, index) => (
@@ -99,6 +93,14 @@ const TicketTiersSection = () => {
               )}
               
               <div className="text-center mb-6">
+                {tier.image && (
+                  <img
+                    src={tier.image}
+                    alt={`${tier.title} pass`}
+                    className="w-full h-auto rounded-xl mb-4"
+                    loading="lazy"
+                  />
+                )}
                 <h4 className="text-2xl font-bold text-white mb-2">{tier.title}</h4>
                 <div className="text-4xl font-bold text-[#FFBF00] mb-2">
                   ${tier.price}

@@ -10,13 +10,13 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
     
-    // Direct redirect to dashboard with referral code
-    const dashboardUrl = 'http://localhost:4174';
+    // Direct redirect to dashboard with referral code (env-based for Vercel)
+    const base = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:4174';
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
     
-    window.location.href = `${dashboardUrl}?${params.toString()}`;
+    window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
   const formContent = (
