@@ -8,12 +8,12 @@ const MainPromotionalSection = () => {
     const referralCode = urlParams.get('referralCode');
     
     // Direct redirect to dashboard with referral code
-    const dashboardUrl = 'http://localhost:4174';
+    const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
     
-    window.location.href = `${dashboardUrl}?${params.toString()}`;
+    window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
   return (

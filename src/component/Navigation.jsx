@@ -13,13 +13,13 @@ const Navigation = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
     
-    // Direct redirect to dashboard with referral code
-    const dashboardUrl = 'http://localhost:4174';
+    // Direct redirect to dashboard with referral code (env-based)
+    const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
     
-    window.location.href = `${dashboardUrl}?${params.toString()}`;
+    window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
   const goHomeAndScrollTop = (e) => {
@@ -54,12 +54,34 @@ const Navigation = () => {
           </a>
         </div>
 
-        {/* Nav Links (desktop, centered, bold, white) */}
-        <nav className="flex-1 hidden md:flex items-center justify-center gap-10 font-inter-semiBold uppercase tracking-wide">
-          <a href="/#tickets" onClick={(e) => goToId(e, 'tickets')} className="text-white font-bold hover:opacity-90">Tickets</a>
-          <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="text-white font-bold hover:opacity-90">Speakers</a>
-          <Link to="/apply/sponsor" className="text-white font-bold hover:opacity-90">Sponsor</Link>
-          <Link to="/contact" className="text-white font-bold hover:opacity-90">Contact Us</Link>
+        {/* Nav Links (desktop, centered) */}
+        <nav className="flex-1 hidden md:flex items-center justify-center gap-10 uppercase">
+          <a
+            href="/#tickets"
+            onClick={(e) => goToId(e, 'tickets')}
+            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+          >
+            Tickets
+          </a>
+          <a
+            href="/#speakers"
+            onClick={(e) => goToId(e, 'speakers')}
+            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+          >
+            Speakers
+          </a>
+          <Link
+            to="/apply/sponsor"
+            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+          >
+            Sponsor
+          </Link>
+          <Link
+            to="/contact"
+            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+          >
+            Contact Us
+          </Link>
         </nav>
         {/* Button at last */}
         <div className="flex-shrink-0 hidden md:block">
@@ -103,10 +125,10 @@ const Hamburger = ({ showForm, setShowForm }) => {
       {open && (
         <div className="absolute right-0 mt-2 w-64 bg-[#1F1F1F] border border-[#2a2a2a] rounded-lg shadow-lg z-50">
           <div className="py-2 text-sm font-inter-semiBold uppercase tracking-wide">
-            <a onClick={() => setOpen(false)} href="/#tickets" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Tickets</a>
-            <a onClick={() => setOpen(false)} href="/#speakers" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Speakers</a>
-            <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Sponsor</Link>
-            <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 text-white font-bold hover:bg-[#2a2a2a]">Contact Us</Link>
+            <a onClick={() => setOpen(false)} href="/#tickets" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Tickets</a>
+            <a onClick={() => setOpen(false)} href="/#speakers" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Speakers</a>
+            <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Sponsor</Link>
+            <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Contact Us</Link>
           </div>
         </div>
       )}

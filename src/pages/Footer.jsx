@@ -15,12 +15,12 @@ const Footer = () => {
     const referralCode = urlParams.get('referralCode');
     
     // Direct redirect to dashboard with referral code
-    const dashboardUrl = 'http://localhost:4174';
+    const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
     
-    window.location.href = `${dashboardUrl}?${params.toString()}`;
+    window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
   return (
@@ -59,28 +59,34 @@ const Footer = () => {
               alt="BitIndia Logo"
               className="h-10 w-auto md:h-12"
             />
-            <div className="flex gap-4 md:gap-6 text-gray-400 text-lg md:text-xl">
-              <Link
-                to="https://t.me/BitcoinConfIND"
+            <div className="flex items-center gap-5 md:gap-6 text-gray-300 text-lg md:text-xl">
+              <a
+                href="https://t.me/BitcoinConfIND"
                 target="_blank"
-                className="hover:text-amber-500"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:text-amber-500"
               >
                 <FaTelegram />
-              </Link>
-              <Link
-                to="https://x.com/BitcoinConfIND"
+                <span className="text-sm md:text-base">Telegram</span>
+              </a>
+              <a
+                href="https://x.com/BitcoinConfIND"
                 target="_blank"
-                className="hover:text-amber-500"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:text-amber-500"
               >
                 <FaXTwitter />
-              </Link>
-              <Link
-                to="https://www.instagram.com/bitcoinconfind"
+                <span className="text-sm md:text-base">X</span>
+              </a>
+              <a
+                href="https://www.instagram.com/bitcoinconfindia"
                 target="_blank"
-                className="hover:text-amber-500"
+                rel="noreferrer"
+                className="flex items-center gap-2 hover:text-amber-500"
               >
                 <FaInstagram />
-              </Link>
+                <span className="text-sm md:text-base">Instagram</span>
+              </a>
             </div>
           </div>
 

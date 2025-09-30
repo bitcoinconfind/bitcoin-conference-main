@@ -1,5 +1,5 @@
 import React from "react";
-import circle from "../assets/imgs/others/Subtract.png";
+import square from "../assets/imgs/others/Subtract.svg";
 import circleUser from "../assets/imgs/others/MeetSpeakers.jpg";
 import Button from "../component/Button";
 
@@ -52,16 +52,19 @@ const SpeakerCard = ({ img, name, company, role }) => {
   return (
     <div className="flex flex-col items-center text-center">
       {/* Circle + User */}
-      <div className="relative flex items-center justify-center">
-        <img
-          src={circle}
-          alt="Circle"
-          className="w-56 h-56 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 xl:w-72 xl:h-72"
-        />
+      <div className="relative w-56 h-56 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 xl:w-72 xl:h-72">
+        {/* Blurred speaker fills the entire square, clipped to circle */}
         <img
           src={img}
           alt={name}
-          className="absolute rounded-full w-44 h-44 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-52 xl:h-52 object-cover blur-lg"
+          className="absolute rounded-full object-cover z-10"
+          style={{ width: '85%', height: '85%', left: '7.5%', top: '7.5%', filter: 'blur(6px) brightness(0.9)', position: 'absolute' }}
+        />
+        {/* Square ring exactly on edges */}
+        <img
+          src={square}
+          alt="Square"
+          className="absolute inset-0 w-full h-full"
         />
       </div>
 
@@ -107,7 +110,7 @@ const Speakers = () => {
             variant="general"
           />
         </div>
-        <a href="/apply/speaker">
+        <a href="mailto:contact@bitcoinconfindia.com?subject=Apply%20to%20be%20Speaker">
           <div className="w-auto border-1 p-1 border-[#1F1F1F] rounded-lg">
             <Button
               label={"Apply to be a Speaker"}

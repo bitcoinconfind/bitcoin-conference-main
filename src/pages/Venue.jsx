@@ -1,8 +1,8 @@
 import React from "react";
 import venueeBg from "../assets/imgs/others/Venue_bg.png";
-import venueOne from "../assets/imgs/carousels/carousel_1.png";
-import venueTwo from "../assets/imgs/carousels/carousel_2.png";
-import venueThree from "../assets/imgs/carousels/carousel_3.png";
+import venueOne from "../assets/imgs/carousels/carousel_1.JPG";
+import venueTwo from "../assets/imgs/carousels/carousel_2.JPG";
+import venueThree from "../assets/imgs/carousels/carousel_3.JPG";
 
 const Venue = () => {
   const venues = [
@@ -51,7 +51,7 @@ const Venue = () => {
             </p>
             <h1 className="text-2xl font-familjen sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-snug">
               Venue Announcement
-              <br className="hidden sm:block" />
+              <br />
               <span className="text-[#FFBF00]">Coming Soon</span>
             </h1>
             <p className="text-sm font-inter sm:text-base md:text-lg max-w-xl leading-relaxed text-gray-300">
