@@ -79,7 +79,7 @@ const Footer = () => {
                 <span className="text-sm md:text-base">X</span>
               </a>
               <a
-                href="https://www.instagram.com/bitcoinconfindia"
+                href="https://www.instagram.com/bitcoinconfind"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 hover:text-amber-500"

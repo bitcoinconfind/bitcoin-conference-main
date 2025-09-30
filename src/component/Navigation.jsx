@@ -8,18 +8,26 @@ const Navigation = () => {
   const location = useLocation();
   const [showForm, setShowForm] = useState(false);
 
+  const normalizeUrl = (u) => {
+    if (!u) return '/';
+    let url = u.trim();
+    if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
+    return url.replace(/\/$/, '');
+  };
+
   const handleWinFreeTickets = () => {
     // Get referral code from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
     
     // Direct redirect to dashboard with referral code (env-based)
-    const base = import.meta.env.VITE_DASHBOARD_URL;
+    const base = normalizeUrl(import.meta.env.VITE_DASHBOARD_URL);
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
     
-    window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
+    const qs = params.toString();
+    window.location.href = qs ? `${base}?${qs}` : base;
   };
 
   const goHomeAndScrollTop = (e) => {
