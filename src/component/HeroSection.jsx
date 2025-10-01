@@ -24,7 +24,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[30px] min-h-[400px] sm:min-h-[450px] md:min-h-[500px] pb-0 md:pb-8">
+    <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[16px] min-h-[320px] sm:min-h-[450px] md:min-h-[500px] pb-0 md:pb-8">
       {/* Background Images */}
       <img
         src={RightSplashImg}
@@ -39,7 +39,7 @@ const HeroSection = () => {
       
       {/* Main Content */}
       <div className="w-full flex-1 flex items-center justify-center">
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-4 lg:gap-8">
           
           {/* Left Section - Logo */}
           <div className="flex justify-center lg:justify-end w-full lg:w-1/4">
@@ -47,7 +47,7 @@ const HeroSection = () => {
               src={BitcoinIcon}
               alt="bitcoin-icon"
               loading="lazy"
-              className="w-auto h-[192px] sm:h-[240px] lg:h-[256px] object-contain"
+              className="w-auto h-[120px] sm:h-[240px] lg:h-[256px] object-contain"
             />
           </div>
 
@@ -59,7 +59,7 @@ const HeroSection = () => {
                 src={MeetingDetails}
                 alt="conference-details"
                 loading="lazy"
-                className="w-auto h-[200px] sm:h-[250px] lg:h-[280px] object-contain"
+                className="w-auto h-[140px] sm:h-[250px] lg:h-[280px] object-contain"
               />
             </div>
 
@@ -69,7 +69,7 @@ const HeroSection = () => {
                 src={DatesImg}
                 alt="conference-dates"
                 loading="lazy"
-                className="w-[130px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
+                className="w-[110px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
             </div>
           </div>

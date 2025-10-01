@@ -17,14 +17,14 @@ const MainPromotionalSection = () => {
   };
 
   return (
-    <section className="pt-2 pb-2 px-4 bg-black">
+    <section className="pt-1 pb-1 px-4 bg-black">
       <div className="max-w-4xl mx-auto text-center">
 
         {/* Gradient Lines + Subheading - Always visible */}
-        <div className="flex items-center justify-center mb-3 md:mb-6 sm:mb-8 gap-3">
+        <div className="flex items-center justify-center mb-2 md:mb-6 sm:mb-8 gap-2">
           <div className="flex-1 h-[1px] bg-gradient-to-r from-[#010101] via-[#FBF5EE] to-[#FBF5EE]"></div>
 
-          <span className="text-[#FFBF00] font-semibold text-sm sm:text-base md:text-xl lg:text-2xl uppercase">
+          <span className="text-[#FFBF00] font-semibold text-xs sm:text-base md:text-xl lg:text-2xl uppercase">
             Get A Chance to Win Free Conference Tickets
           </span>
 
@@ -43,7 +43,7 @@ const MainPromotionalSection = () => {
         <Button
           label="Win Free Tickets"
           variant="primary"
-          className="md:hidden px-6 py-3 text-base font-bold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-xl w-auto max-w-[200px]"
+          className="md:hidden px-5 py-2.5 text-sm font-bold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-xl w-auto max-w-[180px]"
           onClick={handleWinFreeTickets}
         />
       </div>
