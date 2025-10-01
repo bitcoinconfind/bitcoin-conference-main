@@ -1,7 +1,7 @@
 // Card.jsx
 import Swal from "sweetalert2";
 import Button from "./Button";
-import bitLogo from "../assets/imgs/others/Vector.png";
+import bitLogo from "../assets/imgs/logo/BitcoinLogo.svg";
 import "sweetalert2/dist/sweetalert2.min.css";
 
 const Card = ({ title, price, currency = "USD", buttonLabel, features, onBuy }) => {

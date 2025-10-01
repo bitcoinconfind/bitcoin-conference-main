@@ -1,5 +1,5 @@
 import React from "react";
-import BitcoinIcon from "../assets/imgs/logo/bitcoin_icon.png";
+import BitcoinIcon from "../assets/imgs/logo/BitcoinLogo.svg";
 // Updated to use src-based assets (moved to src/assets/imgs/...)
 import MeetingDetails from "../assets/imgs/herosection/conference_detail.svg";
 import DatesImg from "../assets/imgs/herosection/dates.svg";
@@ -39,52 +39,50 @@ const HeroSection = () => {
       
       {/* Main Content */}
       <div className="w-full flex-1 flex items-center justify-center">
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-between w-full gap-8 lg:gap-12">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-8 lg:gap-8">
           
-          {/* Left Section - Grid with four divs: wrapper, logo, details, dates */}
-          <div className="grid grid-cols-1 sm:grid-flow-col sm:auto-cols-max items-start justify-center justify-items-center gap-x-6 gap-y-2 sm:gap-x-10 sm:gap-y-2 lg:gap-x-12 lg:gap-y-2 w-full mx-auto sm:max-w-[560px] lg:max-w-[700px]">
-            {/* 1) Logo */}
-            <div className="justify-self-center sm:col-start-1 sm:row-start-1">
-              <img
-                src={BitcoinIcon}
-                alt="bitcoin-icon"
-                loading="lazy"
-                className="w-auto h-[150px] sm:h-[190px] lg:h-[230px] min-w-[120px] sm:min-w-[150px] lg:min-w-[180px] object-contain"
-              />
-            </div>
+          {/* Left Section - Logo */}
+          <div className="flex justify-center lg:justify-end w-full lg:w-1/4">
+            <img
+              src={BitcoinIcon}
+              alt="bitcoin-icon"
+              loading="lazy"
+              className="w-auto h-[192px] sm:h-[240px] lg:h-[256px] object-contain"
+            />
+          </div>
 
-            {/* 2) Conference Details */}
-            <div className="justify-self-center sm:col-start-2 sm:row-start-1 sm:ml-10 lg:ml-16 xl:ml-24 2xl:ml-28">
+          {/* Center Section - Conference Details and Dates stacked vertically */}
+          <div className="flex flex-col items-center justify-center gap-4 w-full lg:w-1/2">
+            {/* Conference Details */}
+            <div>
               <img
                 src={MeetingDetails}
                 alt="conference-details"
                 loading="lazy"
-                className="w-auto h-[120px] sm:h-[150px] lg:h-[200px] object-contain"
+                className="w-auto h-[200px] sm:h-[250px] lg:h-[280px] object-contain"
               />
             </div>
 
-            {/* 3) Dates (separate div) */}
-            <div className="justify-self-center sm:col-start-2 sm:row-start-2 sm:ml-10 lg:ml-16 xl:ml-24 2xl:ml-28">
+            {/* Dates */}
+            <div>
               <img
                 src={DatesImg}
                 alt="conference-dates"
                 loading="lazy"
-                className="w-[130px] h-auto sm:w-[180px] lg:w-[270px] object-contain mt-1 sm:mt-1 lg:mt-1"
+                className="w-[130px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
             </div>
           </div>
 
-          {/* Right Section - Side Item and Button */}
-          <div className="flex flex-col items-center gap-4 sm:gap-6 lg:gap-8 w-full lg:w-auto order-3 sm:order-3">
-            {/* Side Item Image */}
-            <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[600px]">
+          {/* Right Section - Side Item */}
+          <div className="flex justify-center lg:justify-end w-full lg:w-1/4">
+            <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
               <img 
                 src={SideLineItem} 
                 alt="side-decoration" 
                 className="w-full h-auto object-contain"
               />
             </div>
-            
           </div>
         </div>
       </div>

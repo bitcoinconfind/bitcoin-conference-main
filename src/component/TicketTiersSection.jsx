@@ -82,7 +82,7 @@ const TicketTiersSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ticketTiers.map((tier, index) => (
-            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-8 hover:border-[#FFBF00] transition-all duration-300">
+            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-8 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full">
               {/* Popular Badge for Pro Pass */}
               {index === 1 && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -108,7 +108,7 @@ const TicketTiersSection = () => {
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start text-gray-300">
                     <svg className="w-5 h-5 text-[#FFBF00] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -122,7 +122,7 @@ const TicketTiersSection = () => {
               <Button
                 label="Coming Soon"
                 variant="secondary"
-                className="w-full py-3 text-lg font-semibold opacity-75 cursor-not-allowed"
+                className="w-full py-3 text-lg font-semibold opacity-75 cursor-not-allowed mt-auto"
                 disabled={true}
               />
             </div>

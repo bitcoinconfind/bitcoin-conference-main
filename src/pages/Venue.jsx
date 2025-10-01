@@ -46,9 +46,6 @@ const Venue = () => {
 
           {/* Content on top */}
           <div className="absolute inset-0 flex flex-col items-center justify-center mt-0 lg:mt-45 text-center text-white px-4 sm:px-6 md:px-10 space-y-4">
-            <p className="text-sm font-familjen sm:text-base md:text-lg lg:text-xl tracking-wide uppercase text-[#FFBF00]">
-              Venue
-            </p>
             <h1 className="text-2xl font-familjen sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-snug">
               Venue Announcement
               <br />

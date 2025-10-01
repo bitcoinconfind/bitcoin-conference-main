@@ -25,7 +25,7 @@ const ConferenceMetrics = () => {
     },
     {
       icon: <FaMicrophone className="w-8 h-8" />,
-      value: "50+",
+      value: "150+",
       label: "Speakers"
     },
     {
