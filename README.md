@@ -1,22 +1,44 @@
-# Bitcoin Conference India - Main App
+# Bitcoin Conference India 2026
 
-The main marketing website for Bitcoin Conference India.
+Official website for Bitcoin Conference India 2026 - the premier Bitcoin event in India.
 
-## Features
-- Marketing website
-- Speaker/Sponsor applications
-- Contact forms
-- "Win Free Tickets" form with referral code
-- Clean redirect to dashboard for authentication
+## 🚀 Quick Start
 
-## Development
 ```bash
 npm install
 npm run dev
 ```
 
-## Deployment
+## ✨ Features
+
+- **Hero Section** - Dynamic conference information with responsive layout
+- **Ticket Tiers** - GA, PRO, and WHALE passes with feature comparison
+- **Speakers** - Featured speakers and industry experts
+- **Venue** - Conference location and details
+- **Sponsorship** - Application forms for sponsors
+- **Win Free Tickets** - Referral-based ticket giveaway system
+
+## 🛠️ Tech Stack
+
+- **React 18** with Vite
+- **Tailwind CSS** for styling
+- **React Router** for navigation
+- **SweetAlert2** for notifications
+
+## 📱 Responsive Design
+
+Fully responsive design optimized for desktop, tablet, and mobile devices.
+
+## 🎨 Design System
+
+- **Colors**: Black background with orange (#FFBF00) accents
+- **Typography**: Familjen Grotesk font family
+- **Icons**: High-quality SVG Bitcoin logos throughout
+
+## 🚀 Deployment
+
 Deploy to Vercel, Netlify, or any static hosting service.
 
-## Architecture
-This is a pure frontend application with no authentication logic. Users are redirected to the dashboard for authentication.
+---
+
+**Bitcoin Conference India 2026** - February 2026 | Hyderabad, India
