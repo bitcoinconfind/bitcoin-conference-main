@@ -22,7 +22,7 @@ const TicketTiersSection = () => {
   const ticketTiers = [
     {
       title: "General Admission",
-      price: "50",
+      price: "99",
       currency: "USD",
       image: GAImg,
       features: [
@@ -35,7 +35,7 @@ const TicketTiersSection = () => {
     },
     {
       title: "VIP Pass",
-      price: "250",
+      price: "299",
       currency: "USD",
       image: VIPImg,
       features: [
@@ -49,7 +49,7 @@ const TicketTiersSection = () => {
     },
     {
       title: "Whale Pass",
-      price: "2500",
+      price: "2999",
       currency: "USD",
       image: WhaleImg,
       features: [
