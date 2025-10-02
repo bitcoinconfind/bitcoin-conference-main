@@ -72,7 +72,7 @@ const HeroSection = () => {
                 src={DatesImg}
                 alt="conference-dates"
                 loading="lazy"
-                className="w-[96px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
+                className="w-[192px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
             </div>
           </div>
