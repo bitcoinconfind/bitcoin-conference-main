@@ -98,7 +98,7 @@ const TicketTiersSection = () => {
                     src={tier.image}
                     alt={`${tier.title} pass`}
                     className="w-full h-auto rounded-xl mb-4 origin-center"
-                    style={{ transform: 'scale(1.3)' }}
+                    style={{ transform: 'scale(1.17)' }}
                     loading="lazy"
                   />
                 )}
