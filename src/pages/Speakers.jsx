@@ -71,7 +71,7 @@ const SpeakerCard = ({ img, name, company, role }) => {
       {/* Info */}
       <div className="mt-4 sm:mt-6 space-y-1">
         <h2 className="text-white font-familjen font-bold text-xl sm:text-lg md:text-xl lg:text-2xl">
-          Comming Soon
+          Coming Soon
         </h2>
         <h3 className="text-[#CB7608] font-familjen font-semibold text-lg sm:text-lg md:text-xl lg:text-2xl">
           {company}
