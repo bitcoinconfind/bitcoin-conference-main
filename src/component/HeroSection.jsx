@@ -1,5 +1,5 @@
 import React from "react";
-import BitcoinIcon from "../assets/imgs/logo/BitcoinLogo.svg";
+import BitcoinIcon from "../assets/imgs/logo/BitcoinLogo.png";
 // Updated to use src-based assets (moved to src/assets/imgs/...)
 import MeetingDetails from "../assets/imgs/herosection/conference_detail.svg";
 import DatesImg from "../assets/imgs/herosection/dates.svg";
