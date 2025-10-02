@@ -29,8 +29,7 @@ const TicketTiersSection = () => {
         "General admission to Bitcoin INDIA 2026",
         "Full access to the Expo Hall – India's largest Bitcoin showcase",
         "Entry to the Main Stage and interactive activations",
-        "Networking opportunities",
-        "Conference materials"
+        "Networking opportunities"
       ]
     },
     {
@@ -42,9 +41,8 @@ const TicketTiersSection = () => {
         "Everything included in the General Admission Pass",
         "Dedicated check-in lines for faster entry",
         "Access to the exclusive Enterprise Hall and Enterprise Stage",
-        "Entry to Bitcoin for Corporations programming",
         "Complimentary coffee, refreshments, and lounge access",
-        "Premium networking & matchmaking tools"
+        "Exclusive After Party access"        
       ]
     },
     {
@@ -53,13 +51,13 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: WhaleImg,
       features: [
+        "Everything included in the VIP Pass",
         "VIP access with a dedicated registration concierge",
-        "Access to The Deep – an exclusive backstage Whale Lounge",
+        "Access to The Trenches – an exclusive backstage Whale Lounge",
         "Front-row premium seating at the Main Stage",
         "All-inclusive gourmet dining, open bar, and premium coffee service",
         "Private Whale-only content sessions with top speakers",
-        "Exclusive invitation to Whale Night",
-        "Priority networking features & concierge support"
+        "Exclusive invitation to Whale Night"
       ]
     }
   ];
@@ -80,9 +78,9 @@ const TicketTiersSection = () => {
       <div className="max-w-7xl mx-auto">
         
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 -my-4 md:my-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 -my-4 md:my-0">
           {ticketTiers.map((tier, index) => (
-            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-6 md:p-8 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full scale-[.85] md:scale-100">
+            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-4 md:p-6 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full scale-[.85] md:scale-100">
               {/* Popular Badge for Pro Pass */}
               {index === 1 && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -92,12 +90,12 @@ const TicketTiersSection = () => {
                 </div>
               )}
               
-              <div className="text-center mb-6">
+              <div className="text-center mb-4">
                 {tier.image && (
                   <img
                     src={tier.image}
                     alt={`${tier.title} pass`}
-                    className="w-full h-auto rounded-xl mb-4 origin-center"
+                    className="w-full h-auto rounded-xl mb-3 origin-center"
                     style={{ transform: 'scale(1.17)' }}
                     loading="lazy"
                   />
@@ -109,13 +107,13 @@ const TicketTiersSection = () => {
                 </div>
               </div>
 
-              <ul className="space-y-2 mb-6 flex-grow">
+              <ul className="space-y-1.5 mb-4 flex-grow">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start text-gray-300">
                     <svg className="w-5 h-5 text-[#FFBF00] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                  <span className="text-xs md:text-sm">{feature}</span>
+                  <span className="text-lg md:text-xl font-bold">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -131,7 +129,7 @@ const TicketTiersSection = () => {
         </div>
 
         {/* Event Details */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div className="text-center">
               <div className="text-3xl font-bold mb-2 text-[#FFBF00]">Hyderabad</div>
