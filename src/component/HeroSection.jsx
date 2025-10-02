@@ -24,25 +24,25 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[60px] min-h-[380px] sm:min-h-[500px] md:min-h-[550px] pb-0 md:pb-8 mt-2">
+    <div className="relative px-3 sm:px-8 lg:px-20 flex flex-col w-full pt-[56px] min-h-[320px] sm:min-h-[500px] md:min-h-[550px] pb-0 md:pb-8 mt-1">
       {/* Background Images - Fixed to top */}
       {/* Right splash image */}
       <img
         src={RightSplashImg}
         alt="right-splash-image"
-        className="fixed top-[60px] right-0 -z-10 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
+        className="fixed top-[56px] right-0 -z-10 w-[110px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
       />
       
       {/* Left splash image */}
       <img
         src={LeftSplashImg}
         alt="left-splash-image"
-        className="fixed top-[60px] left-0 -z-10 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
+        className="fixed top-[56px] left-0 -z-10 w-[110px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
       />
       
       {/* Main Content - With margin top to push it down */}
-      <div className="w-full flex-1 flex items-center justify-center mt-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-4 lg:gap-8">
+      <div className="w-full flex-1 flex items-center justify-center mt-4">
+        <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-3 lg:gap-8">
           
           {/* Left Section - Logo */}
           <div className="flex justify-center lg:justify-end w-full lg:w-1/4">
@@ -50,7 +50,7 @@ const HeroSection = () => {
               src={BitcoinIcon}
               alt="bitcoin-icon"
               loading="lazy"
-              className="w-auto h-[120px] sm:h-[240px] lg:h-[256px] object-contain"
+              className="w-auto h-[96px] sm:h-[240px] lg:h-[256px] object-contain"
             />
           </div>
 
@@ -62,7 +62,7 @@ const HeroSection = () => {
                 src={MeetingDetails}
                 alt="conference-details"
                 loading="lazy"
-                className="w-auto h-[140px] sm:h-[250px] lg:h-[280px] object-contain"
+                className="w-auto h-[120px] sm:h-[250px] lg:h-[280px] object-contain"
               />
             </div>
 
@@ -72,7 +72,7 @@ const HeroSection = () => {
                 src={DatesImg}
                 alt="conference-dates"
                 loading="lazy"
-                className="w-[110px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
+                className="w-[96px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
             </div>
           </div>
