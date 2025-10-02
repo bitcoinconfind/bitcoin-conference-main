@@ -52,7 +52,7 @@ const SpeakerCard = ({ img, name, company, role }) => {
   return (
     <div className="flex flex-col items-center text-center">
       {/* Circle + User */}
-      <div className="relative w-56 h-56 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 xl:w-72 xl:h-72">
+      <div className="relative w-40 h-40 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-60 lg:h-60 xl:w-72 xl:h-72">
         {/* Blurred speaker fills the entire square, clipped to circle */}
         <img
           src={img}
@@ -94,8 +94,8 @@ const Speakers = () => {
         </h1>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 lg:gap-16 p-10">
+      {/* Grid: Mobile 2 columns (3 rows), Desktop remains 3 columns */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-10 md:gap-12 lg:gap-16 p-6 sm:p-10">
         {speakersData.map((speaker) => (
           <SpeakerCard key={speaker.id} {...speaker} />
         ))}
