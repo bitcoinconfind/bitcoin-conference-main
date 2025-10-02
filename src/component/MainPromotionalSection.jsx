@@ -17,25 +17,14 @@ const MainPromotionalSection = () => {
   };
 
   return (
-    <section className="pt-1 pb-1 px-4 bg-black">
+    <section className="pt-4 pb-8 px-4 bg-black mt-2">
       <div className="max-w-4xl mx-auto text-center">
-
-        {/* Gradient Lines + Subheading - Always visible */}
-        <div className="flex items-center justify-center mb-2 md:mb-6 sm:mb-8 gap-2">
-          <div className="flex-1 h-[1px] bg-gradient-to-r from-[#010101] via-[#FBF5EE] to-[#FBF5EE]"></div>
-
-          <span className="text-[#FFBF00] font-semibold text-xs sm:text-base md:text-xl lg:text-2xl uppercase">
-            Get A Chance to Win Free Conference Tickets
-          </span>
-
-          <div className="flex-1 h-[1px] bg-gradient-to-r from-[#FBF5EE] via-[#FBF5EE] to-[#010101]"></div>
-        </div>
 
         {/* Large Win Free Tickets Button - Desktop */}
         <Button
           label="Win Free Tickets"
           variant="primary"
-          className="hidden md:inline-block px-8 py-4 text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
+          className="hidden md:inline-block px-8 py-4 text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md mb-4 md:mb-6 sm:mb-8"
           onClick={handleWinFreeTickets}
         />
         
@@ -43,7 +32,7 @@ const MainPromotionalSection = () => {
         <Button
           label="Win Free Tickets"
           variant="primary"
-          className="md:hidden px-5 py-2.5 text-sm font-bold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-xl w-auto max-w-[180px]"
+          className="md:hidden px-5 py-2.5 text-sm font-bold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-xl w-auto max-w-[180px] mb-4 md:mb-6 sm:mb-8"
           onClick={handleWinFreeTickets}
         />
       </div>

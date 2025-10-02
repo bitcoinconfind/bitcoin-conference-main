@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/imgs/logo/BitcoinLogo.svg";
+import logo from "../assets/imgs/logo/BitLogo.png";
 import Button from "./Button";
 
 const Navigation = () => {
@@ -50,7 +50,7 @@ const Navigation = () => {
   };
   return (
     <header className="sticky top-0 z-50">
-      <div className="bg-black px-2 lg:px-25 md:px-10 py-1 md:py-3 flex items-center shadow-md relative header-container">
+      <div className="bg-black px-2 lg:px-25 md:px-10 py-2 md:py-3 flex items-center shadow-md relative header-container">
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="/" onClick={goHomeAndScrollTop}>
@@ -67,26 +67,26 @@ const Navigation = () => {
           <a
             href="/#tickets"
             onClick={(e) => goToId(e, 'tickets')}
-            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
           >
             Tickets
           </a>
           <a
             href="/#speakers"
             onClick={(e) => goToId(e, 'speakers')}
-            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
           >
             Speakers
           </a>
           <Link
             to="/apply/sponsor"
-            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
           >
             Sponsor
           </Link>
           <Link
             to="/contact"
-            className="text-white/90 font-extrabold tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
+            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
           >
             Contact Us
           </Link>

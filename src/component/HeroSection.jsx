@@ -15,7 +15,7 @@ const HeroSection = () => {
     const referralCode = urlParams.get('referralCode');
     
     // Direct redirect to dashboard with referral code
-    const base = import.meta.env.VITE_DASHBOARD_URL
+    const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
@@ -24,21 +24,24 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[16px] min-h-[320px] sm:min-h-[450px] md:min-h-[500px] pb-0 md:pb-8">
-      {/* Background Images */}
+    <div className="relative px-4 sm:px-8 lg:px-20 flex flex-col w-full pt-[60px] min-h-[380px] sm:min-h-[500px] md:min-h-[550px] pb-0 md:pb-8 mt-2">
+      {/* Background Images - Fixed to top */}
+      {/* Right splash image */}
       <img
         src={RightSplashImg}
         alt="right-splash-image"
-        className="absolute top-0 right-0 -z-10 w-auto h-auto max-w-[200px] sm:max-w-[300px] lg:max-w-[500px]"
+        className="fixed top-[60px] right-0 -z-10 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
       />
+      
+      {/* Left splash image */}
       <img
         src={LeftSplashImg}
         alt="left-splash-image"
-        className="absolute top-0 left-0 -z-10 w-auto h-auto max-w-[200px] sm:max-w-[300px] lg:max-w-[500px]"
+        className="fixed top-[60px] left-0 -z-10 w-[140px] sm:w-[180px] md:w-[220px] lg:w-[280px] xl:w-[320px] h-auto"
       />
       
-      {/* Main Content */}
-      <div className="w-full flex-1 flex items-center justify-center">
+      {/* Main Content - With margin top to push it down */}
+      <div className="w-full flex-1 flex items-center justify-center mt-8">
         <div className="flex flex-col lg:flex-row items-center justify-between w-full gap-4 lg:gap-8">
           
           {/* Left Section - Logo */}

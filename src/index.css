@@ -6,28 +6,28 @@ body {
 }
 
 .font-familjen {
-  font-family: "Familjen Grotesk", sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 900;
   font-style: normal;
 }
 
 .font-familjen-med {
-  font-family: "Familjen Grotesk", sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
 }
 
 .font-inter {
-  font-family: "Inter", sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
 
 .font-inter-semiBold {
-  font-family: "Inter", sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;

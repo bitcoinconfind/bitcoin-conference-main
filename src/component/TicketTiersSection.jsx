@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from './Button';
-import GAImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - GA.png';
-import ProImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - PRO.png';
-import WhaleImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.png';
+import GAImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - GA.svg';
+import VIPImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - VIP.svg';
+import WhaleImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.svg';
 
 const TicketTiersSection = () => {
   const handleWinFreeTickets = () => {
@@ -34,10 +34,10 @@ const TicketTiersSection = () => {
       ]
     },
     {
-      title: "Pro Pass",
+      title: "VIP Pass",
       price: "250",
       currency: "USD",
-      image: ProImg,
+      image: VIPImg,
       features: [
         "Everything included in the General Admission Pass",
         "Dedicated check-in lines for faster entry",
@@ -80,9 +80,9 @@ const TicketTiersSection = () => {
       <div className="max-w-7xl mx-auto">
         
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-8 -my-4 md:my-0">
           {ticketTiers.map((tier, index) => (
-            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-8 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full">
+            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-6 md:p-8 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full scale-[.85] md:scale-100">
               {/* Popular Badge for Pro Pass */}
               {index === 1 && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -97,24 +97,25 @@ const TicketTiersSection = () => {
                   <img
                     src={tier.image}
                     alt={`${tier.title} pass`}
-                    className="w-full h-auto rounded-xl mb-4"
+                    className="w-full h-auto rounded-xl mb-4 origin-center"
+                    style={{ transform: 'scale(1.3)' }}
                     loading="lazy"
                   />
                 )}
-                <h4 className="text-2xl font-bold text-white mb-2">{tier.title}</h4>
-                <div className="text-4xl font-bold text-[#FFBF00] mb-2">
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{tier.title}</h4>
+                <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-2">
                   ${tier.price}
-                  <span className="text-lg text-gray-400 ml-1">{tier.currency}</span>
+                  <span className="text-base md:text-lg text-gray-400 ml-1">{tier.currency}</span>
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-2 mb-6 flex-grow">
                 {tier.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-start text-gray-300">
                     <svg className="w-5 h-5 text-[#FFBF00] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
-                    <span className="text-sm">{feature}</span>
+                  <span className="text-xs md:text-sm">{feature}</span>
                   </li>
                 ))}
               </ul>
@@ -122,7 +123,7 @@ const TicketTiersSection = () => {
               <Button
                 label="Coming Soon"
                 variant="secondary"
-                className="w-full py-3 text-lg font-semibold opacity-75 cursor-not-allowed mt-auto"
+                className="w-full py-2 md:py-3 text-sm md:text-lg font-semibold opacity-75 cursor-not-allowed mt-auto"
                 disabled={true}
               />
             </div>
