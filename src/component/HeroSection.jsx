@@ -1,11 +1,11 @@
 import React from "react";
-import BitcoinIcon from "../assets/imgs/logo/BitcoinLogo.png";
-// Updated to use src-based assets (moved to src/assets/imgs/...)
-import MeetingDetails from "../assets/imgs/herosection/conference_detail.svg";
-import DatesImg from "../assets/imgs/herosection/dates.svg";
-import SideLineItem from "../assets/imgs/herosection/sideline_item.svg";
-import LeftSplashImg from "../assets/imgs/herosection/left_hero_splash_image.png";
-import RightSplashImg from "../assets/imgs/herosection/right_hero_splash_image.png";
+const BitcoinIcon = "/assets/imgs/logo/BitcoinLogo.png";
+// Updated to use public-based assets
+const MeetingDetails = "/assets/imgs/herosection/conference_detail.svg";
+const DatesImg = "/assets/imgs/herosection/dates.svg";
+const SideLineItem = "/assets/imgs/herosection/sideline_item.svg";
+const LeftSplashImg = "/assets/imgs/herosection/left_hero_splash_image.png";
+const RightSplashImg = "/assets/imgs/herosection/right_hero_splash_image.png";
 import Button from "./Button";
 
 const HeroSection = () => {

@@ -1,6 +1,6 @@
 import React from "react";
-import square from "../assets/imgs/others/Subtract.svg";
-import circleUser from "../assets/imgs/others/MeetSpeakers.jpg";
+const square = "/assets/imgs/others/Subtract.svg";
+const circleUser = "/assets/imgs/others/MeetSpeakers.jpg";
 import Button from "../component/Button";
 
 const speakersData = [

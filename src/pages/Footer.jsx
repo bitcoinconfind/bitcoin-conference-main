@@ -1,5 +1,5 @@
 import React from "react";
-import footLogo from "../assets/imgs/logo/BitLogo.png";
+const footLogo = "/assets/imgs/logo/BitLogo.png";
 import Button from "../component/Button";
 import {
   FaInstagram,

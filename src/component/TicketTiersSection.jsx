@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from './Button';
-import GAImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - GA.svg';
-import VIPImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - VIP.svg';
-import WhaleImg from '../assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.svg';
+const GAImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - GA.svg';
+const VIPImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - VIP.svg';
+const WhaleImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.svg';
 
 const TicketTiersSection = () => {
   const handleWinFreeTickets = () => {

@@ -1,8 +1,8 @@
 import React from "react";
-import venueeBg from "../assets/imgs/others/Venue_bg.png";
-import venueOne from "../assets/imgs/carousels/carousel_1.JPG";
-import venueTwo from "../assets/imgs/carousels/carousel_2.JPG";
-import venueThree from "../assets/imgs/carousels/carousel_3.JPG";
+const venueeBg = "/assets/imgs/others/Venue_bg.png";
+const venueOne = "/assets/imgs/carousels/carousel_1.JPG";
+const venueTwo = "/assets/imgs/carousels/carousel_2.JPG";
+const venueThree = "/assets/imgs/carousels/carousel_3.JPG";
 
 const Venue = () => {
   const venues = [

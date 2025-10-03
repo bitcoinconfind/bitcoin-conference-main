@@ -1,10 +1,10 @@
 import React from "react";
-import videoIcon from "../assets/imgs/counter/Video.png";
-import calendarIcon from "../assets/imgs/counter/calendar.png";
-import partnersIcon from "../assets/imgs/counter/Partners.png";
-import attendeesIcon from "../assets/imgs/counter/attendees.png";
-import speakerIcon from "../assets/imgs/counter/speaker.png";
-import sponsorsIcon from "../assets/imgs/counter/sponsors.png";
+const videoIcon = "/assets/imgs/counter/Video.png";
+const calendarIcon = "/assets/imgs/counter/calendar.png";
+const partnersIcon = "/assets/imgs/counter/Partners.png";
+const attendeesIcon = "/assets/imgs/counter/attendees.png";
+const speakerIcon = "/assets/imgs/counter/speaker.png";
+const sponsorsIcon = "/assets/imgs/counter/sponsors.png";
 const Counter = () => {
   const counters = [
     { id: 1, img: videoIcon, number: "150+", label: "Media & Press" },
