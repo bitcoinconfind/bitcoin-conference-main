@@ -110,11 +110,11 @@ const Speakers = () => {
             variant="general"
           />
         </div>
-        <a href="mailto:contact@bitcoinconfindia.com?subject=Apply%20to%20be%20Speaker">
+        <a href="/apply/speaker">
           <div className="w-auto border-1 p-1 border-[#1F1F1F] rounded-lg">
             <Button
               label={"Apply to be a Speaker"}
-              className="px-6 sm:px-8 md:px-10 py-2 sm:py-3 text-xs sm:text-sm md:text-base lg:text-lg"
+              className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg"
             />
           </div>
         </a>
