@@ -36,8 +36,11 @@ const ConferenceMetrics = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-black">
+    <section className="py-16 px-4 bg-black" aria-labelledby="conference-metrics">
       <div className="max-w-7xl mx-auto">
+        {/* SEO-friendly heading */}
+        <h2 id="conference-metrics" className="sr-only">Bitcoin Conference India 2026 Statistics and Metrics</h2>
+        
         {/* Metrics Container with Elegant Glowing Border */}
         <div className="relative bg-black border-2 border-[#FFBF00] rounded-2xl p-8 shadow-2xl">
           {/* Glowing border effect */}
@@ -47,9 +50,9 @@ const ConferenceMetrics = () => {
           <div className="relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               {metrics.map((metric, index) => (
-                <div key={index} className="flex flex-col items-center text-center">
+                <div key={index} className="flex flex-col items-center text-center" role="img" aria-label={`${metric.value} ${metric.label} for Bitcoin Conference India 2026`}>
                   {/* Icon */}
-                  <div className="text-white mb-4">
+                  <div className="text-white mb-4" aria-hidden="true">
                     {metric.icon}
                   </div>
                   
