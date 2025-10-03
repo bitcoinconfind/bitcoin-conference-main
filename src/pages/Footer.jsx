@@ -99,23 +99,19 @@ const Footer = () => {
             
             {/* Legal Links */}
             <div className="flex flex-wrap text-sm font-familjen-med justify-center md:justify-end gap-3 text-gray-400">
-              <a 
-                href="https://rewards.bitcoinconferenceindia.com/terms" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                to="/terms"
                 className="hover:text-amber-500 transition-colors"
               >
                 Terms & Conditions
-              </a>
+              </Link>
               <span className="text-gray-600">|</span>
-              <a 
-                href="https://rewards.bitcoinconferenceindia.com/privacy" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <Link 
+                to="/privacy"
                 className="hover:text-amber-500 transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>

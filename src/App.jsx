@@ -5,6 +5,8 @@ import Index from "./pages/Index";
 import ApplySponsor from "./pages/ApplySponsor";
 import ApplySpeaker from "./pages/ApplySpeaker";
 import Contact from "./pages/Contact";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
             <Route path="apply/speaker" element={<ApplySpeaker />} />
             <Route path="apply/sponsor" element={<ApplySponsor />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="terms" element={<Terms />} />
+            <Route path="privacy" element={<Privacy />} />
           </Route>
         </Routes>
       </BrowserRouter>

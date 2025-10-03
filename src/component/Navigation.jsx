@@ -51,6 +51,7 @@ const Navigation = () => {
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-black px-2 lg:px-25 md:px-10 py-2 md:py-3 flex items-center shadow-md relative header-container">
+
         {/* Logo */}
         <div className="flex-shrink-0">
           <a href="/" onClick={goHomeAndScrollTop}>
