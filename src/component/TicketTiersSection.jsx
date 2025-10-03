@@ -40,7 +40,7 @@ const TicketTiersSection = () => {
       features: [
         "Everything included in the General Admission Pass",
         "Dedicated check-in lines for faster entry",
-        "Access to the exclusive Enterprise Hall and Enterprise Stage",
+        "Access to the exclusive Enterprise Room",
         "Complimentary coffee, refreshments, and lounge access",
         "Exclusive After Party access"        
       ]
