@@ -34,13 +34,13 @@ const TicketTiersSection = () => {
     },
     {
       title: "VIP Pass",
-      price: "299",
+      price: "399",
       currency: "USD",
       image: VIPImg,
       features: [
         "Everything included in the General Admission Pass",
         "Dedicated check-in lines for faster entry",
-        "Access to the exclusive Enterprise Room",
+        "Access to the exclusive VIP Room",
         "Complimentary coffee, refreshments, and lounge access",
         "Exclusive After Party access"        
       ]
@@ -55,7 +55,7 @@ const TicketTiersSection = () => {
         "VIP access with a dedicated registration concierge",
         "Access to The Trenches – an exclusive backstage Whale Lounge",
         "Front-row premium seating at the Main Stage",
-        "All-inclusive gourmet dining, open bar, and premium coffee service",
+        "All-inclusive gourmet dining and premium coffee service",
         "Private Whale-only content sessions with top speakers",
         "Exclusive invitation to Whale Night"
       ]
