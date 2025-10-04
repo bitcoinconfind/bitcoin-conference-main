@@ -1,6 +1,13 @@
 {
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "https://www.bitcoinconferenceindia.com/(.*)",
+      "destination": "https://bitcoinconferenceindia.com/$1",
+      "permanent": true
+    }
   ]
 }
 
