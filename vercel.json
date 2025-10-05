@@ -17,6 +17,14 @@
       "destination": "https://bitcoinconferenceindia.com/:path*",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
   ]
 }
 
