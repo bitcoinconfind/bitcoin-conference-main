@@ -43,6 +43,8 @@ const Footer = () => {
           <Button
             label="Win Free Tickets"
             variant="primary"
+            withStarBorder={true}
+            starSpeed="5s"
             className="px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base md:text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md w-auto max-w-[200px] sm:max-w-[250px] md:max-w-[300px]"
             onClick={handleWinFreeTickets}
           />

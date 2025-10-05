@@ -114,6 +114,8 @@ const Speakers = () => {
           <div className="w-auto border-1 p-1 border-[#1F1F1F] rounded-lg">
             <Button
               label={"Apply to be a Speaker"}
+              withStarBorder={true}
+              starSpeed="5s"
               className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg"
             />
           </div>

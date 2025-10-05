@@ -96,6 +96,8 @@ const Navigation = () => {
         <div className="flex-shrink-0 hidden md:block">
           <Button
             label="Win Free Tickets"
+            withStarBorder={true}
+            starSpeed="5s"
             className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base"
             onClick={handleWinFreeTickets}
           />
@@ -106,6 +108,8 @@ const Navigation = () => {
           <Button
             label="Win Free Tickets"
             variant="primary"
+            withStarBorder={true}
+            starSpeed="5s"
             className="px-3 py-1.5 text-xs font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
             onClick={handleWinFreeTickets}
           />

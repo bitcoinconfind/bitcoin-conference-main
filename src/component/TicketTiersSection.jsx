@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import TicketCard from './TicketCard';
 const GAImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - GA.svg';
 const VIPImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - VIP.svg';
 const WhaleImg = '/assets/imgs/ticketTiers/Bitcoin India Pass - WHALE.svg';
@@ -26,10 +26,10 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: GAImg,
       features: [
-        "General admission to Bitcoin INDIA 2026",
-        "Full access to the Expo Hall – India's largest Bitcoin showcase",
-        "Entry to the Main Stage and interactive activations",
-        "Networking opportunities"
+        "Entry to Bitcoin INDIA 2026",
+        "Full access to the Expo Hall, India's largest Bitcoin showcase",
+        "Access to the Main Stage and interactive zones",
+        "Open networking throughout the day"
       ]
     },
     {
@@ -38,11 +38,11 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: VIPImg,
       features: [
-        "Everything included in the General Admission Pass",
-        "Dedicated check-in lines for faster entry",
-        "Access to the exclusive VIP Room",
+        "Everything in General Admission",
+        "Priority check in for faster entry",
+        "Access to the VIP Room",
         "Complimentary coffee, refreshments, and lounge access",
-        "Exclusive After Party access"        
+        "Access to the After Party"
       ]
     },
     {
@@ -51,13 +51,13 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: WhaleImg,
       features: [
-        "Everything included in the VIP Pass",
-        "VIP access with a dedicated registration concierge",
-        "Access to The Trenches – an exclusive backstage Whale Lounge",
-        "Front-row premium seating at the Main Stage",
-        "All-inclusive gourmet dining and premium coffee service",
-        "Private Whale-only content sessions with top speakers",
-        "Exclusive invitation to Whale Night"
+        "Everything in the VIP Pass",
+        "Dedicated registration concierge",
+        "Access to the speakers, the backstage Whale Lounge",
+        "Front row seating at the Main Stage",
+        "All inclusive gourmet dining and premium coffee service",
+        "Private Whale only sessions with top speakers",
+        "Invitation to Whale Night"
       ]
     }
   ];
@@ -80,51 +80,12 @@ const TicketTiersSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 -my-4 md:my-0">
           {ticketTiers.map((tier, index) => (
-            <div key={index} className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-4 md:p-6 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full scale-[.85] md:scale-100">
-              {/* Popular Badge for Pro Pass */}
-              {index === 1 && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-[#FFBF00] text-black px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-              
-              <div className="text-center mb-4">
-                {tier.image && (
-                  <img
-                    src={tier.image}
-                    alt={`${tier.title} pass`}
-                    className="w-full h-auto rounded-xl mb-3 origin-center"
-                    style={{ transform: 'scale(1.17)' }}
-                    loading="lazy"
-                  />
-                )}
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{tier.title}</h4>
-                <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-2">
-                  ${tier.price}
-                  <span className="text-base md:text-lg text-gray-400 ml-1">{tier.currency}</span>
-                </div>
-              </div>
-
-              <ul className="space-y-1.5 mb-4 flex-grow">
-                {tier.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start text-gray-300">
-                    <svg className="w-5 h-5 text-[#FFBF00] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  <span className="text-lg md:text-xl font-bold">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <Button
-                label="Coming Soon"
-                variant="secondary"
-                className="w-full py-2 md:py-3 text-sm md:text-lg font-semibold opacity-75 cursor-not-allowed mt-auto"
-                disabled={true}
-              />
-            </div>
+            <TicketCard
+              key={index}
+              tier={tier}
+              index={index}
+              isPopular={index === 1}
+            />
           ))}
         </div>
 

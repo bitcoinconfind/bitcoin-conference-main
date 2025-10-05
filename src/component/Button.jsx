@@ -1,4 +1,4 @@
-import React from "react";
+import { StarBorder } from "./ui/StarBorder";
 
 const Button = ({
   label,
@@ -6,11 +6,13 @@ const Button = ({
   className = "",
   type = "button",
   variant = "primary",
+  withStarBorder = false,
+  starSpeed = "5s",
   "aria-label": ariaLabel,
   ...props
 }) => {
   const baseStyles =
-    "px-6 py-2 rounded-lg font-semibold transition duration-300 relative overflow-hidden";
+    "px-6 py-2 rounded-lg font-semibold transition duration-300";
   const variants = {
     primary:
       "bg-[#FFBF00] font-familjen border border-2 border-[#585858] text-black cursor-pointer font-semibold hover:text-white hover:bg-[#CB7608]",
@@ -23,7 +25,7 @@ const Button = ({
     animatedBtn: "animated-border-btn text-black hover:text-white",
   };
 
-  return (
+  const buttonElement = (
     <button
       type={type}
       onClick={onClick}
@@ -34,6 +36,16 @@ const Button = ({
       {label}
     </button>
   );
+
+  if (withStarBorder) {
+    return (
+      <StarBorder speed={starSpeed}>
+        {buttonElement}
+      </StarBorder>
+    );
+  }
+
+  return buttonElement;
 };
 
 export default Button;

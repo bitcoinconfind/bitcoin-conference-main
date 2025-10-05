@@ -1,0 +1,5 @@
+
+> bitcoin-conference-india-2026@1.0.0 dev
+> vite --port 5174 --strictPort --host --clearScreen=false --debug
+
+sh: /Users/shubhammandawewala/Desktop/bitcoin-conference-main/node_modules/.bin/vite: Permission denied

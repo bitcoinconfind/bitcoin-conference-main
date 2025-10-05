@@ -104,3 +104,141 @@ body {
     background-position: 100% 50%;
   }
 }
+
+/* Star Border Animations */
+@keyframes star-movement-bottom {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+
+@keyframes star-movement-top {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.animate-star-movement-bottom {
+  animation: star-movement-bottom 4s ease-in-out infinite;
+}
+
+.animate-star-movement-top {
+  animation: star-movement-top 4s ease-in-out infinite;
+}
+
+/* ===== TICKET CARD MAXIMUM IMPACT ANIMATIONS ===== */
+
+/* 1. Animated Gradient Background */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.ticket-card-gradient {
+  background: linear-gradient(135deg, #1F1F1F 0%, #2a2a2a 50%, #1F1F1F 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 10s ease infinite;
+}
+
+/* 2. Enhanced Animated Border */
+@keyframes border-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ticket-card-border .animated-border {
+  position: absolute;
+  inset: -2px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    #FFBF00 25%,
+    transparent 50%,
+    #FFBF00 75%,
+    transparent 100%
+  );
+  animation: border-rotate 4s linear infinite;
+  border-radius: inherit;
+}
+
+.ticket-card-border .animated-border::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  background: #1F1F1F;
+  border-radius: inherit;
+}
+
+/* 3. Bitcoin Particle Effects */
+@keyframes float-particle {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+}
+
+.bitcoin-particle {
+  position: absolute;
+  font-size: 20px;
+  color: #FFBF00;
+  opacity: 0;
+  animation: float-particle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 5;
+  text-shadow: 0 0 10px rgba(255, 191, 0, 0.5);
+}
+
+/* 4. Card Container */
+.ticket-card-container {
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+/* Hover state enhancements */
+.ticket-card-container:hover .bitcoin-particle {
+  animation-play-state: running;
+}
+
+.ticket-card-container:hover .animated-border {
+  animation-duration: 2s;
+}
