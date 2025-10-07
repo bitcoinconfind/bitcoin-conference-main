@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|browserconfig\\.xml|favicon\\.png|sitemap\\.xml|robots\\.txt|og-image\\.png|.*\\..*).*)",
+      "destination": "/index.html"
+    }
   ],
   "redirects": [
     {

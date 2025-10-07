@@ -5,14 +5,17 @@
 -- Run this entire file in Supabase SQL Editor
 
 -- =============================================
--- 1. DROP EXISTING TABLES (if they exist)
+-- 1. DO NOT DROP EXISTING TABLES IN PRODUCTION
 -- =============================================
 
-DROP TABLE IF EXISTS contact_queries CASCADE;
-DROP TABLE IF EXISTS speaker_applications CASCADE;
-DROP TABLE IF EXISTS sponsorship_inquiries CASCADE;
-DROP TABLE IF EXISTS allowed_admin_emails CASCADE;
--- Note: admins is managed separately; dropping it would remove admin access. Create if missing below.
+-- IMPORTANT: Dropping tables will permanently delete data.
+-- These were previously used during development. Keep them commented out.
+-- If you truly need to reset a dev database, uncomment carefully.
+-- DROP TABLE IF EXISTS contact_queries CASCADE;
+-- DROP TABLE IF EXISTS speaker_applications CASCADE;
+-- DROP TABLE IF EXISTS sponsorship_inquiries CASCADE;
+-- DROP TABLE IF EXISTS allowed_admin_emails CASCADE;
+-- Note: admins is managed separately; do NOT drop in production.
 
 -- =============================================
 -- 2. CREATE TABLES
