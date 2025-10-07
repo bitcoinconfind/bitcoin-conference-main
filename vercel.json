@@ -1,9 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/((?!assets/|browserconfig\\.xml|favicon\\.png|sitemap\\.xml|robots\\.txt|og-image\\.png|.*\\..*).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
     {
@@ -20,27 +17,8 @@
       "source": "/assets/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/*.css",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/*.js",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-        { "key": "Access-Control-Allow-Methods", "value": "GET, OPTIONS" },
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ]
 }
-
-
