@@ -7,6 +7,8 @@ import ApplySpeaker from "./pages/ApplySpeaker";
 import Contact from "./pages/Contact";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import AdminLogin from "./pages/AdminLogin";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="terms" element={<Terms />} />
             <Route path="privacy" element={<Privacy />} />
+          <Route path="admin/login" element={<AdminLogin />} />
+          <Route path="admin" element={<Admin />} />
           </Route>
         </Routes>
       </BrowserRouter>

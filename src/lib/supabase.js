@@ -1,7 +1,12 @@
 // Supabase configuration
-// Replace these with your actual Supabase project credentials
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://demo.supabase.co';
-const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'demo-key';
+// Fail fast if env vars are missing in production to surface clear error to users
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+  // Throwing here helps us catch misconfiguration quickly during deploy
+  console.error('Missing Supabase env: VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY');
+}
 
 // Import Supabase client
 import { createClient } from '@supabase/supabase-js';
@@ -15,15 +20,14 @@ export const dbHelpers = {
   async submitContactQuery(data) {
     const { data: result, error } = await supabase
       .from('contact_queries')
-      .insert([{
+      .insert([{ 
         name: data.name,
         email: data.email,
         subject: data.subject,
         message: data.message,
         phone: data.phone || null,
         created_at: new Date().toISOString()
-      }])
-      .select();
+      }]);
     
     if (error) throw error;
     return result;
@@ -50,8 +54,7 @@ export const dbHelpers = {
         audience: data.audience,
         status: 'pending',
         created_at: new Date().toISOString()
-      }])
-      .select();
+      }]);
     
     if (error) throw error;
     return result;
@@ -61,7 +64,7 @@ export const dbHelpers = {
   async submitSponsorshipInquiry(data) {
     const { data: result, error } = await supabase
       .from('sponsorship_inquiries')
-      .insert([{
+      .insert([{ 
         company_name: data.companyName,
         contact_name: data.contactName,
         contact_email: data.contactEmail,
@@ -77,8 +80,7 @@ export const dbHelpers = {
         goals: data.goals || null,
         status: 'pending',
         created_at: new Date().toISOString()
-      }])
-      .select();
+      }]);
     
     if (error) throw error;
     return result;

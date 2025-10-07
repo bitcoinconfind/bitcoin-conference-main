@@ -14,6 +14,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
+  const [validationNotice, setValidationNotice] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -43,7 +44,33 @@ const Contact = () => {
     }
     
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    const hasErrors = Object.keys(newErrors).length > 0;
+    if (hasErrors) {
+      const fieldLabels = {
+        name: "Full Name",
+        email: "Email Address",
+        subject: "Subject",
+        message: "Message",
+        phone: "Phone Number",
+      };
+
+      const firstErrorKey = Object.keys(newErrors)[0];
+      const label = fieldLabels[firstErrorKey] || firstErrorKey;
+      setValidationNotice(`Please update the ${label} field.`);
+
+      const el = document.getElementById(firstErrorKey);
+      if (el && typeof el.scrollIntoView === 'function') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (typeof el.focus === 'function') {
+          try { el.focus({ preventScroll: true }); } catch {}
+        }
+      }
+    } else {
+      setValidationNotice("");
+    }
+
+    return !hasErrors;
   };
 
   const handleInputChange = (e) => {
@@ -60,6 +87,10 @@ const Contact = () => {
         [name]: ""
       }));
     }
+
+    if (validationNotice) {
+      setValidationNotice("");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -71,6 +102,7 @@ const Contact = () => {
     
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setValidationNotice("");
     
     try {
       // Submit to Supabase
@@ -115,23 +147,6 @@ const Contact = () => {
             Have questions or feedback? Fill out the form below and we'll get back to you within 24 hours.
           </p>
         </div>
-
-        {submitStatus === "success" && (
-          <div className="mb-6 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
-            <p className="text-green-400 font-inter-semiBold">
-              ✅ Thank you for your message! We'll be in touch shortly.
-            </p>
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="mb-6 p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
-            <p className="text-red-400 font-inter-semiBold">
-              ❌ Something went wrong. Please try again later.
-            </p>
-          </div>
-        )}
-
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -225,7 +240,31 @@ const Contact = () => {
             {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
           </div>
 
-          <div className="pt-4">
+          {/* Submission status / validation messages above submit button */}
+          {validationNotice && (
+            <div className="mt-2 mb-2 p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-lg">
+              <p className="text-yellow-400 font-inter-semiBold">
+                ⚠️ {validationNotice}
+              </p>
+            </div>
+          )}
+          {submitStatus === "success" && (
+            <div className="mt-2 mb-2 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
+              <p className="text-green-400 font-inter-semiBold">
+                ✅ Thank you for your message! We'll be in touch shortly.
+              </p>
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="mt-2 mb-2 p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
+              <p className="text-red-400 font-inter-semiBold">
+                ❌ Something went wrong. Please try again later.
+              </p>
+            </div>
+          )}
+
+          <div className="pt-2">
             <Button
               type="submit"
               label={isSubmitting ? "Sending..." : "Send Message"}

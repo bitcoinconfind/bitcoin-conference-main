@@ -1,12 +1,9 @@
-import React from "react";
 import Home from "./Home";
 import ComingSoon from "../component/ComingSoon";
-import ConferenceMetrics from "../component/ConferenceMetrics";
 import TicketTiersSection from "../component/TicketTiersSection";
 import Speakers from "./Speakers";
 import Highlights from "./Highlights";
 import Venue from "./Venue";
-// Removed Telsection per request
 import Footer from "./Footer";
 import Button from "../component/Button";
 
@@ -42,7 +39,6 @@ const Index = () => {
       </section>
       <TicketTiersSection />
       <Speakers />
-      <ConferenceMetrics />
       <Highlights />
       <Venue />
       <ComingSoon />

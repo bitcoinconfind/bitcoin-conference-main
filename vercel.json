@@ -1,29 +1,12 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "has": [
-        { "type": "host", "value": "bitcoinconferenceindia.com" }
-      ],
-      "destination": "/index.html"
-    }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "www.bitcoinconferenceindia.com" }
-      ],
-      "destination": "https://bitcoinconferenceindia.com/:path*",
+      "source": "https://www.bitcoinconferenceindia.com/(.*)",
+      "destination": "https://bitcoinconferenceindia.com/$1",
       "permanent": true
-    }
-  ],
-  "headers": [
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" }
-      ]
     }
   ]
 }

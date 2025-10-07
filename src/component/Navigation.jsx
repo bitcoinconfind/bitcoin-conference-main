@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const logo = "/assets/imgs/logo/BitLogo.png";
 import Button from "./Button";
@@ -6,7 +6,6 @@ import Button from "./Button";
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const [showForm, setShowForm] = useState(false);
 
   const normalizeUrl = (u) => {
     if (!u) return '/';
@@ -43,7 +42,16 @@ const Navigation = () => {
     e.preventDefault();
     if (location.pathname === "/") {
       const el = document.getElementById(id);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (el) {
+        const headerOffset = 80; // Adjust for fixed header height
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     } else {
       navigate(`/#${id}`);
     }
@@ -113,7 +121,7 @@ const Navigation = () => {
             className="px-3 py-1.5 text-xs font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
             onClick={handleWinFreeTickets}
           />
-          <Hamburger showForm={showForm} setShowForm={setShowForm} />
+          <Hamburger />
         </div>
       </div>
     </header>
@@ -122,7 +130,7 @@ const Navigation = () => {
 
 export default Navigation;
 
-const Hamburger = ({ showForm, setShowForm }) => {
+const Hamburger = () => {
   const [open, setOpen] = useState(false);
   return (
     <div className="relative">

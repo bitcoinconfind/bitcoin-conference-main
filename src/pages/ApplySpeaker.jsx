@@ -23,6 +23,7 @@ const ApplySpeaker = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
+  const [validationNotice, setValidationNotice] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -68,7 +69,36 @@ const ApplySpeaker = () => {
     }
     
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    const hasErrors = Object.keys(newErrors).length > 0;
+    if (hasErrors) {
+      const fieldLabels = {
+        name: "Full Name",
+        email: "Email Address",
+        phone: "Phone Number",
+        bio: "Speaker Bio",
+        topicTitle: "Topic Title",
+        topicAbstract: "Topic Abstract",
+        experience: "Speaking Experience",
+        audience: "Target Audience",
+      };
+
+      const firstErrorKey = Object.keys(newErrors)[0];
+      const label = fieldLabels[firstErrorKey] || firstErrorKey;
+      setValidationNotice(`Please update the ${label} field.`);
+
+      const el = document.getElementById(firstErrorKey);
+      if (el && typeof el.scrollIntoView === 'function') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (typeof el.focus === 'function') {
+          try { el.focus({ preventScroll: true }); } catch {}
+        }
+      }
+    } else {
+      setValidationNotice("");
+    }
+
+    return !hasErrors;
   };
 
   const handleInputChange = (e) => {
@@ -85,6 +115,10 @@ const ApplySpeaker = () => {
         [name]: ""
       }));
     }
+
+    if (validationNotice) {
+      setValidationNotice("");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -96,6 +130,7 @@ const ApplySpeaker = () => {
     
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setValidationNotice("");
     
     try {
       // Submit to Supabase
@@ -153,21 +188,7 @@ const ApplySpeaker = () => {
           </p>
         </div>
 
-        {submitStatus === "success" && (
-          <div className="mb-8 p-6 bg-green-900/20 border border-green-500/50 rounded-lg">
-            <p className="text-green-400 font-inter-semiBold text-lg">
-              ✅ Thank you for your application! Our team will review it and get back to you within 5-7 business days.
-            </p>
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="mb-8 p-6 bg-red-900/20 border border-red-500/50 rounded-lg">
-            <p className="text-red-400 font-inter-semiBold text-lg">
-              ❌ Something went wrong. Please try again later.
-            </p>
-          </div>
-        )}
+        
 
         <div className="bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -437,7 +458,31 @@ const ApplySpeaker = () => {
               </div>
             </div>
 
-            <div className="pt-6">
+            {/* Submission status / validation messages above submit button */}
+            {validationNotice && (
+              <div className="mt-2 mb-4 p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-lg">
+                <p className="text-yellow-400 font-inter-semiBold">
+                  ⚠️ {validationNotice}
+                </p>
+              </div>
+            )}
+            {submitStatus === "success" && (
+              <div className="mt-2 mb-4 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
+                <p className="text-green-400 font-inter-semiBold">
+                  ✅ Thank you for your application! Our team will review it and get back to you within 5-7 business days.
+                </p>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="mt-2 mb-4 p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
+                <p className="text-red-400 font-inter-semiBold">
+                  ❌ Something went wrong. Please try again later.
+                </p>
+              </div>
+            )}
+
+            <div className="pt-2">
               <Button
                 type="submit"
                 label={isSubmitting ? "Submitting Application..." : "Submit Application"}

@@ -22,6 +22,7 @@ const ApplySponsor = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
+  const [validationNotice, setValidationNotice] = useState("");
 
   const sponsorshipTypes = [
     "Platinum Sponsor",
@@ -101,7 +102,35 @@ const ApplySponsor = () => {
     }
     
     setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+
+    const hasErrors = Object.keys(newErrors).length > 0;
+    if (hasErrors) {
+      const fieldLabels = {
+        companyName: "Company Name",
+        contactName: "Contact Person Name",
+        contactEmail: "Contact Email",
+        contactPhone: "Contact Phone",
+        sponsorshipType: "Type of Sponsorship",
+        budgetRange: "Budget Range",
+        message: "Additional Information",
+      };
+
+      const firstErrorKey = Object.keys(newErrors)[0];
+      const label = fieldLabels[firstErrorKey] || firstErrorKey;
+      setValidationNotice(`Please update the ${label} field.`);
+
+      const el = document.getElementById(firstErrorKey);
+      if (el && typeof el.scrollIntoView === 'function') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (typeof el.focus === 'function') {
+          try { el.focus({ preventScroll: true }); } catch {}
+        }
+      }
+    } else {
+      setValidationNotice("");
+    }
+
+    return !hasErrors;
   };
 
   const handleInputChange = (e) => {
@@ -118,6 +147,10 @@ const ApplySponsor = () => {
         [name]: ""
       }));
     }
+
+    if (validationNotice) {
+      setValidationNotice("");
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -129,10 +162,24 @@ const ApplySponsor = () => {
     
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setValidationNotice("");
     
     try {
+      // Normalize URLs to accept values without protocol
+      const normalizeUrl = (value) => {
+        if (!value) return "";
+        const trimmed = value.trim();
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+      };
+
+      const payload = {
+        ...formData,
+        website: normalizeUrl(formData.website),
+        linkedin: normalizeUrl(formData.linkedin),
+      };
       // Submit to Supabase
-      const result = await dbHelpers.submitSponsorshipInquiry(formData);
+      const result = await dbHelpers.submitSponsorshipInquiry(payload);
       console.log('Sponsorship inquiry submitted:', result);
       
       setSubmitStatus("success");
@@ -185,21 +232,7 @@ const ApplySponsor = () => {
           </p>
         </div>
 
-        {submitStatus === "success" && (
-          <div className="mb-8 p-6 bg-green-900/20 border border-green-500/50 rounded-lg">
-            <p className="text-green-400 font-inter-semiBold text-lg">
-              ✅ Thank you for your interest! Our sponsorship team will review your inquiry and get back to you within 2 business days.
-            </p>
-          </div>
-        )}
-
-        {submitStatus === "error" && (
-          <div className="mb-8 p-6 bg-red-900/20 border border-red-500/50 rounded-lg">
-            <p className="text-red-400 font-inter-semiBold text-lg">
-              ❌ Something went wrong. Please try again later.
-            </p>
-          </div>
-        )}
+        
 
         <div className="bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8">
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -266,7 +299,8 @@ const ApplySponsor = () => {
                     Company Website
                   </label>
                   <input
-                    type="url"
+                    type="text"
+                    inputMode="url"
                     id="website"
                     name="website"
                     value={formData.website}
@@ -341,7 +375,8 @@ const ApplySponsor = () => {
                     LinkedIn Profile
                   </label>
                   <input
-                    type="url"
+                    type="text"
+                    inputMode="url"
                     id="linkedin"
                     name="linkedin"
                     value={formData.linkedin}
@@ -456,7 +491,31 @@ const ApplySponsor = () => {
               </div>
             </div>
 
-            <div className="pt-6">
+            {/* Submission status / validation messages above submit button */}
+            {validationNotice && (
+              <div className="mt-2 mb-4 p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-lg">
+                <p className="text-yellow-400 font-inter-semiBold">
+                  ⚠️ {validationNotice}
+                </p>
+              </div>
+            )}
+            {submitStatus === "success" && (
+              <div className="mt-2 mb-4 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
+                <p className="text-green-400 font-inter-semiBold">
+                  ✅ Thank you for your interest! Our sponsorship team will review your inquiry and get back to you within 2 business days.
+                </p>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="mt-2 mb-4 p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
+                <p className="text-red-400 font-inter-semiBold">
+                  ❌ Something went wrong. Please try again later.
+                </p>
+              </div>
+            )}
+
+            <div className="pt-2">
               <Button
                 type="submit"
                 label={isSubmitting ? "Submitting Inquiry..." : "Submit Sponsorship Inquiry"}

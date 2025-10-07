@@ -150,6 +150,10 @@ Interested in sponsoring or partnering with Bitcoin Conference India 2026?
 - `npm run preview` - Preview production build
 - `npm run lint` - Run ESLint
 
+### Admin Dashboard Setup
+
+See `ADMIN_GUIDE.md` for secure admin access setup using Supabase Auth (OTP), RLS, and the allowlist.
+
 ### Contributing
 
 1. Fork the repository
