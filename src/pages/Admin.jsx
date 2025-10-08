@@ -29,6 +29,8 @@ const Admin = () => {
     const run = async () => {
       setLoading(true);
       const { data: { user } } = await supabase.auth.getUser();
+      console.log('Logged in user:', user);
+      
       if (!user) {
         setAuthorized(false);
         setLoading(false);
@@ -36,11 +38,13 @@ const Admin = () => {
         return;
       }
 
-      const { data: adminRow } = await supabase
+      const { data: adminRow, error: adminCheckError } = await supabase
         .from('admins')
         .select('user_id')
         .eq('user_id', user.id)
         .single();
+      
+      console.log('Admin check:', { adminRow, adminCheckError, userId: user.id });
 
       if (!adminRow) {
         setAuthorized(false);
@@ -58,6 +62,11 @@ const Admin = () => {
         supabase.from('speaker_applications').select('*').order('created_at', { ascending: false }).range(from, to),
         supabase.from('sponsorship_inquiries').select('*').order('created_at', { ascending: false }).range(from, to)
       ]);
+
+      console.log('Fetched data:', { contact: cq.data?.length, speakers: spk.data?.length, sponsors: spn.data?.length });
+      if (cq.error) console.error('Contact error:', cq.error);
+      if (spk.error) console.error('Speaker error:', spk.error);
+      if (spn.error) console.error('Sponsor error:', spn.error);
 
       setContact(cq.data || []);
       setSpeakers(spk.data || []);

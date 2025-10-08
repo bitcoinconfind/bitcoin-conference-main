@@ -14,7 +14,20 @@ CREATE POLICY anon_insert_sponsorship ON sponsorship_inquiries FOR INSERT TO ano
 DROP POLICY IF EXISTS admins_select_self ON admins;
 CREATE POLICY admins_select_self ON admins FOR SELECT TO authenticated USING (auth.uid() = user_id);
 
--- Admin READ/UPDATE for submissions
+-- Admin READ policies for submissions
+DROP POLICY IF EXISTS select_admin_contact ON contact_queries;
+CREATE POLICY select_admin_contact ON contact_queries FOR SELECT TO authenticated
+USING (exists (select 1 from admins a where a.user_id = auth.uid()));
+
+DROP POLICY IF EXISTS select_admin_speaker ON speaker_applications;
+CREATE POLICY select_admin_speaker ON speaker_applications FOR SELECT TO authenticated
+USING (exists (select 1 from admins a where a.user_id = auth.uid()));
+
+DROP POLICY IF EXISTS select_admin_sponsor ON sponsorship_inquiries;
+CREATE POLICY select_admin_sponsor ON sponsorship_inquiries FOR SELECT TO authenticated
+USING (exists (select 1 from admins a where a.user_id = auth.uid()));
+
+-- Admin UPDATE policies for submissions
 DROP POLICY IF EXISTS update_admin_contact ON contact_queries;
 CREATE POLICY update_admin_contact ON contact_queries FOR UPDATE TO authenticated
 USING (exists (select 1 from admins a where a.user_id = auth.uid()))

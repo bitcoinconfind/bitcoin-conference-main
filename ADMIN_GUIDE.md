@@ -9,35 +9,32 @@ Follow these steps to enable and manage the admin dashboard securely.
 - Optional: Authentication → Settings → Email domain allowlist → add org domains
 
 ### 2) Apply the Database Schema
-Run the complete schema in `database/complete_schema.sql` in the Supabase SQL editor. It:
-- Creates tables for forms
-- Enables RLS
+Run these SQL files **in order** in the Supabase SQL editor:
+
+1. `database/01_schema_tables.sql` - Creates tables (admins, contact_queries, speaker_applications, sponsorship_inquiries)
+2. `database/02_schema_functions.sql` - Creates functions (is_allowed_admin, set_admin_email) and triggers
+3. `database/03_schema_policies.sql` - Applies RLS policies (anon INSERT only, admin SELECT/UPDATE)
+
+This setup:
+- Enables RLS on all tables
 - Allows public INSERT only
-- Creates `admins` and `allowed_admin_emails` tables
-- Adds RLS policies so only admins can SELECT/UPDATE form data
+- Grants admins SELECT/UPDATE via RLS policies
 
-### 3) Allowlist Admin Emails (who may request OTP)
-Insert allowed emails into `allowed_admin_emails`:
-
-```sql
-insert into allowed_admin_emails(email) values
-('admin1@yourdomain.com'),
-('admin2@yourdomain.com');
-```
-
-Only project owners can modify this table. The login UI checks this table before sending an OTP.
-
-### 4) Create Admin Users and Grant Admin Role
-Create/invite users in Supabase → Authentication → Users. Then add each user’s UUID to `admins`:
+### 3) Create Admin Users and Grant Admin Role
+Create/invite users in Supabase → Authentication → Users. Then add each user to `admins`:
 
 ```sql
+-- Add admin (email auto-fills from auth.users via trigger)
 insert into admins (user_id)
-select id from auth.users where email = 'admin1@yourdomain.com';
+select id from auth.users where email = 'admin@yourdomain.com';
 ```
 
-Admins (present in `admins`) can read/update statuses; non-admins cannot.
+**What happens:**
+- The `set_admin_email()` trigger automatically populates the `email` column from `auth.users`
+- The `is_allowed_admin(email)` function checks if the email exists in `admins` before sending OTP
+- Only users in `admins` can read/update form submissions via RLS policies
 
-### 5) App Environment Variables
+### 4) App Environment Variables
 Set these in `.env.local` (and in Vercel for production):
 
 ```
@@ -45,7 +42,7 @@ VITE_SUPABASE_URL=YOUR_PROJECT_URL
 VITE_SUPABASE_ANON_KEY=YOUR_ANON_KEY
 ```
 
-### 6) Routes and Access
+### 5) Routes and Access
 - Admin login: `/admin/login` (Email OTP)
 - Admin dashboard: `/admin` (auto-redirects to login if unauthorized)
 
