@@ -50,3 +50,12 @@ Disallow: /
 
 User-agent: DotBot
 Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsSiteAudit
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
