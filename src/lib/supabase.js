@@ -3,24 +3,31 @@
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
-  // Throwing here helps us catch misconfiguration quickly during deploy
-  console.error('Missing Supabase env: VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY');
-}
-
 // Import Supabase client
 import { createClient } from '@supabase/supabase-js';
 
-// Create Supabase client
-export const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Create Supabase client (only if credentials are available)
+export const supabase = (SUPABASE_URL && SUPABASE_ANON_KEY)
+  ? createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+  : null;
+
+// Warn in development if Supabase is not configured
+if (!supabase && import.meta.env.DEV) {
+  console.warn('⚠️ Supabase not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env file to enable database features.');
+}
 
 // Database helper functions
 export const dbHelpers = {
   // Contact queries
   async submitContactQuery(data) {
+    if (!supabase) {
+      console.error('Supabase not configured. Cannot submit contact query.');
+      throw new Error('Database not configured. Please contact the administrator.');
+    }
+
     const { data: result, error } = await supabase
       .from('contact_queries')
-      .insert([{ 
+      .insert([{
         name: data.name,
         email: data.email,
         subject: data.subject,
@@ -28,13 +35,18 @@ export const dbHelpers = {
         phone: data.phone || null,
         created_at: new Date().toISOString()
       }]);
-    
+
     if (error) throw error;
     return result;
   },
 
   // Speaker applications
   async submitSpeakerApplication(data) {
+    if (!supabase) {
+      console.error('Supabase not configured. Cannot submit speaker application.');
+      throw new Error('Database not configured. Please contact the administrator.');
+    }
+
     const { data: result, error } = await supabase
       .from('speaker_applications')
       .insert([{
@@ -55,16 +67,21 @@ export const dbHelpers = {
         status: 'pending',
         created_at: new Date().toISOString()
       }]);
-    
+
     if (error) throw error;
     return result;
   },
 
   // Sponsorship inquiries
   async submitSponsorshipInquiry(data) {
+    if (!supabase) {
+      console.error('Supabase not configured. Cannot submit sponsorship inquiry.');
+      throw new Error('Database not configured. Please contact the administrator.');
+    }
+
     const { data: result, error } = await supabase
       .from('sponsorship_inquiries')
-      .insert([{ 
+      .insert([{
         company_name: data.companyName,
         contact_name: data.contactName,
         contact_email: data.contactEmail,
@@ -81,7 +98,7 @@ export const dbHelpers = {
         status: 'pending',
         created_at: new Date().toISOString()
       }]);
-    
+
     if (error) throw error;
     return result;
   }

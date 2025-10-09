@@ -101,7 +101,7 @@ const TicketTiersSection = () => {
               <div className="text-lg text-gray-400">Year</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-[#FFBF00]">TBA</div>
+              <div className="text-3xl font-bold mb-2 text-[#FFBF00]">FEB/2026</div>
               <div className="text-lg text-gray-400">Date</div>
             </div>
           </div>
