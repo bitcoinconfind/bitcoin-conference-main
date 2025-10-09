@@ -1,7 +1,7 @@
 import Button from "../component/Button";
 
-const QuoteMobile = "/assets/imgs/Quote/Frame 47487.png";
-const QuoteDesktop = "/assets/imgs/Quote/Quote.png";
+const QuoteMobile = "/assets/imgs/Quote/loli.svg";
+const QuoteDesktop = "/assets/imgs/Quote/Quote (1).svg";
 
 const Speakers = () => {
   return (

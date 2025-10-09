@@ -122,8 +122,8 @@ Register now to win free tickets to Bitcoin Conference India 2026:
 ## 📅 Important Dates
 
 - **Registration Opens**: Now Open
-- **Early Bird Deadline**: TBA
-- **Conference Dates**: 2026 (TBA)
+- **Early Bird Deadline**: FEB/2026
+- **Conference Dates**: FEB/2026
 - **Venue Announcement**: Coming Soon
 
 ## 🤝 Sponsorship & Partnership

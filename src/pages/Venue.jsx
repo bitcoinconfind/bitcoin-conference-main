@@ -3,7 +3,7 @@ const venueeBg = "/assets/imgs/others/Venue_bg.png";
 const venueOne = "/assets/imgs/carousels/carousel_1.JPG";
 const venueTwo = "/assets/imgs/carousels/carousel_2.JPG";
 const venueThree = "/assets/imgs/carousels/carousel_3.JPG";
-const venueFour = "/assets/imgs/carousels/carousel_4.JPG"; // Add a fourth image
+const venueFour = "/assets/imgs/carousels/carousel_4.jpg"; // Add a fourth image
 
 const Venue = () => {
   // Hero carousel images
@@ -16,13 +16,33 @@ const Venue = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Auto-slide every 3.5 seconds
+  // Auto-slide every 3.5 seconds - ONLY on desktop/tablet (md and above)
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 768px)');
+
+    // Reset to first slide on mobile
+    if (!mediaQuery.matches) {
+      setCurrentSlide(0);
+      return;
+    }
+
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 3500);
 
-    return () => clearInterval(interval);
+    // Listen for screen size changes
+    const handleChange = (e) => {
+      if (!e.matches) {
+        setCurrentSlide(0); // Reset to first slide when switching to mobile
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+
+    return () => {
+      clearInterval(interval);
+      mediaQuery.removeEventListener('change', handleChange);
+    };
   }, [heroImages.length]);
   const venues = [
     {
@@ -49,22 +69,31 @@ const Venue = () => {
     {
       id: 4,
       img: venueFour,
-      alt: "Hussain Sagar Hyderabad",
-      title: "Hussain Sagar",
-      description: "At Hussain Sagar, the 125 ft Ambedkar statue and the monolithic Buddha share the skyline and frame Tank Bund.",
+      alt: "Amazon Campus Hyderabad",
+      title: "Amazon Campus",
+      description: "The world's largest Amazon campus outside the US, spanning 9.5 acres with cutting-edge architecture and state-of-the-art facilities in the heart of Hyderabad's IT corridor.",
     },
   ];
   return (
-    <section className="relative w-full p-5">
+    <section className="relative w-full">
       {/* Hero Carousel Section */}
-      <div className="relative w-full flex justify-center py-12 sm:py-16 md:py-24 lg:py-32">
-       
-        <div className="relative w-[93%] sm:w-[88%] md:w-[83%] lg:w-[78%] border-1 border-gray-500 rounded-lg overflow-hidden">
+      <div className="relative w-full flex justify-center py-6 sm:py-12 md:py-16 lg:py-24 px-5">
+
+        <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
           {/* Carousel Container */}
-          <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[85vh] overflow-hidden">
-            {/* Sliding Images */}
-            <div 
-              className="flex transition-transform duration-700 ease-in-out h-full"
+          <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
+            {/* Mobile: Show only first image (no sliding) */}
+            <div className="block md:hidden w-full h-full">
+              <img
+                src={heroImages[0]}
+                alt="Venue 1"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Desktop: Sliding Images */}
+            <div
+              className="hidden md:flex transition-transform duration-700 ease-in-out h-full"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {heroImages.map((image, index) => (
@@ -107,18 +136,42 @@ const Venue = () => {
           </div>
         </div>
       </div>
-      {/* Photo grid - 4 equal parts */}
-      <div className="w-full flex flex-wrap justify-center gap-6 px-5">
+      {/* Photo grid - All devices show all 4 cards */}
+
+      {/* Mobile - Stacked Cards */}
+      <div className="flex md:hidden flex-col gap-6 w-full px-5 py-6">
         {venues.map((venue) => (
           <div
             key={venue.id}
-            className="w-full sm:w-[95%] md:w-[45%] lg:w-[22%] rounded-lg border border-gray-500 overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer bg-black"
+            className="w-full max-w-sm mx-auto rounded-lg border border-gray-500 overflow-hidden bg-black"
           >
             <div className="overflow-hidden">
               <img
                 src={venue.img}
                 alt={venue.alt}
-                className="w-full h-[32rem] object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <div className="p-4 text-white">
+              <h3 className="text-xl font-familjen mb-2">{venue.title}</h3>
+              <p className="text-sm font-inter text-gray-300">{venue.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop - Grid Layout */}
+      <div className="hidden md:flex flex-wrap justify-center gap-6 px-5 py-6">
+        {venues.map((venue) => (
+          <div
+            key={venue.id}
+            className="w-[calc(50%-12px)] lg:w-[calc(25%-18px)] rounded-lg border border-gray-500 overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer bg-black"
+          >
+            <div className="overflow-hidden">
+              <img
+                src={venue.img}
+                alt={venue.alt}
+                className="w-full h-56 lg:h-[32rem] object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
             <div className="p-4 text-white">

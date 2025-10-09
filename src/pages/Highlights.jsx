@@ -19,12 +19,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  MAIN STAGE
+                  VIP Experience
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Experience world-class keynotes and panels featuring India's top Bitcoin 
-                  thought leaders, global industry experts, and groundbreaking discussions 
-                  on Bitcoin's future in Asia.
+                  Unlock exclusive access to premium lounges, private networking
+                  sessions, gourmet experiences, and intimate fireside chats with
+                  industry pioneers in our elite VIP zones.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
@@ -34,12 +34,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  Networking
+                  Art Gallery
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Connect with 40,000+ Bitcoin enthusiasts, entrepreneurs, developers, 
-                  and investors from across India and the global Bitcoin ecosystem 
-                  in dedicated networking zones.
+                  Discover stunning Bitcoin-inspired artwork and digital masterpieces
+                  that celebrate the fusion of technology, creativity,
+                  and decentralized culture.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
@@ -49,12 +49,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  Official Store
+                  Expo Hall
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Shop exclusive Bitcoin India merchandise, limited edition collectibles, 
-                  and premium conference memorabilia to commemorate your participation 
-                  in India's premier Bitcoin event.
+                  Discover India's largest Bitcoin innovation showcase featuring
+                  groundbreaking technology, visionary startups, and industry-leading
+                  companies shaping Bitcoin's future across Asia.
                 </p>
               </div>
             </div>
@@ -69,12 +69,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  Expo Hall
+                  Networking
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Explore India's largest Bitcoin showcase featuring cutting-edge 
-                  technology, innovative startups, and leading companies driving 
-                  Bitcoin adoption across the subcontinent.
+                  Connect with 40,000+ Bitcoin enthusiasts, builders, investors,
+                  and thought leaders from India and beyond in purpose-built
+                  networking spaces designed for meaningful connections.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
@@ -84,12 +84,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  VIP Experience
+                  Official Store
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Enjoy exclusive access to premium lounges, private networking 
-                  sessions, gourmet dining, and intimate conversations with 
-                  industry leaders in our VIP areas.
+                  Take home exclusive Bitcoin India merchandise, rare limited-edition
+                  collectibles, and premium memorabilia celebrating your journey
+                  at India's most iconic Bitcoin gathering.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
@@ -99,12 +99,12 @@ const Highlights = () => {
             <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full">
               <div className="flex-1">
                 <h1 className="text-[#FF9F1E] font-familjen mb-3 md:mb-5 text-2xl md:text-3xl font-bold uppercase">
-                  Art Gallery
+                  Main Stage
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Immerse yourself in Bitcoin-inspired art and digital collectibles 
-                  showcasing the creative intersection of technology, culture, 
-                  and financial innovation.
+                  Witness world-class keynotes and power-packed panel discussions
+                  featuring India's top Bitcoin visionaries, global experts, and
+                  transformative conversations shaping Asia's Bitcoin future.
                 </p>
               </div>
             </div>

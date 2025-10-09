@@ -94,7 +94,7 @@ const Footer = () => {
 
           {/* Sponsorship Links */}
           <div className="mt-6 md:mt-0 flex flex-col md:items-end gap-8 md:mr-25 w-full md:w-auto">
-            <div className="flex flex-wrap text-xl font-familjen-med justify-center md:justify-end gap-3 text-white">
+            <div className="flex flex-wrap text-sm font-familjen-med justify-center md:justify-end gap-3 text-white">
               <Link to="/apply/sponsor" className="hover:text-amber-500">Sponsorship</Link>
               <Link to="/contact" className="hover:text-amber-500">Contact</Link>
             </div>
