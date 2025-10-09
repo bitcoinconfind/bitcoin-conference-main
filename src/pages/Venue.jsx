@@ -3,7 +3,7 @@ const venueeBg = "/assets/imgs/others/Venue_bg.png";
 const venueOne = "/assets/imgs/carousels/carousel_1.JPG";
 const venueTwo = "/assets/imgs/carousels/carousel_2.JPG";
 const venueThree = "/assets/imgs/carousels/carousel_3.JPG";
-const venueFour = "/assets/imgs/carousels/carousel_4.jpg"; // Add a fourth image
+const venueFour = "/assets/imgs/carousels/carousel_4.JPG"; // Add a fourth image
 
 const Venue = () => {
   // Hero carousel images
