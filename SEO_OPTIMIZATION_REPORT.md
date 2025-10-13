@@ -19,7 +19,7 @@ This document outlines the comprehensive SEO optimizations implemented for Bitco
 - **Enhanced OG Tags**: Optimized for Facebook, LinkedIn sharing
 - **Twitter Cards**: Large image cards for better engagement
 - **Image Dimensions**: Proper 1200x630 OG image specifications
-- **Social Media Handles**: @BitcoinConfIndia integration
+- **Social Media Handles**: @BitcoinConfIND integration
 - **Article Tags**: Technology, Bitcoin, Cryptocurrency, Blockchain
 
 ### 3. JSON-LD Structured Data

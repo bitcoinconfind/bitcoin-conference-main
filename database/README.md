@@ -4,27 +4,31 @@ This directory contains the complete database schema for the Bitcoin Conference 
 
 ## 📁 Files
 
-### `complete_schema.sql` - Complete Setup
-**This is the ONLY schema file you need**
+### Migration Files (Run in Order)
+1. **`01_schema_tables.sql`** - Creates all tables and enables RLS
+2. **`02_schema_functions.sql`** - Creates functions and triggers
+3. **`03_schema_policies.sql`** - Creates RLS policies and grants
 
-Features:
+### Features:
 - ✅ Complete table structure
-- ✅ Working RLS policies
-- ✅ No admin complexity
-- ✅ Just forms working
+- ✅ Working RLS policies with admin access
+- ✅ Admin dashboard functionality
+- ✅ Data migration safe (uses IF NOT EXISTS)
 - ✅ Handles existing tables gracefully
 
 ## 🚀 Quick Start
 
-### For Any Project (New or Existing)
-
-1. **Create Supabase project** (if new)
+### For New Projects
+1. **Create Supabase project**
 2. **Go to SQL Editor**
-3. **Copy and paste** `complete_schema.sql`
-4. **Click "Run"**
-5. **Done!** Your forms are ready
+3. **Run files in order**: 01 → 02 → 03
+4. **Done!** Your forms and admin dashboard are ready
 
-**This works for both new projects and fixing existing ones!**
+### For Existing Projects (Migration)
+1. **Backup your data first!**
+2. **Run files in order**: 01 → 02 → 03
+3. **Data is preserved** - no tables are dropped
+4. **Admin access is fixed** - dashboard will work
 
 ## 📊 Database Structure
 
@@ -63,10 +67,22 @@ After running the schema:
 
 ## 🛠️ Data Access
 
-To view form submissions:
+### Admin Dashboard
+- **URL**: `https://yourdomain.com/admin`
+- **Features**: View all submissions, mark as handled, filter by status
+- **Authentication**: Only users in `admins` table can access
+
+### Direct Database Access
 1. Go to Supabase Dashboard
 2. Navigate to Table Editor
 3. View `contact_queries`, `speaker_applications`, `sponsorship_inquiries`
+
+### Adding Admin Users
+```sql
+-- Add admin user (replace with actual user_id and email)
+INSERT INTO admins (user_id, email) 
+VALUES ('user-uuid-here', 'admin@example.com');
+```
 
 ## 📈 Monitoring
 
@@ -88,21 +104,23 @@ Check your Supabase dashboard to see:
 
 ### Common Issues
 
-1. **"RLS policy violation"** - Run `complete_schema.sql`
-2. **"Table doesn't exist"** - Run `complete_schema.sql`
-3. **"Permission denied"** - Run `complete_schema.sql`
+1. **"Admin can't see data"** - Run `03_schema_policies.sql` (missing SELECT policies)
+2. **"RLS policy violation"** - Run all 3 files in order
+3. **"Table doesn't exist"** - Run `01_schema_tables.sql`
+4. **"Permission denied"** - Run `03_schema_policies.sql`
 
 ### Quick Fix
 
-- **Any issue?** → Run `complete_schema.sql` (it handles everything!)
+- **Admin dashboard not working?** → Run `03_schema_policies.sql`
+- **Any other issue?** → Run all 3 files in order: 01 → 02 → 03
 
-## 📝 Notes
+## 📝 Migration Notes
 
-- Simple and clean approach
-- No admin complexity
-- Just forms working
-- Perfect for form collection websites
+- **Data Safe**: All files use `IF NOT EXISTS` and `CREATE OR REPLACE`
+- **No Data Loss**: Tables are never dropped, only created or updated
+- **Admin Ready**: Dashboard works immediately after running all 3 files
+- **Backward Compatible**: Works with existing data and tables
 
 ---
 
-**Ready to use!** Choose your schema and get started! 🚀
+**Ready to migrate!** Run the 3 files in order and your admin dashboard will work! 🚀

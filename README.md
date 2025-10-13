@@ -136,10 +136,9 @@ Interested in sponsoring or partnering with Bitcoin Conference India 2026?
 
 ## 📱 Social Media
 
-- **Twitter**: [@BitcoinConfIndia](https://twitter.com/BitcoinConfIndia)
-- **LinkedIn**: [Bitcoin Conference India](https://linkedin.com/company/bitcoin-conference-india)
-- **Facebook**: [Bitcoin Conference India](https://facebook.com/BitcoinConferenceIndia)
-- **Instagram**: [@bitcoinconferenceindia](https://instagram.com/bitcoinconferenceindia)
+- **X (Twitter)**: [@BitcoinConfIND](https://x.com/BitcoinConfIND)
+- **Telegram**: [@BitcoinConfIND](https://t.me/BitcoinConfIND)
+- **Instagram**: [@bitcoinconfind](https://www.instagram.com/bitcoinconfind)
 
 ## 🛠️ Development
 

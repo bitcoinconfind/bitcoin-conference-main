@@ -53,15 +53,35 @@ const Admin = () => {
 
       const from = (page - 1) * pageSize;
       const to = from + pageSize - 1;
-      const [cq, spk, spn] = await Promise.all([
-        supabase.from('contact_queries').select('*').order('created_at', { ascending: false }).range(from, to),
-        supabase.from('speaker_applications').select('*').order('created_at', { ascending: false }).range(from, to),
-        supabase.from('sponsorship_inquiries').select('*').order('created_at', { ascending: false }).range(from, to)
-      ]);
+      
+      try {
+        const [cq, spk, spn] = await Promise.all([
+          supabase.from('contact_queries').select('*').order('created_at', { ascending: false }).range(from, to),
+          supabase.from('speaker_applications').select('*').order('created_at', { ascending: false }).range(from, to),
+          supabase.from('sponsorship_inquiries').select('*').order('created_at', { ascending: false }).range(from, to)
+        ]);
 
-      setContact(cq.data || []);
-      setSpeakers(spk.data || []);
-      setSponsors(spn.data || []);
+        if (cq.error) {
+          console.error('Contact queries error:', cq.error);
+          alert('Error loading contact queries: ' + cq.error.message);
+        }
+        if (spk.error) {
+          console.error('Speaker applications error:', spk.error);
+          alert('Error loading speaker applications: ' + spk.error.message);
+        }
+        if (spn.error) {
+          console.error('Sponsorship inquiries error:', spn.error);
+          alert('Error loading sponsorship inquiries: ' + spn.error.message);
+        }
+
+        setContact(cq.data || []);
+        setSpeakers(spk.data || []);
+        setSponsors(spn.data || []);
+      } catch (error) {
+        console.error('Database error:', error);
+        alert('Database error: ' + error.message);
+      }
+      
       setLoading(false);
     };
 
@@ -88,10 +108,20 @@ const Admin = () => {
   };
 
   const markHandled = async (table, id) => {
-    await supabase.from(table).update({ status: 'handled' }).eq('id', id);
-    // refresh current page
-    const current = page;
-    setPage(current);
+    try {
+      const { error } = await supabase.from(table).update({ status: 'handled' }).eq('id', id);
+      if (error) {
+        console.error('Update error:', error);
+        alert('Error updating status: ' + error.message);
+        return;
+      }
+      // refresh current page
+      const current = page;
+      setPage(current);
+    } catch (error) {
+      console.error('Update error:', error);
+      alert('Error updating status: ' + error.message);
+    }
   };
 
   if (loading) {
