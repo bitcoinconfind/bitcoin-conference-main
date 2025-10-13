@@ -1,6 +1,6 @@
 -- Policies and grants (no destructive statements)
 
--- Public INSERT only
+-- Public INSERT only (for both anon and authenticated users)
 DROP POLICY IF EXISTS anon_insert_contact ON contact_queries;
 CREATE POLICY anon_insert_contact ON contact_queries FOR INSERT TO anon WITH CHECK (true);
 
@@ -9,6 +9,16 @@ CREATE POLICY anon_insert_speaker ON speaker_applications FOR INSERT TO anon WIT
 
 DROP POLICY IF EXISTS anon_insert_sponsorship ON sponsorship_inquiries;
 CREATE POLICY anon_insert_sponsorship ON sponsorship_inquiries FOR INSERT TO anon WITH CHECK (true);
+
+-- Also allow authenticated users to INSERT (in case user is logged in)
+DROP POLICY IF EXISTS auth_insert_contact ON contact_queries;
+CREATE POLICY auth_insert_contact ON contact_queries FOR INSERT TO authenticated WITH CHECK (true);
+
+DROP POLICY IF EXISTS auth_insert_speaker ON speaker_applications;
+CREATE POLICY auth_insert_speaker ON speaker_applications FOR INSERT TO authenticated WITH CHECK (true);
+
+DROP POLICY IF EXISTS auth_insert_sponsorship ON sponsorship_inquiries;
+CREATE POLICY auth_insert_sponsorship ON sponsorship_inquiries FOR INSERT TO authenticated WITH CHECK (true);
 
 -- Admin self-check
 DROP POLICY IF EXISTS admins_select_self ON admins;
@@ -53,9 +63,9 @@ GRANT INSERT ON contact_queries TO anon;
 GRANT INSERT ON speaker_applications TO anon;
 GRANT INSERT ON sponsorship_inquiries TO anon;
 
-GRANT SELECT, UPDATE ON contact_queries TO authenticated;
-GRANT SELECT, UPDATE ON speaker_applications TO authenticated;
-GRANT SELECT, UPDATE ON sponsorship_inquiries TO authenticated;
+GRANT INSERT, SELECT, UPDATE ON contact_queries TO authenticated;
+GRANT INSERT, SELECT, UPDATE ON speaker_applications TO authenticated;
+GRANT INSERT, SELECT, UPDATE ON sponsorship_inquiries TO authenticated;
 GRANT SELECT ON admins TO authenticated;
 
 
