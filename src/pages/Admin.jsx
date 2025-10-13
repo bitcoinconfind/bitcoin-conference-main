@@ -18,8 +18,6 @@ const Admin = () => {
   const [sponsors, setSponsors] = useState([]);
   const [filter, setFilter] = useState("all"); // all | pending | handled
   const [activeTab, setActiveTab] = useState("contact"); // contact | speakers | sponsors
-  const [page, setPage] = useState(1);
-  const pageSize = 20;
 
   useEffect(() => {
     const noindex = document.createElement('meta');
@@ -52,14 +50,11 @@ const Admin = () => {
 
       setAuthorized(true);
 
-      const from = (page - 1) * pageSize;
-      const to = from + pageSize - 1;
-      
       try {
         const [cq, spk, spn] = await Promise.all([
-          supabase.from('contact_queries').select('*').order('created_at', { ascending: false }).range(from, to),
-          supabase.from('speaker_applications').select('*').order('created_at', { ascending: false }).range(from, to),
-          supabase.from('sponsorship_inquiries').select('*').order('created_at', { ascending: false }).range(from, to)
+          supabase.from('contact_queries').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
+          supabase.from('speaker_applications').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
+          supabase.from('sponsorship_inquiries').select('*', { count: 'exact' }).order('created_at', { ascending: false })
         ]);
 
         if (cq.error) {
@@ -75,6 +70,11 @@ const Admin = () => {
           alert('Error loading sponsorship inquiries: ' + spn.error.message);
         }
 
+        // Debug logging
+        console.log('Contact queries count:', cq.data?.length, 'Total available:', cq.count);
+        console.log('Speaker applications count:', spk.data?.length, 'Total available:', spk.count);
+        console.log('Sponsorship inquiries count:', spn.data?.length, 'Total available:', spn.count);
+
         setContact(cq.data || []);
         setSpeakers(spk.data || []);
         setSponsors(spn.data || []);
@@ -88,7 +88,7 @@ const Admin = () => {
 
     run();
     return () => { try { document.head.removeChild(noindex); } catch {} };
-  }, [page]);
+  }, []);
 
   const filtered = useMemo(() => {
     const byStatus = (rows) => {
@@ -179,7 +179,15 @@ const Admin = () => {
       <div className="max-w-6xl mx-auto text-white">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
           <h1 className="text-2xl sm:text-4xl font-familjen">Admin Dashboard</h1>
-          <button onClick={signOut} className="px-4 py-2 rounded-lg border border-[#585858] text-[#FFFFFFCC] hover:bg-[#2a2a2a] text-sm sm:text-base self-start sm:self-auto">Sign out</button>
+          <div className="flex gap-2">
+            <button 
+              onClick={() => window.location.reload()} 
+              className="px-4 py-2 rounded-lg border border-[#585858] text-[#FFFFFFCC] hover:bg-[#2a2a2a] text-sm sm:text-base"
+            >
+              Refresh All
+            </button>
+            <button onClick={signOut} className="px-4 py-2 rounded-lg border border-[#585858] text-[#FFFFFFCC] hover:bg-[#2a2a2a] text-sm sm:text-base">Sign out</button>
+          </div>
         </div>
 
         {/* Tab Navigation - Mobile Responsive */}
@@ -188,7 +196,7 @@ const Admin = () => {
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-4">
             <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
               <button 
-                onClick={() => { setActiveTab('contact'); setPage(1); }} 
+                onClick={() => setActiveTab('contact')} 
                 className={`px-3 py-2 rounded-lg border text-sm ${
                   activeTab === 'contact' 
                     ? 'border-[#FFBF00] bg-[#FFBF00]/10 text-[#FFBF00]' 
@@ -200,7 +208,7 @@ const Admin = () => {
                 <span className="ml-1">({contact.length})</span>
               </button>
               <button 
-                onClick={() => { setActiveTab('speakers'); setPage(1); }} 
+                onClick={() => setActiveTab('speakers')} 
                 className={`px-3 py-2 rounded-lg border text-sm ${
                   activeTab === 'speakers' 
                     ? 'border-[#FFBF00] bg-[#FFBF00]/10 text-[#FFBF00]' 
@@ -212,7 +220,7 @@ const Admin = () => {
                 <span className="ml-1">({speakers.length})</span>
               </button>
               <button 
-                onClick={() => { setActiveTab('sponsors'); setPage(1); }} 
+                onClick={() => setActiveTab('sponsors')} 
                 className={`px-3 py-2 rounded-lg border text-sm ${
                   activeTab === 'sponsors' 
                     ? 'border-[#FFBF00] bg-[#FFBF00]/10 text-[#FFBF00]' 
@@ -229,16 +237,11 @@ const Admin = () => {
             <div className="flex flex-col sm:flex-row sm:items-center gap-3 w-full sm:w-auto sm:ml-auto">
               <div className="flex items-center gap-2">
                 <label className="text-[#FFFFFF80] text-sm">Filter:</label>
-                <select value={filter} onChange={(e) => { setFilter(e.target.value); setPage(1); }} className="bg-[#1F1F1F] border border-[#585858] rounded-lg px-3 py-2 text-sm flex-1 sm:flex-none">
+                <select value={filter} onChange={(e) => setFilter(e.target.value)} className="bg-[#1F1F1F] border border-[#585858] rounded-lg px-3 py-2 text-sm flex-1 sm:flex-none">
                   <option value="all">All</option>
                   <option value="pending">Pending</option>
                   <option value="handled">Handled</option>
                 </select>
-              </div>
-              <div className="flex items-center justify-center gap-2">
-                <button disabled={page===1} onClick={() => setPage(p => Math.max(1, p-1))} className="px-3 py-2 rounded-lg border border-[#585858] disabled:opacity-50 text-sm">Prev</button>
-                <span className="text-[#FFFFFF80] text-sm">Page {page}</span>
-                <button onClick={() => setPage(p => p+1)} className="px-3 py-2 rounded-lg border border-[#585858] text-sm">Next</button>
               </div>
             </div>
           </div>
