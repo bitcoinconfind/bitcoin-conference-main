@@ -10,7 +10,7 @@ const Counter = () => {
     { id: 1, img: videoIcon, number: "150+", label: "Media & Press" },
     { id: 2, img: calendarIcon, number: "2 days", label: "of Content" },
     { id: 3, img: partnersIcon, number: "200+", label: "Partners" },
-    { id: 4, img: attendeesIcon, number: "40k+", label: "Attendees" },
+    { id: 4, img: attendeesIcon, number: "50k+", label: "Attendees" },
     { id: 5, img: speakerIcon, number: "50+", label: "Speakers" },
     { id: 6, img: sponsorsIcon, number: "100+", label: "Sponsors" },
   ];

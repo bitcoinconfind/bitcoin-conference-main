@@ -72,7 +72,7 @@ const Highlights = () => {
                   Networking
                 </h1>
                 <p className="text-white font-inter-semiBold text-base md:text-lg">
-                  Connect with 40,000+ Bitcoin enthusiasts, builders, investors,
+                  Connect with 50,000+ Bitcoin enthusiasts, builders, investors,
                   and thought leaders from India and beyond in purpose-built
                   networking spaces designed for meaningful connections.
                 </p>

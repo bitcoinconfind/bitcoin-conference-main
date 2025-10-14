@@ -20,7 +20,7 @@ const ConferenceMetrics = () => {
     },
     {
       icon: <FaUsers className="w-8 h-8" />,
-      value: "40k+",
+      value: "50k+",
       label: "Attendees"
     },
     {

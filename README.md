@@ -4,11 +4,11 @@
 [![World's Largest](https://img.shields.io/badge/World's%20Largest-Bitcoin%20Conference-gold)](https://bitcoinconferenceindia.com)
 [![First Time in India](https://img.shields.io/badge/First%20Time-in%20India-green)](https://bitcoinconferenceindia.com)
 
-**Bitcoin Conference India 2026** - The world's largest Bitcoin conference coming to India for the first time! Join 40,000+ attendees, 150+ speakers, and 200+ partners for an unprecedented gathering of Bitcoin enthusiasts, developers, investors, and industry leaders.
+**Bitcoin Conference India 2026** - The world's largest Bitcoin conference coming to India for the first time! Join 50,000+ attendees, 150+ speakers, and 200+ partners for an unprecedented gathering of Bitcoin enthusiasts, developers, investors, and industry leaders.
 
 ## 🚀 Event Highlights
 
-- **40,000+ Attendees** - Join the largest Bitcoin community gathering in India
+- **50,000+ Attendees** - Join the largest Bitcoin community gathering in India
 - **150+ Speakers** - World-class industry experts and thought leaders
 - **200+ Partners** - Leading companies and organizations in the crypto space
 - **100+ Sponsors** - Top-tier sponsors supporting the event
