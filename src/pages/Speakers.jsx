@@ -1,7 +1,8 @@
 import Button from "../component/Button";
 
-const QuoteMobile = "/assets/imgs/Quote/loli.svg";
-const QuoteDesktop = "/assets/imgs/Quote/Quote (1).svg";
+// Case-sensitive paths (ensure folder name matches actual: 'quote')
+const QuoteMobile = "/assets/imgs/quote/mobile-view.svg";
+const QuoteDesktop = "/assets/imgs/quote/desktop-view.svg";
 
 const Speakers = () => {
   return (
@@ -27,20 +28,17 @@ const Speakers = () => {
         </a>
       </div>
 
-      {/* Quote Image - Responsive */}
+      {/* Quote image - different assets for mobile and desktop */}
       <div className="mt-12 sm:mt-16 flex justify-center overflow-hidden">
-        {/* Mobile view - Frame 47487 */}
-        <img
-          src={QuoteMobile}
-          alt="Bitcoin Conference India 2026 Quote"
-          className="block lg:hidden w-full max-w-3xl object-contain transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer"
-        />
-        {/* Desktop view - Quote */}
-        <img
-          src={QuoteDesktop}
-          alt="Bitcoin Conference India 2026 Quote"
-          className="hidden lg:block w-full max-w-7xl object-contain transition-transform duration-500 ease-in-out hover:scale-110 cursor-pointer"
-        />
+        <picture>
+          <source media="(min-width: 1024px)" srcSet={QuoteDesktop} />
+          <img
+            src={QuoteMobile}
+            alt="Bitcoin Conference India 2026 Quote"
+            className="w-full max-w-3xl lg:max-w-7xl object-contain"
+            loading="lazy"
+          />
+        </picture>
       </div>
     </section>
   );

@@ -16,8 +16,10 @@ const Admin = () => {
   const [contact, setContact] = useState([]);
   const [speakers, setSpeakers] = useState([]);
   const [sponsors, setSponsors] = useState([]);
+  const [students, setStudents] = useState([]);
+  const [media, setMedia] = useState([]);
   const [filter, setFilter] = useState("all"); // all | pending | handled
-  const [activeTab, setActiveTab] = useState("contact"); // contact | speakers | sponsors
+  const [activeTab, setActiveTab] = useState("contact"); // contact | speakers | sponsors | students | media
 
   useEffect(() => {
     const noindex = document.createElement('meta');
@@ -51,10 +53,12 @@ const Admin = () => {
       setAuthorized(true);
 
       try {
-        const [cq, spk, spn] = await Promise.all([
+        const [cq, spk, spn, stu, med] = await Promise.all([
           supabase.from('contact_queries').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
           supabase.from('speaker_applications').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
-          supabase.from('sponsorship_inquiries').select('*', { count: 'exact' }).order('created_at', { ascending: false })
+          supabase.from('sponsorship_inquiries').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
+          supabase.from('student_volunteer_queries').select('*', { count: 'exact' }).order('created_at', { ascending: false }),
+          supabase.from('media_partnership_queries').select('*', { count: 'exact' }).order('created_at', { ascending: false })
         ]);
 
         if (cq.error) {
@@ -69,15 +73,27 @@ const Admin = () => {
           console.error('Sponsorship inquiries error:', spn.error);
           alert('Error loading sponsorship inquiries: ' + spn.error.message);
         }
+        if (stu.error) {
+          console.error('Student/Volunteer error:', stu.error);
+          alert('Error loading student/volunteer queries: ' + stu.error.message);
+        }
+        if (med.error) {
+          console.error('Media/Partnership error:', med.error);
+          alert('Error loading media & partnerships: ' + med.error.message);
+        }
 
         // Debug logging
         console.log('Contact queries count:', cq.data?.length, 'Total available:', cq.count);
         console.log('Speaker applications count:', spk.data?.length, 'Total available:', spk.count);
         console.log('Sponsorship inquiries count:', spn.data?.length, 'Total available:', spn.count);
+        console.log('Student/Volunteer count:', stu.data?.length, 'Total available:', stu.count);
+        console.log('Media & Partnerships count:', med.data?.length, 'Total available:', med.count);
 
-        setContact(cq.data || []);
-        setSpeakers(spk.data || []);
-        setSponsors(spn.data || []);
+      setContact(cq.data || []);
+      setSpeakers(spk.data || []);
+      setSponsors(spn.data || []);
+        setStudents(stu.data || []);
+        setMedia(med.data || []);
       } catch (error) {
         console.error('Database error:', error);
         alert('Database error: ' + error.message);
@@ -101,6 +117,8 @@ const Admin = () => {
       contact: byStatus(contact),
       speakers: byStatus(speakers),
       sponsors: byStatus(sponsors),
+      students: byStatus(students),
+      media: byStatus(media),
     };
     
     return allData[activeTab] || [];
@@ -115,7 +133,9 @@ const Admin = () => {
     const tableMap = {
       contact: 'contact_queries',
       speakers: 'speaker_applications',
-      sponsors: 'sponsorship_inquiries'
+      sponsors: 'sponsorship_inquiries',
+      students: 'student_volunteer_queries',
+      media: 'media_partnership_queries'
     };
     
     const table = tableMap[activeTab];
@@ -231,6 +251,30 @@ const Admin = () => {
                 <span className="sm:hidden">Sponsors</span>
                 <span className="ml-1">({sponsors.length})</span>
               </button>
+            <button 
+              onClick={() => setActiveTab('students')} 
+              className={`px-3 py-2 rounded-lg border text-sm ${
+                activeTab === 'students' 
+                  ? 'border-[#FFBF00] bg-[#FFBF00]/10 text-[#FFBF00]' 
+                  : 'border-[#585858] text-[#FFFFFF80] hover:bg-[#2a2a2a]'
+              }`}
+            >
+              <span className="hidden sm:inline">Student / Volunteer</span>
+              <span className="sm:hidden">Students</span>
+              <span className="ml-1">({students.length})</span>
+            </button>
+            <button 
+              onClick={() => setActiveTab('media')} 
+              className={`px-3 py-2 rounded-lg border text-sm ${
+                activeTab === 'media' 
+                  ? 'border-[#FFBF00] bg-[#FFBF00]/10 text-[#FFBF00]' 
+                  : 'border-[#585858] text-[#FFFFFF80] hover:bg-[#2a2a2a]'
+              }`}
+            >
+              <span className="hidden sm:inline">Media & Partnerships</span>
+              <span className="sm:hidden">Media</span>
+              <span className="ml-1">({media.length})</span>
+            </button>
             </div>
             
             {/* Mobile: Stack controls vertically */}
@@ -238,10 +282,10 @@ const Admin = () => {
               <div className="flex items-center gap-2">
                 <label className="text-[#FFFFFF80] text-sm">Filter:</label>
                 <select value={filter} onChange={(e) => setFilter(e.target.value)} className="bg-[#1F1F1F] border border-[#585858] rounded-lg px-3 py-2 text-sm flex-1 sm:flex-none">
-                  <option value="all">All</option>
-                  <option value="pending">Pending</option>
-                  <option value="handled">Handled</option>
-                </select>
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="handled">Handled</option>
+          </select>
               </div>
             </div>
           </div>
@@ -386,7 +430,7 @@ const Admin = () => {
                 </div>
               ))}
             </div>
-          </Section>
+        </Section>
         )}
 
         {/* Sponsorship Inquiries Tab */}
@@ -483,6 +527,108 @@ const Admin = () => {
               ))}
             </div>
           </Section>
+        )}
+
+        {/* Student / Volunteer Tab */}
+        {activeTab === 'students' && (
+          <Section title="Student / Volunteer">
+            <div className="space-y-4">
+              {filtered.map((r) => (
+                <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">{r.name}</h3>
+                      <p className="text-[#FFFFFF80]">{r.email}</p>
+                      {r.phone && <p className="text-[#FFFFFF80] text-sm">Phone: {r.phone}</p>}
+                      {r.university && <p className="text-[#FFFFFF80] text-sm">University: {r.university}</p>}
+                    </div>
+                    <div className="text-right">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        (r.status || 'pending') === 'pending' ? 'bg-yellow-600/20 text-yellow-400' : 'bg-green-600/20 text-green-400'
+                      }`}>
+                        {(r.status || 'pending').toUpperCase()}
+                      </span>
+                      <p className="text-[#FFFFFF60] text-sm mt-1">{new Date(r.created_at).toLocaleString()}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                    {r.role_interest && (
+                      <div>
+                        <h4 className="text-[#FFBF00] font-medium mb-1">Role Interest:</h4>
+                        <p className="text-white">{r.role_interest}</p>
+                      </div>
+                    )}
+                    {r.availability && (
+                      <div>
+                        <h4 className="text-[#FFBF00] font-medium mb-1">Availability:</h4>
+                        <p className="text-white">{r.availability}</p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <h4 className="text-[#FFBF00] font-medium mb-1">Message:</h4>
+                    <p className="text-white whitespace-pre-wrap">{r.message}</p>
+                  </div>
+                  <button onClick={() => toggleStatus(r.id, r.status || 'pending')} className={`px-3 py-2 rounded border text-sm ${
+                    (r.status || 'pending') === 'pending' ? 'border-green-600 text-green-400' : 'border-yellow-600 text-yellow-400'
+                  }`}>
+                    {(r.status || 'pending') === 'pending' ? 'Mark as Handled' : 'Mark as Pending'}
+                  </button>
+                </div>
+              ))}
+            </div>
+        </Section>
+        )}
+
+        {/* Media & Partnerships Tab */}
+        {activeTab === 'media' && (
+          <Section title="Media & Partnerships">
+            <div className="space-y-4">
+              {filtered.map((r) => (
+                <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h3 className="text-white font-semibold text-lg">{r.name}</h3>
+                      <p className="text-[#FFFFFF80]">{r.email}</p>
+                      {r.organization && <p className="text-[#FFFFFF80] text-sm">Org: {r.organization}</p>}
+                      {r.website && <p className="text-[#FFFFFF80] text-sm break-all">Website: {r.website}</p>}
+                    </div>
+                    <div className="text-right">
+                      <span className={`px-2 py-1 rounded text-xs ${
+                        (r.status || 'pending') === 'pending' ? 'bg-yellow-600/20 text-yellow-400' : 'bg-green-600/20 text-green-400'
+                      }`}>
+                        {(r.status || 'pending').toUpperCase()}
+                      </span>
+                      <p className="text-[#FFFFFF60] text-sm mt-1">{new Date(r.created_at).toLocaleString()}</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-3">
+                    {r.partnership_type && (
+                      <div>
+                        <h4 className="text-[#FFBF00] font-medium mb-1">Type:</h4>
+                        <p className="text-white">{r.partnership_type}</p>
+                      </div>
+                    )}
+                    {r.phone && (
+                      <div>
+                        <h4 className="text-[#FFBF00] font-medium mb-1">Phone:</h4>
+                        <p className="text-white">{r.phone}</p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mb-3">
+                    <h4 className="text-[#FFBF00] font-medium mb-1">Message:</h4>
+                    <p className="text-white whitespace-pre-wrap">{r.message}</p>
+                  </div>
+                  <button onClick={() => toggleStatus(r.id, r.status || 'pending')} className={`px-3 py-2 rounded border text-sm ${
+                    (r.status || 'pending') === 'pending' ? 'border-green-600 text-green-400' : 'border-yellow-600 text-yellow-400'
+                  }`}>
+                    {(r.status || 'pending') === 'pending' ? 'Mark as Handled' : 'Mark as Pending'}
+                  </button>
+                </div>
+              ))}
+            </div>
+        </Section>
         )}
       </div>
     </section>

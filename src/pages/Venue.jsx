@@ -76,16 +76,34 @@ const Venue = () => {
   ];
   return (
     <section className="relative w-full">
-      {/* Hero Carousel Section */}
-      <div className="relative w-full flex justify-center py-6 sm:py-12 md:py-16 lg:py-24 px-5">
+      {/* Hero Title/Copy ABOVE the image */}
+      <div className="w-full flex flex-col items-center text-center gap-3 sm:gap-4 pt-6 sm:pt-10 md:pt-12">
+        <h1 className="text-2xl font-familjen sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-snug text-white">
+          Venue Announcement
+          <br />
+          <span className="text-[#FFBF00]">Coming Soon</span>
+        </h1>
+        <p className="text-sm font-inter sm:text-base md:text-lg max-w-2xl leading-relaxed text-gray-300 px-5">
+          We're securing an iconic location in Hyderabad that will perfectly complement
+          the scale and significance of India's premier Bitcoin conference.
+        </p>
+        <div className="mt-2">
+          <span className="inline-block px-4 py-2 bg-[#FFBF00]/20 border border-[#FFBF00]/30 rounded-full text-sm font-medium text-[#FFBF00]">
+            Stay tuned for the big reveal
+          </span>
+        </div>
+      </div>
+
+      {/* Hero Carousel Section (images below the copy) */}
+      <div className="relative w-full flex justify-center py-4 sm:py-8 md:py-12 lg:py-16 px-5">
 
         <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
           {/* Carousel Container */}
           <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
             {/* Mobile: Show only first image (no sliding) */}
-            <div className="block md:hidden w-full h-full">
+            <div className="block md:hidden w-full h-full z-0">
               <img
-                src={heroImages[0]}
+                src={heroImages[1]}
                 alt="Venue 1"
                 className="w-full h-full object-cover"
               />
@@ -93,7 +111,7 @@ const Venue = () => {
 
             {/* Desktop: Sliding Images */}
             <div
-              className="hidden md:flex transition-transform duration-700 ease-in-out h-full"
+              className="hidden md:flex transition-transform duration-700 ease-in-out h-full z-0"
               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
               {heroImages.map((image, index) => (
@@ -108,32 +126,7 @@ const Venue = () => {
             </div>
           </div>
 
-          {/* Gradient Overlay */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(0,0,0,0) 0%, #000000 100%)",
-            }}
-          ></div>
-
-          {/* Content on top */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-10 space-y-4">
-            <h1 className="text-2xl font-familjen sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-snug">
-              Venue Announcement
-              <br />
-              <span className="text-[#FFBF00]">Coming Soon</span>
-            </h1>
-            <p className="text-sm font-inter sm:text-base md:text-lg max-w-xl leading-relaxed text-gray-300">
-              We're securing an iconic location in Hyderabad that will perfectly complement 
-              the scale and significance of India's premier Bitcoin conference.
-            </p>
-            <div className="mt-4">
-              <span className="inline-block px-4 py-2 bg-[#FFBF00]/20 border border-[#FFBF00]/30 rounded-full text-sm font-medium text-[#FFBF00]">
-                Stay tuned for the big reveal
-              </span>
-            </div>
-          </div>
+          {/* removed gradient overlay */}
         </div>
       </div>
       {/* Photo grid - All devices show all 4 cards */}
@@ -149,7 +142,7 @@ const Venue = () => {
               <img
                 src={venue.img}
                 alt={venue.alt}
-                className="w-full h-64 object-cover"
+                className="w-full h-[28rem] object-cover object-top"
               />
             </div>
             <div className="p-4 text-white">
@@ -171,7 +164,7 @@ const Venue = () => {
               <img
                 src={venue.img}
                 alt={venue.alt}
-                className="w-full h-56 lg:h-[32rem] object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-56 lg:h-[32rem] object-cover object-top transition-transform duration-500 hover:scale-110"
               />
             </div>
             <div className="p-4 text-white">

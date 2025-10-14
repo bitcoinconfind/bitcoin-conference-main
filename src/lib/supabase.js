@@ -40,6 +40,46 @@ export const dbHelpers = {
     return result;
   },
 
+  // Student/Volunteer form
+  async submitStudentVolunteer(data) {
+    if (!supabase) throw new Error('Database not configured. Please contact the administrator.');
+    const { data: result, error } = await supabase
+      .from('student_volunteer_queries')
+      .insert([{
+        name: data.name,
+        email: data.email,
+        phone: data.phone || null,
+        university: data.university || null,
+        role_interest: data.roleInterest || null,
+        availability: data.availability || null,
+        message: data.message,
+        status: 'pending',
+        created_at: new Date().toISOString()
+      }]);
+    if (error) throw error;
+    return result;
+  },
+
+  // Media & Partnerships form
+  async submitMediaPartnership(data) {
+    if (!supabase) throw new Error('Database not configured. Please contact the administrator.');
+    const { data: result, error } = await supabase
+      .from('media_partnership_queries')
+      .insert([{
+        name: data.name,
+        email: data.email,
+        organization: data.organization || null,
+        website: data.website || null,
+        partnership_type: data.partnershipType || null,
+        phone: data.phone || null,
+        message: data.message,
+        status: 'pending',
+        created_at: new Date().toISOString()
+      }]);
+    if (error) throw error;
+    return result;
+  },
+
   // Speaker applications
   async submitSpeakerApplication(data) {
     if (!supabase) {

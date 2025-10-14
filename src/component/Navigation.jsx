@@ -91,7 +91,7 @@ const Navigation = () => {
             to="/apply/sponsor"
             className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
           >
-            Sponsor
+            Sponsors
           </Link>
           <Link
             to="/contact"
@@ -148,7 +148,7 @@ const Hamburger = () => {
           <div className="py-2 text-sm font-inter-semiBold uppercase tracking-wide">
             <a onClick={() => setOpen(false)} href="/#tickets" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Tickets</a>
             <a onClick={() => setOpen(false)} href="/#speakers" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Speakers</a>
-            <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Sponsor</Link>
+            <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Sponsors</Link>
             <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Contact Us</Link>
           </div>
         </div>

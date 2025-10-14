@@ -69,3 +69,35 @@ ALTER TABLE speaker_applications ENABLE ROW LEVEL SECURITY;
 ALTER TABLE sponsorship_inquiries ENABLE ROW LEVEL SECURITY;
 
 
+-- Student/Volunteer Queries
+CREATE TABLE IF NOT EXISTS student_volunteer_queries (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  university TEXT,
+  role_interest TEXT,
+  availability TEXT,
+  message TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Media & Partnership Queries
+CREATE TABLE IF NOT EXISTS media_partnership_queries (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  organization TEXT,
+  website TEXT,
+  partnership_type TEXT,
+  phone TEXT,
+  message TEXT NOT NULL,
+  status TEXT NOT NULL DEFAULT 'pending',
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Enable RLS for new tables
+ALTER TABLE student_volunteer_queries ENABLE ROW LEVEL SECURITY;
+ALTER TABLE media_partnership_queries ENABLE ROW LEVEL SECURITY;
+
