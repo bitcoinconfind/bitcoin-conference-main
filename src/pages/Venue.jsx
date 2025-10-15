@@ -6,44 +6,10 @@ const venueThree = "/assets/imgs/carousels/carousel_3.JPG";
 const venueFour = "/assets/imgs/carousels/carousel_4.JPG"; // Add a fourth image
 
 const Venue = () => {
-  // Hero carousel images
-  const heroImages = [
-    "/assets/imgs/others/Venue_bg.png", // Image 1 - Current building
-    "/assets/imgs/others/venue_hero_2.png", // Image 2 - Nighttime palace (you'll add this)
-    "/assets/imgs/others/venue_hero_3.png", // Image 3 - Placeholder
-    "/assets/imgs/others/venue_hero_4.png", // Image 4 - Placeholder
-  ];
+  // Static hero background image (venue banner)
+  const heroBackground = venueeBg;
 
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  // Auto-slide every 3.5 seconds - ONLY on desktop/tablet (md and above)
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-    // Reset to first slide on mobile
-    if (!mediaQuery.matches) {
-      setCurrentSlide(0);
-      return;
-    }
-
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
-    }, 3500);
-
-    // Listen for screen size changes
-    const handleChange = (e) => {
-      if (!e.matches) {
-        setCurrentSlide(0); // Reset to first slide when switching to mobile
-      }
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    return () => {
-      clearInterval(interval);
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, [heroImages.length]);
+  // Must-visit places in Hyderabad (used by the carousel) — declare BEFORE hooks
   const venues = [
     {
       id: 1,
@@ -74,61 +40,53 @@ const Venue = () => {
       description: "The world's largest Amazon campus outside the US, spanning 9.5 acres with cutting-edge architecture and state-of-the-art facilities in the heart of Hyderabad's IT corridor.",
     },
   ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Disable auto-slide; keep static content
+  useEffect(() => {
+    setCurrentSlide(0);
+  }, [venues.length]);
+  // venues is now declared above
   return (
-    <section className="relative w-full">
+    <section className="relative w-full z-0">
       {/* Hero Title/Copy ABOVE the image */}
-      <div className="w-full flex flex-col items-center text-center gap-3 sm:gap-4 pt-6 sm:pt-10 md:pt-12">
-        <h1 className="text-2xl font-familjen sm:text-3xl md:text-4xl lg:text-6xl font-bold leading-snug text-white">
-          Venue Announcement
-          <br />
-          <span className="text-[#FFBF00]">Coming Soon</span>
-        </h1>
-        <p className="text-sm font-inter sm:text-base md:text-lg max-w-2xl leading-relaxed text-gray-300 px-5">
+      <div className="w-full flex flex-col items-center text-center gap-3 sm:gap-4 pt-6 sm:pt-10 md:pt-12 relative z-20">
+        <h1 className="metric-value leading-snug">Venue</h1>
+        <p className="subheading max-w-2xl leading-relaxed text-gray-300 px-5">
           We're securing an iconic location in Hyderabad that will perfectly complement
           the scale and significance of India's premier Bitcoin conference.
         </p>
-        <div className="mt-2">
-          <span className="inline-block px-4 py-2 bg-[#FFBF00]/20 border border-[#FFBF00]/30 rounded-full text-sm font-medium text-[#FFBF00]">
-            Stay tuned for the big reveal
-          </span>
-        </div>
+        {/* Removed old stay tuned chip here; now shown under the banner */}
       </div>
 
-      {/* Hero Carousel Section (images below the copy) */}
-      <div className="relative w-full flex justify-center py-4 sm:py-8 md:py-12 lg:py-16 px-5">
-
+      {/* Static Venue background banner */}
+      <div className="relative w-full flex justify-center px-5 z-10">
         <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
-          {/* Carousel Container */}
-          <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
-            {/* Mobile: Show only first image (no sliding) */}
-            <div className="block md:hidden w-full h-full z-0">
-              <img
-                src={heroImages[1]}
-                alt="Venue 1"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Desktop: Sliding Images */}
-            <div
-              className="hidden md:flex transition-transform duration-700 ease-in-out h-full z-0"
-              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-            >
-              {heroImages.map((image, index) => (
-                <div key={index} className="min-w-full h-full flex-shrink-0">
-                  <img
-                    src={image}
-                    alt={`Venue ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* removed gradient overlay */}
+          <img src={heroBackground} alt="Venue background" className="w-full h-[36vh] sm:h-[48vh] md:h-[56vh] lg:h-[64vh] object-cover object-center" />
         </div>
       </div>
+
+      {/* Stay tuned chip directly under the venue background */}
+      <div className="w-full flex justify-center mt-3 sm:mt-4">
+        <span className="inline-block px-4 py-2 bg-[#FFBF00]/20 border border-[#FFBF00]/30 rounded-full text-sm font-medium text-[#FFBF00]">
+          Stay tuned for the big reveal
+        </span>
+      </div>
+
+      {/* Why Hyderabad blurb */}
+      <div className="w-full px-6 sm:px-10 lg:px-20 mt-4 sm:mt-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="metric-value mb-2">Hyderabad: India’s Tech Hub</h2>
+          <p className="metric-label text-[1.125rem] md:text-[1.25rem]">
+            India’s tech capital of the South and home to world-class campuses, Hyderabad blends
+            innovation hubs, global enterprises, and a thriving builder community—making it the
+            perfect host city for Bitcoin Conference India.
+          </p>
+        </div>
+      </div>
+
+      {/* Removed moving desktop carousel; static grid below shows places */}
       {/* Photo grid - All devices show all 4 cards */}
 
       {/* Mobile - Stacked Cards */}

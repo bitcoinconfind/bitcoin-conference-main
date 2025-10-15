@@ -250,3 +250,107 @@ body {
 .ticket-card-container:hover .animated-border {
   animation-duration: 2s;
 }
+
+/* Utility component classes for consistent typography */
+.heading-hero {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #fff;
+  font-weight: 900;
+  line-height: 1.15;
+  font-size: 1.875rem; /* text-3xl */
+}
+@media (min-width: 640px) {.heading-hero{font-size:2.25rem}}
+@media (min-width: 768px) {.heading-hero{font-size:3rem}}
+@media (min-width: 1024px) {.heading-hero{font-size:3.75rem}}
+
+/* Variant to allow yellow display headings when needed */
+.heading-hero-yellow { color: #FFBF00; }
+
+.heading-page {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.25rem; /* text-xl */
+}
+@media (min-width: 640px) {.heading-page{font-size:1.875rem}}
+@media (min-width: 768px) {.heading-page{font-size:2.25rem}}
+
+/* Yellow variant for page headings (declared after .heading-page to override color) */
+.heading-page-yellow { color: #FFBF00; }
+
+.subheading {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff; /* Match metric label style */
+  font-weight: 400;
+  font-size: 0.875rem; /* text-sm */
+}
+@media (min-width: 640px) {.subheading{font-size:1rem}}
+@media (min-width: 768px) {.subheading{font-size:1.125rem}}
+
+/* Larger subheading for prominent feature titles */
+.subheading-xl {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #FFBF00;
+  font-weight: 700;
+  font-size: 1.5rem; /* ~2x of base */
+}
+@media (min-width: 640px) {.subheading-xl{font-size:1.75rem}}
+@media (min-width: 768px) {.subheading-xl{font-size:2rem}}
+
+/* 2x larger subheading, neutral color */
+.subheading-2x {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff; /* Match metric label style */
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+@media (min-width: 640px) {.subheading-2x{font-size:1.75rem}}
+@media (min-width: 768px) {.subheading-2x{font-size:2rem}}
+
+/* Half-size subheading for compact blurbs */
+.subheading-half {
+  font-family: "Barlow Condensed", sans-serif;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  font-size: 0.75rem; /* smaller than base */
+}
+@media (min-width: 640px) {.subheading-half{font-size:0.875rem}}
+@media (min-width: 768px) {.subheading-half{font-size:1rem}}
+
+.nav-link {
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  font-size: 0.875rem;
+  transition: color .2s ease;
+}
+@media (min-width: 768px) {.nav-link{font-size:1rem}}
+@media (min-width: 1024px) {.nav-link{font-size:1.125rem}}
+.nav-link:hover { color: #FFBF00; }
+
+.footer-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+@media (min-width: 640px) {.footer-heading{font-size:1.5rem}}
+
+/* Metric value/label utilities (used for 50,000+, 150+, etc.) */
+.metric-value {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #FFBF00;
+  font-weight: 800;
+  line-height: 1;
+  font-size: 2rem;
+}
+@media (min-width: 640px) {.metric-value{font-size:2.25rem}}
+@media (min-width: 768px) {.metric-value{font-size:2.5rem}}
+
+.metric-label {
+  font-family: "Barlow Condensed", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 1.40625rem; /* ~1.5x previous size */
+}

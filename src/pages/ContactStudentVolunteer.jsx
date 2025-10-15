@@ -44,7 +44,7 @@ const ContactStudentVolunteer = () => {
             </svg>
             Back
           </Link>
-          <h1 className="font-familjen text-2xl sm:text-3xl text-center w-full">Student / Volunteer</h1>
+          <h1 className="heading-page">Student / Volunteer</h1>
         </div>
         <form onSubmit={submit} className="space-y-4">
           <input className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg" placeholder="Full Name" name="name" value={formData.name} onChange={onChange} />

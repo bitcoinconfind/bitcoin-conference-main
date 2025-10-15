@@ -179,10 +179,10 @@ const ApplySpeaker = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="font-familjen text-4xl sm:text-5xl mb-6 text-white">
+          <h1 className="metric-value mb-2">
             Apply to Speak
           </h1>
-          <p className="text-lg sm:text-xl text-[#FFFFFFCC] max-w-3xl mx-auto">
+          <p className="metric-label max-w-3xl mx-auto">
             Share your expertise with the Bitcoin community at India's premier conference. 
             We're looking for thought leaders, innovators, and industry experts.
           </p>
@@ -194,7 +194,7 @@ const ApplySpeaker = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Personal Information</h2>
+              <h2 className="metric-value mb-4">Personal Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -284,7 +284,7 @@ const ApplySpeaker = () => {
 
             {/* Speaker Bio */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Speaker Profile</h2>
+              <h2 className="metric-value mb-4">Speaker Profile</h2>
               <div>
                 <label htmlFor="bio" className="block text-sm font-inter-semiBold text-white mb-2">
                   Speaker Bio *
@@ -307,7 +307,7 @@ const ApplySpeaker = () => {
 
             {/* Speaking Topic */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Speaking Topic</h2>
+              <h2 className="metric-value mb-4">Speaking Topic</h2>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="topicTitle" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -350,7 +350,7 @@ const ApplySpeaker = () => {
 
             {/* Experience & Audience */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Experience & Audience</h2>
+              <h2 className="metric-value mb-4">Experience & Audience</h2>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="experience" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -392,7 +392,7 @@ const ApplySpeaker = () => {
 
             {/* Additional Information */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Additional Information</h2>
+              <h2 className="metric-value mb-4">Additional Information</h2>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="previousSpeaking" className="block text-sm font-inter-semiBold text-white mb-2">

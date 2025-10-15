@@ -66,12 +66,8 @@ const TicketTiersSection = () => {
     <div id="tickets" className="py-16 px-4 sm:px-8 lg:px-20 bg-black">
       {/* Header Section (removed Coming Soon per request) */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2 font-familjen">
-          Ticket Tiers
-        </h2>
-        <p className="text-lg text-gray-300">
-          Choose your experience level for Bitcoin Conference India 2026
-        </p>
+        <h2 className="metric-value mb-2">Ticket Tiers</h2>
+        <p className="metric-label text-[1.125rem]">Choose your experience level for Bitcoin Conference India 2026</p>
       </div>
 
       {/* Ticket Tiers Section */}
@@ -93,16 +89,16 @@ const TicketTiersSection = () => {
         <div className="mt-12 text-center">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-[#FFBF00]">Hyderabad</div>
-              <div className="text-lg text-gray-400">Location</div>
+              <div className="metric-value mb-2">Hyderabad</div>
+              <div className="metric-label">Location</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-[#FFBF00]">2026</div>
-              <div className="text-lg text-gray-400">Year</div>
+              <div className="metric-value mb-2">2026</div>
+              <div className="metric-label">Year</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2 text-[#FFBF00]">FEB/2026</div>
-              <div className="text-lg text-gray-400">Date</div>
+              <div className="metric-value mb-2">FEB/2026</div>
+              <div className="metric-label">Date</div>
             </div>
           </div>
         </div>

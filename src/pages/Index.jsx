@@ -1,8 +1,8 @@
 import Home from "./Home";
-import ComingSoon from "../component/ComingSoon";
+import SponsorsSection from "../component/SponsorsSection";
 import TicketTiersSection from "../component/TicketTiersSection";
 import Speakers from "./Speakers";
-import Highlights from "./Highlights";
+import WhyAttend from "./WhyAttend";
 import Venue from "./Venue";
 import Footer from "./Footer";
 import Button from "../component/Button";
@@ -25,6 +25,7 @@ const Index = () => {
   return (
     <>
       <Home />
+      {/* Win Free Tickets CTA above Ticket Tiers */}
       <section className="pt-4 pb-8 px-4 bg-black mt-2">
         <div className="max-w-4xl mx-auto text-center">
           <Button
@@ -39,9 +40,9 @@ const Index = () => {
       </section>
       <TicketTiersSection />
       <Speakers />
-      <Highlights />
+      <WhyAttend />
       <Venue />
-      <ComingSoon />
+      <SponsorsSection />
       <Footer />
     </>
   );

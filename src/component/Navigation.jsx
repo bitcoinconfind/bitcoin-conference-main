@@ -6,6 +6,24 @@ import Button from "./Button";
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const smoothScrollTo = (targetY, duration = 1400) => {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+
+    const animate = (timestamp) => {
+      if (startTime === null) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuad(progress);
+      window.scrollTo(0, startY + distance * eased);
+      if (elapsed < duration) requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  };
 
   const normalizeUrl = (u) => {
     if (!u) return '/';
@@ -32,7 +50,7 @@ const Navigation = () => {
   const goHomeAndScrollTop = (e) => {
     e.preventDefault();
     if (location.pathname === "/") {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      smoothScrollTo(0, 1400);
     } else {
       navigate("/");
       // Layout hook will smooth-scroll to top on route change
@@ -46,11 +64,7 @@ const Navigation = () => {
         const headerOffset = 80; // Adjust for fixed header height
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
+        smoothScrollTo(offsetPosition, 1400);
       }
     } else {
       navigate(`/#${id}`);
@@ -73,32 +87,11 @@ const Navigation = () => {
 
         {/* Nav Links (desktop, centered) */}
         <nav className="flex-1 hidden md:flex items-center justify-center gap-10 uppercase">
-          <a
-            href="/#tickets"
-            onClick={(e) => goToId(e, 'tickets')}
-            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
-          >
-            Tickets
-          </a>
-          <a
-            href="/#speakers"
-            onClick={(e) => goToId(e, 'speakers')}
-            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
-          >
-            Speakers
-          </a>
-          <Link
-            to="/apply/sponsor"
-            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
-          >
-            Sponsors
-          </Link>
-          <Link
-            to="/contact"
-            className="text-white/90 font-normal tracking-[0.18em] text-sm md:text-base lg:text-lg hover:text-[#FFBF00] transition-colors"
-          >
-            Contact Us
-          </Link>
+          <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="metric-label">Speakers</a>
+          <a href="/#sponsors-cta" onClick={(e) => goToId(e, 'sponsors-cta')} className="metric-label">Sponsors</a>
+          <Link to="/media" className="metric-label">Media</Link>
+          <Link to="/student-volunteer" className="metric-label">Volunteer</Link>
+          <Link to="/contact" className="metric-label">Contact Us</Link>
         </nav>
         {/* Button at last */}
         <div className="flex-shrink-0 hidden md:block">
@@ -146,10 +139,78 @@ const Hamburger = () => {
       {open && (
         <div className="absolute right-0 mt-2 w-64 bg-[#1F1F1F] border border-[#2a2a2a] rounded-lg shadow-lg z-50">
           <div className="py-2 text-sm font-inter-semiBold uppercase tracking-wide">
-            <a onClick={() => setOpen(false)} href="/#tickets" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Tickets</a>
-            <a onClick={() => setOpen(false)} href="/#speakers" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Speakers</a>
-            <Link onClick={() => setOpen(false)} to="/apply/sponsor" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Sponsors</Link>
-            <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 text-white/90 font-extrabold tracking-widest hover:bg-[#2a2a2a]">Contact Us</Link>
+            
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                const go = () => {
+                  const el = document.getElementById('speakers');
+                  if (el) {
+                    const headerOffset = 80;
+                    const y = el.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                    // reuse same eased scroll as nav
+                    const startY = window.pageYOffset;
+                    const distance = y - startY;
+                    let startTime = null;
+                    const easeInOutQuad = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+                    const duration = 1400;
+                    const animate = (ts) => {
+                      if (startTime === null) startTime = ts;
+                      const elapsed = ts - startTime;
+                      const progress = Math.min(elapsed / duration, 1);
+                      const eased = easeInOutQuad(progress);
+                      window.scrollTo(0, startY + distance * eased);
+                      if (elapsed < duration) requestAnimationFrame(animate);
+                    };
+                    requestAnimationFrame(animate);
+                    return true;
+                  }
+                  return false;
+                };
+                if (window.location.pathname !== '/') {
+                  window.location.assign('/#speakers');
+                  setTimeout(() => { go(); }, 400);
+                } else {
+                  if (!go()) setTimeout(() => { go(); }, 100);
+                }
+              }}
+              href="/#speakers"
+              className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]"
+            >
+              Speakers
+            </a>
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                setOpen(false);
+                const go = () => {
+                  const el = document.getElementById('sponsors-cta');
+                  if (el) {
+                    const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    return true;
+                  }
+                  return false;
+                };
+                if (window.location.pathname !== '/') {
+                  window.location.assign('/#sponsors-cta');
+                  // try after navigation settles
+                  setTimeout(() => { go(); }, 400);
+                } else {
+                  if (!go()) {
+                    setTimeout(() => { go(); }, 100);
+                  }
+                }
+              }}
+              href="/#sponsors-cta"
+              className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]"
+            >
+              Sponsors
+            </a>
+            <Link onClick={() => setOpen(false)} to="/media" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Media</Link>
+            <Link onClick={() => setOpen(false)} to="/student-volunteer" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Volunteer</Link>
+            <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Contact Us</Link>
           </div>
         </div>
       )}

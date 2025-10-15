@@ -223,10 +223,10 @@ const ApplySponsor = () => {
         </div>
 
         <div className="text-center mb-12">
-          <h1 className="font-familjen text-4xl sm:text-5xl mb-6 text-white">
+          <h1 className="metric-value mb-2">
             Become a Sponsor
           </h1>
-        <p className="text-lg sm:text-xl text-[#FFFFFFCC] max-w-3xl mx-auto">
+          <p className="metric-label max-w-3xl mx-auto">
             Partner with Bitcoin India and reach a dedicated audience of crypto enthusiasts, 
             investors, and industry leaders. Let's create something unforgettable together.
           </p>
@@ -238,7 +238,7 @@ const ApplySponsor = () => {
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Company Information</h2>
+              <h2 className="metric-value mb-4">Company Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="companyName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -314,7 +314,7 @@ const ApplySponsor = () => {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Contact Information</h2>
+              <h2 className="metric-value mb-4">Contact Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contactName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -390,7 +390,7 @@ const ApplySponsor = () => {
 
             {/* Sponsorship Details */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Sponsorship Details</h2>
+              <h2 className="metric-value mb-4">Sponsorship Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="sponsorshipType" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -438,7 +438,7 @@ const ApplySponsor = () => {
 
             {/* Additional Information */}
             <div>
-              <h2 className="text-2xl font-familjen text-white mb-6">Additional Information</h2>
+              <h2 className="metric-value mb-4">Additional Information</h2>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="goals" className="block text-sm font-inter-semiBold text-white mb-2">

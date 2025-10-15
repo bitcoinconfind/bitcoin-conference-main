@@ -5,13 +5,13 @@ const ComingSoon = () => {
   return (
     <section className="py-10 px-4 sm:px-8 lg:px-20 bg-black">
       <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#FFBF00] mb-4 font-familjen">
+        <h1 className="heading-page text-[#FFBF00] mb-4">
           Coming Soon
         </h1>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl text-white mb-6 font-semibold">
+        <h2 className="subheading text-white mb-6">
           Bitcoin Conference India 2026
         </h2>
-        <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-gray-300 max-w-3xl mx-auto leading-relaxed">
           Get ready for the most exciting Bitcoin conference in India. Stay updated with the latest
           announcements and be the first to know when tickets go live.
         </p>
