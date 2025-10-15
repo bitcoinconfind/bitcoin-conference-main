@@ -89,7 +89,7 @@ const Navigation = () => {
         <nav className="flex-1 hidden md:flex items-center justify-center gap-10 uppercase">
           <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="metric-label">Speakers</a>
           <a href="/#sponsors-cta" onClick={(e) => goToId(e, 'sponsors-cta')} className="metric-label">Sponsors</a>
-          <Link to="/media" className="metric-label">Media</Link>
+          <Link to="/media" className="metric-label">Partnerships</Link>
           <Link to="/student-volunteer" className="metric-label">Volunteer</Link>
           <Link to="/contact" className="metric-label">Contact Us</Link>
         </nav>
@@ -208,7 +208,7 @@ const Hamburger = () => {
             >
               Sponsors
             </a>
-            <Link onClick={() => setOpen(false)} to="/media" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Media</Link>
+            <Link onClick={() => setOpen(false)} to="/media" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Partnerships</Link>
             <Link onClick={() => setOpen(false)} to="/student-volunteer" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Volunteer</Link>
             <Link onClick={() => setOpen(false)} to="/contact" className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]">Contact Us</Link>
           </div>
