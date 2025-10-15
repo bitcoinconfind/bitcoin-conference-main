@@ -53,7 +53,7 @@ const Venue = () => {
       {/* Hero Title/Copy ABOVE the image */}
       <div className="w-full flex flex-col items-center text-center gap-3 sm:gap-4 pt-6 sm:pt-10 md:pt-12 relative z-20">
         <h1 className="metric-value leading-snug">Venue</h1>
-        <p className="subheading max-w-2xl leading-relaxed text-gray-300 px-5">
+        <p className="metric-label text-white max-w-2xl leading-relaxed px-5 text-[1.125rem] md:text-[1.25rem]">
           We're securing an iconic location in Hyderabad that will perfectly complement
           the scale and significance of India's premier Bitcoin conference.
         </p>
