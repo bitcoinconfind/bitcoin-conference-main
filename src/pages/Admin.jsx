@@ -3,7 +3,7 @@ import { supabase } from "../lib/supabase";
 
 const Section = ({ title, children }) => (
   <div className="mb-8">
-    <h2 className="text-2xl font-familjen text-white mb-4">{title}</h2>
+    <h2 className="metric-value mb-4">{title}</h2>
     <div className="bg-[#1F1F1F] border border-[#2a2a2a] rounded-xl p-4 overflow-auto">
       {children}
     </div>
@@ -186,7 +186,7 @@ const Admin = () => {
     return (
       <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
         <div className="max-w-md w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-white text-center">
-          <h1 className="text-3xl font-familjen mb-4">Access denied</h1>
+          <h1 className="metric-value mb-2">Access denied</h1>
           <p className="mb-6">You must be an admin and signed in to view this page.</p>
           <a href="/admin/login" className="text-[#FFBF00] hover:underline">Go to Admin Login</a>
         </div>
@@ -198,7 +198,7 @@ const Admin = () => {
     <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 py-4 sm:py-20 bg-black">
       <div className="max-w-6xl mx-auto text-white">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
-          <h1 className="text-2xl sm:text-4xl font-familjen">Admin Dashboard</h1>
+          <h1 className="metric-value">Admin Dashboard</h1>
           <div className="flex gap-2">
             <button 
               onClick={() => window.location.reload()} 

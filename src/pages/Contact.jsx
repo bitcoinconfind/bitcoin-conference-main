@@ -127,7 +127,7 @@ const Contact = () => {
 
   return (
     <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
-      <div className="max-w-2xl w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-white">
+      <div className="max-w-5xl w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-10 text-white shadow-xl">
         {/* Back Button */}
         <div className="mb-6">
           <Link 
@@ -141,39 +141,37 @@ const Contact = () => {
           </Link>
         </div>
 
-        <div className="text-center mb-8">
-          <h1 className="font-familjen text-3xl sm:text-4xl mb-4">Contact Us</h1>
-          <p className="text-[#FFFFFFCC] font-inter-semiBold mb-4">
-            Choose the type of inquiry to get started.
-          </p>
-          {/* Quick selector cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-            <button onClick={() => window.location.href='/contact/general'} className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-4 hover:bg-[#2a2a2a]">
-              <h3 className="text-white font-familjen text-xl mb-1">General Queries</h3>
-              <p className="text-sm text-[#FFFFFF99]">Ask us anything about the conference.</p>
-            </button>
-            <button onClick={() => window.location.href='/contact/student-volunteer'} className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-4 hover:bg-[#2a2a2a]">
-              <h3 className="text-white font-familjen text-xl mb-1">Student / Volunteer</h3>
-              <p className="text-sm text-[#FFFFFF99]">Apply to help and be part of the crew.</p>
-            </button>
-            <button onClick={() => window.location.href='/contact/media-partnership'} className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-4 hover:bg-[#2a2a2a]">
-              <h3 className="text-white font-familjen text-xl mb-1">Media & Partnerships</h3>
-              <p className="text-sm text-[#FFFFFF99]">Press, media collaborations, and partnerships.</p>
-            </button>
-          </div>
-        </div>
-        {/* Selection page only; form moved to /contact/general */}
+        <div className="text-center mb-10">
+          <h1 className="metric-value mb-2">Contact Us</h1>
+          <p className="metric-label mb-8">Reach us directly or fill the form.</p>
 
-        <div className="mt-8 text-center">
-          <p className="text-sm text-[#FFFFFF80]">
-            Or reach us directly at{" "}
-            <a 
-              href="mailto:contact@btcindia.media" 
-              className="text-[#FFBF00] hover:underline"
-            >
-              contact@btcindia.media
-            </a>
-          </p>
+          {/* Unified cards: email first, then CTA */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
+              <h3 className="metric-value mb-2">General Queries</h3>
+              <div className="metric-label mb-4">
+                Reach us directly at <a href="mailto:contact@btcindia.media" className="text-[#FFBF00] hover:underline">contact@btcindia.media</a>
+              </div>
+              <p className="metric-label mb-4">Ask us anything about the conference.</p>
+              <button onClick={() => window.location.href='/contact/general'} className="w-full bg-[#FFBF00] text-black font-semibold py-2 rounded-md hover:bg-[#CB7608] mt-auto">Fill the form</button>
+            </div>
+            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
+              <h3 className="metric-value mb-2">Student / Volunteer</h3>
+              <div className="metric-label mb-4">
+                Reach us directly at <a href="mailto:volunteer@btcindia.media" className="text-[#FFBF00] hover:underline">volunteer@btcindia.media</a>
+              </div>
+              <p className="metric-label mb-4">Apply to help and be part of the crew.</p>
+              <button onClick={() => window.location.href='/contact/student-volunteer'} className="w-full bg-[#FFBF00] text-black font-semibold py-2 rounded-md hover:bg-[#CB7608] mt-auto">Fill the form</button>
+            </div>
+            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
+              <h3 className="metric-value mb-2">Media & Partnerships</h3>
+              <div className="metric-label mb-4">
+                Reach us directly at <a href="mailto:partnerships@btcindia.media" className="text-[#FFBF00] hover:underline">partnerships@btcindia.media</a>
+              </div>
+              <p className="metric-label mb-4">Press, media collaborations, and partnerships.</p>
+              <button onClick={() => window.location.href='/contact/media-partnership'} className="w-full bg-[#FFBF00] text-black font-semibold py-2 rounded-md hover:bg-[#CB7608] mt-auto">Fill the form</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>

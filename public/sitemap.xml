@@ -31,7 +31,23 @@
   <!-- Contact Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/contact</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Media Info Page -->
+  <url>
+    <loc>https://bitcoinconferenceindia.com/media</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Student / Volunteer Info Page -->
+  <url>
+    <loc>https://bitcoinconferenceindia.com/student-volunteer</loc>
+    <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -68,12 +84,6 @@
     <priority>0.7</priority>
   </url>
   
-  <!-- Highlights Page -->
-  <url>
-    <loc>https://bitcoinconferenceindia.com/highlights</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  <!-- Removed Highlights page (deprecated) -->
   
 </urlset>

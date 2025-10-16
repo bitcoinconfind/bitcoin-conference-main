@@ -65,7 +65,7 @@ const HeroSection = () => {
                 src={MeetingDetails}
                 alt="Bitcoin Conference India 2026 event details - World's largest Bitcoin conference coming to India for the first time"
                 loading="lazy"
-                className="w-auto h-[120px] sm:h-[250px] lg:h-[280px] object-contain"
+                className="w-auto h-[120px] sm:h-[250px] lg:h-[280px] object-contain heading-hero"
               />
             </div>
 

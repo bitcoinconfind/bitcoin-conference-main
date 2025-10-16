@@ -6,12 +6,14 @@ const QuoteDesktop = "/assets/imgs/quote/desktop-view.svg";
 
 const Speakers = () => {
   return (
-    <section id="speakers" className="mt-10 sm:mt-14 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32">
+    <section id="speakers" className="mt-10 sm:mt-14 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 scroll-mt-24">
       {/* Heading */}
-      <div className="text-center mb-8 sm:mb-12">
-        <h1 className="font-bold font-familjen text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-          Speakers Announcing Soon
-        </h1>
+      <div className="text-center mb-6 sm:mb-8">
+        <h1 className="metric-value leading-tight">Speakers</h1>
+        <p className="metric-label max-w-3xl mx-auto mt-3">
+          Share your expertise with a high-intent audience of builders, investors, and media.
+          Our top speaker lineup is being curated and will be revealed soon — apply now to be part of it.
+        </p>
       </div>
 
       {/* Buttons */}

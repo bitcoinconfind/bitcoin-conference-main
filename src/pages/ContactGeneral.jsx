@@ -59,7 +59,7 @@ const ContactGeneral = () => {
             </svg>
             Back
           </Link>
-          <h1 className="font-familjen text-2xl sm:text-3xl text-center w-full">General Queries</h1>
+          <h1 className="heading-page">General Queries</h1>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
