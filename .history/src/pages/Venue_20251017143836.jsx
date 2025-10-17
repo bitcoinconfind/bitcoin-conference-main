@@ -79,26 +79,12 @@ const bannerImages = [venueeBg, venuehero2, venuehero3, venuehero4];
       </div>
 
      
-      {/* Sliding Venue Banner */}
-  <div className="relative w-full flex justify-center px-5 z-10">
-  {/* This is the outer container that crops the content */}
-  <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
-    {/* This is the inner container that holds all images and moves */}
-    <div
-      className="flex transition-transform duration-700 ease-in-out"
-      style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-    >
-      {/* Map over the bannerImages array to create a slide for each image */}
-      {bannerImages.map((imageSrc, index) => (
-        <div key={index} className="w-full flex-shrink-0">
-          <img
-            src={imageSrc}
-            alt={`Venue background ${index + 1}`}
-            className="w-full h-[36vh] sm:h-[48vh] md:h-[56vh] lg:h-[64vh] object-cover object-center"
-          />
-        </div>
-      ))}
-    </div>
+      {/* Static Venue background banner */}
+   <div className="relative w-full flex justify-center px-5 z-10">
+    <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
+    <button className="h-3 w-3 bg-amber-300">
+      <img src={heroBackground} alt="Venue background" className="w-full h-[36vh] sm:h-[48vh] md:h-[56vh] lg:h-[64vh] object-cover object-center" />
+    </button>
   </div>
 </div>
 

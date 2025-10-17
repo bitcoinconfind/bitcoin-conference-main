@@ -82,7 +82,7 @@ const bannerImages = [venueeBg, venuehero2, venuehero3, venuehero4];
       {/* Sliding Venue Banner */}
   <div className="relative w-full flex justify-center px-5 z-10">
   {/* This is the outer container that crops the content */}
-  <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
+  <div className="relative w-[95%] sm:w-[90%] md:w-[95%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
     {/* This is the inner container that holds all images and moves */}
     <div
       className="flex transition-transform duration-700 ease-in-out"

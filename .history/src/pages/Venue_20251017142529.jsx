@@ -8,24 +8,9 @@ const venueTwo = "/assets/imgs/carousels/carousel_2.JPG";
 const venueThree = "/assets/imgs/carousels/carousel_3.JPG";
 const venueFour = "/assets/imgs/carousels/carousel_4.JPG"; // Add a fourth image
 
-
-// Create an array for the banner slider
-const bannerImages = [venueeBg, venuehero2, venuehero3, venuehero4];
-
-  const Venue = () => {
-  // State to track the current image index for the bannerVenue
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // useEffect to automatically slide the banner images
-  useEffect(() => {
-    // Set up an interval to change the image every 3 seconds (3000 milliseconds)
-    const intervalId = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % bannerImages.length);
-    }, 3000);
-
-    // Clean up the interval when the component unmounts to prevent memory leaks
-    return () => clearInterval(intervalId);
-  }, []); 
+const Venue = () => {
+  // Static hero background image (venue banner)
+  const heroBackground = venueeBg;
 
   // Must-visit places in Hyderabad (used by the carousel) — declare BEFORE hooks
   const venues = [
@@ -78,29 +63,13 @@ const bannerImages = [venueeBg, venuehero2, venuehero3, venuehero4];
         {/* Removed old stay tuned chip here; now shown under the banner */}
       </div>
 
-     
-      {/* Sliding Venue Banner */}
-  <div className="relative w-full flex justify-center px-5 z-10">
-  {/* This is the outer container that crops the content */}
-  <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
-    {/* This is the inner container that holds all images and moves */}
-    <div
-      className="flex transition-transform duration-700 ease-in-out"
-      style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
-    >
-      {/* Map over the bannerImages array to create a slide for each image */}
-      {bannerImages.map((imageSrc, index) => (
-        <div key={index} className="w-full flex-shrink-0">
-          <img
-            src={imageSrc}
-            alt={`Venue background ${index + 1}`}
-            className="w-full h-[36vh] sm:h-[48vh] md:h-[56vh] lg:h-[64vh] object-cover object-center"
-          />
+      {/* Static Venue background banner */}
+      <div className="relative w-full flex justify-center px-5 z-10">
+        <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
+          <button></button>
+          <img src={heroBackground} alt="Venue background" className="w-full h-[36vh] sm:h-[48vh] md:h-[56vh] lg:h-[64vh] object-cover object-center" />
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
       {/* Stay tuned chip directly under the venue background */}
       <div className="w-full flex justify-center mt-3 sm:mt-4">
