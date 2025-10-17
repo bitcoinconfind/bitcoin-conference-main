@@ -4,7 +4,7 @@ import Button from "../component/Button";
 import {
   FaInstagram,
   FaTelegram,
-  FaYoutube,
+  FaYoutube
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router-dom";
@@ -66,17 +66,6 @@ const Footer = () => {
                 <FaInstagram />
                 <span className="text-sm md:text-base">Instagram</span>
               </a>
-
-            <a
-             href="https://youtube.com/@bitcoinconferenceindia?si=8HlxOhyq41PvhKRD"
-             target="_blank"
-             rel="noreferrer"
-             className="flex items-center gap-2 hover:text-amber-500"
-            >
-           <FaYoutube className="text-xl md:text-2xl" />
-          <span className="text-sm md:text-base">YouTube</span>
-         </a>
-
             </div>
           </div>
 

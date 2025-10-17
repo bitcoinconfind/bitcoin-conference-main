@@ -75,7 +75,7 @@ const Footer = () => {
             >
            <FaYoutube className="text-xl md:text-2xl" />
           <span className="text-sm md:text-base">YouTube</span>
-         </a>
+</a>
 
             </div>
           </div>
