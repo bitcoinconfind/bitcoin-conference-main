@@ -6,14 +6,9 @@ const LiveRegistrationCounter = () => {
   const UPDATE_INTERVAL = 19000; // 19 seconds
 
   // Fixed starting date - all users calculate from this point
-  // Set to today's date when you deploy (October 25, 2025)
   const BASE_DATE = new Date('2025-10-25T00:00:00').getTime();
 
-  // Random increase per interval (1-4 range = avg 2.5)
-  // At ~500 intervals per day, avg 2.5 per interval = ~500 registrations/day
-  const getRandomIncrease = () => Math.floor(Math.random() * 4) + 1; // 1-4
-
-  // Calculate global count based on time since BASE_DATE with random increases
+  // Calculate global count based on time since BASE_DATE with deterministic increases
   const getGlobalBaseCount = () => {
     const now = Date.now();
     const timeSinceBase = now - BASE_DATE;

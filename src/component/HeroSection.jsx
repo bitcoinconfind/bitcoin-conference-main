@@ -62,6 +62,13 @@ const HeroSection = () => {
                 className="w-[192px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
             </div>
+
+            {/* World's Largest Bitcoin Conference */}
+            <div className="text-center mt-2 text-3xl font-bold" style={{fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em'}}>
+              <span className="text-white">World's Largest </span>
+              <span className="text-[#FF8C00]">Bitcoin</span>
+              <span className="text-white"> Conference</span>
+            </div>
           </FadeIn>
 
           {/* Right Section - Side Item */}
