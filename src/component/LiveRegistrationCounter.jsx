@@ -58,7 +58,10 @@ const LiveRegistrationCounter = () => {
       const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
       const currentIncrease = Math.floor((currentRandomValue % 4) + 1);
       
-      setRegistrationCount(currentCount);
+      // Add the current interval's increase to the count
+      const finalCount = currentCount + currentIncrease;
+      
+      setRegistrationCount(finalCount);
       setRecentIncrease(currentIncrease);
       setShowPulse(true);
 
