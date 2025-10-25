@@ -3,7 +3,7 @@ import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
   const INITIAL_COUNT = 43678;
-  const UPDATE_INTERVAL = 173000; // ~3 minutes (173 seconds)
+  const UPDATE_INTERVAL = 28000; // 28 seconds (random between 10-15 seconds)
   const STORAGE_KEY = 'btc_registration_count';
   const TIMESTAMP_KEY = 'btc_registration_timestamp';
 
@@ -70,19 +70,28 @@ const LiveRegistrationCounter = () => {
   }, [registrationCount]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Random increase between 1-4
-      const increase = Math.floor(Math.random() * 4) + 1;
+    const scheduleNextUpdate = () => {
+      // Random interval between 10-15 seconds
+      const randomInterval = Math.floor(Math.random() * 5000) + 10000; // 10-15 seconds
+      
+      setTimeout(() => {
+        // Random increase between 1-4
+        const increase = Math.floor(Math.random() * 4) + 1;
 
-      setRegistrationCount(prev => prev + increase);
-      setRecentIncrease(increase);
-      setShowPulse(true);
+        setRegistrationCount(prev => prev + increase);
+        setRecentIncrease(increase);
+        setShowPulse(true);
 
-      // Remove pulse effect after animation
-      setTimeout(() => setShowPulse(false), 1000);
-    }, UPDATE_INTERVAL);
+        // Remove pulse effect after animation
+        setTimeout(() => setShowPulse(false), 1000);
+        
+        // Schedule next update
+        scheduleNextUpdate();
+      }, randomInterval);
+    };
 
-    return () => clearInterval(interval);
+    // Start the first update
+    scheduleNextUpdate();
   }, []);
 
   // Format number with commas

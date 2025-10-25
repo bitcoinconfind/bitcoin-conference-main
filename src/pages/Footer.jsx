@@ -34,72 +34,149 @@ const Footer = () => {
       <footer className="-mt-8 w-full">
         {/* Top Section */}
         <div className="bg-black p-6 md:p-8 flex flex-col md:flex-row items-center justify-between shadow-md w-full">
-          {/* Logo + Social Icons */}
-          <div className="flex flex-col md:ml-18 items-center md:items-start gap-6 md:gap-12 w-full md:w-auto">
-            <img
-              src={footLogo}
-              alt="BitIndia Logo"
-              className="h-10 w-auto md:h-12"
-            />
-            <div className="flex items-center gap-5 md:gap-6 text-gray-300 text-lg md:text-xl">
-              <a
-                href="https://t.me/BitcoinConfIND"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaTelegram />
-              </a>
-              <a
-                href="https://x.com/BitcoinConfIND"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaXTwitter />
-              </a>
-              <a
-                href="https://www.instagram.com/bitcoinconfind"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="https://youtube.com/@bitcoinconferenceindia"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaYoutube />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/bitcoinconfind/"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaLinkedin />
-              </a>
-              <a
-                href="https://discord.gg/UNsh7qhXs5"
-                target="_blank"
-                rel="noreferrer"
-                className="flex items-center gap-2 hover:text-amber-500"
-              >
-                <FaDiscord />
-              </a>
+          {/* Mobile Layout: BTC Price Ticker First */}
+          <div className="flex flex-col md:hidden items-center gap-6 w-full">
+            {/* BTC Price Ticker - Mobile */}
+            <div className="w-full flex justify-center">
+              <BtcPriceTicker />
+            </div>
+            
+            {/* Logo + Social Icons - Mobile */}
+            <div className="flex flex-col items-center gap-6 w-full">
+              <img
+                src={footLogo}
+                alt="BitIndia Logo"
+                className="h-10 w-auto"
+              />
+              <div className="flex items-center gap-5 text-gray-300 text-lg">
+                <a
+                  href="https://t.me/BitcoinConfIND"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaTelegram />
+                </a>
+                <a
+                  href="https://x.com/BitcoinConfIND"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaXTwitter />
+                </a>
+                <a
+                  href="https://www.instagram.com/bitcoinconfind"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://youtube.com/@bitcoinconferenceindia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaYoutube />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/bitcoinconfind/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://discord.gg/UNsh7qhXs5"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaDiscord />
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* BTC Price Ticker - Center */}
-          <div className="hidden md:flex w-full md:w-auto justify-center items-center -ml-40">
-            <BtcPriceTicker />
+          {/* Desktop Layout */}
+          <div className="hidden md:flex w-full items-center justify-between">
+            {/* Logo + Social Icons - Desktop */}
+            <div className="flex flex-col md:ml-18 items-center md:items-start gap-6 md:gap-12 w-full md:w-auto">
+              <img
+                src={footLogo}
+                alt="BitIndia Logo"
+                className="h-10 w-auto md:h-12"
+              />
+              <div className="flex items-center gap-5 md:gap-6 text-gray-300 text-lg md:text-xl">
+                <a
+                  href="https://t.me/BitcoinConfIND"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaTelegram />
+                </a>
+                <a
+                  href="https://x.com/BitcoinConfIND"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaXTwitter />
+                </a>
+                <a
+                  href="https://www.instagram.com/bitcoinconfind"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaInstagram />
+                </a>
+                <a
+                  href="https://youtube.com/@bitcoinconferenceindia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaYoutube />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/bitcoinconfind/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaLinkedin />
+                </a>
+                <a
+                  href="https://discord.gg/UNsh7qhXs5"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 hover:text-amber-500"
+                >
+                  <FaDiscord />
+                </a>
+              </div>
+            </div>
+
+            {/* BTC Price Ticker - Desktop */}
+            <div className="flex w-full md:w-auto justify-center items-center">
+              <BtcPriceTicker />
+            </div>
+
+            {/* Footer Links - Desktop */}
+            <div className="mt-6 md:mt-0 flex flex-col items-center md:items-end gap-3 md:mr-25 w-full md:w-auto text-white">
+              <Link to="/contact" className="metric-label hover:text-amber-500 transition-colors">Contact Us</Link>
+              <Link to="/privacy" className="metric-label hover:text-amber-500 transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="metric-label hover:text-amber-500 transition-colors">Terms & Conditions</Link>
+            </div>
           </div>
 
-          {/* Footer Links */}
-          <div className="mt-6 md:mt-0 flex flex-col items-center md:items-end gap-3 md:mr-25 w-full md:w-auto text-white">
+          {/* Footer Links - Mobile */}
+          <div className="flex md:hidden flex-col items-center gap-3 w-full text-white mt-6">
             <Link to="/contact" className="metric-label hover:text-amber-500 transition-colors">Contact Us</Link>
             <Link to="/privacy" className="metric-label hover:text-amber-500 transition-colors">Privacy Policy</Link>
             <Link to="/terms" className="metric-label hover:text-amber-500 transition-colors">Terms & Conditions</Link>
