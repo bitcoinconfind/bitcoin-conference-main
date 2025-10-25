@@ -2,85 +2,43 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
-  const INITIAL_COUNT = 43000;
-  const UPDATE_INTERVAL = 19000; // 19 seconds
-
-  // Fixed starting date - all users calculate from this point
-  const BASE_DATE = new Date('2025-10-25T00:00:00').getTime();
-
-  // Calculate global count based on time since BASE_DATE with deterministic increases
-  const getGlobalBaseCount = () => {
-    const now = Date.now();
-    const timeSinceBase = now - BASE_DATE;
-    const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
-    
-    // Use deterministic random based on interval number for consistency
-    // Include the current interval in the calculation
-    let totalIncrease = 0;
-    for (let i = 0; i <= intervalsSinceBase; i++) {
-      // Use interval number as seed for deterministic random
-      const seed = i;
-      const randomValue = Math.sin(seed) * 10000;
-      const increase = Math.floor((randomValue % 4) + 1);
-      totalIncrease += increase;
-    }
-    
-    return INITIAL_COUNT + totalIncrease;
-  };
-
-  // Initialize count from global base - all users see the same count
-  const getInitialCount = () => {
-    return getGlobalBaseCount();
-  };
-
-  const [registrationCount, setRegistrationCount] = useState(getInitialCount);
+  const [registrationCount, setRegistrationCount] = useState(43000);
   const [recentIncrease, setRecentIncrease] = useState(0);
   const [showPulse, setShowPulse] = useState(false);
 
   useEffect(() => {
-    const updateCounter = () => {
-      const now = Date.now();
-      const timeSinceBase = now - BASE_DATE;
-      const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
-      
-      // Calculate current count with deterministic random increases
-      // Include the current interval in the calculation
-      let totalIncrease = 0;
-      for (let i = 0; i <= intervalsSinceBase; i++) {
-        const seed = i;
-        const randomValue = Math.sin(seed) * 10000;
-        const increase = Math.floor((randomValue % 4) + 1);
-        totalIncrease += increase;
+    const fetchCounter = async () => {
+      try {
+        const response = await fetch('/api/counter');
+        const data = await response.json();
+        
+        if (data.success) {
+          const previousCount = registrationCount;
+          const newCount = data.count;
+          
+          // Calculate increase for animation
+          const increase = newCount - previousCount;
+          if (increase > 0) {
+            setRecentIncrease(increase);
+            setShowPulse(true);
+            setTimeout(() => setShowPulse(false), 1000);
+          }
+          
+          setRegistrationCount(newCount);
+        }
+      } catch (error) {
+        console.error('Failed to fetch counter:', error);
       }
-      
-      const finalCount = INITIAL_COUNT + totalIncrease;
-      
-      // Calculate the increase for the current interval only
-      const currentIntervalSeed = intervalsSinceBase;
-      const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
-      const currentIncrease = Math.floor((currentRandomValue % 4) + 1);
-      
-      // Ensure the count never decreases
-      setRegistrationCount(prevCount => {
-        const newCount = Math.max(prevCount, finalCount);
-        return newCount;
-      });
-      
-      setRecentIncrease(currentIncrease);
-      setShowPulse(true);
-
-      // Remove pulse effect after animation
-      setTimeout(() => setShowPulse(false), 1000);
     };
 
-    // Update immediately
-    updateCounter();
+    // Fetch immediately
+    fetchCounter();
     
-    // Then update every UPDATE_INTERVAL (19 seconds)
-    const interval = setInterval(updateCounter, UPDATE_INTERVAL);
+    // Then fetch every 5 seconds to stay in sync
+    const interval = setInterval(fetchCounter, 5000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [registrationCount]);
 
   // Format number with commas
   const formatNumber = (num) => {
