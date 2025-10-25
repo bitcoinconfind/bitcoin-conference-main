@@ -2,96 +2,82 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
-  const INITIAL_COUNT = 43678;
-  const UPDATE_INTERVAL = 28000; // 28 seconds (random between 10-15 seconds)
-  const STORAGE_KEY = 'btc_registration_count';
-  const TIMESTAMP_KEY = 'btc_registration_timestamp';
+  const INITIAL_COUNT = 43000;
+  const UPDATE_INTERVAL = 19000; // 19 seconds
 
   // Fixed starting date - all users calculate from this point
   // Set to today's date when you deploy (October 25, 2025)
   const BASE_DATE = new Date('2025-10-25T00:00:00').getTime();
 
-  // Average increase per interval (1-4 range = avg 2.5)
+  // Random increase per interval (1-4 range = avg 2.5)
   // At ~500 intervals per day, avg 2.5 per interval = ~500 registrations/day
-  const AVG_INCREASE_PER_INTERVAL = 1;
+  const getRandomIncrease = () => Math.floor(Math.random() * 4) + 1; // 1-4
 
-  // Calculate global count based on time since BASE_DATE
+  // Calculate global count based on time since BASE_DATE with random increases
   const getGlobalBaseCount = () => {
     const now = Date.now();
     const timeSinceBase = now - BASE_DATE;
     const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
-    const globalIncrease = Math.floor(intervalsSinceBase * AVG_INCREASE_PER_INTERVAL);
-    return INITIAL_COUNT + globalIncrease;
+    
+    // Use deterministic random based on interval number for consistency
+    let totalIncrease = 0;
+    for (let i = 0; i < intervalsSinceBase; i++) {
+      // Use interval number as seed for deterministic random
+      const seed = i;
+      const randomValue = Math.sin(seed) * 10000;
+      const increase = Math.floor((randomValue % 4) + 1);
+      totalIncrease += increase;
+    }
+    
+    return INITIAL_COUNT + totalIncrease;
   };
 
-  // Initialize count from localStorage or calculate from global base
+  // Initialize count from global base - all users see the same count
   const getInitialCount = () => {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    const timestamp = localStorage.getItem(TIMESTAMP_KEY);
-    const globalBase = getGlobalBaseCount();
-
-    if (stored && timestamp) {
-      const storedCount = parseInt(stored, 10);
-      const lastUpdate = parseInt(timestamp, 10);
-
-      // If stored count is significantly behind global count, reset to global
-      // This handles cases where user hasn't visited in days
-      if (storedCount < globalBase - 100) {
-        return globalBase;
-      }
-
-      const now = Date.now();
-      const timeDiff = now - lastUpdate;
-      const missedIntervals = Math.floor(timeDiff / UPDATE_INTERVAL);
-
-      if (missedIntervals > 0) {
-        // Add estimated increases for missed intervals
-        const estimatedIncrease = Math.floor(missedIntervals * AVG_INCREASE_PER_INTERVAL);
-        const newCount = storedCount + estimatedIncrease;
-
-        // Ensure we don't fall too far behind the global count
-        return Math.max(newCount, globalBase);
-      }
-
-      return Math.max(storedCount, globalBase);
-    }
-
-    return globalBase;
+    return getGlobalBaseCount();
   };
 
   const [registrationCount, setRegistrationCount] = useState(getInitialCount);
   const [recentIncrease, setRecentIncrease] = useState(0);
   const [showPulse, setShowPulse] = useState(false);
 
-  // Save to localStorage whenever count changes
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, registrationCount.toString());
-    localStorage.setItem(TIMESTAMP_KEY, Date.now().toString());
-  }, [registrationCount]);
-
-  useEffect(() => {
-    const scheduleNextUpdate = () => {
-      // Random interval between 10-15 seconds
-      const randomInterval = Math.floor(Math.random() * 5000) + 10000; // 10-15 seconds
+    const updateCounter = () => {
+      const now = Date.now();
+      const timeSinceBase = now - BASE_DATE;
+      const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
       
-      setTimeout(() => {
-        // Random increase between 1-4
-        const increase = Math.floor(Math.random() * 4) + 1;
+      // Calculate current count with deterministic random increases
+      let totalIncrease = 0;
+      for (let i = 0; i < intervalsSinceBase; i++) {
+        const seed = i;
+        const randomValue = Math.sin(seed) * 10000;
+        const increase = Math.floor((randomValue % 4) + 1);
+        totalIncrease += increase;
+      }
+      
+      const currentCount = INITIAL_COUNT + totalIncrease;
+      
+      // Calculate the increase for the current interval
+      const currentIntervalSeed = intervalsSinceBase;
+      const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
+      const currentIncrease = Math.floor((currentRandomValue % 4) + 1);
+      
+      setRegistrationCount(currentCount);
+      setRecentIncrease(currentIncrease);
+      setShowPulse(true);
 
-        setRegistrationCount(prev => prev + increase);
-        setRecentIncrease(increase);
-        setShowPulse(true);
-
-        // Remove pulse effect after animation
-        setTimeout(() => setShowPulse(false), 1000);
-        
-        // Schedule next update
-        scheduleNextUpdate();
-      }, randomInterval);
+      // Remove pulse effect after animation
+      setTimeout(() => setShowPulse(false), 1000);
     };
 
-    // Start the first update
-    scheduleNextUpdate();
+    // Update immediately
+    updateCounter();
+    
+    // Then update every UPDATE_INTERVAL (19 seconds)
+    const interval = setInterval(updateCounter, UPDATE_INTERVAL);
+    
+    return () => clearInterval(interval);
   }, []);
 
   // Format number with commas
@@ -175,7 +161,7 @@ const LiveRegistrationCounter = () => {
           </div>
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">150+</div>
-            <div className="text-xs text-gray-400 mt-1">Speakers and leaders</div>
+            <div className="text-xs text-gray-400 mt-1">Speakers and Global Leaders</div>
           </div>
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">100+</div>
@@ -183,7 +169,7 @@ const LiveRegistrationCounter = () => {
           </div>
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">2 Days</div>
-            <div className="text-xs text-gray-400 mt-1">Of Content</div>
+            <div className="text-xs text-gray-400 mt-1">Of Networking</div>
           </div>
         </div>
       </div>
