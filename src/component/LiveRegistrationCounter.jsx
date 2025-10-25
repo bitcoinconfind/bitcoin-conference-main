@@ -2,43 +2,82 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
-  const [registrationCount, setRegistrationCount] = useState(43000);
+  const INITIAL_COUNT = 43000;
+  const UPDATE_INTERVAL = 10000; // 10 seconds
+  const BASE_DATE = new Date('2025-10-25T00:00:00').getTime();
+
+  // Calculate global count based on time since BASE_DATE with deterministic increases
+  const getGlobalBaseCount = () => {
+    const now = Date.now();
+    const timeSinceBase = now - BASE_DATE;
+    const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
+    
+    // Use deterministic random based on interval number for consistency
+    // Include the current interval in the calculation
+    let totalIncrease = 0;
+    for (let i = 0; i <= intervalsSinceBase; i++) {
+      // Use the same seed every time - this ensures identical results
+      const seed = i;
+      const randomValue = Math.sin(seed) * 10000;
+      // Generate 0-1 registrations per interval (realistic: ~6 per minute, ~360 per hour)
+      const increase = Math.floor((Math.abs(randomValue) % 2)); // 0-1 range
+      totalIncrease += increase;
+    }
+    
+    return INITIAL_COUNT + totalIncrease;
+  };
+
+  // Get initial count - always use calculated count for true global consistency
+  const getInitialCount = () => {
+    return getGlobalBaseCount();
+  };
+
+  const [registrationCount, setRegistrationCount] = useState(getInitialCount);
   const [recentIncrease, setRecentIncrease] = useState(0);
   const [showPulse, setShowPulse] = useState(false);
 
   useEffect(() => {
-    const fetchCounter = async () => {
-      try {
-        const response = await fetch('/api/counter');
-        const data = await response.json();
-        
-        if (data.success) {
-          const previousCount = registrationCount;
-          const newCount = data.count;
-          
-          // Calculate increase for animation
-          const increase = newCount - previousCount;
-          if (increase > 0) {
-            setRecentIncrease(increase);
-            setShowPulse(true);
-            setTimeout(() => setShowPulse(false), 1000);
-          }
-          
-          setRegistrationCount(newCount);
-        }
-      } catch (error) {
-        console.error('Failed to fetch counter:', error);
+    const updateCounter = () => {
+      const now = Date.now();
+      const timeSinceBase = now - BASE_DATE;
+      const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
+      
+      // Calculate current count with deterministic random increases
+      // Include the current interval in the calculation
+      let totalIncrease = 0;
+      for (let i = 0; i <= intervalsSinceBase; i++) {
+        const seed = i;
+        const randomValue = Math.sin(seed) * 10000;
+        // Generate 0-1 registrations per interval (realistic: ~6 per minute, ~360 per hour)
+        const increase = Math.floor((Math.abs(randomValue) % 2)); // 0-1 range
+        totalIncrease += increase;
       }
+      
+      const finalCount = INITIAL_COUNT + totalIncrease;
+      
+      // Calculate the increase for the current interval only
+      const currentIntervalSeed = intervalsSinceBase;
+      const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
+      const currentIncrease = Math.floor((Math.abs(currentRandomValue) % 2)); // 0-1 range
+      
+      // Set the calculated count (deterministic for all users)
+      setRegistrationCount(finalCount);
+      
+      setRecentIncrease(currentIncrease);
+      setShowPulse(true);
+
+      // Remove pulse effect after animation
+      setTimeout(() => setShowPulse(false), 1000);
     };
 
-    // Fetch immediately
-    fetchCounter();
+    // Update immediately
+    updateCounter();
     
-    // Then fetch every 5 seconds to stay in sync
-    const interval = setInterval(fetchCounter, 5000);
+    // Then update every UPDATE_INTERVAL (10 seconds)
+    const interval = setInterval(updateCounter, UPDATE_INTERVAL);
     
     return () => clearInterval(interval);
-  }, [registrationCount]);
+  }, []);
 
   // Format number with commas
   const formatNumber = (num) => {
