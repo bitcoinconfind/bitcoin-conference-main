@@ -10,6 +10,11 @@ export const EMAIL_CONFIG = {
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <!-- Email Header with Logos -->
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #FFBF00;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/logo/BitLogo.png" alt="Bitcoin Conference India" style="height: 40px; margin-right: 20px;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/bimi/bimi-logo.svg" alt="BIMI" style="height: 40px;">
+        </div>
         <h2 style="color: #FFBF00;">New Contact Form Submission</h2>
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <p><strong>Name:</strong> ${formData.name}</p>
@@ -41,6 +46,11 @@ export const EMAIL_CONFIG = {
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <!-- Email Header with Logos -->
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #FFBF00;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/logo/BitLogo.png" alt="Bitcoin Conference India" style="height: 40px; margin-right: 20px;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/bimi/bimi-logo.svg" alt="BIMI" style="height: 40px;">
+        </div>
         <h2 style="color: #FFBF00;">New Speaker Application</h2>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -98,6 +108,11 @@ export const EMAIL_CONFIG = {
     getReplyTo: (formData) => formData.contactEmail,
     getHtml: (formData) => `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <!-- Email Header with Logos -->
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #FFBF00;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/logo/BitLogo.png" alt="Bitcoin Conference India" style="height: 40px; margin-right: 20px;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/bimi/bimi-logo.svg" alt="BIMI" style="height: 40px;">
+        </div>
         <h2 style="color: #FFBF00;">New Sponsor Application</h2>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -148,6 +163,11 @@ export const EMAIL_CONFIG = {
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <!-- Email Header with Logos -->
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #FFBF00;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/logo/BitLogo.png" alt="Bitcoin Conference India" style="height: 40px; margin-right: 20px;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/bimi/bimi-logo.svg" alt="BIMI" style="height: 40px;">
+        </div>
         <h2 style="color: #FFBF00;">New Student/Volunteer Application</h2>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
@@ -186,6 +206,11 @@ export const EMAIL_CONFIG = {
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <!-- Email Header with Logos -->
+        <div style="text-align: center; padding: 20px 0; border-bottom: 2px solid #FFBF00;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/logo/BitLogo.png" alt="Bitcoin Conference India" style="height: 40px; margin-right: 20px;">
+          <img src="https://bitcoinconferenceindia.com/assets/imgs/bimi/bimi-logo.svg" alt="BIMI" style="height: 40px;">
+        </div>
         <h2 style="color: #FFBF00;">New Media Partnership Inquiry</h2>
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">

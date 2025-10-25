@@ -218,42 +218,42 @@ const BtcPriceTicker = () => {
 
   return (
     <div className="bg-black transition-all duration-700 ease-out">
-      <div className="flex items-center justify-center" style={{ transform: 'translateX(-30px)' }}>
-        {/* Mobile Layout - Vertical with Powered by */}
-        <div className="flex flex-col md:hidden items-center gap-3 w-full cursor-pointer group"
+      <div className="flex items-center justify-center">
+        {/* Mobile Layout - Horizontal */}
+        <div className="flex md:hidden items-center justify-end gap-8 w-full cursor-pointer group px-4"
              onClick={() => setShowInr(!showInr)}>
 
           {/* Powered by BitcoinWala */}
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex flex-col items-center gap-1">
             <span className="text-[#FFBF00] text-sm font-bold">
               Presented By:
             </span>
             <img
               src={btcLogo}
               alt="BitcoinWala"
-              className="h-8 w-auto transition-transform duration-300"
+              className="h-12 w-auto transition-transform duration-300"
             />
           </div>
 
           {/* Price Display with Auto Animation */}
           <div className="flex flex-col items-center gap-1">
-            <span className="text-white text-sm font-bold">
+            <span className="text-white text-xs font-bold">
               <span className="text-[#FF8C00]">BTC</span>/{showInr ? 'INR' : 'USD'}
             </span>
             
             {btcData.loading ? (
-              <div className="h-6 w-40 bg-[#2a2a2a] animate-pulse rounded"></div>
+              <div className="h-10 w-64 bg-[#2a2a2a] animate-pulse rounded"></div>
             ) : (
-              <div className="relative w-40 flex justify-center">
+              <div className="relative w-64 flex justify-center">
                 {/* USD Price */}
-                <span className={`text-[#FFBF00] font-bold text-2xl transition-all duration-500 transform ${
+                <span className={`text-[#FFBF00] font-bold text-3xl transition-all duration-500 transform ${
                   showInr ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
                 }`}>
                   {formatPrice(btcData.price, 'USD')}
                 </span>
                 
                 {/* INR Price */}
-                <span className={`absolute top-0 left-0 w-full text-center text-[#FFBF00] font-bold text-2xl transition-all duration-500 transform ${
+                <span className={`absolute top-0 left-0 w-full text-center text-[#FFBF00] font-bold text-3xl transition-all duration-500 transform ${
                   showInr ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                 }`}>
                   {formatPrice(getInrPrice(), 'INR')}
