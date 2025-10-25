@@ -15,8 +15,9 @@ const LiveRegistrationCounter = () => {
     const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
     
     // Use deterministic random based on interval number for consistency
+    // Include the current interval in the calculation
     let totalIncrease = 0;
-    for (let i = 0; i < intervalsSinceBase; i++) {
+    for (let i = 0; i <= intervalsSinceBase; i++) {
       // Use interval number as seed for deterministic random
       const seed = i;
       const randomValue = Math.sin(seed) * 10000;
@@ -43,25 +44,28 @@ const LiveRegistrationCounter = () => {
       const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
       
       // Calculate current count with deterministic random increases
+      // Include the current interval in the calculation
       let totalIncrease = 0;
-      for (let i = 0; i < intervalsSinceBase; i++) {
+      for (let i = 0; i <= intervalsSinceBase; i++) {
         const seed = i;
         const randomValue = Math.sin(seed) * 10000;
         const increase = Math.floor((randomValue % 4) + 1);
         totalIncrease += increase;
       }
       
-      const currentCount = INITIAL_COUNT + totalIncrease;
+      const finalCount = INITIAL_COUNT + totalIncrease;
       
-      // Calculate the increase for the current interval
+      // Calculate the increase for the current interval only
       const currentIntervalSeed = intervalsSinceBase;
       const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
       const currentIncrease = Math.floor((currentRandomValue % 4) + 1);
       
-      // Add the current interval's increase to the count
-      const finalCount = currentCount + currentIncrease;
+      // Ensure the count never decreases
+      setRegistrationCount(prevCount => {
+        const newCount = Math.max(prevCount, finalCount);
+        return newCount;
+      });
       
-      setRegistrationCount(finalCount);
       setRecentIncrease(currentIncrease);
       setShowPulse(true);
 
