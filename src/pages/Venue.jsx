@@ -85,7 +85,7 @@ const Venue = () => {
                     className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover object-center"
                   />
                   {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/40"></div>
+                  <div className="absolute inset-0 bg-black/60"></div>
                 </div>
               ))}
             </div>

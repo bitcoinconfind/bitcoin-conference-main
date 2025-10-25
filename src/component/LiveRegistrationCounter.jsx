@@ -136,7 +136,7 @@ const LiveRegistrationCounter = () => {
                     </div>
                   </div>
                   <p className="text-gray-400 text-sm mt-1">
-                    People attending Bitcoin Conference 2025
+                    People attending Bitcoin Conference 2026
                   </p>
                 </div>
               </div>
@@ -161,7 +161,7 @@ const LiveRegistrationCounter = () => {
             {/* FOMO Message */}
             <div className="mt-6 pt-6 border-t border-[#FFBF00]/20">
               <p className="text-center text-gray-300 text-sm md:text-base">
-                <span className="text-[#FFBF00] font-semibold">Don't miss out!</span> Join thousands of Bitcoin enthusiasts securing their spot right now.
+                <span className="text-[#FFBF00] font-semibold">Don't miss out!</span> Join with thousands of Bitcoin enthusiasts securing their spot right now.
               </p>
             </div>
           </div>
@@ -183,7 +183,7 @@ const LiveRegistrationCounter = () => {
           </div>
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">2 Days</div>
-            <div className="text-xs text-gray-400 mt-1">HODLer-Only Content</div>
+            <div className="text-xs text-gray-400 mt-1">Of Content</div>
           </div>
         </div>
       </div>

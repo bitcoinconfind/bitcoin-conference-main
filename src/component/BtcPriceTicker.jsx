@@ -218,15 +218,15 @@ const BtcPriceTicker = () => {
 
   return (
     <div className="bg-black transition-all duration-700 ease-out">
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center" style={{ transform: 'translateX(-30px)' }}>
         {/* Mobile Layout - Vertical with Powered by */}
         <div className="flex flex-col md:hidden items-center gap-3 w-full cursor-pointer group"
              onClick={() => setShowInr(!showInr)}>
-          
+
           {/* Powered by BitcoinWala */}
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[#FF8C00] text-sm font-bold">
-              Powered By:
+            <span className="text-[#FFBF00] text-sm font-bold">
+              Presented By:
             </span>
             <img
               src={btcLogo}
@@ -269,8 +269,8 @@ const BtcPriceTicker = () => {
           
           {/* Powered by BitcoinWala */}
           <div className="flex flex-col items-center gap-2">
-            <span className="text-[#FF8C00] text-sm font-bold">
-              Powered By:
+            <span className="text-[#FFBF00] text-sm font-bold">
+              Presented By:
             </span>
             <img
               src={btcLogo}
