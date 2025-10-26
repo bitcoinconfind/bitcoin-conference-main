@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
-  const INITIAL_COUNT = 43000;
-  const UPDATE_INTERVAL = 10000; // 10 seconds
-  const BASE_DATE = new Date('2025-10-25T00:00:00').getTime();
+  const INITIAL_COUNT = 50000;
+  const UPDATE_INTERVAL = 37000; // 10 seconds
+  const BASE_DATE = new Date('2025-10-26T00:00:00').getTime();
 
   // Calculate global count based on time since BASE_DATE with deterministic increases
   const getGlobalBaseCount = () => {
