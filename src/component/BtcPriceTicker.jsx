@@ -231,7 +231,7 @@ const BtcPriceTicker = () => {
             <img
               src={btcLogo}
               alt="BitcoinWala"
-              className="h-12 w-auto transition-transform duration-300"
+              className="h-16 w-auto transition-transform duration-300"
             />
           </div>
 

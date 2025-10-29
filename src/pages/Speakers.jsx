@@ -8,6 +8,7 @@ const Quote4 = "/assets/imgs/quote/Quote (4).png";
 const Quote5 = "/assets/imgs/quote/Quote (5).png";
 const Quote6 = "/assets/imgs/quote/Quote (6).png";
 const Quote7 = "/assets/imgs/quote/Quote (7).png";
+const Quote8 = "/assets/imgs/quote/Quote (8).png";
 
 // Mobile static image
 const QuoteMobile = "/assets/imgs/quote/Frame 47488.png";
@@ -16,7 +17,7 @@ const Speakers = () => {
   // Carousel state for desktop quote images
   const [currentQuote, setCurrentQuote] = useState(0);
 
-  const quoteImages = [Quote3, Quote4, Quote5, Quote6, Quote7];
+  const quoteImages = [Quote3, Quote4, Quote5, Quote6, Quote7, Quote8];
 
   // Auto-slide carousel every 5 seconds (slow animation)
   useEffect(() => {
