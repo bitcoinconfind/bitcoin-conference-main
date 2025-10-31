@@ -264,7 +264,7 @@ const BtcPriceTicker = () => {
         </div>
 
         {/* Desktop Layout - Vertical (same as mobile) */}
-        <div className="hidden md:flex flex-col items-center gap-3 w-full cursor-pointer group"
+        <div className="hidden md:flex flex-col items-start gap-3 w-full cursor-pointer group pl-0 -ml-12"
              onClick={() => setShowInr(!showInr)}>
           
           {/* Powered by BitcoinWala */}
@@ -280,11 +280,11 @@ const BtcPriceTicker = () => {
           </div>
 
           {/* Price Display with Auto Animation */}
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col items-center gap-1 -ml-6">
             <span className="text-white text-sm font-bold">
               <span className="text-[#FF8C00]">BTC</span>/{showInr ? 'INR' : 'USD'}
             </span>
-            
+
             {btcData.loading ? (
               <div className="h-6 w-40 bg-[#2a2a2a] animate-pulse rounded"></div>
             ) : (

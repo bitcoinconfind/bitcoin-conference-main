@@ -1,37 +1,9 @@
-import { useState } from 'react';
 import Button from './Button';
 
 const TicketCard = ({ tier, isPopular }) => {
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const tiltX = ((y - centerY) / centerY) * -10;
-    const tiltY = ((x - centerX) / centerX) * 10;
-
-    setTilt({ x: tiltX, y: tiltY });
-  };
-
-  const handleMouseLeave = () => {
-    setTilt({ x: 0, y: 0 });
-  };
-
   return (
     <div
-      className="ticket-card-container relative scale-[.85] md:scale-100"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg) scale(${tilt.x || tilt.y ? 1.05 : 1})`,
-        transition: 'transform 0.3s ease-out',
-      }}
+      className="ticket-card-container relative scale-[.85] md:scale-100 transition-all duration-500 ease-out hover:scale-[.90] md:hover:scale-105 hover:shadow-2xl hover:shadow-[#FFBF00]/20"
     >
       {/* Animated Border */}
       <div className="ticket-card-border absolute inset-0 rounded-2xl overflow-hidden pointer-events-none">
@@ -39,7 +11,7 @@ const TicketCard = ({ tier, isPopular }) => {
       </div>
 
       {/* Card Content */}
-      <div className="relative bg-[#1F1F1F] border border-[#585858] rounded-2xl p-4 md:p-6 hover:border-[#FFBF00] transition-all duration-300 flex flex-col h-full ticket-card-gradient">
+      <div className="relative bg-[#1F1F1F] border-2 border-[#585858] rounded-2xl p-4 md:p-6 hover:border-[#FFBF00] transition-all duration-500 flex flex-col h-full ticket-card-gradient hover:shadow-[0_20px_50px_rgba(255,191,0,0.3)]">
         {/* Popular Badge */}
         {isPopular && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
