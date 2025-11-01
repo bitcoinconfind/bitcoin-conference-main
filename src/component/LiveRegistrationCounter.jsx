@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 
 const LiveRegistrationCounter = () => {
-  const INITIAL_COUNT = 50000;
+  const INITIAL_COUNT = 57000;
   const UPDATE_INTERVAL = 73000; // 10 seconds
   const BASE_DATE = new Date('2025-11-01T00:00:00').getTime();
 
