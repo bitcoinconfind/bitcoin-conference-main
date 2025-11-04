@@ -66,7 +66,7 @@ const HeroSection = () => {
             {/* World's Largest Bitcoin Conference */}
             <div className="text-center mt-2 text-[3.5vw] sm:text-2xl lg:text-3xl font-bold italic whitespace-nowrap leading-none" style={{fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em'}}>
               <span className="text-white">World's Largest </span>
-              <span className="text-[#FF8C00]">Bitcoin</span>
+              <span className="text-[#f7931a]">Bitcoin</span>
               <span className="text-white"> Conference</span>
             </div>
           </FadeIn>
