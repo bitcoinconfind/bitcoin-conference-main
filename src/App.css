@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+
+body {
+  background-color: black;
+}
+
+.font-familjen {
+  font-family: "Familjen Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.font-familjen-med {
+  font-family: "Familjen Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-inter-semiBold {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Button Css */
+/* Add this in your global CSS or module CSS */
+.animated-border-btn {
+  position: relative;
+  padding: 12px 24px;
+  border-radius: 12px;
+  background: #FFBF00;
+  color: black;
+  font-weight: 600;
+  font-family: 'Familjen', sans-serif;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Pseudo-element for the border animation */
+.animated-border-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(312.82deg, #F69415 37.22%, #FFFFFF 49.57%, #F69415 60.14%);
+  background-size: 200% 200%;
+  animation: rotateBorder 3s linear infinite;
+}
+
+/* Mask the inner part to make it appear as a border */
+.animated-border-btn::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #FFBF00;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Keyframes for animation */
+@keyframes rotateBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
