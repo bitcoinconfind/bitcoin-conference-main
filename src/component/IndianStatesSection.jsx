@@ -83,22 +83,22 @@ const IndianStatesSection = () => {
               <FadeIn direction="up" delay={400} duration={800}>
                 <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
                   <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
-                    100%
-                  </div>
-                  <div className="text-white text-xs md:text-sm">
-                    India Coverage
-                  </div>
-                </div>
-              </FadeIn>
-
-              {/* Card 4: Population Reach */}
-              <FadeIn direction="up" delay={450} duration={800}>
-                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
                     1.4+
                   </div>
                   <div className="text-white text-xs md:text-sm">
                     Billion People
+                  </div>
+                </div>
+              </FadeIn>
+
+              {/* Card 4: Education Reach */}
+              <FadeIn direction="up" delay={450} duration={800}>
+                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                  <div className="text-2xl md:text-3xl font-bold text-[#FFBF00] mb-1 whitespace-nowrap" style={{fontFamily: 'Sora, sans-serif'}}>
+                    Year-Round
+                  </div>
+                  <div className="text-white text-xs md:text-sm">
+                    Of Education
                   </div>
                 </div>
               </FadeIn>
