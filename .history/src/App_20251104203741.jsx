@@ -14,8 +14,6 @@ import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import MediaInfo from "./pages/MediaInfo";
 import StudentVolunteerInfo from "./pages/StudentVolunteerInfo";
-import UsdCheckout from "./pages/UsdCheckout";
-import CryptoCheckout from "./pages/CryptoCheckout";
 
 function App() {
   return (
@@ -41,9 +39,6 @@ function App() {
           </Route>
           {/* Fallback: redirect any unknown route to homepage */}
           <Route path="*" element={<Navigate to="/" replace />} />
-          {/*Ticket Checkout Payment Routes Payment with USD Or Crypto*/}
-          <Route path="checkout/usd" element={<UsdCheckout />} />
-          <Route path="checkout/crypto" element={<CryptoCheckout />} />
         </Routes>
       </BrowserRouter>
     </>
