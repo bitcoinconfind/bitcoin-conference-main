@@ -3,6 +3,7 @@ import SponsorsSection from "../component/SponsorsSection";
 import TicketTiersSection from "../component/TicketTiersSection";
 import Speakers from "./Speakers";
 import WhyAttend from "./WhyAttend";
+import IndianStatesSection from "../component/IndianStatesSection";
 import Venue from "./Venue";
 import Footer from "./Footer";
 import Button from "../component/Button";
@@ -43,6 +44,7 @@ const Index = () => {
       <TicketTiersSection />
       <Speakers />
       <WhyAttend />
+      <IndianStatesSection />
       <Venue />
       <SponsorsSection />
       <Footer />
