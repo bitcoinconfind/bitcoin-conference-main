@@ -176,6 +176,7 @@ export const EMAIL_CONFIG = {
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone || 'Not provided'}</p>
           <p><strong>University:</strong> ${formData.university || 'Not provided'}</p>
+          <p><strong>City:</strong> ${formData.city || 'Not provided'}</p>
         </div>
 
         <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">

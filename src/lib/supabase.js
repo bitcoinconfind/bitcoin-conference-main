@@ -59,7 +59,7 @@ export const dbHelpers = {
         name: data.name,
         email: data.email,
         phone: data.phone || null,
-        university: data.university || null,
+        university: (data.city ? `${data.university} - ${data.city}` : data.university) || null,
         role_interest: data.roleInterest || null,
         availability: data.availability || null,
         message: data.message,
