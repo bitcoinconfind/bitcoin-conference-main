@@ -43,15 +43,12 @@
 }
 
 .loading-content {
-  position: absolute;
-  top: var(--content-top);
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: static; /* use flex centering from parent */
   z-index: 3;
   text-align: center;
   animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   padding: 0 12px; /* ensure breathing room on small screens */
-  max-width: 92vw;
+  max-width: 80vw;
   width: 100%;
 }
 
@@ -62,7 +59,7 @@
   font-style: italic;
   letter-spacing: -0.02em;
   line-height: 1.2;
-  white-space: nowrap;
+  white-space: normal;
   margin: 0;
   padding: 0 1rem;
   text-shadow: 0 0 30px rgba(255, 140, 0, 0.3);
@@ -307,6 +304,12 @@
   }
 
   .loading-screen { --content-top: 56%; }
+}
+
+/* Desktop refinements */
+@media (min-width: 1024px) {
+  .loading-text { font-size: clamp(28px, 3.8vw, 64px); white-space: nowrap; }
+  .word-spacer { width: 1.25rem; }
 }
 
 /* Small-height devices (landscape phones) */
