@@ -91,7 +91,7 @@ const Navigation = () => {
             <img
               src={logo}
               alt="BitIndia Logo"
-              className="h-6 sm:h-7 md:h-10 w-auto"
+              className="h-9 sm:h-11 md:h-16 lg:h-20 w-auto"
             />
           </a>
         </div>
