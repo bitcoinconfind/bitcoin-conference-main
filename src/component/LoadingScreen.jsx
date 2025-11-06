@@ -36,9 +36,6 @@ const LoadingScreen = ({ onLoadComplete }) => {
       {/* Animated background gradient */}
       <div className="loading-bg-gradient"></div>
 
-      {/* Floating Bitcoin symbol */}
-      <div className="floating-bitcoin">₿</div>
-
       <div className="loading-content">
         <h1 className="loading-text">
           <span className="text-white word-animate word-1">World's Largest</span>

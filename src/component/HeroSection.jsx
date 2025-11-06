@@ -63,12 +63,7 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* World's Largest Bitcoin Conference */}
-            <div className="text-center mt-2 text-[4.5vw] sm:text-3xl lg:text-4xl font-bold italic whitespace-nowrap leading-none" style={{fontFamily: 'Sora, sans-serif', letterSpacing: '-0.02em'}}>
-              <span className="text-white">World's Largest </span>
-              <span className="text-[#FF8C00]">Bitcoin</span>
-              <span className="text-white"> Conference</span>
-            </div>
+            {/* Headline removed from main hero (shown in LoadingScreen instead) */}
           </FadeIn>
 
           {/* Right Section - Side Item */}

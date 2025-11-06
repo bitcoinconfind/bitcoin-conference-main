@@ -13,6 +13,10 @@
   opacity: 1;
   transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  /* Mobile-first responsive variables */
+  --text-fs: clamp(18px, 6vw, 40px);
+  --content-top: 60%;
+  padding: env(safe-area-inset-top) 12px env(safe-area-inset-bottom);
 }
 
 .loading-screen--exit {
@@ -39,15 +43,21 @@
 }
 
 .loading-content {
-  position: relative;
-  z-index: 2;
+  position: absolute;
+  top: var(--content-top);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
   text-align: center;
   animation: fadeInSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  padding: 0 12px; /* ensure breathing room on small screens */
+  max-width: 92vw;
+  width: 100%;
 }
 
 .loading-text {
   font-family: 'Sora', sans-serif;
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: var(--text-fs);
   font-weight: 700;
   font-style: italic;
   letter-spacing: -0.02em;
@@ -73,7 +83,7 @@
 /* Word spacer for increased spacing between words */
 .word-spacer {
   display: inline-block;
-  width: 1.5rem;
+  width: 1.25rem;
 }
 
 /* Word animation - staggered entrance */
@@ -147,6 +157,8 @@
   animation: gridMove 20s linear infinite;
   opacity: 0.4;
 }
+
+/* (logo removed) */
 
 @keyframes gridMove {
   0% {
@@ -245,20 +257,42 @@
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
+  /* Switch to flow layout for rock-solid centering on phones */
+  .loading-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .loading-content {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    max-width: 90vw;
+    padding: 0 8px;
+  }
+
   .loading-text {
     white-space: normal;
     word-wrap: break-word;
-    font-size: clamp(1.25rem, 6vw, 2.5rem);
+    font-size: clamp(1.1rem, 5.8vw, 2.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-align: center;
   }
+
+  .word-spacer { width: 0.5rem; }
 
   .loading-bg-gradient {
     width: 200%;
     height: 200%;
   }
 
-  .floating-bitcoin {
-    font-size: 12rem;
-  }
+  .loading-screen { --content-top: 58%; }
 
   .particle {
     width: 3px;
@@ -268,10 +302,29 @@
 
 @media (max-width: 480px) {
   .loading-text {
-    font-size: clamp(1.125rem, 7vw, 2rem);
+    font-size: clamp(1rem, 6.8vw, 1.75rem);
+    line-height: 1.12;
   }
 
-  .floating-bitcoin {
-    font-size: 8rem;
+  .loading-screen { --content-top: 56%; }
+}
+
+/* Small-height devices (landscape phones) */
+@media (max-height: 700px) and (max-width: 900px) {
+  .loading-screen {
+    --logo-top: 30%;
+    --content-top: 62%;
+  }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bg-gradient,
+  .grid-background,
+  .particle,
+  .loading-text,
+  .loading-logo {
+    animation: none !important;
+    transition: none !important;
   }
 }
