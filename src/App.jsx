@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 import Layout from "./component/Layout";
 import Index from "./pages/Index";
 import ApplySponsor from "./pages/ApplySponsor";
@@ -14,10 +15,18 @@ import AdminLogin from "./pages/AdminLogin";
 import Admin from "./pages/Admin";
 import MediaInfo from "./pages/MediaInfo";
 import StudentVolunteerInfo from "./pages/StudentVolunteerInfo";
+import LoadingScreen from "./component/LoadingScreen";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
+
   return (
     <>
+      {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
