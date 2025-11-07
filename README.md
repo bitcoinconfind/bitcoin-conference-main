@@ -32,7 +32,7 @@
 - **World's Largest** - Unprecedented scale and reach
 - **Premium Content** - Curated sessions by industry leaders
 - **Networking Opportunities** - Connect with the global Bitcoin community
-- **Free Tickets Available** - Register now to win free tickets
+- **Free Tickets Available** - Register now to get free tickets
 - **Exclusive Merchandise** - Limited edition Bitcoin India merchandise
 
 ## 🛠️ Tech Stack

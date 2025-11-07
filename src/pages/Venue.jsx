@@ -61,7 +61,7 @@ const Venue = () => {
       img: venueFour,
       alt: "Amazon Campus Hyderabad",
       title: "Amazon Campus",
-      description: "The world's largest Amazon campus outside the US, spanning 9.5 acres with cutting-edge architecture and state-of-the-art facilities in the heart of Hyderabad's IT corridor.",
+      description: "The world's largest Amazon campus, spanning 9.5 acres with cutting-edge architecture and state-of-the-art facilities in the heart of Hyderabad's IT corridor.",
     },
   ];
   return (

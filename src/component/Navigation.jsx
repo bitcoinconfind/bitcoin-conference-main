@@ -107,7 +107,7 @@ const Navigation = () => {
         {/* Button at last */}
         <div className="flex-shrink-0 hidden md:block">
           <Button
-            label="Win Free Tickets"
+            label="Get Free Tickets"
             withStarBorder={true}
             starSpeed="5s"
             className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base"
@@ -115,10 +115,10 @@ const Navigation = () => {
           />
         </div>
 
-        {/* Mobile Win Free Tickets Button */}
+        {/* Mobile Get Free Tickets Button */}
         <div className="ml-auto md:hidden flex items-center gap-2">
           <Button
-            label="Win Free Tickets"
+            label="Get Free Tickets"
             variant="primary"
             withStarBorder={true}
             starSpeed="5s"

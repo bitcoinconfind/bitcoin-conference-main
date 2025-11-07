@@ -113,16 +113,14 @@ const LiveRegistrationCounter = () => {
                 <div className="text-left">
                   <div className="flex items-center gap-2">
                     <h3 className="text-white text-xl md:text-2xl font-semibold font-inter-semiBold">
-                      Live Registrations
+                      Sign-ups
                     </h3>
                     <div className="flex items-center gap-1 text-green-400 animate-pulse">
                       <span className="w-2 h-2 bg-green-400 rounded-full"></span>
                       <span className="text-xs font-medium">LIVE</span>
                     </div>
                   </div>
-                  <p className="text-gray-400 text-sm mt-1">
-                    People attending Bitcoin Conference 2026
-                  </p>
+
                 </div>
               </div>
 

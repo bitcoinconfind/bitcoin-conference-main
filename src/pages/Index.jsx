@@ -27,11 +27,11 @@ const Index = () => {
   return (
     <>
       <Home />
-      {/* Win Free Tickets CTA above Ticket Tiers */}
+      {/* Get Free Tickets CTA above Ticket Tiers */}
       <section className="pt-4 pb-8 px-4 bg-black mt-2">
         <div className="max-w-4xl mx-auto text-center">
           <Button
-            label="Win Free Tickets"
+            label="Get Free Tickets"
             variant="primary"
             withStarBorder={true}
             starSpeed="5s"

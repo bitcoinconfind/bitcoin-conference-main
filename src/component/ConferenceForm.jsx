@@ -23,7 +23,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
     <div className={`${isModal ? 'bg-black p-6 rounded-lg max-w-2xl mx-auto' : 'w-full'}`}>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-[#FFBF00] font-familjen">
-          Sign Up & Win Free Tickets!
+          Sign Up & Get Free Tickets!
         </h2>
         {isModal && onClose && (
           <button
