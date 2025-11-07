@@ -21,13 +21,13 @@ const IndianStatesSection = () => {
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{fontFamily: 'Sora, sans-serif'}}>
               <span className="text-white">ONE </span>
-              <span className="text-[#FF8C00]">NATION</span>
+              <span className="gradient-text">NATION</span>
               <span className="text-white"> ONE </span>
-              <span className="text-[#FF8C00]">BITCOIN</span>
+              <span className="gradient-text">BITCOIN</span>
               <span className="text-white"> MISSION</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-              Small-scale conferences across all 35 states and union territories of India,
+              Small-scale conferences across all 35 States and Union Territories of India,
               spreading Bitcoin awareness and education nationwide.
             </p>
           </div>
