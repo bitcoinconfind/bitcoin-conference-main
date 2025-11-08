@@ -27,7 +27,7 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: GAImg,
       features: [
-        "Entry to Bitcoin INDIA 2026",
+        "Entry to Bitcoin India 2026",
         "Full access to the Expo Hall, India's largest Bitcoin showcase",
         "Access to the Main Stage and interactive zones",
         "Open networking throughout the day"
@@ -35,7 +35,7 @@ const TicketTiersSection = () => {
     },
     {
       title: "VIP Pass",
-      price: "399",
+      price: "599",
       currency: "USD",
       image: VIPImg,
       features: [
