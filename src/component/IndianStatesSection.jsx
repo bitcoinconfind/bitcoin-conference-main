@@ -27,8 +27,8 @@ const IndianStatesSection = () => {
               <span className="text-white"> MISSION</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-              Small-scale conferences across all 35 States and Union Territories of India,
-              spreading Bitcoin awareness and education nationwide.
+              Regional Node Bitcoin Conferences across all 27 States & 8 Union Territories in their vernacular languages,
+              spreading Bitcoin awareness and education Nationwide
             </p>
           </div>
         </FadeIn>

@@ -102,7 +102,7 @@ const LiveRegistrationCounter = () => {
               {/* Left side - Icon and label */}
               <div className="flex items-center gap-4">
                 <div className="relative">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#FFBF00] to-[#F69415] flex items-center justify-center ${showPulse ? 'animate-pulse' : ''}`}>
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#FFBF00] to-[#F69415] flex items-center justify-center shadow-[0_0_20px_rgba(255,191,0,0.6)] ${showPulse ? 'animate-pulse' : ''}`}>
                     <FaUsers className="text-2xl text-black" />
                   </div>
                   {showPulse && (
@@ -154,7 +154,7 @@ const LiveRegistrationCounter = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">50K+</div>
-            <div className="text-xs text-gray-400 mt-1">Expected Attendees</div>
+            <div className="text-xs text-gray-400 mt-1">Attendees</div>
           </div>
           <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
             <div className="text-2xl font-bold text-[#FFBF00]">150+</div>

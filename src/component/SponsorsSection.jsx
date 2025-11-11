@@ -75,7 +75,7 @@ const SponsorsSection = () => {
         <div id="sponsors-cta" className="text-center scroll-mt-24">
           <a href="/apply/sponsor">
             <div className="inline-block">
-              <Button label="Apply to be a Sponsor" withStarBorder={true} starSpeed="5s" className="px-8 py-3 text-base" />
+              <Button label="Become a Sponsor" withStarBorder={true} starSpeed="5s" className="px-8 py-3 text-base" />
             </div>
           </a>
         </div>

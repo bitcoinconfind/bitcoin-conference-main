@@ -27,10 +27,11 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: GAImg,
       features: [
-        "Entry to Bitcoin India 2026",
-        "Full access to the Expo Hall, India's largest Bitcoin showcase",
-        "Access to the Main Stage and interactive zones",
-        "Open networking throughout the day"
+        "Access to Bitcoin Conference India 2026",
+        "Explore India's largest Bitcoin Expo & Experience Zone",
+        "Attend Main Stage sessions, panels, and community talks",
+        "Entry to interactive workshops and demo spaces",
+        "Meet and network with Bitcoin builders, investors, and enthusiasts"
       ]
     },
     {
@@ -40,10 +41,11 @@ const TicketTiersSection = () => {
       image: VIPImg,
       features: [
         "Everything in General Admission",
-        "Priority check in for faster entry",
-        "Access to the VIP Room",
-        "Complimentary coffee, refreshments, and lounge access",
-        "Access to the After Party"
+        "Priority check-in and express entry at all gates",
+        "Access to the exclusive VIP Lounge with refreshments and networking zones",
+        "Private roundtable discussions with speakers and partners",
+        "Evening VIP Mixer invite with investors and ecosystem leaders",
+        "Curated Bitcoin India merchandise kit"
       ]
     },
     {
@@ -52,13 +54,14 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: WhaleImg,
       features: [
-        "Everything in the VIP Pass",
-        "Dedicated registration concierge",
-        "Access to the speakers, the backstage Whale Lounge",
-        "Front row seating at the Main Stage",
-        "All inclusive gourmet dining and premium coffee service",
-        "Private Whale only sessions with top speakers",
-        "Invitation to Whale Night"
+        "All VIP benefits included",
+        "Personal concierge for entry, seating, and support",
+        "Access to Whale Lounge, private sessions with global speakers",
+        "Reserved seating at all Main Stage events",
+        "Gourmet dining and premium beverage service",
+        "Exclusive Whale Night,  a private celebration with key leaders",
+        "Invitation-only Investor & Policy Roundtable",
+        "Media and press visibility as a Whale supporter"
       ]
     }
   ];

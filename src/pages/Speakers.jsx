@@ -34,7 +34,7 @@ const Speakers = () => {
           <h1 className="metric-value leading-tight gradient-text">Speakers</h1>
           <p className="metric-label max-w-3xl mx-auto mt-3">
             Share your expertise with a high-intent audience of builders, investors, and media.
-            Our top speaker lineup is being curated and will be revealed soon — apply now to be part of it.
+            Our top speaker lineup is being curated and will be revealed soon , apply now to be part of it.
           </p>
         </div>
       </FadeIn>
