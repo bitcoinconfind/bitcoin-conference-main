@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "./component/Layout";
 import Index from "./pages/Index";
 import ApplySponsor from "./pages/ApplySponsor";
@@ -18,10 +18,21 @@ import StudentVolunteerInfo from "./pages/StudentVolunteerInfo";
 import LoadingScreen from "./component/LoadingScreen";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // Check if loading screen has already been shown in this session
+  const hasSeenLoadingScreen = sessionStorage.getItem('hasSeenLoadingScreen') === 'true';
+  const [isLoading, setIsLoading] = useState(!hasSeenLoadingScreen);
+
+  useEffect(() => {
+    // If loading screen was already shown, skip it
+    if (hasSeenLoadingScreen) {
+      setIsLoading(false);
+    }
+  }, [hasSeenLoadingScreen]);
 
   const handleLoadComplete = () => {
     setIsLoading(false);
+    // Mark that loading screen has been shown in this session
+    sessionStorage.setItem('hasSeenLoadingScreen', 'true');
   };
 
   return (
