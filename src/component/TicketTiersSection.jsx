@@ -104,7 +104,7 @@ const TicketTiersSection = () => {
                 <div className="metric-label text-base">Year</div>
               </div>
               <div className="text-center card-hover-lift">
-                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">FEB/2026</div>
+                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">MARCH</div>
                 <div className="metric-label text-base">Date</div>
               </div>
             </div>
