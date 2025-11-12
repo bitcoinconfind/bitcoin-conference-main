@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "./component/Layout";
 import Index from "./pages/Index";
 import ApplySponsor from "./pages/ApplySponsor";
@@ -19,10 +19,14 @@ import LoadingScreen from "./component/LoadingScreen";
 import StarfieldBackground from "./component/StarfieldBackground";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // Check if loading screen has been shown in this session
+  const hasSeenLoadingScreen = sessionStorage.getItem('hasSeenLoadingScreen');
+  const [isLoading, setIsLoading] = useState(!hasSeenLoadingScreen);
 
   const handleLoadComplete = () => {
     setIsLoading(false);
+    // Mark that user has seen the loading screen in this session
+    sessionStorage.setItem('hasSeenLoadingScreen', 'true');
   };
 
   return (

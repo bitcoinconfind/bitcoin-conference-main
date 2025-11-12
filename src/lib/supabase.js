@@ -165,7 +165,7 @@ export const dbHelpers = {
         contact_phone: data.contactPhone,
         website: data.website || null,
         linkedin: data.linkedin || null,
-        sponsorship_type: data.sponsorshipType,
+        sponsorship_type: data.sponsorshipType || null,
         budget_range: data.budgetRange,
         message: data.message,
         company_size: data.companySize || null,

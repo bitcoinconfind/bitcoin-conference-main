@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS sponsorship_inquiries (
   contact_phone TEXT NOT NULL,
   website TEXT,
   linkedin TEXT,
-  sponsorship_type TEXT NOT NULL,
+  sponsorship_type TEXT,
   budget_range TEXT NOT NULL,
   message TEXT NOT NULL,
   company_size TEXT,

@@ -11,7 +11,6 @@ const ApplySponsor = () => {
     contactPhone: "",
     website: "",
     linkedin: "",
-    sponsorshipType: "",
     budgetRange: "",
     message: "",
     companySize: "",
@@ -23,17 +22,6 @@ const ApplySponsor = () => {
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
   const [validationNotice, setValidationNotice] = useState("");
-
-  const sponsorshipTypes = [
-    "Platinum Sponsor",
-    "Gold Sponsor", 
-    "Silver Sponsor",
-    "Bronze Sponsor",
-    "Exhibitor",
-    "Media Partner",
-    "Custom Package",
-    "Not Sure"
-  ];
 
   const budgetRanges = [
     "$5,000 - $10,000",
@@ -55,11 +43,22 @@ const ApplySponsor = () => {
 
   const industries = [
     "Cryptocurrency/Blockchain",
+    "Bitcoin Mining",
+    "Hardware Wallet",
+    "Crypto Exchange",
+    "Payment Processor",
+    "Custody & Security",
     "Financial Services",
-    "Technology",
+    "Banking & Traditional Finance",
     "Investment/VC",
+    "Asset Management",
+    "Technology",
+    "Software Development",
+    "Infrastructure Provider",
     "Media",
     "Education",
+    "Legal & Compliance",
+    "Consulting",
     "Government",
     "Other"
   ];
@@ -87,10 +86,6 @@ const ApplySponsor = () => {
       newErrors.contactPhone = "Phone number is invalid";
     }
     
-    if (!formData.sponsorshipType) {
-      newErrors.sponsorshipType = "Please select a sponsorship type";
-    }
-    
     if (!formData.budgetRange) {
       newErrors.budgetRange = "Please select a budget range";
     }
@@ -110,7 +105,6 @@ const ApplySponsor = () => {
         contactName: "Contact Person Name",
         contactEmail: "Contact Email",
         contactPhone: "Contact Phone",
-        sponsorshipType: "Type of Sponsorship",
         budgetRange: "Budget Range",
         message: "Additional Information",
       };
@@ -190,7 +184,6 @@ const ApplySponsor = () => {
         contactPhone: "",
         website: "",
         linkedin: "",
-        sponsorshipType: "",
         budgetRange: "",
         message: "",
         companySize: "",
@@ -392,27 +385,6 @@ const ApplySponsor = () => {
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Sponsorship Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="sponsorshipType" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Type of Sponsorship *
-                  </label>
-                  <select
-                    id="sponsorshipType"
-                    name="sponsorshipType"
-                    value={formData.sponsorshipType}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
-                      errors.sponsorshipType ? 'border-red-500' : 'border-[#585858]'
-                    }`}
-                  >
-                    <option value="">Select sponsorship type</option>
-                    {sponsorshipTypes.map((type) => (
-                      <option key={type} value={type}>{type}</option>
-                    ))}
-                  </select>
-                  {errors.sponsorshipType && <p className="text-red-400 text-sm mt-1">{errors.sponsorshipType}</p>}
-                </div>
-
                 <div>
                   <label htmlFor="budgetRange" className="block text-sm font-inter-semiBold text-white mb-2">
                     Budget Range *
