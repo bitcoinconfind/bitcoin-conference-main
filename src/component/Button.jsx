@@ -18,7 +18,7 @@ const Button = ({
     "px-6 py-2 rounded-lg font-semibold transition duration-300";
   const variants = {
     primary:
-      "bg-[#FFBF00] font-familjen border border-2 border-[#585858] text-black cursor-pointer font-semibold",
+      "bg-[#f7931a] font-familjen border border-2 border-[#585858] text-black cursor-pointer font-semibold",
     secondary:
       "bg-[#FFFFFF] font-familjen border border-3 border-[#585858] text-black cursor-pointer",
     general:

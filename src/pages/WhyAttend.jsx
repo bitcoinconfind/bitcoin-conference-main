@@ -16,33 +16,33 @@ const WhyAttend = () => {
         <FadeIn direction="up" delay={200} duration={800}>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 px-4 sm:px-6 lg:px-0">
             {/* Card 1 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">VIP Experience</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Satoshi Lounge</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  Access premium lounges, hosted meet‑ups, and curated small‑group sessions with headline speakers and ecosystem leaders.
+                  A private space for founders, investors, and policymakers to connect, share insights, and spark high-value conversations that shape Bitcoin's future in India.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
             </div>
 
             {/* Card 2 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Art Gallery</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Bitcoin Bazaar</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  Explore Bitcoin‑inspired art and installations that bring culture, creativity, and open‑source values together.
+                  The heart of innovation where startups, miners, and builders showcase real products and infrastructure powering the Bitcoin economy.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
             </div>
 
             {/* Card 3 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Expo Hall</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Bitcoin Art District</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  India's largest Bitcoin showcase—products, dev tools, Lightning, mining, security, infra, wallets, exchanges, and enterprise.
+                  Experience Bitcoin through creativity. Walk through installations, live art, and digital displays inspired by freedom, finance, and the orange revolution.
                 </p>
               </div>
             </div>
@@ -56,33 +56,33 @@ const WhyAttend = () => {
         <FadeIn direction="up" delay={400} duration={800}>
           <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 px-4 sm:px-6 lg:px-0">
             {/* Card 4 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Networking</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Network Square</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  Meet founders, devs, investors, and partners across structured meet‑ups, themed lounges, and targeted matchmaking.
+                  Meet the people building the future. Curated meetups, partnerships, and collaborations designed to help every conversation turn into opportunity.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
             </div>
 
             {/* Card 5 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Official Store</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Merch & Collectibles</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  Exclusive drops, limited merchandise, and collectibles from the event and ecosystem partners.
+                  Limited edition Bitcoin Conference India gear, art collabs, and memorabilia you'll want to hold not trade. Once it's gone, it's gone.
                 </p>
               </div>
               <div className="hidden lg:block w-[1px] h-full bg-gradient-to-b from-[#010101] via-[#FBF5EE] to-[#010101]"></div>
             </div>
 
             {/* Card 6 */}
-            <div className="flex flex-col lg:flex-row items-start gap-4 lg:gap-6 w-full card-hover-lift">
-              <div className="flex-1">
-                <h3 className="text-[#FFBF00] font-sora font-semibold text-xl sm:text-2xl mb-3 uppercase tracking-tight">Main Stage</h3>
+            <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 w-full card-hover-lift">
+              <div className="flex-1 text-center">
+                <h3 className="text-[#f7931a] font-sora font-semibold text-xl sm:text-2xl mb-3 tracking-tight">Main Stage</h3>
                 <p className="metric-label text-base sm:text-lg">
-                  World‑class keynotes and panels featuring global voices shaping Bitcoin's next decade across tech, policy, finance, and adoption.
+                  The center of it all, where global Bitcoin leaders, innovators, and policymakers come together to discuss, debate, and define what's next.
                 </p>
               </div>
             </div>

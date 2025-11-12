@@ -98,19 +98,20 @@ const Navigation = () => {
 
         {/* Nav Links (desktop, centered) */}
         <nav className="flex-1 hidden md:flex items-center justify-center gap-10 uppercase">
-          <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#FFBF00]">Speakers</a>
-          <a href="/#sponsors-cta" onClick={(e) => goToId(e, 'sponsors-cta')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#FFBF00]">Sponsors</a>
-          <Link to="/media" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#FFBF00]">Partnerships</Link>
-          <Link to="/student-volunteer" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#FFBF00]">Volunteer</Link>
-          <Link to="/contact" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#FFBF00]">Contact Us</Link>
+          <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Speakers</a>
+          <a href="/#sponsors-cta" onClick={(e) => goToId(e, 'sponsors-cta')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Sponsors</a>
+          <Link to="/media" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Partnerships</Link>
+          <Link to="/student-volunteer" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Volunteer</Link>
+          <Link to="/contact" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Contact Us</Link>
         </nav>
         {/* Button at last */}
         <div className="flex-shrink-0 hidden md:block">
           <Button
             label="Get Free Tickets"
+            variant="primary"
             withStarBorder={true}
             starSpeed="5s"
-            className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base"
+            className="px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm md:text-base !bg-[#f7931a] text-black font-semibold"
             onClick={handleWinFreeTickets}
           />
         </div>
@@ -122,7 +123,7 @@ const Navigation = () => {
             variant="primary"
             withStarBorder={true}
             starSpeed="5s"
-            className="px-3 py-1.5 text-xs font-semibold bg-[#FFBF00] text-black transform hover:scale-105 transition-all duration-300 shadow-md"
+            className="px-3 py-1.5 text-xs font-semibold !bg-[#f7931a] text-black transform hover:scale-105 transition-all duration-300 shadow-md"
             onClick={handleWinFreeTickets}
           />
           <Hamburger />

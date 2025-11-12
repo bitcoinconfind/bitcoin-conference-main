@@ -20,8 +20,7 @@ const IndianStatesSection = () => {
               <span className="text-white"> MISSION</span>
             </h2>
             <p className="text-gray-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto">
-              Small-scale conferences across all 35 States and Union Territories of India,
-              spreading Bitcoin awareness and education nationwide.
+              Regional Node Bitcoin Conferences across all 27 States & 8 Union Territories in their vernacular languages, spreading Bitcoin awareness and education Nationwide
             </p>
           </div>
         </FadeIn>
@@ -50,8 +49,8 @@ const IndianStatesSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 w-full max-w-5xl mx-auto">
               {/* Card 1: States Coverage */}
               <FadeIn direction="up" delay={300} duration={800}>
-                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
+                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                  <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
                     35+
                   </div>
                   <div className="text-white text-xs md:text-sm">
@@ -62,8 +61,8 @@ const IndianStatesSection = () => {
 
               {/* Card 2: Regional Languages */}
               <FadeIn direction="up" delay={350} duration={800}>
-                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
+                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                  <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
                     30+
                   </div>
                   <div className="text-white text-xs md:text-sm">
@@ -74,8 +73,8 @@ const IndianStatesSection = () => {
 
               {/* Card 3: Reach */}
               <FadeIn direction="up" delay={400} duration={800}>
-                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
-                  <div className="text-3xl md:text-4xl font-bold text-[#FFBF00] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
+                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                  <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
                     1.4+
                   </div>
                   <div className="text-white text-xs md:text-sm">
@@ -86,8 +85,8 @@ const IndianStatesSection = () => {
 
               {/* Card 4: Education Reach */}
               <FadeIn direction="up" delay={450} duration={800}>
-                <div className="border border-[#FFBF00]/30 rounded-lg px-4 py-4 text-center hover:border-[#FFBF00] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
-                  <div className="text-2xl md:text-3xl font-bold text-[#FFBF00] mb-1 whitespace-nowrap" style={{fontFamily: 'Sora, sans-serif'}}>
+                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                  <div className="text-2xl md:text-3xl font-bold text-[#f7931a] mb-1 whitespace-nowrap" style={{fontFamily: 'Sora, sans-serif'}}>
                     Year-Round
                   </div>
                   <div className="text-white text-xs md:text-sm">
@@ -104,7 +103,7 @@ const IndianStatesSection = () => {
                   label="Explore State Events"
                   variant="primary"
                   withStarBorder={false}
-                  className="px-10 py-4 text-base md:text-lg font-bold bg-[#FFBF00] text-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg"
+                  className="px-10 py-4 text-base md:text-lg font-bold bg-[#f7931a] text-black rounded-full transform hover:scale-105 transition-all duration-300 shadow-lg"
                 />
               </div>
             </FadeIn> */}

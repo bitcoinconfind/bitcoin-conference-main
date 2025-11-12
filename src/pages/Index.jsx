@@ -34,7 +34,7 @@ const Index = () => {
           variant="primary"
           withStarBorder={true}
           starSpeed="5s"
-          className="px-8 py-4 text-lg font-semibold bg-[#FFBF00] text-black transform hover:scale-105 transition-all duration-300 shadow-md"
+          className="px-8 py-4 text-lg font-semibold !bg-[#f7931a] text-black transform hover:scale-105 transition-all duration-300 shadow-md"
           onClick={handleWinFreeTickets}
         />
       </div>

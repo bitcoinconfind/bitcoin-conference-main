@@ -27,10 +27,11 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: GAImg,
       features: [
-        "Admission to Bitcoin India Conference 2026",
-        "Complete access to India's premier Bitcoin Expo Hall",
-        "Explore the Main Stage presentations and interactive areas",
-        "All-day networking opportunities with attendees"
+        "Access to Bitcoin Conference India 2026",
+        "Explore India's largest Bitcoin Expo & Experience Zone",
+        "Attend Main Stage sessions, panels, and community talks",
+        "Entry to interactive workshops and demo spaces",
+        "Meet and network with Bitcoin builders, investors, and enthusiasts"
       ]
     },
     {
@@ -39,26 +40,28 @@ const TicketTiersSection = () => {
       currency: "USD",
       image: VIPImg,
       features: [
-        "All General Admission benefits included",
-        "Fast-track registration and entry privileges",
-        "Exclusive VIP Lounge access",
-        "Premium beverages, snacks, and private relaxation area",
-        "Official After Party invitation"
+        "Everything in General Admission",
+        "Priority check-in and express entry at all gates",
+        "Access to the exclusive VIP Lounge with refreshments and networking zones",
+        "Private roundtable discussions with speakers and partners",
+        "Evening VIP Mixer invite with investors and ecosystem leaders",
+        "Curated Bitcoin India merchandise kit"
       ]
     },
     {
-      title: "Whale Pass",
+      title: "Satoshi Pass",
       price: "2999",
       currency: "USD",
       image: WhaleImg,
       features: [
-        "Complete VIP Pass benefits included",
-        "Personal concierge for registration assistance",
-        "Backstage Whale Lounge with direct speaker access",
-        "Reserved front row seats at Main Stage events",
-        "Full-service gourmet meals and premium beverage station",
-        "Exclusive private sessions with industry-leading speakers",
-        "Special invitation to the exclusive Whale Night event"
+        "All VIP benefits included",
+        "Personal concierge for entry, seating, and support",
+        "Access to Satoshi Lounge, private sessions with global speakers",
+        "Reserved seating at all Main Stage events",
+        "Gourmet dining and premium beverage service",
+        "Exclusive Satoshi Night, a private celebration with key leaders",
+        "Invitation-only Investor & Policy Roundtable",
+        "Media and press visibility as a Whale supporter"
       ]
     }
   ];
@@ -93,15 +96,15 @@ const TicketTiersSection = () => {
           <div className="mt-12 text-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
               <div className="text-center card-hover-lift">
-                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">Hyderabad</div>
+                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">Hyderabad</div>
                 <div className="metric-label text-base">Location</div>
               </div>
               <div className="text-center card-hover-lift">
-                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">2026</div>
+                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">2026</div>
                 <div className="metric-label text-base">Year</div>
               </div>
               <div className="text-center card-hover-lift">
-                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">FEB/2026</div>
+                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">FEBRUARY</div>
                 <div className="metric-label text-base">Date</div>
               </div>
             </div>

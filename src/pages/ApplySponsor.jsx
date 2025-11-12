@@ -213,7 +213,7 @@ const ApplySponsor = () => {
         <div className="mb-8">
           <Link 
             to="/" 
-            className="inline-flex items-center text-[#FFBF00] hover:text-[#CB7608] transition-colors"
+            className="inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -250,7 +250,7 @@ const ApplySponsor = () => {
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.companyName ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter your company name"
@@ -267,7 +267,7 @@ const ApplySponsor = () => {
                     name="industry"
                     value={formData.industry}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
                   >
                     <option value="">Select your industry</option>
                     {industries.map((industry) => (
@@ -285,7 +285,7 @@ const ApplySponsor = () => {
                     name="companySize"
                     value={formData.companySize}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
                   >
                     <option value="">Select company size</option>
                     {companySizes.map((size) => (
@@ -305,7 +305,7 @@ const ApplySponsor = () => {
                     name="website"
                     value={formData.website}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
                     placeholder="https://yourcompany.com"
                   />
                 </div>
@@ -326,7 +326,7 @@ const ApplySponsor = () => {
                     name="contactName"
                     value={formData.contactName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.contactName ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter contact person's name"
@@ -344,7 +344,7 @@ const ApplySponsor = () => {
                     name="contactEmail"
                     value={formData.contactEmail}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.contactEmail ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter contact email address"
@@ -362,7 +362,7 @@ const ApplySponsor = () => {
                     name="contactPhone"
                     value={formData.contactPhone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.contactPhone ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter contact phone number"
@@ -381,7 +381,7 @@ const ApplySponsor = () => {
                     name="linkedin"
                     value={formData.linkedin}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
                     placeholder="https://linkedin.com/company/yourcompany"
                   />
                 </div>
@@ -401,7 +401,7 @@ const ApplySponsor = () => {
                     name="sponsorshipType"
                     value={formData.sponsorshipType}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.sponsorshipType ? 'border-red-500' : 'border-[#585858]'
                     }`}
                   >
@@ -422,7 +422,7 @@ const ApplySponsor = () => {
                     name="budgetRange"
                     value={formData.budgetRange}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
                       errors.budgetRange ? 'border-red-500' : 'border-[#585858]'
                     }`}
                   >
@@ -450,7 +450,7 @@ const ApplySponsor = () => {
                     value={formData.goals}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
                     placeholder="What are your main goals for sponsoring this event?"
                   />
                 </div>
@@ -465,7 +465,7 @@ const ApplySponsor = () => {
                     value={formData.previousSponsorship}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
                     placeholder="Have you sponsored similar events before? Please describe your experience."
                   />
                 </div>
@@ -480,7 +480,7 @@ const ApplySponsor = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     rows={4}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
                       errors.message ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Tell us more about your company, specific requirements, or any questions you have about sponsorship opportunities..."
@@ -530,7 +530,7 @@ const ApplySponsor = () => {
               Questions? Contact our sponsorship team at{" "}
               <a 
                 href="mailto:sponsors@btcindia.media" 
-                className="text-[#FFBF00] hover:underline"
+                className="text-[#f7931a] hover:underline"
               >
                 sponsors@btcindia.media
               </a>
