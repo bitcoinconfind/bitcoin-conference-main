@@ -65,7 +65,7 @@ const Venue = () => {
     },
   ];
   return (
-    <div className="relative w-full z-0">
+    <section className="relative w-full z-0">
       {/* Venue Hero Image Carousel with Text Overlay */}
       <div className="relative w-full flex justify-center px-5 z-10 mt-6 sm:mt-10 md:mt-12">
         <div className="relative w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] border border-gray-500 rounded-lg overflow-hidden">
@@ -96,12 +96,12 @@ const Venue = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
               <span className="text-white">Venue Announcement</span>
               <br />
-              <span className="text-[#f7931a]">Coming Soon</span>
+              <span className="text-[#FFBF00]">Coming Soon</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-white mb-5 sm:mb-6">
               We're securing an iconic location in Hyderabad that will perfectly complement the scale and significance of India's premier Bitcoin conference.
             </p>
-            <button className="px-6 py-3 bg-transparent hover:bg-[#f7931a]/20 border-2 border-[#f7931a] rounded-full text-sm sm:text-base font-semibold gradient-text transition-all duration-300 shadow-[0_0_15px_rgba(247,147,26,0.4)] hover:shadow-[0_0_30px_rgba(247,147,26,0.7)] hover:scale-105">
+            <button className="px-6 py-3 bg-[#FFBF00]/20 hover:bg-[#FFBF00]/30 border-2 border-[#FFBF00] rounded-full text-sm sm:text-base font-semibold text-[#FFBF00] transition-all duration-300">
               Stay tuned for the big reveal
             </button>
           </div>
@@ -159,7 +159,7 @@ const Venue = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

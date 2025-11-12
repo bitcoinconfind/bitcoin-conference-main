@@ -49,17 +49,17 @@ const TicketTiersSection = () => {
       ]
     },
     {
-      title: "Satoshi Pass",
+      title: "Whale Pass",
       price: "2999",
       currency: "USD",
       image: WhaleImg,
       features: [
         "All VIP benefits included",
         "Personal concierge for entry, seating, and support",
-        "Access to Satoshi Lounge, private sessions with global speakers",
+        "Access to Whale Lounge, private sessions with global speakers",
         "Reserved seating at all Main Stage events",
         "Gourmet dining and premium beverage service",
-        "Exclusive Satoshi Night, a private celebration with key leaders",
+        "Exclusive Whale Night,  a private celebration with key leaders",
         "Invitation-only Investor & Policy Roundtable",
         "Media and press visibility as a Whale supporter"
       ]
@@ -67,7 +67,7 @@ const TicketTiersSection = () => {
   ];
 
   return (
-    <div id="tickets" className="max-w-7xl mx-auto">
+    <div id="tickets" className="py-16 px-4 sm:px-8 lg:px-20 bg-black">
       {/* Header Section (removed Coming Soon per request) */}
       <FadeIn direction="up" duration={800}>
         <div className="text-center mb-8">
@@ -77,7 +77,7 @@ const TicketTiersSection = () => {
       </FadeIn>
 
       {/* Ticket Tiers Section */}
-      <div>
+      <div className="max-w-7xl mx-auto">
         
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 -my-4 md:my-0">
@@ -96,15 +96,15 @@ const TicketTiersSection = () => {
           <div className="mt-12 text-center">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white">
               <div className="text-center card-hover-lift">
-                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">Hyderabad</div>
+                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">Hyderabad</div>
                 <div className="metric-label text-base">Location</div>
               </div>
               <div className="text-center card-hover-lift">
-                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">2026</div>
+                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">2026</div>
                 <div className="metric-label text-base">Year</div>
               </div>
               <div className="text-center card-hover-lift">
-                <div className="text-[#f7931a] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">FEBRUARY</div>
+                <div className="text-[#FFBF00] font-sora font-bold text-3xl sm:text-4xl mb-2 tracking-tight">FEB/2026</div>
                 <div className="metric-label text-base">Date</div>
               </div>
             </div>
@@ -116,6 +116,7 @@ const TicketTiersSection = () => {
           <div className="w-full h-[1px] border-t border-[0.5px] [border-image-source:linear-gradient(90deg,#010101_20.49%,#FBF5EE_47.96%,#010101_84.28%)] [border-image-slice:1]"></div>
         </div>
       </div>
+      
     </div>
   );
 };

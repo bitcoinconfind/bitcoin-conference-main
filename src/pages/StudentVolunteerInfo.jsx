@@ -9,7 +9,7 @@ const StudentVolunteerInfo = () => {
         <div className="mb-6">
           <Link 
             to="/" 
-            className="inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors"
+            className="inline-flex items-center text-[#FFBF00] hover:text-[#CB7608] transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -39,7 +39,7 @@ const StudentVolunteerInfo = () => {
 
         <div className="text-center">
           <a href="/contact/student-volunteer">
-            <button className="bg-[#f7931a] text-black font-semibold px-6 py-3 rounded-lg">Apply as Student / Volunteer</button>
+            <button className="bg-[#FFBF00] text-black font-semibold px-6 py-3 rounded-lg hover:bg-[#CB7608]">Apply as Student / Volunteer</button>
           </a>
         </div>
 
@@ -47,7 +47,7 @@ const StudentVolunteerInfo = () => {
         <div className="mt-8 text-center">
           <p className="metric-label">
             Prefer email? Reach us at {" "}
-            <a href="mailto:satoshi@btcindia.media" className="text-[#f7931a] hover:underline">team@btcindia.media</a>.
+            <a href="mailto:satoshi@btcindia.media" className="text-[#FFBF00] hover:underline">satoshi@btcindia.media</a>.
           </p>
         </div>
       </div>

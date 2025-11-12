@@ -68,14 +68,15 @@ const ConferenceMetrics = () => {
   const { containerRef, getItemProps } = useStaggeredScrollAnimation(metrics.length, { staggerDelay: 100 });
 
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* SEO-friendly heading */}
-      <h2 id="conference-metrics" className="sr-only">Bitcoin Conference India 2026 Statistics and Metrics</h2>
+    <section className="py-16 px-4 bg-black" aria-labelledby="conference-metrics">
+      <div className="max-w-7xl mx-auto">
+        {/* SEO-friendly heading */}
+        <h2 id="conference-metrics" className="sr-only">Bitcoin Conference India 2026 Statistics and Metrics</h2>
 
         {/* Metrics Container with Elegant Glowing Border */}
-        <div className="relative bg-black border-2 border-[#f7931a] rounded-2xl p-8 shadow-2xl card-hover-lift">
+        <div className="relative bg-black border-2 border-[#FFBF00] rounded-2xl p-8 shadow-2xl card-hover-lift">
           {/* Glowing border effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#f7931a] via-[#CB7608] to-[#f7931a] rounded-2xl opacity-20 blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#FFBF00] via-[#CB7608] to-[#FFBF00] rounded-2xl opacity-20 blur-sm"></div>
 
           {/* Content */}
           <div className="relative z-10" ref={containerRef}>
@@ -93,7 +94,8 @@ const ConferenceMetrics = () => {
             </div>
           </div>
         </div>
-    </div>
+      </div>
+    </section>
   );
 };
 

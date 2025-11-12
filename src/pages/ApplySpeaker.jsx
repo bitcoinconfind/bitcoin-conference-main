@@ -169,7 +169,7 @@ const ApplySpeaker = () => {
         <div className="mb-8">
           <Link 
             to="/" 
-            className="inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors"
+            className="inline-flex items-center text-[#FFBF00] hover:text-[#CB7608] transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -206,7 +206,7 @@ const ApplySpeaker = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
                       errors.name ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter your full name"
@@ -224,7 +224,7 @@ const ApplySpeaker = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
                       errors.email ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter your email address"
@@ -242,7 +242,7 @@ const ApplySpeaker = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
                       errors.phone ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Enter your phone number"
@@ -260,7 +260,7 @@ const ApplySpeaker = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
                     placeholder="Your current company or organization"
                   />
                 </div>
@@ -275,7 +275,7 @@ const ApplySpeaker = () => {
                     name="jobTitle"
                     value={formData.jobTitle}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
                     placeholder="Your current job title"
                   />
                 </div>
@@ -295,7 +295,7 @@ const ApplySpeaker = () => {
                   value={formData.bio}
                   onChange={handleInputChange}
                   rows={4}
-                  className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
+                  className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical ${
                     errors.bio ? 'border-red-500' : 'border-[#585858]'
                   }`}
                   placeholder="Tell us about your background, expertise, and achievements..."
@@ -319,7 +319,7 @@ const ApplySpeaker = () => {
                     name="topicTitle"
                     value={formData.topicTitle}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent ${
                       errors.topicTitle ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="What is the title of your proposed talk?"
@@ -337,7 +337,7 @@ const ApplySpeaker = () => {
                     value={formData.topicAbstract}
                     onChange={handleInputChange}
                     rows={6}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical ${
                       errors.topicAbstract ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Provide a detailed description of your talk, key points, and what attendees will learn..."
@@ -362,7 +362,7 @@ const ApplySpeaker = () => {
                     value={formData.experience}
                     onChange={handleInputChange}
                     rows={4}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical ${
                       errors.experience ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Describe your previous speaking engagements, conferences, workshops, etc."
@@ -380,7 +380,7 @@ const ApplySpeaker = () => {
                     value={formData.audience}
                     onChange={handleInputChange}
                     rows={3}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical ${
                       errors.audience ? 'border-red-500' : 'border-[#585858]'
                     }`}
                     placeholder="Who is your target audience? What level of expertise should they have?"
@@ -404,7 +404,7 @@ const ApplySpeaker = () => {
                     value={formData.previousSpeaking}
                     onChange={handleInputChange}
                     rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent resize-vertical"
                     placeholder="List specific conferences, events, or platforms where you've spoken"
                   />
                 </div>
@@ -420,7 +420,7 @@ const ApplySpeaker = () => {
                       name="linkedin"
                       value={formData.linkedin}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
                       placeholder="https://linkedin.com/in/username"
                     />
                   </div>
@@ -435,7 +435,7 @@ const ApplySpeaker = () => {
                       name="twitter"
                       value={formData.twitter}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
                       placeholder="@username"
                     />
                   </div>
@@ -450,7 +450,7 @@ const ApplySpeaker = () => {
                       name="website"
                       value={formData.website}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent"
                       placeholder="https://yourwebsite.com"
                     />
                   </div>
@@ -497,7 +497,7 @@ const ApplySpeaker = () => {
               Questions? Contact us at{" "}
               <a 
                 href="mailto:speakers@btcindia.media" 
-                className="text-[#f7931a] hover:underline"
+                className="text-[#FFBF00] hover:underline"
               >
                 speakers@btcindia.media
               </a>

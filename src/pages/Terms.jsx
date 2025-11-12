@@ -9,7 +9,7 @@ const Terms = () => {
         <div className="mb-8">
           <Link 
             to="/" 
-            className="inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors"
+            className="inline-flex items-center text-[#FFBF00] hover:text-[#CB7608] transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -62,7 +62,7 @@ const Terms = () => {
           </section>
 
           <section className="mb-8">
-            <h2 className="subheading text-[#f7931a] mb-4">6. Contact Information</h2>
+            <h2 className="subheading text-[#FFBF00] mb-4">6. Contact Information</h2>
             <p className="text-gray-300 leading-relaxed">
               If you have any questions about these Terms & Conditions, please contact us at contact@btcindia.media
             </p>

@@ -132,7 +132,7 @@ const BtcSidebarWidget = () => {
     >
       <div className={`
         bg-gradient-to-br from-black via-[#1a1a1a] to-black
-        border-2 border-[#f7931a]
+        border-2 border-[#FFBF00]
         rounded-lg
         shadow-2xl
         transition-all duration-300 ease-in-out
@@ -162,7 +162,7 @@ const BtcSidebarWidget = () => {
               {btcData.loading ? (
                 <div className="h-6 w-24 bg-[#2a2a2a] animate-pulse rounded"></div>
               ) : (
-                <span className="text-[#f7931a] font-bold text-lg">
+                <span className="text-[#FFBF00] font-bold text-lg">
                   {formatPrice(btcData.price)}
                 </span>
               )}

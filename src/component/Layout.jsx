@@ -23,7 +23,7 @@ const Layout = () => {
   return (
     <>
       <Navigation />
-      <main className="relative z-10">
+      <main className="">
         <Outlet />
       </main>
     </>

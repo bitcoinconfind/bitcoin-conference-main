@@ -9,7 +9,7 @@ export function StarBorder({
   ...props
 }) {
   const Component = as || "div"
-  const defaultColor = color || "#f7931a"
+  const defaultColor = color || "#FFBF00"
 
   return (
     <Component
