@@ -126,12 +126,12 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
-      <div className="max-w-5xl w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-10 text-white shadow-xl">
+    <section className="min-h-[70vh] w-full px-4 sm:px-8 lg:px-20 py-20 text-white">
+      <div className="max-w-5xl mx-auto">
         {/* Back Button */}
         <div className="mb-6">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,24 +147,24 @@ const Contact = () => {
 
           {/* Unified cards: email first, then CTA */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
-              <h3 className="metric-value mb-2">General Queries</h3>
+            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#f7931a] transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">General Queries</h3>
               <div className="metric-label mb-4">
                 Reach us directly at <a href="mailto:contact@btcindia.media" className="text-[#f7931a] hover:underline">contact@btcindia.media</a>
               </div>
               <p className="metric-label mb-4">Ask us anything about the conference.</p>
               <button onClick={() => window.location.href='/contact/general'} className="w-full bg-[#f7931a] text-black font-semibold py-2 rounded-md mt-auto">Fill the form</button>
             </div>
-            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
-              <h3 className="metric-value mb-2">Speaker Applications</h3>
+            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#f7931a] transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Speaker Applications</h3>
               <div className="metric-label mb-4">
                 Reach us directly at <a href="mailto:speakers@btcindia.media" className="text-[#f7931a] hover:underline">speakers@btcindia.media</a>
               </div>
               <p className="metric-label mb-4">Apply to speak at the conference and share your expertise.</p>
               <button onClick={() => window.location.href='/apply/speaker'} className="w-full bg-[#f7931a] text-black font-semibold py-2 rounded-md mt-auto">Apply to Speak</button>
             </div>
-            <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6 flex flex-col min-h-[260px]">
-              <h3 className="metric-value mb-2">Sponsor Inquiries</h3>
+            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#f7931a] transition-all duration-500">
+              <h3 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Sponsor Inquiries</h3>
               <div className="metric-label mb-4">
                 Reach us directly at <a href="mailto:sponsors@btcindia.media" className="text-[#f7931a] hover:underline">sponsors@btcindia.media</a>
               </div>

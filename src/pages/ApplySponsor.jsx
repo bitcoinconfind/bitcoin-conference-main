@@ -234,11 +234,11 @@ const ApplySponsor = () => {
 
         
 
-        <div className="bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8">
+        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#f7931a] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div>
-              <h2 className="metric-value mb-4">Company Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Company Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="companyName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -314,7 +314,7 @@ const ApplySponsor = () => {
 
             {/* Contact Information */}
             <div>
-              <h2 className="metric-value mb-4">Contact Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Contact Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contactName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -390,7 +390,7 @@ const ApplySponsor = () => {
 
             {/* Sponsorship Details */}
             <div>
-              <h2 className="metric-value mb-4">Sponsorship Details</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Sponsorship Details</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="sponsorshipType" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -438,7 +438,7 @@ const ApplySponsor = () => {
 
             {/* Additional Information */}
             <div>
-              <h2 className="metric-value mb-4">Additional Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Additional Information</h2>
               <div className="space-y-6">
                 <div>
                   <label htmlFor="goals" className="block text-sm font-inter-semiBold text-white mb-2">

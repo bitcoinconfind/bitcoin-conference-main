@@ -23,16 +23,16 @@ const MediaInfo = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Priority Access</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Priority Access</div>
             <p className="metric-label">Press lounge, scheduled interview slots, and stage-side access for approved crews.</p>
           </div>
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Co‑Branded Moments</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Co‑Branded Moments</div>
             <p className="metric-label">Partner segments, on‑ground activations, and content integrations amplified on our channels.</p>
           </div>
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Content Support</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Content Support</div>
             <p className="metric-label">Access to media kits, speaker quotes, and highlight reels for fast turnarounds.</p>
           </div>
         </div>

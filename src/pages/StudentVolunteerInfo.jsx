@@ -23,16 +23,16 @@ const StudentVolunteerInfo = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Free Pass</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Free Pass</div>
             <p className="metric-label">Get complimentary access to the conference for your shift days.</p>
           </div>
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Networking</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Networking</div>
             <p className="metric-label">Meet speakers, founders, and recruiters while working on‑ground.</p>
           </div>
-          <div className="bg-[#242424] border border-[#3a3a3a] rounded-xl p-6">
-            <div className="metric-value mb-2">Certificate</div>
+          <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#f7931a] transition-all duration-500">
+            <div className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Certificate</div>
             <p className="metric-label">Receive an official certificate and recommendation for your contribution.</p>
           </div>
         </div>
