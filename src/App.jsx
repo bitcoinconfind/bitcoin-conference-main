@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Layout from "./component/Layout";
 import Index from "./pages/Index";
 import ApplySponsor from "./pages/ApplySponsor";
@@ -16,28 +16,19 @@ import Admin from "./pages/Admin";
 import MediaInfo from "./pages/MediaInfo";
 import StudentVolunteerInfo from "./pages/StudentVolunteerInfo";
 import LoadingScreen from "./component/LoadingScreen";
+import StarfieldBackground from "./component/StarfieldBackground";
 
 function App() {
-  // Check if loading screen has already been shown in this session
-  const hasSeenLoadingScreen = sessionStorage.getItem('hasSeenLoadingScreen') === 'true';
-  const [isLoading, setIsLoading] = useState(!hasSeenLoadingScreen);
-
-  useEffect(() => {
-    // If loading screen was already shown, skip it
-    if (hasSeenLoadingScreen) {
-      setIsLoading(false);
-    }
-  }, [hasSeenLoadingScreen]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleLoadComplete = () => {
     setIsLoading(false);
-    // Mark that loading screen has been shown in this session
-    sessionStorage.setItem('hasSeenLoadingScreen', 'true');
   };
 
   return (
     <>
       {isLoading && <LoadingScreen onLoadComplete={handleLoadComplete} />}
+      <StarfieldBackground />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

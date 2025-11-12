@@ -85,28 +85,21 @@ const LiveRegistrationCounter = () => {
   };
 
   return (
-    <div className="w-full py-12 px-4 bg-black relative overflow-hidden">
-      {/* Background gradient glow effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFBF00]/5 to-transparent"></div>
-
-      <div className="max-w-4xl mx-auto relative z-10">
+    <div className="max-w-4xl mx-auto relative z-10">
         {/* Main Counter Card */}
         <div className="relative group">
-          {/* Animated border */}
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-[#FFBF00] via-[#F69415] to-[#FFBF00] rounded-lg opacity-75 group-hover:opacity-100 blur transition duration-500 group-hover:duration-200 animate-gradient"></div>
-
           {/* Card content */}
-          <div className="relative bg-black rounded-lg p-8 border-2 border-[#FFBF00]/30">
+          <div className="relative bg-black rounded-lg p-8 border-2 border-[#f7931a] shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.5)] transition-shadow duration-300">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
 
               {/* Left side - Icon and label */}
               <div className="flex items-center gap-4">
                 <div className="relative">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#FFBF00] to-[#F69415] flex items-center justify-center shadow-[0_0_20px_rgba(255,191,0,0.6)] ${showPulse ? 'animate-pulse' : ''}`}>
+                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#f7931a] to-[#F69415] flex items-center justify-center shadow-[0_0_20px_rgba(247,147,26,0.6)] ${showPulse ? 'animate-pulse' : ''}`}>
                     <FaUsers className="text-2xl text-black" />
                   </div>
                   {showPulse && (
-                    <div className="absolute inset-0 rounded-full bg-[#FFBF00] animate-ping opacity-50"></div>
+                    <div className="absolute inset-0 rounded-full bg-[#f7931a] animate-ping opacity-50"></div>
                   )}
                 </div>
 
@@ -126,7 +119,7 @@ const LiveRegistrationCounter = () => {
 
               {/* Right side - Counter */}
               <div className="flex flex-col items-center md:items-end">
-                <div className={`text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#FFBF00] via-[#F69415] to-[#FFBF00] bg-clip-text text-transparent transition-all duration-500 ${showPulse ? 'scale-110' : 'scale-100'}`}>
+                <div className={`text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#f7931a] via-[#F69415] to-[#f7931a] bg-clip-text text-transparent transition-all duration-500 ${showPulse ? 'scale-110' : 'scale-100'}`}>
                   {formatNumber(registrationCount)}
                 </div>
 
@@ -142,9 +135,9 @@ const LiveRegistrationCounter = () => {
             </div>
 
             {/* FOMO Message */}
-            <div className="mt-6 pt-6 border-t border-[#FFBF00]/20">
+            <div className="mt-6 pt-6 border-t border-[#f7931a]/20">
               <p className="text-center text-gray-300 text-sm md:text-base">
-                <span className="text-[#FFBF00] font-semibold">Don't miss out!</span> Join with thousands of Bitcoin enthusiasts securing their spot right now.
+                <span className="text-[#f7931a] font-semibold">Don't miss out!</span> Join with thousands of Bitcoin enthusiasts securing their spot right now.
               </p>
             </div>
           </div>
@@ -152,24 +145,23 @@ const LiveRegistrationCounter = () => {
 
         {/* Sub-stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#FFBF00]">50K+</div>
+          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">50K+</div>
             <div className="text-xs text-gray-400 mt-1">Attendees</div>
           </div>
-          <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#FFBF00]">150+</div>
+          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">150+</div>
             <div className="text-xs text-gray-400 mt-1">Speakers and Global Leaders</div>
           </div>
-          <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#FFBF00]">100+</div>
+          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">100+</div>
             <div className="text-xs text-gray-400 mt-1">Industry Sponsors</div>
           </div>
-          <div className="bg-black/50 border border-[#FFBF00]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#FFBF00]">2 Days</div>
+          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">2 Days</div>
             <div className="text-xs text-gray-400 mt-1">Of Networking</div>
           </div>
         </div>
-      </div>
     </div>
   );
 };

@@ -25,21 +25,19 @@ const Index = () => {
   };
 
   return (
-    <>
+    <div className="space-y-16 md:space-y-20">
       <Home />
       {/* Get Free Tickets CTA above Ticket Tiers */}
-      <section className="pt-4 pb-8 px-4 bg-black mt-2">
-        <div className="max-w-4xl mx-auto text-center">
-          <Button
-            label="Get Free Tickets"
-            variant="primary"
-            withStarBorder={true}
-            starSpeed="5s"
-            className="px-8 py-4 text-lg font-semibold bg-[#FFBF00] text-black hover:bg-[#CB7608] transform hover:scale-105 transition-all duration-300 shadow-md"
-            onClick={handleWinFreeTickets}
-          />
-        </div>
-      </section>
+      <div className="flex justify-center -mt-16">
+        <Button
+          label="Get Free Tickets"
+          variant="primary"
+          withStarBorder={true}
+          starSpeed="5s"
+          className="px-8 py-4 text-lg font-semibold !bg-[#f7931a] text-black transform hover:scale-105 transition-all duration-300 shadow-md"
+          onClick={handleWinFreeTickets}
+        />
+      </div>
       <LiveRegistrationCounter />
       <TicketTiersSection />
       <Speakers />
@@ -48,7 +46,7 @@ const Index = () => {
       <Venue />
       <SponsorsSection />
       <Footer />
-    </>
+    </div>
   );
 };
 

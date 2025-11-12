@@ -27,7 +27,7 @@ const Speakers = () => {
     return () => clearInterval(interval);
   }, [quoteImages.length]);
   return (
-    <section id="speakers" className="mt-10 sm:mt-14 px-4 sm:px-6 md:px-10 lg:px-20 xl:px-32 scroll-mt-24">
+    <div id="speakers" className="scroll-mt-24 max-w-7xl mx-auto">
       {/* Heading */}
       <FadeIn direction="up" duration={800}>
         <div className="text-center mb-6 sm:mb-8">
@@ -46,9 +46,10 @@ const Speakers = () => {
             <div className="w-auto border-1 p-1 border-[#1F1F1F] rounded-lg">
               <Button
                 label={"Apply to be a Speaker"}
+                variant="primary"
                 withStarBorder={true}
                 starSpeed="5s"
-                className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg"
+                className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg !bg-[#f7931a] text-black"
               />
             </div>
           </a>
@@ -108,7 +109,7 @@ const Speakers = () => {
                 <div
                   className={`h-0.5 transition-all duration-500 ease-out ${
                     currentQuote === index
-                      ? "w-16 bg-[#FFBF00]"
+                      ? "w-16 bg-[#f7931a]"
                       : "w-8 bg-gray-600 group-hover:bg-gray-400 group-hover:w-12"
                   }`}
                 />
@@ -118,7 +119,7 @@ const Speakers = () => {
         </div>
         </div>
       </FadeIn>
-    </section>
+    </div>
   );
 };
 

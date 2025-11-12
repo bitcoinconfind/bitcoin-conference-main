@@ -84,7 +84,7 @@ const ContactMediaPartnership = () => {
     <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
       <div className="max-w-2xl w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-white">
         <div className="mb-6 relative flex items-center justify-center px-16 sm:px-0">
-          <Link to="/contact" className="absolute left-3 sm:left-0 inline-flex items-center text-[#FFBF00] hover:text-[#CB7608] transition-colors z-10">
+          <Link to="/contact" className="absolute left-3 sm:left-0 inline-flex items-center text-[#f7931a] hover:text-[#CB7608] transition-colors z-10">
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
