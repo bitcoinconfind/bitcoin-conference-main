@@ -30,3 +30,6 @@ build/
 .DS_Store
 Thumbs.db
 .vercel
+
+# Prevent nested duplicate directory
+bitcoin-conference-main-main/
