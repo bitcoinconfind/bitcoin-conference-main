@@ -25,7 +25,7 @@ const HeroSection = () => {
   return (
     <div className="relative px-3 sm:px-8 lg:px-20 flex flex-col w-full pt-[56px] min-h-[320px] sm:min-h-[500px] md:min-h-[550px] pb-0 md:pb-8 mt-1">
       {/* SEO-friendly hidden heading for search engines */}
-      <h1 className="sr-only">Bitcoin Conference India 2026 - World's Largest Bitcoin Conference First Time in India</h1>
+      <h1 className="sr-only">Bitcoin Conference India 2026 - World's Largest Bitcoin Conference & Crypto Event | 150+ Bitcoin Speakers | Blockchain Summit</h1>
 
       {/* Main Content - With margin top to push it down */}
       <div className="w-full flex-1 flex items-center justify-center mt-4">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <FadeIn direction="left" delay={100} duration={1000} className="flex justify-center lg:justify-end w-full lg:w-1/4">
             <img
               src={BitcoinIcon}
-              alt="Bitcoin Conference India 2026 official logo - World's largest Bitcoin conference"
+              alt="Bitcoin Conference India 2026 - Official logo for world's largest Bitcoin conference and crypto event"
               loading="lazy"
               className="w-auto h-[96px] sm:h-[240px] lg:h-[256px] object-contain"
             />
@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div>
               <img
                 src={MeetingDetails}
-                alt="Bitcoin Conference India 2026 event details - World's largest Bitcoin conference coming to India for the first time"
+                alt="Bitcoin Conference India 2026 - Premier crypto event and blockchain summit with 150+ Bitcoin speakers"
                 loading="lazy"
                 className="w-auto h-[120px] sm:h-[250px] lg:h-[280px] object-contain heading-hero"
               />
@@ -57,7 +57,7 @@ const HeroSection = () => {
             <div>
               <img
                 src={DatesImg}
-                alt="Bitcoin Conference India 2026 dates and schedule information"
+                alt="Bitcoin Conference India 2026 event dates - February 25-27, 2026 | Crypto events 2026 schedule"
                 loading="lazy"
                 className="w-[192px] h-auto sm:w-[180px] lg:w-[270px] object-contain"
               />
@@ -71,7 +71,7 @@ const HeroSection = () => {
             <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
               <img
                 src={SideLineItem}
-                alt="Bitcoin Conference India 2026 decorative element featuring cryptocurrency and blockchain themes"
+                alt="Bitcoin Conference India 2026 decorative graphic - Cryptocurrency and blockchain summit themes"
                 className="w-full h-auto object-contain"
               />
             </div>

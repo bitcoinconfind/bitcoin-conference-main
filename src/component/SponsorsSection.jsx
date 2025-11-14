@@ -8,8 +8,8 @@ const SponsorsSection = () => {
       {/* Headline */}
         <FadeIn direction="up" duration={800}>
           <div className="text-center mb-6 sm:mb-8">
-            <h2 className="metric-value leading-tight gradient-text">Why Sponsor?</h2>
-            <p className="metric-label max-w-3xl mx-auto mt-3">Partner with the World's Largest Bitcoin Conference</p>
+            <h2 className="metric-value leading-tight gradient-text">Sponsor Bitcoin Conference India 2026</h2>
+            <p className="metric-label max-w-3xl mx-auto mt-3">Partner with Bitcoin Conference India - the premier blockchain summit and crypto conference</p>
           </div>
         </FadeIn>
 

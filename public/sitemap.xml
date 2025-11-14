@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://bitcoinconferenceindia.com/</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- Apply Speaker Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/apply/speaker</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Apply Sponsor Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/apply/sponsor</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/contact</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Media Info Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/media</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -47,7 +47,7 @@
   <!-- Student / Volunteer Info Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/student-volunteer</loc>
-    <lastmod>2025-10-15</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -55,7 +55,7 @@
   <!-- Terms Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/terms</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -63,7 +63,7 @@
   <!-- Privacy Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/privacy</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
@@ -71,7 +71,7 @@
   <!-- Speakers Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/speakers</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -79,7 +79,7 @@
   <!-- Venue Page -->
   <url>
     <loc>https://bitcoinconferenceindia.com/venue</loc>
-    <lastmod>2025-10-11</lastmod>
+    <lastmod>2025-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
