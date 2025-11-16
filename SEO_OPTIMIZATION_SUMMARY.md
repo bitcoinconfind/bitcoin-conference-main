@@ -4,7 +4,7 @@
 Comprehensive on-page SEO improvements implemented to boost rankings for broader, high-opportunity keywords while maintaining current strong positions for "bitcoin conference india" related terms.
 
 ## Target Keywords Analysis
-Based on Google Search Console data, we focused on improving CTR and rankings for:
+Based on Google Search Console data, we have focused on improving CTR and rankings for:
 - **High impression, low CTR terms**: bitcoin conference (136 impressions, 25.74% CTR), bitcoin conference 2026 (69 impressions, 30.43% CTR)
 - **Zero-click terms with potential**: bitcoin speakers (0 clicks, 72.88 position), crypto conference 2026 (0 clicks, 18.75 position), blockchain conference 2026 (0 clicks, 73 position), bitcoin events 2026, crypto summit 2026
 
