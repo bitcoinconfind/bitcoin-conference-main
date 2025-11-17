@@ -43,15 +43,13 @@ const Speakers = () => {
       <FadeIn direction="up" delay={200} duration={800}>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 sm:mt-14">
           <a href="/apply/speaker">
-            <div className="w-auto border-1 p-1 border-[#1F1F1F] rounded-lg">
-              <Button
-                label={"Apply to be a Speaker"}
-                variant="primary"
-                withStarBorder={true}
-                starSpeed="5s"
-                className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg !bg-[#f7931a] text-black"
-              />
-            </div>
+            <Button
+              label={"Apply to be a Speaker"}
+              variant="primary"
+              withStarBorder={true}
+              starSpeed="5s"
+              className="px-12 sm:px-8 md:px-10 py-4 sm:py-3 text-lg sm:text-sm md:text-base lg:text-lg !bg-[#f7931a] text-black"
+            />
           </a>
         </div>
       </FadeIn>
@@ -107,10 +105,10 @@ const Speakers = () => {
                 aria-label={`Go to quote ${index + 1}`}
               >
                 <div
-                  className={`h-0.5 transition-all duration-500 ease-out ${
+                  className={`h-1 transition-all duration-500 ease-out ${
                     currentQuote === index
-                      ? "w-16 bg-[#f7931a]"
-                      : "w-8 bg-gray-600 group-hover:bg-gray-400 group-hover:w-12"
+                      ? "w-24 bg-[#f7931a]"
+                      : "w-12 bg-gray-600 group-hover:bg-gray-400 group-hover:w-16"
                   }`}
                 />
               </button>

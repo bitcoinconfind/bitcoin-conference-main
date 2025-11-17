@@ -90,8 +90,9 @@ const Navigation = () => {
           <a href="/" onClick={goHomeAndScrollTop}>
             <img
               src={logo}
-              alt="Bitcoin Conference India 2026 logo - World's largest crypto event and blockchain summit"
-              className="h-9 sm:h-11 md:h-16 lg:h-20 w-auto"
+              alt="BitIndia Logo"
+              className="w-auto"
+              style={{ height: '55px' }}
             />
           </a>
         </div>

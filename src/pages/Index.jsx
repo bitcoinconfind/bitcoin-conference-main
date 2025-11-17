@@ -8,6 +8,7 @@ import Venue from "./Venue";
 import Footer from "./Footer";
 import Button from "../component/Button";
 import LiveRegistrationCounter from "../component/LiveRegistrationCounter";
+import FAQSection from "../component/FAQSection";
 
 const Index = () => {
   const handleWinFreeTickets = () => {
@@ -45,6 +46,7 @@ const Index = () => {
       <IndianStatesSection />
       <Venue />
       <SponsorsSection />
+      <FAQSection />
       <Footer />
     </div>
   );

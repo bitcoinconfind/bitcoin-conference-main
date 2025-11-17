@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 
 /**
  * Custom hook for count-up animations
@@ -17,43 +17,54 @@ export const useCountUp = (end, options = {}) => {
   } = options;
 
   const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
   const rafRef = useRef(null);
 
-  // Parse the end value to extract number and suffix
-  const parseValue = (value) => {
-    if (typeof value === 'number') {
-      return { number: value, suffix: '' };
-    }
+  // Parse the end value to extract number and suffix - memoized to prevent recalculation
+  const { targetNumber, suffix, multiplier } = useMemo(() => {
+    const parseValue = (value) => {
+      if (typeof value === 'number') {
+        return { targetNumber: value, suffix: '', multiplier: '' };
+      }
 
-    // Handle cases like "50k+", "150+", "2 days"
-    const match = value.toString().match(/^(\d+(?:\.\d+)?)\s*([kKmM]?)(.*)$/);
-    if (match) {
-      let number = parseFloat(match[1]);
-      const multiplier = match[2].toLowerCase();
-      const suffix = match[2] + match[3];
+      const stringValue = value.toString();
 
-      // Convert k/m to actual numbers for animation
-      if (multiplier === 'k') number *= 1000;
-      if (multiplier === 'm') number *= 1000000;
+      // Handle cases like "50k+", "150+", "2 days", "1.4+"
+      const match = stringValue.match(/^(\d+(?:\.\d+)?)\s*([kKmM]?)(.*)$/);
+      if (match) {
+        let number = parseFloat(match[1]);
+        const mult = match[2].toLowerCase();
+        const suff = match[3]; // Only the part after k/m (e.g., "+" or " days")
 
-      return { number, suffix };
-    }
+        // Convert k/m to actual numbers for animation
+        if (mult === 'k') number *= 1000;
+        if (mult === 'm') number *= 1000000;
 
-    return { number: 0, suffix: value };
-  };
+        return { targetNumber: number, suffix: suff, multiplier: mult };
+      }
 
-  const { number: targetNumber, suffix } = parseValue(end);
+      // If no number found, treat as static text (e.g., "Year-Round")
+      return { targetNumber: 0, suffix: stringValue, multiplier: '', isStatic: true };
+    };
+
+    return parseValue(end);
+  }, [end]);
 
   useEffect(() => {
-    if (!start || hasStarted) return;
+    if (!start) return;
 
-    setHasStarted(true);
+    // If target is 0 or static text, don't animate
+    if (targetNumber === 0) {
+      return;
+    }
 
     const startTime = Date.now() + delay;
     const endTime = startTime + duration;
 
+    let isCanceled = false;
+
     const animate = () => {
+      if (isCanceled) return;
+
       const now = Date.now();
 
       if (now < startTime) {
@@ -78,28 +89,37 @@ export const useCountUp = (end, options = {}) => {
     rafRef.current = requestAnimationFrame(animate);
 
     return () => {
+      isCanceled = true;
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
       }
     };
-  }, [start, targetNumber, duration, delay, hasStarted]);
+  }, [start, targetNumber, duration, delay]);
 
-  // Format the count with suffix
-  const formatCount = () => {
-    if (count === 0 && !hasStarted) return '0';
-
-    // If suffix contains 'k' or 'K', display as simplified number
-    if (suffix.toLowerCase().includes('k')) {
-      return `${Math.floor(count / 1000)}k${suffix.slice(1)}`;
-    }
-    if (suffix.toLowerCase().includes('m')) {
-      return `${Math.floor(count / 1000000)}m${suffix.slice(1)}`;
+  // Format the count with suffix - memoize to prevent unnecessary recalculations
+  const formattedCount = useMemo(() => {
+    // If targetNumber is 0, this is static text (like "Year-Round"), show suffix only
+    if (targetNumber === 0) {
+      return suffix;
     }
 
-    return `${count}${suffix}`;
-  };
+    // If multiplier is 'k' or 'm', display as simplified number
+    if (multiplier === 'k') {
+      const kValue = Math.floor(count / 1000);
+      return `${kValue}k${suffix}`;
+    }
+    if (multiplier === 'm') {
+      const mValue = Math.floor(count / 1000000);
+      return `${mValue}m${suffix}`;
+    }
 
-  return formatCount();
+    // Format large numbers with commas
+    const formattedNumber = count >= 1000 ? count.toLocaleString('en-US') : count;
+    return `${formattedNumber}${suffix}`;
+  }, [count, multiplier, suffix, targetNumber]);
+
+  return formattedCount;
 };
 
 /**
@@ -114,14 +134,15 @@ export const useCountUpOnScroll = (end, options = {}) => {
     if (!element) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !shouldStart) {
-          setShouldStart(true);
-          observer.unobserve(element);
-        }
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !shouldStart) {
+            setShouldStart(true);
+          }
+        });
       },
       {
-        threshold: 0.3,
+        threshold: 0.1, // Trigger when 10% of element is visible
         rootMargin: '0px'
       }
     );

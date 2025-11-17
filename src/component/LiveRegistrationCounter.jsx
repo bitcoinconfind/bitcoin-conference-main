@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
+import { useCountUpOnScroll } from '../hooks/useCountUp';
 
 const LiveRegistrationCounter = () => {
   const INITIAL_COUNT = 60300;
   const UPDATE_INTERVAL = 370000; // 10 seconds
   const BASE_DATE = new Date('2025-11-06T00:00:00').getTime();
+
+  // Count-up animations for metric boxes - trigger on scroll
+  const { ref: attendeesRef, count: attendeesCount } = useCountUpOnScroll("50k+", { duration: 2000, delay: 0 });
+  const { ref: speakersRef, count: speakersCount } = useCountUpOnScroll("150+", { duration: 2000, delay: 100 });
+  const { ref: sponsorsRef, count: sponsorsCount } = useCountUpOnScroll("100+", { duration: 2000, delay: 200 });
+  const { ref: daysRef, count: daysCount } = useCountUpOnScroll("2 days", { duration: 2000, delay: 300 });
 
   // Calculate global count based on time since BASE_DATE with deterministic increases
   const getGlobalBaseCount = () => {
@@ -145,20 +152,20 @@ const LiveRegistrationCounter = () => {
 
         {/* Sub-stats row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">50K+</div>
+          <div ref={attendeesRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">{attendeesCount}</div>
             <div className="text-xs text-gray-400 mt-1">Attendees</div>
           </div>
-          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">150+</div>
+          <div ref={speakersRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">{speakersCount}</div>
             <div className="text-xs text-gray-400 mt-1">Speakers and Global Leaders</div>
           </div>
-          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">100+</div>
+          <div ref={sponsorsRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a]">{sponsorsCount}</div>
             <div className="text-xs text-gray-400 mt-1">Industry Sponsors</div>
           </div>
-          <div className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">2 Days</div>
+          <div ref={daysRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
+            <div className="text-2xl font-bold text-[#f7931a] capitalize">{daysCount}</div>
             <div className="text-xs text-gray-400 mt-1">Of Networking</div>
           </div>
         </div>

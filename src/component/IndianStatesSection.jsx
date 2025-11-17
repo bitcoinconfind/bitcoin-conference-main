@@ -1,10 +1,16 @@
 import FadeIn from "./ui/FadeIn";
+import { useCountUpOnScroll } from '../hooks/useCountUp';
 // import Button from "./Button"; // Commented out - button is hidden for now
 
 // Indian map image
 const IndianMapImage = "/india 1.svg";
 
 const IndianStatesSection = () => {
+  // Count-up animations for metric boxes - trigger on scroll
+  const { ref: statesRef, count: statesCount } = useCountUpOnScroll("35+", { duration: 2000, delay: 0 });
+  const { ref: languagesRef, count: languagesCount } = useCountUpOnScroll("30+", { duration: 2000, delay: 100 });
+  const { ref: peopleRef, count: peopleCount } = useCountUpOnScroll("1.4+", { duration: 2000, delay: 200 });
+  const { ref: educationRef, count: educationText } = useCountUpOnScroll("Year-Round", { duration: 2000, delay: 300 });
   return (
     <div className="w-full max-w-7xl mx-auto">
       {/* SEO-friendly heading */}
@@ -49,9 +55,9 @@ const IndianStatesSection = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-8 md:mt-12 w-full max-w-5xl mx-auto">
               {/* Card 1: States Coverage */}
               <FadeIn direction="up" delay={300} duration={800}>
-                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                <div ref={statesRef} className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
                   <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
-                    35+
+                    {statesCount}
                   </div>
                   <div className="text-white text-xs md:text-sm">
                     States & UTs
@@ -61,9 +67,9 @@ const IndianStatesSection = () => {
 
               {/* Card 2: Regional Languages */}
               <FadeIn direction="up" delay={350} duration={800}>
-                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                <div ref={languagesRef} className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
                   <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
-                    30+
+                    {languagesCount}
                   </div>
                   <div className="text-white text-xs md:text-sm">
                     Regional Languages
@@ -73,9 +79,9 @@ const IndianStatesSection = () => {
 
               {/* Card 3: Reach */}
               <FadeIn direction="up" delay={400} duration={800}>
-                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                <div ref={peopleRef} className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
                   <div className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-1" style={{fontFamily: 'Sora, sans-serif'}}>
-                    1.4+
+                    {peopleCount}
                   </div>
                   <div className="text-white text-xs md:text-sm">
                     Billion People
@@ -85,9 +91,9 @@ const IndianStatesSection = () => {
 
               {/* Card 4: Education Reach */}
               <FadeIn direction="up" delay={450} duration={800}>
-                <div className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
+                <div ref={educationRef} className="border border-[#f7931a]/30 rounded-lg px-4 py-4 text-center hover:border-[#f7931a] transition-colors duration-300 bg-black/50 h-[120px] flex flex-col justify-center">
                   <div className="text-2xl md:text-3xl font-bold text-[#f7931a] mb-1 whitespace-nowrap" style={{fontFamily: 'Sora, sans-serif'}}>
-                    Year-Round
+                    {educationText}
                   </div>
                   <div className="text-white text-xs md:text-sm">
                     Of Education

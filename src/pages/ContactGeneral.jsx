@@ -116,7 +116,7 @@ const ContactGeneral = () => {
           )}
 
           <div className="pt-2">
-            <Button type="submit" label={isSubmitting ? "Sending..." : "Send Message"} className="w-full py-3 text-lg font-semibold" disabled={isSubmitting} />
+            <Button type="submit" label={isSubmitting ? "Sending..." : "Send Message"} className="w-full py-3 text-lg font-semibold !bg-transparent !border-2 !border-[#f7931a] !text-[#f7931a] shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:!bg-[#f7931a]/10 hover:!shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300" disabled={isSubmitting} />
           </div>
         </form>
       </div>

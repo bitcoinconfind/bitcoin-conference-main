@@ -39,7 +39,7 @@ const MediaInfo = () => {
 
         <div className="text-center">
           <a href="/contact/media-partnership">
-            <button className="bg-[#f7931a] text-black font-semibold px-6 py-3 rounded-lg">Apply for Media & Partnerships</button>
+            <button className="bg-transparent border-2 border-[#f7931a] text-[#f7931a] font-semibold px-6 py-3 rounded-lg shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:bg-[#f7931a]/10 hover:shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300">Apply for Media & Partnerships</button>
           </a>
         </div>
 
