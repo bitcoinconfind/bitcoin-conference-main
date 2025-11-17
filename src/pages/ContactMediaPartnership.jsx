@@ -170,7 +170,7 @@ const ContactMediaPartnership = () => {
             {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
           </div>
           
-          <Button type="submit" label={loading ? 'Submitting...' : 'Submit'} className="w-full py-3 text-lg" disabled={loading} />
+          <Button type="submit" label={loading ? 'Submitting...' : 'Submit'} className="w-full py-3 text-lg !bg-transparent !border-2 !border-[#f7931a] !text-[#f7931a] shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:!bg-[#f7931a]/10 hover:!shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300" disabled={loading} />
           
           {status==='validation' && <p className="text-yellow-400">⚠️ Please fill in all required fields.</p>}
           {status==='ok' && <p className="text-green-400">✅ Thank you for contacting us. We will reach out to you as soon as possible.</p>}

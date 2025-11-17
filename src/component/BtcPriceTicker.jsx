@@ -228,11 +228,19 @@ const BtcPriceTicker = () => {
             <span className="text-[#f7931a] text-[10px] sm:text-xs font-bold">
               Presented By:
             </span>
-            <img
-              src={btcLogo}
-              alt="BitcoinWala"
-              className="h-10 sm:h-12 w-auto transition-transform duration-300"
-            />
+            <a
+              href="https://www.bitcoinwala.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={btcLogo}
+                alt="BitcoinWala"
+                className="h-10 sm:h-12 w-auto transition-transform duration-300 hover:scale-110"
+              />
+            </a>
           </div>
 
           {/* Price Display with Auto Animation */}
@@ -272,11 +280,19 @@ const BtcPriceTicker = () => {
             <span className="text-[#f7931a] text-sm font-bold">
               Presented By:
             </span>
-            <img
-              src={btcLogo}
-              alt="BitcoinWala"
-              className="h-8 w-auto lg:h-9 xl:h-10 transition-transform duration-300 group-hover:scale-110"
-            />
+            <a
+              href="https://www.bitcoinwala.ai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={btcLogo}
+                alt="BitcoinWala"
+                className="h-8 w-auto lg:h-9 xl:h-10 transition-transform duration-300 hover:scale-110"
+              />
+            </a>
           </div>
 
           {/* Price Display with Auto Animation */}

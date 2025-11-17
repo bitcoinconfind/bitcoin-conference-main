@@ -153,7 +153,7 @@ const Contact = () => {
                 Reach us directly at <a href="mailto:contact@btcindia.media" className="text-[#f7931a] hover:underline">contact@btcindia.media</a>
               </div>
               <p className="metric-label mb-4">Ask us anything about the conference.</p>
-              <button onClick={() => window.location.href='/contact/general'} className="w-full bg-[#f7931a] text-black font-semibold py-2 rounded-md mt-auto">Fill the form</button>
+              <button onClick={() => window.location.href='/contact/general'} className="w-full bg-transparent border-2 border-[#f7931a] text-[#f7931a] font-semibold py-2 rounded-md mt-auto shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:bg-[#f7931a]/10 hover:shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300">Fill the form</button>
             </div>
             <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#f7931a] transition-all duration-500">
               <h3 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Speaker Applications</h3>
@@ -161,7 +161,7 @@ const Contact = () => {
                 Reach us directly at <a href="mailto:speakers@btcindia.media" className="text-[#f7931a] hover:underline">speakers@btcindia.media</a>
               </div>
               <p className="metric-label mb-4">Apply to speak at the conference and share your expertise.</p>
-              <button onClick={() => window.location.href='/apply/speaker'} className="w-full bg-[#f7931a] text-black font-semibold py-2 rounded-md mt-auto">Apply to Speak</button>
+              <button onClick={() => window.location.href='/apply/speaker'} className="w-full bg-transparent border-2 border-[#f7931a] text-[#f7931a] font-semibold py-2 rounded-md mt-auto shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:bg-[#f7931a]/10 hover:shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300">Apply to Speak</button>
             </div>
             <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#f7931a] transition-all duration-500">
               <h3 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-2">Sponsor Inquiries</h3>
@@ -169,7 +169,7 @@ const Contact = () => {
                 Reach us directly at <a href="mailto:sponsors@btcindia.media" className="text-[#f7931a] hover:underline">sponsors@btcindia.media</a>
               </div>
               <p className="metric-label mb-4">Partner with us and reach the Bitcoin community.</p>
-              <button onClick={() => window.location.href='/apply/sponsor'} className="w-full bg-[#f7931a] text-black font-semibold py-2 rounded-lg mt-auto">Become a Sponsor</button>
+              <button onClick={() => window.location.href='/apply/sponsor'} className="w-full bg-transparent border-2 border-[#f7931a] text-[#f7931a] font-semibold py-2 rounded-lg mt-auto shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:bg-[#f7931a]/10 hover:shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300">Become a Sponsor</button>
             </div>
           </div>
         </div>

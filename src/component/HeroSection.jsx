@@ -68,7 +68,7 @@ const HeroSection = () => {
 
           {/* Right Section - Side Item */}
           <FadeIn direction="right" delay={100} duration={1000} className="flex justify-center lg:justify-end w-full lg:w-1/4">
-            <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px]">
+            <div className="w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[500px] bg-black rounded-lg">
               <img
                 src={SideLineItem}
                 alt="Bitcoin Conference India 2026 decorative element featuring cryptocurrency and blockchain themes"

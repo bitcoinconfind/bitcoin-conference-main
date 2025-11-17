@@ -117,7 +117,7 @@ const ContactStudentVolunteer = () => {
             <label className="block mb-1 text-sm text-gray-300">Message <span className="text-[#f7931a]" aria-hidden>*</span></label>
             <textarea required aria-required="true" className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg" placeholder="How can you help? What can you offer? What is your goal?" rows={6} name="message" value={formData.message} onChange={onChange} />
           </div>
-          <Button type="submit" label={loading ? 'Submitting...' : 'Submit'} className="w-full py-3 text-lg" disabled={loading} />
+          <Button type="submit" label={loading ? 'Submitting...' : 'Submit'} className="w-full py-3 text-lg !bg-transparent !border-2 !border-[#f7931a] !text-[#f7931a] shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:!bg-[#f7931a]/10 hover:!shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300" disabled={loading} />
           {status==='validation' && <p className="text-yellow-400">{statusMessage}</p>}
           {status==='ok' && <p className="text-green-400">✅ Thank you for contacting us. We will reach out to you as soon as possible.</p>}
           {status==='err' && <p className="text-red-400">Submission failed. Try again.</p>}
