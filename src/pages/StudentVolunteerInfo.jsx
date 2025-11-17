@@ -47,7 +47,7 @@ const StudentVolunteerInfo = () => {
         <div className="mt-8 text-center">
           <p className="metric-label">
             Prefer email? Reach us at {" "}
-            <a href="mailto:satoshi@btcindia.media" className="text-[#f7931a] hover:underline">team@btcindia.media</a>.
+            <a href="mailto:team@btcindia.media" className="text-[#f7931a] hover:underline">team@btcindia.media</a>.
           </p>
         </div>
       </div>
