@@ -20,49 +20,49 @@ const Terms = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="metric-value mb-2">Terms & Conditions</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-[#f7931a] mb-2">Terms & Conditions</h1>
           <p className="metric-label">Last updated: {new Date().toLocaleDateString()}</p>
         </div>
 
         {/* Content */}
         <div className="prose prose-invert max-w-none">
           <section className="mb-8">
-            <h2 className="metric-value mb-2">1. Acceptance of Terms</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-300 leading-relaxed">
               By accessing and using the Bitcoin Conference India website and services, you accept and agree to be bound by the terms and provision of this agreement.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="metric-value mb-2">2. Event Information</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">2. Event Information</h2>
             <p className="text-gray-300 leading-relaxed">
               Bitcoin Conference India is an independent event dedicated to promoting Bitcoin education and adoption in India. All information provided is for educational purposes only and should not be considered as financial advice.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="metric-value mb-2">3. Registration and Tickets</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">3. Registration and Tickets</h2>
             <p className="text-gray-300 leading-relaxed">
               Event registration and ticket purchases are subject to availability. We reserve the right to refuse service to anyone for any reason at any time. All sales are final unless otherwise specified.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="metric-value mb-2">4. Limitation of Liability</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">4. Limitation of Liability</h2>
             <p className="text-gray-300 leading-relaxed">
               Bitcoin Conference India shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="metric-value mb-2">5. Privacy</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">5. Privacy</h2>
             <p className="text-gray-300 leading-relaxed">
               Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the website, to understand our practices.
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="subheading text-[#f7931a] mb-4">6. Contact Information</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">6. Contact Information</h2>
             <p className="text-gray-300 leading-relaxed">
               If you have any questions about these Terms & Conditions, please contact us at contact@btcindia.media
             </p>
