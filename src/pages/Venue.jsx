@@ -81,7 +81,7 @@ const Venue = () => {
                 >
                   <img
                     src={image}
-                    alt={`Bitcoin Conference India 2026 venue location ${index + 1} - Hyderabad hosting crypto event and blockchain summit`}
+                    alt={`Venue background ${index + 1}`}
                     className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover object-center"
                   />
                   {/* Dark overlay for better text readability */}
@@ -93,11 +93,11 @@ const Venue = () => {
 
           {/* Text Overlay - Centered on Carousel */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6 sm:px-10 md:px-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
               <span className="text-white">Venue Announcement</span>
               <br />
               <span className="text-[#f7931a]">Coming Soon</span>
-            </h2>
+            </h1>
             <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-white mb-5 sm:mb-6">
               We're securing an iconic location in Hyderabad that will perfectly complement the scale and significance of India's premier Bitcoin conference.
             </p>
@@ -126,7 +126,7 @@ const Venue = () => {
             <div className="overflow-hidden">
               <img
                 src={venue.img}
-                alt={`${venue.alt} - Landmark near Bitcoin Conference India 2026 venue in Hyderabad`}
+                alt={venue.alt}
                 className="w-full h-[28rem] object-cover object-top"
               />
             </div>
@@ -148,7 +148,7 @@ const Venue = () => {
             <div className="overflow-hidden">
               <img
                 src={venue.img}
-                alt={`${venue.alt} - Tourist attraction near Bitcoin Conference India 2026 crypto event venue`}
+                alt={venue.alt}
                 className="w-full h-56 lg:h-[32rem] object-cover object-top transition-transform duration-500 hover:scale-110"
               />
             </div>

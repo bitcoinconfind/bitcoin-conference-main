@@ -6,24 +6,20 @@ const FAQSection = () => {
 
   const faqs = [
     {
+      question: "What is Bitcoin Conference India?",
+      answer: "Bitcoin Conference India is the country's premier gathering for Bitcoin enthusiasts, builders, investors, and policymakers. It's a platform to explore Bitcoin's impact on India's economy, connect with global leaders, and experience the future of decentralized finance through engaging discussions, exhibitions, and networking opportunities."
+    },
+    {
       question: "When and where is Bitcoin Conference India 2026?",
       answer: "Bitcoin Conference India 2026 will be held in March 2026 in Hyderabad, India. Exact dates will be announced soon."
     },
     {
-      question: "What ticket tiers are available?",
-      answer: "We offer three ticket tiers: General Admission ($99), VIP Pass ($599), and Satoshi Pass ($2999). Each tier offers different levels of access and exclusive benefits including networking opportunities, VIP lounges, and private sessions with speakers."
-    },
-    {
       question: "What can I expect at the conference?",
-      answer: "Experience India's largest Bitcoin Expo & Experience Zone, attend main stage sessions and panels, participate in interactive workshops, network with Bitcoin builders and investors, and gain insights from global Bitcoin leaders. The conference also features dedicated networking zones, VIP mixers, and various social events."
+      answer: "Experience the Satoshi Lounge - a private space for founders, investors, and policymakers. Explore the Bitcoin Bazaar where startups and miners showcase real products. Visit the Bitcoin Art District featuring installations and live art. Connect at Network Square with curated meetups and partnerships. Shop limited edition Merch & Collectibles. And attend the Main Stage where global Bitcoin leaders discuss and debate what's next for Bitcoin."
     },
     {
-      question: "How can I become a sponsor or speaker?",
-      answer: "We welcome both sponsorship and speaker applications! For sponsors, we offer various packages to help your brand reach thousands of Bitcoin enthusiasts. Speakers can apply if they are Bitcoin experts, builders, or thought leaders. Please visit our Contact page to discuss partnership opportunities or submit your application."
-    },
-    {
-      question: "Are there volunteer opportunities and what is the refund policy?",
-      answer: "Yes! We have a dedicated Student Volunteer program - visit our Volunteer page to learn more. Regarding refunds, policies will be detailed when ticket sales begin. Generally, refunds are available up to a certain date before the event, with full terms provided at purchase."
+      question: "Are there volunteer opportunities?",
+      answer: "Yes! We have a dedicated Student Volunteer program - visit our Volunteer page to learn more and apply for exciting opportunities to be part of India's largest Bitcoin conference."
     }
   ];
 
@@ -78,19 +74,6 @@ const FAQSection = () => {
           </FadeIn>
         ))}
       </div>
-
-      {/* Contact CTA */}
-      <FadeIn direction="up" delay={800} duration={600}>
-        <div className="mt-12 text-center">
-          <p className="metric-label text-[1.125rem] mb-4">Still have questions?</p>
-          <a
-            href="/contact"
-            className="inline-block px-8 py-3 bg-[#f7931a] text-black font-semibold rounded-lg hover:bg-[#F69415] transition-all duration-300 hover:scale-105 shadow-md"
-          >
-            Contact Us
-          </a>
-        </div>
-      </FadeIn>
     </div>
   );
 };

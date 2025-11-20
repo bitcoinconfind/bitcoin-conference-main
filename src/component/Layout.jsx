@@ -24,9 +24,7 @@ const Layout = () => {
     <>
       <Navigation />
       <main className="relative z-10">
-        <article>
-          <Outlet />
-        </article>
+        <Outlet />
       </main>
     </>
   );

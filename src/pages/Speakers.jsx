@@ -31,7 +31,7 @@ const Speakers = () => {
       {/* Heading */}
       <FadeIn direction="up" duration={800}>
         <div className="text-center mb-6 sm:mb-8">
-          <h2 className="metric-value leading-tight gradient-text">Bitcoin Speakers & Industry Leaders</h2>
+          <h1 className="metric-value leading-tight gradient-text">Speakers</h1>
           <p className="metric-label max-w-3xl mx-auto mt-3">
             Share your expertise with a high-intent audience of builders, investors, and media.
             Our top speaker lineup is being curated and will be revealed soon , apply now to be part of it.
@@ -66,7 +66,7 @@ const Speakers = () => {
           <div className="lg:hidden w-full max-w-3xl">
             <img
               src={QuoteMobile}
-              alt="Bitcoin Conference India 2026 - Testimonials from Bitcoin speakers and crypto industry leaders"
+              alt="Bitcoin Conference India 2026 Quote"
               className="w-full object-contain"
               loading="lazy"
             />
@@ -86,7 +86,7 @@ const Speakers = () => {
                 >
                   <img
                     src={quote}
-                    alt={`Bitcoin speakers testimonial ${index + 1} - Insights from blockchain leaders at crypto conference 2026`}
+                    alt={`Bitcoin Conference India 2026 Quote ${index + 1}`}
                     className="w-full object-contain"
                     loading="lazy"
                   />

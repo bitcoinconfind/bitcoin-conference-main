@@ -71,8 +71,8 @@ const TicketTiersSection = () => {
       {/* Header Section (removed Coming Soon per request) */}
       <FadeIn direction="up" duration={800}>
         <div className="text-center mb-8">
-          <h2 className="metric-value mb-2 gradient-text">Bitcoin Conference India 2026 Ticket Tiers</h2>
-          <p className="metric-label text-[1.125rem]">Choose your crypto event experience - from General Admission to exclusive VIP and Satoshi passes</p>
+          <h2 className="metric-value mb-2 gradient-text">Ticket Tiers</h2>
+          <p className="metric-label text-[1.125rem]">Choose your experience level for Bitcoin Conference India 2026</p>
         </div>
       </FadeIn>
 
