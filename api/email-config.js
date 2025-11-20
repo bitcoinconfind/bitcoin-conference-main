@@ -158,7 +158,7 @@ export const EMAIL_CONFIG = {
   // Student/Volunteer application configuration
   'student-volunteer': {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['satoshi@btcindia.media'],
+    to: ['team@btcindia.media'],
     getSubject: (formData) => `Student/Volunteer Application: ${formData.name}`,
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `

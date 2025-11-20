@@ -22,7 +22,7 @@ const TicketCard = ({ tier, isPopular }) => {
               src={tier.image}
               alt={`${tier.title} pass`}
               className="w-full h-auto rounded-xl mb-3 origin-center"
-              style={{ transform: 'scale(1.17)' }}
+              style={{ transform: 'scale(1.2)' }}
               loading="lazy"
             />
           )}

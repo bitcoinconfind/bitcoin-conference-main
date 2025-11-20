@@ -19,7 +19,7 @@ const StudentVolunteerInfo = () => {
         </div>
         <div className="text-center mb-8">
           <h1 className="metric-value mb-2">Student / Volunteer</h1>
-          <p className="metric-label">Join the crew and help run India’s biggest Bitcoin conference.</p>
+          <p className="metric-label">Join the crew and help run India's Largest Bitcoin conference.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
@@ -39,7 +39,7 @@ const StudentVolunteerInfo = () => {
 
         <div className="text-center">
           <a href="/contact/student-volunteer">
-            <button className="bg-[#f7931a] text-black font-semibold px-6 py-3 rounded-lg">Apply as Student / Volunteer</button>
+            <button className="bg-transparent border-2 border-[#f7931a] text-[#f7931a] font-semibold px-6 py-3 rounded-lg shadow-[0_0_10px_rgba(247,147,26,0.3)] hover:bg-[#f7931a]/10 hover:shadow-[0_0_20px_rgba(247,147,26,0.6)] transition-all duration-300">Apply as Student / Volunteer</button>
           </a>
         </div>
 
@@ -47,7 +47,7 @@ const StudentVolunteerInfo = () => {
         <div className="mt-8 text-center">
           <p className="metric-label">
             Prefer email? Reach us at {" "}
-            <a href="mailto:satoshi@btcindia.media" className="text-[#f7931a] hover:underline">team@btcindia.media</a>.
+            <a href="mailto:team@btcindia.media" className="text-[#f7931a] hover:underline">team@btcindia.media</a>.
           </p>
         </div>
       </div>
