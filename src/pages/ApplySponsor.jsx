@@ -6,62 +6,17 @@ import { dbHelpers } from "../lib/supabase";
 const ApplySponsor = () => {
   const [formData, setFormData] = useState({
     companyName: "",
+    website: "",
     contactName: "",
     contactEmail: "",
     contactPhone: "",
-    website: "",
     linkedin: "",
-    budgetRange: "",
-    message: "",
-    companySize: "",
-    industry: "",
-    previousSponsorship: "",
-    goals: ""
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [errors, setErrors] = useState({});
   const [validationNotice, setValidationNotice] = useState("");
-
-  const budgetRanges = [
-    "$5,000 - $10,000",
-    "$10,000 - $25,000", 
-    "$25,000 - $50,000",
-    "$50,000 - $100,000",
-    "$100,000+",
-    "Custom Budget",
-    "Prefer not to specify"
-  ];
-
-  const companySizes = [
-    "Startup (1-10 employees)",
-    "Small (11-50 employees)",
-    "Medium (51-200 employees)",
-    "Large (201-1000 employees)",
-    "Enterprise (1000+ employees)"
-  ];
-
-  const industries = [
-    "Cryptocurrency/Blockchain",
-    "Bitcoin Mining",
-    "Hardware Wallet",
-    "Crypto Exchange",
-    "Payment Processor",
-    "Custody & Security",
-    "Financial Services",
-    "Banking & Traditional Finance",
-    "Investment/VC",
-    "Asset Management",
-    "Technology",
-    "Software Development",
-    "Infrastructure Provider",
-    "Media",
-    "Education",
-    "Legal & Compliance",
-    "Consulting",
-    "Government",
-    "Other"
-  ];
 
   const validateForm = () => {
     const newErrors = {};
@@ -82,18 +37,10 @@ const ApplySponsor = () => {
     
     if (!formData.contactPhone.trim()) {
       newErrors.contactPhone = "Phone number is required";
-    } else if (!/^[\+]?[1-9][\d]{0,15}$/.test(formData.contactPhone.replace(/\s/g, ""))) {
-      newErrors.contactPhone = "Phone number is invalid";
-    }
-    
-    if (!formData.budgetRange) {
-      newErrors.budgetRange = "Please select a budget range";
     }
     
     if (!formData.message.trim()) {
-      newErrors.message = "Please provide additional information";
-    } else if (formData.message.trim().length < 20) {
-      newErrors.message = "Please provide more details (minimum 20 characters)";
+      newErrors.message = "Additional information is required";
     }
     
     setErrors(newErrors);
@@ -103,9 +50,8 @@ const ApplySponsor = () => {
       const fieldLabels = {
         companyName: "Company Name",
         contactName: "Contact Person Name",
-        contactEmail: "Contact Email",
-        contactPhone: "Contact Phone",
-        budgetRange: "Budget Range",
+        contactEmail: "Email",
+        contactPhone: "Phone Number",
         message: "Additional Information",
       };
 
@@ -168,10 +114,15 @@ const ApplySponsor = () => {
       };
 
       const payload = {
-        ...formData,
+        companyName: formData.companyName,
         website: normalizeUrl(formData.website),
+        contactName: formData.contactName,
+        contactEmail: formData.contactEmail,
+        contactPhone: formData.contactPhone,
         linkedin: normalizeUrl(formData.linkedin),
+        message: formData.message
       };
+      
       // Submit to Supabase
       const result = await dbHelpers.submitSponsorshipInquiry(payload);
       console.log('Sponsorship inquiry submitted:', result);
@@ -179,17 +130,12 @@ const ApplySponsor = () => {
       setSubmitStatus("success");
       setFormData({
         companyName: "",
+        website: "",
         contactName: "",
         contactEmail: "",
         contactPhone: "",
-        website: "",
         linkedin: "",
-        budgetRange: "",
-        message: "",
-        companySize: "",
-        industry: "",
-        previousSponsorship: "",
-        goals: ""
+        message: ""
       });
     } catch (error) {
       console.error("Error submitting inquiry:", error);
@@ -225,8 +171,6 @@ const ApplySponsor = () => {
           </p>
         </div>
 
-        
-
         <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#f7931a] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
@@ -249,42 +193,6 @@ const ApplySponsor = () => {
                     placeholder="Enter your company name"
                   />
                   {errors.companyName && <p className="text-red-400 text-sm mt-1">{errors.companyName}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="industry" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Industry
-                  </label>
-                  <select
-                    id="industry"
-                    name="industry"
-                    value={formData.industry}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
-                  >
-                    <option value="">Select your industry</option>
-                    {industries.map((industry) => (
-                      <option key={industry} value={industry}>{industry}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="companySize" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Company Size
-                  </label>
-                  <select
-                    id="companySize"
-                    name="companySize"
-                    value={formData.companySize}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
-                  >
-                    <option value="">Select company size</option>
-                    {companySizes.map((size) => (
-                      <option key={size} value={size}>{size}</option>
-                    ))}
-                  </select>
                 </div>
 
                 <div>
@@ -329,7 +237,7 @@ const ApplySponsor = () => {
 
                 <div>
                   <label htmlFor="contactEmail" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Contact Email *
+                    Email *
                   </label>
                   <input
                     type="email"
@@ -347,7 +255,7 @@ const ApplySponsor = () => {
 
                 <div>
                   <label htmlFor="contactPhone" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Contact Phone *
+                    Phone No *
                   </label>
                   <input
                     type="tel"
@@ -365,7 +273,7 @@ const ApplySponsor = () => {
 
                 <div>
                   <label htmlFor="linkedin" className="block text-sm font-inter-semiBold text-white mb-2">
-                    LinkedIn Profile
+                    LinkedIn
                   </label>
                   <input
                     type="text"
@@ -381,85 +289,25 @@ const ApplySponsor = () => {
               </div>
             </div>
 
-            {/* Sponsorship Details */}
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Sponsorship Details</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="budgetRange" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Budget Range *
-                  </label>
-                  <select
-                    id="budgetRange"
-                    name="budgetRange"
-                    value={formData.budgetRange}
-                    onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent ${
-                      errors.budgetRange ? 'border-red-500' : 'border-[#585858]'
-                    }`}
-                  >
-                    <option value="">Select budget range</option>
-                    {budgetRanges.map((range) => (
-                      <option key={range} value={range}>{range}</option>
-                    ))}
-                  </select>
-                  {errors.budgetRange && <p className="text-red-400 text-sm mt-1">{errors.budgetRange}</p>}
-                </div>
-              </div>
-            </div>
-
             {/* Additional Information */}
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Additional Information</h2>
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="goals" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Sponsorship Goals
-                  </label>
-                  <textarea
-                    id="goals"
-                    name="goals"
-                    value={formData.goals}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
-                    placeholder="What are your main goals for sponsoring this event?"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="previousSponsorship" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Previous Sponsorship Experience
-                  </label>
-                  <textarea
-                    id="previousSponsorship"
-                    name="previousSponsorship"
-                    value={formData.previousSponsorship}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
-                    placeholder="Have you sponsored similar events before? Please describe your experience."
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Additional Information *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={4}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
-                      errors.message ? 'border-red-500' : 'border-[#585858]'
-                    }`}
-                    placeholder="Tell us more about your company, specific requirements, or any questions you have about sponsorship opportunities..."
-                  />
-                  {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
-                  <p className="text-gray-400 text-sm mt-1">Minimum 20 characters</p>
-                </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-inter-semiBold text-white mb-2">
+                  Additional Information *
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={4}
+                  className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
+                    errors.message ? 'border-red-500' : 'border-[#585858]'
+                  }`}
+                  placeholder="Tell us more about your company, specific requirements, or any questions you have about sponsorship opportunities..."
+                />
+                {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
               </div>
             </div>
 

@@ -55,39 +55,29 @@ export const EMAIL_CONFIG = {
         
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3>Personal Information</h3>
-          <p><strong>Name:</strong> ${formData.name}</p>
+          <p><strong>Full Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Company:</strong> ${formData.company || 'Not provided'}</p>
-          <p><strong>Job Title:</strong> ${formData.jobTitle || 'Not provided'}</p>
+          <p><strong>Ph.no:</strong> ${formData.phone}</p>
+          <p><strong>Company/Org:</strong> ${formData.company || 'Not provided'}</p>
+          <p><strong>Title:</strong> ${formData.jobTitle || 'Not provided'}</p>
         </div>
 
         <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">
-          <h3>Speaker Bio</h3>
+          <h3>Speaker Profile</h3>
           <p style="white-space: pre-wrap;">${formData.bio}</p>
         </div>
 
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3>Speaking Topic</h3>
-          <p><strong>Title:</strong> ${formData.topicTitle}</p>
-          <h4>Abstract:</h4>
+          <p><strong>Topic Title:</strong> ${formData.topicTitle}</p>
+          <h4>Topic Abstract:</h4>
           <p style="white-space: pre-wrap;">${formData.topicAbstract}</p>
         </div>
 
         <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">
-          <h3>Experience & Audience</h3>
-          <h4>Speaking Experience:</h4>
-          <p style="white-space: pre-wrap;">${formData.experience}</p>
-          <h4>Target Audience:</h4>
-          <p style="white-space: pre-wrap;">${formData.audience}</p>
-        </div>
-
-        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3>Additional Information</h3>
-          <p><strong>Previous Speaking Engagements:</strong></p>
-          <p style="white-space: pre-wrap;">${formData.previousSpeaking || 'Not provided'}</p>
+          <h3>Social Links</h3>
           <p><strong>LinkedIn:</strong> ${formData.linkedin || 'Not provided'}</p>
-          <p><strong>Twitter:</strong> ${formData.twitter || 'Not provided'}</p>
+          <p><strong>Telegram:</strong> ${formData.telegram || 'Not provided'}</p>
           <p><strong>Website:</strong> ${formData.website || 'Not provided'}</p>
         </div>
 
@@ -118,32 +108,20 @@ export const EMAIL_CONFIG = {
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3>Company Information</h3>
           <p><strong>Company Name:</strong> ${formData.companyName}</p>
-          <p><strong>Contact Name:</strong> ${formData.contactName}</p>
-          <p><strong>Contact Email:</strong> ${formData.contactEmail}</p>
-          <p><strong>Contact Phone:</strong> ${formData.contactPhone}</p>
-          <p><strong>Website:</strong> ${formData.website || 'Not provided'}</p>
+          <p><strong>Company Website:</strong> ${formData.website || 'Not provided'}</p>
+        </div>
+
+        <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">
+          <h3>Contact Information</h3>
+          <p><strong>Contact Person Name:</strong> ${formData.contactName}</p>
+          <p><strong>Email:</strong> ${formData.contactEmail}</p>
+          <p><strong>Phone No:</strong> ${formData.contactPhone}</p>
           <p><strong>LinkedIn:</strong> ${formData.linkedin || 'Not provided'}</p>
         </div>
 
-        <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">
-          <h3>Sponsorship Details</h3>
-          <p><strong>Sponsorship Type:</strong> ${formData.sponsorshipType}</p>
-          <p><strong>Budget Range:</strong> ${formData.budgetRange}</p>
-          <p><strong>Company Size:</strong> ${formData.companySize || 'Not provided'}</p>
-          <p><strong>Industry:</strong> ${formData.industry || 'Not provided'}</p>
-        </div>
-
         <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3>Message</h3>
-          <p style="white-space: pre-wrap;">${formData.message}</p>
-        </div>
-
-        <div style="background: #fff; padding: 20px; border-left: 4px solid #FFBF00; margin: 20px 0;">
           <h3>Additional Information</h3>
-          <p><strong>Previous Sponsorship Experience:</strong></p>
-          <p style="white-space: pre-wrap;">${formData.previousSponsorship || 'Not provided'}</p>
-          <p><strong>Goals:</strong></p>
-          <p style="white-space: pre-wrap;">${formData.goals || 'Not provided'}</p>
+          <p style="white-space: pre-wrap;">${formData.message}</p>
         </div>
 
         <hr style="margin: 30px 0;">

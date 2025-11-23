@@ -13,12 +13,9 @@ const ApplySpeaker = () => {
     bio: "",
     topicTitle: "",
     topicAbstract: "",
-    previousSpeaking: "",
     linkedin: "",
-    twitter: "",
-    website: "",
-    experience: "",
-    audience: ""
+    telegram: "",
+    website: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -29,7 +26,7 @@ const ApplySpeaker = () => {
     const newErrors = {};
     
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required";
+      newErrors.name = "Full name is required";
     }
     
     if (!formData.email.trim()) {
@@ -40,14 +37,10 @@ const ApplySpeaker = () => {
     
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
-    } else if (!/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ""))) {
-      newErrors.phone = "Phone number is invalid";
     }
     
     if (!formData.bio.trim()) {
-      newErrors.bio = "Speaker bio is required";
-    } else if (formData.bio.trim().length < 50) {
-      newErrors.bio = "Bio must be at least 50 characters";
+      newErrors.bio = "Speaker profile is required";
     }
     
     if (!formData.topicTitle.trim()) {
@@ -56,16 +49,6 @@ const ApplySpeaker = () => {
     
     if (!formData.topicAbstract.trim()) {
       newErrors.topicAbstract = "Topic abstract is required";
-    } else if (formData.topicAbstract.trim().length < 100) {
-      newErrors.topicAbstract = "Abstract must be at least 100 characters";
-    }
-    
-    if (!formData.experience.trim()) {
-      newErrors.experience = "Please describe your speaking experience";
-    }
-    
-    if (!formData.audience.trim()) {
-      newErrors.audience = "Please describe your target audience";
     }
     
     setErrors(newErrors);
@@ -74,13 +57,11 @@ const ApplySpeaker = () => {
     if (hasErrors) {
       const fieldLabels = {
         name: "Full Name",
-        email: "Email Address",
-        phone: "Phone Number",
-        bio: "Speaker Bio",
+        email: "Email",
+        phone: "Phone No",
+        bio: "Speaker Profile",
         topicTitle: "Topic Title",
         topicAbstract: "Topic Abstract",
-        experience: "Speaking Experience",
-        audience: "Target Audience",
       };
 
       const firstErrorKey = Object.keys(newErrors)[0];
@@ -133,8 +114,30 @@ const ApplySpeaker = () => {
     setValidationNotice("");
     
     try {
+      // Normalize URLs to accept values without protocol
+      const normalizeUrl = (value) => {
+        if (!value) return "";
+        const trimmed = value.trim();
+        if (/^https?:\/\//i.test(trimmed)) return trimmed;
+        return `https://${trimmed}`;
+      };
+
+      const payload = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        jobTitle: formData.jobTitle,
+        bio: formData.bio,
+        topicTitle: formData.topicTitle,
+        topicAbstract: formData.topicAbstract,
+        linkedin: normalizeUrl(formData.linkedin),
+        telegram: formData.telegram,
+        website: normalizeUrl(formData.website)
+      };
+      
       // Submit to Supabase
-      const result = await dbHelpers.submitSpeakerApplication(formData);
+      const result = await dbHelpers.submitSpeakerApplication(payload);
       console.log('Speaker application submitted:', result);
       
       setSubmitStatus("success");
@@ -147,12 +150,9 @@ const ApplySpeaker = () => {
         bio: "",
         topicTitle: "",
         topicAbstract: "",
-        previousSpeaking: "",
         linkedin: "",
-        twitter: "",
-        website: "",
-        experience: "",
-        audience: ""
+        telegram: "",
+        website: ""
       });
     } catch (error) {
       console.error("Error submitting application:", error);
@@ -188,8 +188,6 @@ const ApplySpeaker = () => {
           </p>
         </div>
 
-        
-
         <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#f7931a] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
@@ -216,7 +214,7 @@ const ApplySpeaker = () => {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Email Address *
+                    Email *
                   </label>
                   <input
                     type="email"
@@ -234,7 +232,7 @@ const ApplySpeaker = () => {
 
                 <div>
                   <label htmlFor="phone" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Phone Number *
+                    Ph.no *
                   </label>
                   <input
                     type="tel"
@@ -252,7 +250,7 @@ const ApplySpeaker = () => {
 
                 <div>
                   <label htmlFor="company" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Company/Organization
+                    Company/Org
                   </label>
                   <input
                     type="text"
@@ -267,7 +265,7 @@ const ApplySpeaker = () => {
 
                 <div>
                   <label htmlFor="jobTitle" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Job Title
+                    Title
                   </label>
                   <input
                     type="text"
@@ -282,12 +280,12 @@ const ApplySpeaker = () => {
               </div>
             </div>
 
-            {/* Speaker Bio */}
+            {/* Speaker Profile */}
             <div>
               <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Speaker Profile</h2>
               <div>
                 <label htmlFor="bio" className="block text-sm font-inter-semiBold text-white mb-2">
-                  Speaker Bio *
+                  Speaker Profile *
                 </label>
                 <textarea
                   id="bio"
@@ -301,7 +299,6 @@ const ApplySpeaker = () => {
                   placeholder="Tell us about your background, expertise, and achievements..."
                 />
                 {errors.bio && <p className="text-red-400 text-sm mt-1">{errors.bio}</p>}
-                <p className="text-gray-400 text-sm mt-1">Minimum 50 characters</p>
               </div>
             </div>
 
@@ -343,117 +340,59 @@ const ApplySpeaker = () => {
                     placeholder="Provide a detailed description of your talk, key points, and what attendees will learn..."
                   />
                   {errors.topicAbstract && <p className="text-red-400 text-sm mt-1">{errors.topicAbstract}</p>}
-                  <p className="text-gray-400 text-sm mt-1">Minimum 100 characters</p>
                 </div>
               </div>
             </div>
 
-            {/* Experience & Audience */}
+            {/* Social Links */}
             <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Experience & Audience</h2>
-              <div className="space-y-6">
+              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Social Links</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
-                  <label htmlFor="experience" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Speaking Experience *
+                  <label htmlFor="linkedin" className="block text-sm font-inter-semiBold text-white mb-2">
+                    LinkedIn
                   </label>
-                  <textarea
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
+                  <input
+                    type="text"
+                    inputMode="url"
+                    id="linkedin"
+                    name="linkedin"
+                    value={formData.linkedin}
                     onChange={handleInputChange}
-                    rows={4}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
-                      errors.experience ? 'border-red-500' : 'border-[#585858]'
-                    }`}
-                    placeholder="Describe your previous speaking engagements, conferences, workshops, etc."
-                  />
-                  {errors.experience && <p className="text-red-400 text-sm mt-1">{errors.experience}</p>}
-                </div>
-
-                <div>
-                  <label htmlFor="audience" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Target Audience *
-                  </label>
-                  <textarea
-                    id="audience"
-                    name="audience"
-                    value={formData.audience}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical ${
-                      errors.audience ? 'border-red-500' : 'border-[#585858]'
-                    }`}
-                    placeholder="Who is your target audience? What level of expertise should they have?"
-                  />
-                  {errors.audience && <p className="text-red-400 text-sm mt-1">{errors.audience}</p>}
-                </div>
-              </div>
-            </div>
-
-            {/* Additional Information */}
-            <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#f7931a] mb-4">Additional Information</h2>
-              <div className="space-y-6">
-                <div>
-                  <label htmlFor="previousSpeaking" className="block text-sm font-inter-semiBold text-white mb-2">
-                    Previous Speaking Engagements (Optional)
-                  </label>
-                  <textarea
-                    id="previousSpeaking"
-                    name="previousSpeaking"
-                    value={formData.previousSpeaking}
-                    onChange={handleInputChange}
-                    rows={3}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent resize-vertical"
-                    placeholder="List specific conferences, events, or platforms where you've spoken"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                    placeholder="https://linkedin.com/in/username"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div>
-                    <label htmlFor="linkedin" className="block text-sm font-inter-semiBold text-white mb-2">
-                      LinkedIn Profile
-                    </label>
-                    <input
-                      type="url"
-                      id="linkedin"
-                      name="linkedin"
-                      value={formData.linkedin}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
-                      placeholder="https://linkedin.com/in/username"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="telegram" className="block text-sm font-inter-semiBold text-white mb-2">
+                    Telegram
+                  </label>
+                  <input
+                    type="text"
+                    id="telegram"
+                    name="telegram"
+                    value={formData.telegram}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                    placeholder="@username"
+                  />
+                </div>
 
-                  <div>
-                    <label htmlFor="twitter" className="block text-sm font-inter-semiBold text-white mb-2">
-                      Twitter/X Handle
-                    </label>
-                    <input
-                      type="text"
-                      id="twitter"
-                      name="twitter"
-                      value={formData.twitter}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
-                      placeholder="@username"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="website" className="block text-sm font-inter-semiBold text-white mb-2">
-                      Personal Website
-                    </label>
-                    <input
-                      type="url"
-                      id="website"
-                      name="website"
-                      value={formData.website}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
-                      placeholder="https://yourwebsite.com"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="website" className="block text-sm font-inter-semiBold text-white mb-2">
+                    Website
+                  </label>
+                  <input
+                    type="text"
+                    inputMode="url"
+                    id="website"
+                    name="website"
+                    value={formData.website}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f7931a] focus:border-transparent"
+                    placeholder="https://yourwebsite.com"
+                  />
                 </div>
               </div>
             </div>

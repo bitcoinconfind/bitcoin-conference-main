@@ -126,12 +126,9 @@ export const dbHelpers = {
         bio: data.bio,
         topic_title: data.topicTitle,
         topic_abstract: data.topicAbstract,
-        previous_speaking: data.previousSpeaking || null,
         linkedin: data.linkedin || null,
-        twitter: data.twitter || null,
+        telegram: data.telegram || null,
         website: data.website || null,
-        experience: data.experience,
-        audience: data.audience,
         status: 'pending',
         created_at: new Date().toISOString()
       }]);
@@ -165,13 +162,8 @@ export const dbHelpers = {
         contact_phone: data.contactPhone,
         website: data.website || null,
         linkedin: data.linkedin || null,
-        sponsorship_type: data.sponsorshipType || null,
-        budget_range: data.budgetRange,
+        budget_range: null,
         message: data.message,
-        company_size: data.companySize || null,
-        industry: data.industry || null,
-        previous_sponsorship: data.previousSponsorship || null,
-        goals: data.goals || null,
         status: 'pending',
         created_at: new Date().toISOString()
       }]);
