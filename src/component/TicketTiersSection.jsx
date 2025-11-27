@@ -10,13 +10,13 @@ const TicketTiersSection = () => {
     // Get referral code from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
-    
+
     // Direct redirect to dashboard with referral code (env-based)
     const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
-    
+
     window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
@@ -70,7 +70,7 @@ const TicketTiersSection = () => {
     <div id="tickets" className="max-w-7xl mx-auto">
       {/* Header Section (removed Coming Soon per request) */}
       <FadeIn direction="up" duration={800}>
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <h2 className="metric-value mb-2 gradient-text">Ticket Tiers</h2>
           <p className="metric-label text-[1.125rem]">Choose your experience level for Bitcoin Conference India 2026</p>
         </div>
@@ -78,9 +78,9 @@ const TicketTiersSection = () => {
 
       {/* Ticket Tiers Section */}
       <div>
-        
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 -my-4 md:my-0">
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6 md:my-0">
           {ticketTiers.map((tier, index) => (
             <TicketCard
               key={index}

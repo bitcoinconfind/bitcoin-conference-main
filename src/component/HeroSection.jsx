@@ -12,13 +12,13 @@ const HeroSection = () => {
     // Get referral code from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
-    
+
     // Direct redirect to dashboard with referral code
     const base = import.meta.env.VITE_DASHBOARD_URL;
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
-    
+
     window.location.href = `${base.replace(/\/$/, '')}?${params.toString()}`;
   };
 
@@ -33,12 +33,38 @@ const HeroSection = () => {
 
           {/* Left Section - Logo */}
           <FadeIn direction="left" delay={100} duration={1000} className="flex justify-center lg:justify-end w-full lg:w-1/4">
-            <img
-              src={BitcoinIcon}
-              alt="Bitcoin Conference India 2026 official logo - World's largest Bitcoin conference"
-              loading="lazy"
-              className="w-auto h-[96px] sm:h-[240px] lg:h-[256px] object-contain"
-            />
+            <style>
+              {`
+                @keyframes spin-centered-precise {
+                  from {
+                    transform: translate(-50.08%, -49.60%) rotate(0deg);
+                  }
+                  to {
+                    transform: translate(-50.08%, -49.60%) rotate(360deg);
+                  }
+                }
+                .animate-spin-centered-precise {
+                  animation: spin-centered-precise 10s linear infinite;
+                  transform-origin: 50.08% 49.60%;
+                }
+              `}
+            </style>
+            <div className="relative w-full h-[96px] sm:h-[240px] lg:h-[256px]">
+              {/* Stable Center - Group 2 */}
+              <img
+                src="/assets/imgs/logo/Group 2.png"
+                alt="Bitcoin Conference India Logo Center"
+                className="absolute top-1/2 left-1/2 w-auto h-[68%] object-contain z-20"
+                style={{ transform: 'translate(-50%, -54%)' }}
+              />
+
+              {/* Rotating Outer - Group 1 */}
+              <img
+                src="/assets/imgs/logo/Group 1.png"
+                alt="Bitcoin Conference India Logo Rotating Ring"
+                className="absolute top-1/2 left-1/2 w-auto h-full object-contain z-10 animate-spin-centered-precise"
+              />
+            </div>
           </FadeIn>
 
           {/* Center Section - Conference Details and Dates stacked vertically */}
@@ -84,4 +110,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

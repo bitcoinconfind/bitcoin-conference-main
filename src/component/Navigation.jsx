@@ -7,6 +7,20 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
+
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/') {
+      const hash = location.hash;
+      if (hash === '#speakers') setActiveLink('speakers');
+      else if (hash === '#why-sponsor' || hash === '#sponsors-cta') setActiveLink('sponsors');
+      else setActiveLink('');
+    } else if (path === '/media') setActiveLink('partnerships');
+    else if (path === '/student-volunteer') setActiveLink('volunteer');
+    else if (path === '/contact') setActiveLink('contact');
+    else setActiveLink('');
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,13 +61,13 @@ const Navigation = () => {
     // Get referral code from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const referralCode = urlParams.get('referralCode');
-    
+
     // Direct redirect to dashboard with referral code (env-based)
     const base = normalizeUrl(import.meta.env.VITE_DASHBOARD_URL);
     const params = new URLSearchParams({
       ...(referralCode && { referralCode: referralCode })
     });
-    
+
     const qs = params.toString();
     window.location.href = qs ? `${base}?${qs}` : base;
   };
@@ -62,6 +76,7 @@ const Navigation = () => {
     e.preventDefault();
     if (location.pathname === "/") {
       smoothScrollTo(0, 1400);
+      window.history.pushState(null, null, '/');
     } else {
       navigate("/");
       // Layout hook will smooth-scroll to top on route change
@@ -76,6 +91,7 @@ const Navigation = () => {
         const elementPosition = el.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         smoothScrollTo(offsetPosition, 1400);
+        window.history.pushState(null, null, `#${id}`);
       }
     } else {
       navigate(`/#${id}`);
@@ -99,11 +115,46 @@ const Navigation = () => {
 
         {/* Nav Links (desktop, centered) */}
         <nav className="flex-1 hidden md:flex items-center justify-center gap-10 uppercase">
-          <a href="/#speakers" onClick={(e) => goToId(e, 'speakers')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Speakers</a>
-          <a href="/#sponsors-cta" onClick={(e) => goToId(e, 'sponsors-cta')} className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Sponsors</a>
-          <Link to="/media" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Partnerships</Link>
-          <Link to="/student-volunteer" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Volunteer</Link>
-          <Link to="/contact" className="metric-label transition-all duration-300 hover:scale-110 hover:!text-[#f7931a]">Contact Us</Link>
+          {[
+            { id: 'speakers', label: 'Speakers', type: 'hash', target: 'speakers' },
+            { id: 'sponsors', label: 'Sponsors', type: 'hash', target: 'why-sponsor' },
+            { id: 'partnerships', label: 'Partnerships', type: 'link', target: '/media' },
+            { id: 'volunteer', label: 'Volunteer', type: 'link', target: '/student-volunteer' },
+            { id: 'contact', label: 'Contact Us', type: 'link', target: '/contact' },
+          ].map((item) => {
+            const isActive =
+              (item.type === 'link' && location.pathname === item.target) ||
+              (item.type === 'hash' && activeLink === item.id);
+
+            return item.type === 'hash' ? (
+              <a
+                key={item.id}
+                href={`/#${item.target}`}
+                onClick={(e) => {
+                  goToId(e, item.target);
+                  setActiveLink(item.id);
+                }}
+                className={`metric-label relative transition-all duration-300 hover:scale-110 hover:!text-[#f7931a] ${isActive ? '!text-[#f7931a]' : ''}`}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-[#f7931a] rounded-full shadow-[0_0_8px_rgba(247,147,26,0.6)]"></span>
+                )}
+              </a>
+            ) : (
+              <Link
+                key={item.id}
+                to={item.target}
+                onClick={() => setActiveLink(item.id)}
+                className={`metric-label relative transition-all duration-300 hover:scale-110 hover:!text-[#f7931a] ${isActive ? '!text-[#f7931a]' : ''}`}
+              >
+                {item.label}
+                {isActive && (
+                  <span className="absolute -bottom-2 left-0 w-full h-[3px] bg-[#f7931a] rounded-full shadow-[0_0_8px_rgba(247,147,26,0.6)]"></span>
+                )}
+              </Link>
+            );
+          })}
         </nav>
         {/* Button at last */}
         <div className="flex-shrink-0 hidden md:block">
@@ -152,7 +203,7 @@ const Hamburger = () => {
       {open && (
         <div className="absolute right-0 mt-2 w-64 bg-[#1F1F1F] border border-[#2a2a2a] rounded-lg shadow-lg z-50">
           <div className="py-2 text-sm font-inter-semiBold uppercase tracking-wide">
-            
+
             <a
               onClick={(e) => {
                 e.preventDefault();
@@ -198,7 +249,7 @@ const Hamburger = () => {
                 e.preventDefault();
                 setOpen(false);
                 const go = () => {
-                  const el = document.getElementById('sponsors-cta');
+                  const el = document.getElementById('why-sponsor');
                   if (el) {
                     const y = el.getBoundingClientRect().top + window.pageYOffset - 80;
                     window.scrollTo({ top: y, behavior: 'smooth' });
@@ -207,7 +258,7 @@ const Hamburger = () => {
                   return false;
                 };
                 if (window.location.pathname !== '/') {
-                  window.location.assign('/#sponsors-cta');
+                  window.location.assign('/#why-sponsor');
                   // try after navigation settles
                   setTimeout(() => { go(); }, 400);
                 } else {
@@ -216,7 +267,7 @@ const Hamburger = () => {
                   }
                 }
               }}
-              href="/#sponsors-cta"
+              href="/#why-sponsor"
               className="block px-4 py-2 metric-label hover:bg-[#2a2a2a]"
             >
               Sponsors

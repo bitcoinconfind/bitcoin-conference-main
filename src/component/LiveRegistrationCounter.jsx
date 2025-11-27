@@ -11,14 +11,14 @@ const LiveRegistrationCounter = () => {
   const { ref: attendeesRef, count: attendeesCount } = useCountUpOnScroll("50k+", { duration: 2000, delay: 0 });
   const { ref: speakersRef, count: speakersCount } = useCountUpOnScroll("150+", { duration: 2000, delay: 100 });
   const { ref: sponsorsRef, count: sponsorsCount } = useCountUpOnScroll("100+", { duration: 2000, delay: 200 });
-  const { ref: daysRef, count: daysCount } = useCountUpOnScroll("2 days", { duration: 2000, delay: 300 });
+  const { ref: daysRef, count: daysCount } = useCountUpOnScroll("2Days", { duration: 2000, delay: 300 });
 
   // Calculate global count based on time since BASE_DATE with deterministic increases
   const getGlobalBaseCount = () => {
     const now = Date.now();
     const timeSinceBase = now - BASE_DATE;
     const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
-    
+
     // Use deterministic random based on interval number for consistency
     // Include the current interval in the calculation
     let totalIncrease = 0;
@@ -30,7 +30,7 @@ const LiveRegistrationCounter = () => {
       const increase = Math.floor((Math.abs(randomValue) % 2)); // 0-1 range
       totalIncrease += increase;
     }
-    
+
     return INITIAL_COUNT + totalIncrease;
   };
 
@@ -48,7 +48,7 @@ const LiveRegistrationCounter = () => {
       const now = Date.now();
       const timeSinceBase = now - BASE_DATE;
       const intervalsSinceBase = Math.floor(timeSinceBase / UPDATE_INTERVAL);
-      
+
       // Calculate current count with deterministic random increases
       // Include the current interval in the calculation
       let totalIncrease = 0;
@@ -59,17 +59,17 @@ const LiveRegistrationCounter = () => {
         const increase = Math.floor((Math.abs(randomValue) % 2)); // 0-1 range
         totalIncrease += increase;
       }
-      
+
       const finalCount = INITIAL_COUNT + totalIncrease;
-      
+
       // Calculate the increase for the current interval only
       const currentIntervalSeed = intervalsSinceBase;
       const currentRandomValue = Math.sin(currentIntervalSeed) * 10000;
       const currentIncrease = Math.floor((Math.abs(currentRandomValue) % 2)); // 0-1 range
-      
+
       // Set the calculated count (deterministic for all users)
       setRegistrationCount(finalCount);
-      
+
       setRecentIncrease(currentIncrease);
       setShowPulse(true);
 
@@ -79,10 +79,10 @@ const LiveRegistrationCounter = () => {
 
     // Update immediately
     updateCounter();
-    
+
     // Then update every UPDATE_INTERVAL (10 seconds)
     const interval = setInterval(updateCounter, UPDATE_INTERVAL);
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -93,82 +93,83 @@ const LiveRegistrationCounter = () => {
 
   return (
     <div className="max-w-4xl mx-auto relative z-10">
-        {/* Main Counter Card */}
-        <div className="relative group">
-          {/* Card content */}
-          <div className="relative bg-black rounded-lg p-8 border-2 border-[#f7931a] shadow-[0_0_20px_rgba(247,147,26,0.3)] hover:shadow-[0_0_30px_rgba(247,147,26,0.5)] transition-shadow duration-300">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+      {/* Main Counter Card */}
+      <div className="relative group">
+        {/* Card content */}
+        <div className="relative bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-[0_0_30px_rgba(247,147,26,0.1)] hover:shadow-[0_0_50px_rgba(247,147,26,0.2)] transition-all duration-500 hover:border-[#f7931a]/30">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#f7931a]/5 to-transparent rounded-2xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-              {/* Left side - Icon and label */}
-              <div className="flex items-center gap-4">
-                <div className="relative">
-                  <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#f7931a] to-[#F69415] flex items-center justify-center shadow-[0_0_20px_rgba(247,147,26,0.6)] ${showPulse ? 'animate-pulse' : ''}`}>
-                    <FaUsers className="text-2xl text-black" />
-                  </div>
-                  {showPulse && (
-                    <div className="absolute inset-0 rounded-full bg-[#f7931a] animate-ping opacity-50"></div>
-                  )}
+          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+
+            {/* Left side - Icon and label */}
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-[#f7931a] to-[#F69415] flex items-center justify-center shadow-[0_0_20px_rgba(247,147,26,0.4)] ${showPulse ? 'animate-pulse' : ''}`}>
+                  <FaUsers className="text-2xl text-black" />
                 </div>
-
-                <div className="text-left">
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-white text-xl md:text-2xl font-semibold font-inter-semiBold">
-                      Sign-ups
-                    </h3>
-                    <div className="flex items-center gap-1 text-green-400 animate-pulse">
-                      <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-                      <span className="text-xs font-medium">LIVE</span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Right side - Counter */}
-              <div className="flex flex-col items-center md:items-end">
-                <div className={`text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#f7931a] via-[#F69415] to-[#f7931a] bg-clip-text text-transparent transition-all duration-500 ${showPulse ? 'scale-110' : 'scale-100'}`}>
-                  {formatNumber(registrationCount)}
-                </div>
-
-                {/* Recent increase indicator */}
-                {recentIncrease > 0 && (
-                  <div className={`mt-2 flex items-center gap-1 text-green-400 text-sm font-medium transition-opacity duration-500 ${showPulse ? 'opacity-100' : 'opacity-60'}`}>
-                    <FaChartLine className="text-xs" />
-                    <span>+{recentIncrease} just registered!</span>
-                  </div>
+                {showPulse && (
+                  <div className="absolute inset-0 rounded-full bg-[#f7931a] animate-ping opacity-50"></div>
                 )}
               </div>
 
+              <div className="text-left">
+                <div className="flex items-center gap-2">
+                  <h3 className="text-white text-xl md:text-2xl font-semibold font-inter-semiBold">
+                    Sign-ups
+                  </h3>
+                  <div className="flex items-center gap-1 text-green-400 animate-pulse">
+                    <span className="w-2 h-2 bg-green-400 rounded-full shadow-[0_0_10px_rgba(74,222,128,0.8)]"></span>
+                    <span className="text-xs font-medium tracking-wider">LIVE</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* FOMO Message */}
-            <div className="mt-6 pt-6 border-t border-[#f7931a]/20">
-              <p className="text-center text-gray-300 text-sm md:text-base">
-                <span className="text-[#f7931a] font-semibold">Don't miss out!</span> Join with thousands of Bitcoin enthusiasts securing their spot right now.
-              </p>
-            </div>
-          </div>
-        </div>
+            {/* Right side - Counter */}
+            <div className="flex flex-col items-center md:items-end">
+              <div className={`text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#f7931a] via-[#F69415] to-[#f7931a] bg-clip-text text-transparent transition-all duration-500 drop-shadow-sm ${showPulse ? 'scale-110' : 'scale-100'}`}>
+                {formatNumber(registrationCount)}
+              </div>
 
-        {/* Sub-stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-          <div ref={attendeesRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">{attendeesCount}</div>
-            <div className="text-xs text-gray-400 mt-1">Attendees</div>
+              {/* Recent increase indicator */}
+              {recentIncrease > 0 && (
+                <div className={`mt-2 flex items-center gap-1 text-green-400 text-sm font-medium transition-opacity duration-500 ${showPulse ? 'opacity-100' : 'opacity-60'}`}>
+                  <FaChartLine className="text-xs" />
+                  <span>+{recentIncrease} just registered!</span>
+                </div>
+              )}
+            </div>
+
           </div>
-          <div ref={speakersRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">{speakersCount}</div>
-            <div className="text-xs text-gray-400 mt-1">Speakers and Global Leaders</div>
-          </div>
-          <div ref={sponsorsRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a]">{sponsorsCount}</div>
-            <div className="text-xs text-gray-400 mt-1">Industry Sponsors</div>
-          </div>
-          <div ref={daysRef} className="bg-black/50 border border-[#f7931a]/20 rounded-lg p-4 text-center backdrop-blur-sm">
-            <div className="text-2xl font-bold text-[#f7931a] capitalize">{daysCount}</div>
-            <div className="text-xs text-gray-400 mt-1">Of Networking</div>
+
+          {/* FOMO Message */}
+          <div className="relative z-10 mt-6 pt-6 border-t border-white/10">
+            <p className="text-center text-gray-300 text-sm md:text-base">
+              <span className="text-[#f7931a] font-semibold">Don't miss out!</span> Join with thousands of Bitcoin enthusiasts securing their spot right now.
+            </p>
           </div>
         </div>
+      </div>
+
+      {/* Sub-stats row */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
+        <div ref={attendeesRef} className="group bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-sm hover:bg-[#f7931a]/10 hover:border-[#f7931a]/30 transition-all duration-300">
+          <div className="text-2xl font-bold text-[#f7931a] group-hover:scale-105 transition-transform duration-300">{attendeesCount}</div>
+          <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-300">Attendees</div>
+        </div>
+        <div ref={speakersRef} className="group bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-sm hover:bg-[#f7931a]/10 hover:border-[#f7931a]/30 transition-all duration-300">
+          <div className="text-2xl font-bold text-[#f7931a] group-hover:scale-105 transition-transform duration-300">{speakersCount}</div>
+          <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-300">Speakers and Global Leaders</div>
+        </div>
+        <div ref={sponsorsRef} className="group bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-sm hover:bg-[#f7931a]/10 hover:border-[#f7931a]/30 transition-all duration-300">
+          <div className="text-2xl font-bold text-[#f7931a] group-hover:scale-105 transition-transform duration-300">{sponsorsCount}</div>
+          <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-300">Industry Sponsors</div>
+        </div>
+        <div ref={daysRef} className="group bg-white/5 border border-white/10 rounded-xl p-4 text-center backdrop-blur-sm hover:bg-[#f7931a]/10 hover:border-[#f7931a]/30 transition-all duration-300">
+          <div className="text-2xl font-bold text-[#f7931a] capitalize group-hover:scale-105 transition-transform duration-300">{daysCount}</div>
+          <div className="text-xs text-gray-400 mt-1 group-hover:text-gray-300">Of Networking</div>
+        </div>
+      </div>
     </div>
   );
 };
