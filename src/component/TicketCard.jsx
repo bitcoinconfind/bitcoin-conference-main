@@ -53,7 +53,7 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
           <Button
             label="Coming Soon"
             variant="secondary"
-            className="w-full py-2 md:py-3 text-sm md:text-lg font-semibold cursor-not-allowed mt-auto !border-[#ff6501] !border-2 !bg-transparent shadow-[0_0_10px_rgba(255,101,1,0.3)] hover:!bg-[#ff6501]/10 hover:!shadow-[0_0_20px_rgba(255,101,1,0.6)] transition-all duration-300 gradient-text"
+            className="w-full py-2 md:py-3 text-sm md:text-lg font-semibold cursor-not-allowed mt-auto !border-[#ff6501] !border-2 !bg-[#ff6501] !text-black opacity-100 shadow-[0_0_10px_rgba(255,101,1,0.3)] hover:!bg-[#ff6501] hover:!shadow-[0_0_20px_rgba(255,101,1,0.6)] transition-all duration-300"
             disabled={true}
           />
         </div>

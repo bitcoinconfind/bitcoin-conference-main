@@ -43,7 +43,7 @@ const Hero = () => {
                     <FadeIn direction="up" delay={400} duration={800} className="w-full">
                         <p className="text-xl sm:text-2xl text-gray-300 font-light leading-relaxed text-center lg:text-left">
                             India's premier Bitcoin gathering is coming to Hyderabad. <br />
-                            Join <span className="text-white font-bold">50,000+</span> attendees, <span className="text-white font-bold">150+</span> speakers, and industry leaders for a historic event.
+                            Join <span className="text-[#ff6501] font-bold">50,000+</span> attendees, <span className="text-[#ff6501] font-bold">150+</span> speakers, and industry leaders for a historic event.
                         </p>
                     </FadeIn>
 
@@ -58,7 +58,7 @@ const Hero = () => {
                             <Button
                                 label="Become a Sponsor"
                                 variant="secondary"
-                                className="px-8 py-4 text-lg font-bold"
+                                className="px-8 py-4 text-lg font-bold !border-[#ff6501] !text-[#ff6501]"
                             />
                         </a>
                     </FadeIn>
