@@ -1,4 +1,4 @@
-# Bitcoin Forum India 2026 - World's Largest Bitcoin Conference
+# Bitcoin Forum India 2026 - Where India meets Bitcoin
 
 [![Bitcoin Forum India 2026](https://img.shields.io/badge/Bitcoin%20Conference-India%202026-orange)](https://bitcoinconferenceindia.com)
 [![World's Largest](https://img.shields.io/badge/World's%20Largest-Bitcoin%20Conference-gold)](https://bitcoinconferenceindia.com)
