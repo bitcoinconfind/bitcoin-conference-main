@@ -19,7 +19,7 @@ const Hero = () => {
 
     return (
 
-        <section className="relative w-full min-h-[85vh] flex flex-col justify-center px-4 sm:px-8 lg:px-24 overflow-hidden pt-18 md:pt-22 pb-12">
+        <section className="relative w-full min-h-[85vh] flex flex-col justify-center px-4 sm:px-8 lg:px-24 overflow-hidden pt-24 md:pt-28 pb-12">
 
 
 
@@ -30,7 +30,7 @@ const Hero = () => {
 
 
                 {/* Image Section (Left) */}
-                <FadeIn direction="up" delay={100} className="relative w-[60%] sm:w-[50%] lg:w-[45%] lg:max-w-[660px] lg:opacity-80 pointer-events-none perspective-1000 p-0 m-0">
+                <FadeIn direction="up" delay={100} className="relative w-[65%] sm:w-[50%] lg:w-[35%] lg:max-w-[500px] lg:opacity-80 pointer-events-none perspective-1000 p-0 m-0 mt-8 lg:mt-32">
                     <img
                         src="/assets/imgs/logo/wib.svg"
                         alt="Bitcoin Forum India"
@@ -39,26 +39,26 @@ const Hero = () => {
                 </FadeIn>
 
                 {/* Content Section (Right) */}
-                <div className="flex flex-col items-center lg:items-start w-full lg:w-[60%] lg:pl-12">
+                <div className="flex flex-col items-center lg:items-start w-full lg:w-[60%] lg:pl-12 mt-8 lg:mt-32">
                     <FadeIn direction="up" delay={400} duration={800} className="w-full">
-                        <p className="text-xl sm:text-2xl text-gray-300 font-light leading-relaxed text-center lg:text-left">
+                        <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed text-center lg:text-left">
                             India's premier Bitcoin gathering is coming to Hyderabad. <br />
                             Join <span className="text-[#ff6501] font-bold">50,000+</span> attendees, <span className="text-[#ff6501] font-bold">150+</span> speakers, and industry leaders for a historic event.
                         </p>
                     </FadeIn>
 
-                    <FadeIn direction="up" delay={600} duration={800} className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8">
+                    <FadeIn direction="up" delay={600} duration={800} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-6 mt-6 sm:mt-8">
                         <Button
                             label="Get Free Tickets"
                             variant="primary"
-                            className="px-8 py-4 text-lg font-bold shadow-lg shadow-btc-gold/20"
+                            className="px-5 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold shadow-lg shadow-btc-gold/20"
                             onClick={handleWinFreeTickets}
                         />
                         <a href="/#sponsors-cta">
                             <Button
                                 label="Become a Sponsor"
                                 variant="secondary"
-                                className="px-8 py-4 text-lg font-bold !border-[#ff6501] !text-[#ff6501]"
+                                className="px-5 py-2.5 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold !border-[#ff6501] !text-[#ff6501]"
                             />
                         </a>
                     </FadeIn>

@@ -67,41 +67,52 @@ const Navigation = () => {
   return (
     <>
       <div className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] md:w-[90%] lg:w-[85%]">
-        {/* Main Header Pill - Truly Centered */}
+        {/* Main Header Pill - Contains Logo, Nav, and Button */}
         <header
-          className={`transition-all duration-500 ease-out 
+          className={`transition-all duration-500 ease-out border-2 border-[#ff6501]
             ${isScrolled
-              ? 'py-3 md:py-4 bg-[#ff6501]/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-2xl'
-              : 'py-3 md:py-5 bg-[#ff6501]/10 backdrop-blur-md'
-            } rounded-full w-full max-w-[600px] mx-auto`}
+              ? 'py-3 md:py-4 bg-white shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-2xl'
+              : 'py-3 md:py-5 bg-white backdrop-blur-md'
+            } rounded-2xl w-full mx-auto`}
         >
           <BorderBeam size={300} duration={12} delay={9} borderWidth={3} colorFrom="#ff6501" colorTo="#ff6501" />
 
-          <div className="px-10 flex items-center justify-center relative z-10 w-full">
-            {/* Desktop Nav - Centered */}
-            <nav className="hidden md:flex items-center gap-1">
+          <div className="px-6 md:px-10 flex items-center justify-between relative z-10 w-full">
+            {/* Logo - Left (visible on all screens) */}
+            <div className="flex-shrink-0">
+              <Link to="/">
+                <img
+                  src="/headerlogo.png"
+                  alt="Bitcoin India Forum"
+                  className="h-10 md:h-14 lg:h-16 w-auto transition-all duration-300 hover:scale-105"
+                />
+              </Link>
+            </div>
+
+            {/* Desktop Nav - Center */}
+            <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">
               <NavLink onClick={(e) => goToId(e, 'speakers')} href="/#speakers">Speakers</NavLink>
               <NavLink onClick={(e) => goToId(e, 'sponsors-cta')} href="/#sponsors-cta">Sponsors</NavLink>
               <NavLink to="/media">Partnerships</NavLink>
               <NavLink to="/student-volunteer">Volunteer</NavLink>
             </nav>
 
-            {/* Mobile Toggle */}
-            <div className="md:hidden">
+            {/* Get Tickets Button - Desktop Right */}
+            <div className="hidden md:block flex-shrink-0">
+              <Button
+                label="Get Tickets"
+                variant="primary"
+                className={`!rounded-full transition-all duration-300 ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'} shadow-lg shadow-[#ff6501]/20`}
+                onClick={handleWinFreeTickets}
+              />
+            </div>
+
+            {/* Mobile Hamburger - Right */}
+            <div className="md:hidden flex-shrink-0">
               <Hamburger goToId={goToId} handleWinFreeTickets={handleWinFreeTickets} />
             </div>
           </div>
         </header>
-
-        {/* Get Tickets Button - Absolute positioned to the right */}
-        <div className="hidden md:block absolute right-0 top-0">
-          <Button
-            label="Get Tickets"
-            variant="primary"
-            className={`!rounded-full transition-all duration-300 ${isScrolled ? 'px-8 py-3 text-base' : 'px-10 py-4 text-lg'} shadow-lg shadow-[#ff6501]/20`}
-            onClick={handleWinFreeTickets}
-          />
-        </div>
       </div>
     </>
   );
@@ -122,8 +133,8 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
 
   return (
     <div className="relative">
-      <button onClick={() => setOpen(!open)} className="p-2 text-white/80 hover:text-[#ff6501] transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+      <button onClick={() => setOpen(!open)} className="p-2 text-black hover:text-[#ff6501] transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
           <path strokeLinecap="round" strokeLinejoin="round" d={open ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
         </svg>
       </button>

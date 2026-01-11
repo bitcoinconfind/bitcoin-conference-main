@@ -26,10 +26,11 @@ export const BorderBeam = ({
         return () => resizeObserver.disconnect();
     }, []);
 
-    const rx = Math.min(dimensions.width, dimensions.height) / 2;
+    // Use 24px radius for smoother curves (rounded-2xl visual appearance)
+    const rx = 24;
     const { width: w, height: h } = dimensions;
 
-    // Path: Top-Left -> Clockwise
+    // Path: Top-Left -> Clockwise (Rounded Rectangle)
     const pathData = w > 0 ? `
     M ${rx} 0
     L ${w - rx} 0

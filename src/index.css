@@ -98,6 +98,51 @@ button[disabled] {
   }
 }
 
+/* Wave animations for gradient background */
+@keyframes wave-move-1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-5%, 5%) scale(1.1);
+  }
+
+  66% {
+    transform: translate(5%, -5%) scale(0.9);
+  }
+}
+
+@keyframes wave-move-2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(10%, 10%) rotate(5deg);
+  }
+}
+
+@keyframes wave-move-3 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  25% {
+    transform: translate(8%, -3%) scale(1.15);
+  }
+
+  75% {
+    transform: translate(-8%, 3%) scale(0.85);
+  }
+}
+
 /* Background Gradients */
 .bg-premium-dark {
   background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 100%);
@@ -206,4 +251,23 @@ button[disabled] {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #e65a00;
+}
+
+/* Ripple Effect Animation */
+@keyframes cell-ripple {
+  0% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+.animate-cell-ripple {
+  animation: cell-ripple var(--duration, 200ms) ease-out none 1 var(--delay, 0ms);
 }
