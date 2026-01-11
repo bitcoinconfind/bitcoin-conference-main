@@ -45,6 +45,15 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
         - **Solution**:
             - Applied `z-20` to the Map container (placing it just above the background).
             - **CRITICAL**: Added `pointer-events-auto` to the Map container. This ensures the map explicitly captures mouse events instead of letting them fall through to the background, even if visually layered correctly. This replicates the successful pattern used in the Hero section.
+    - **Hero Section Interactivity**:
+        - **Issue**: Content ("Get Tickets" buttons) was potentially blocked by background layers.
+        - **Solution**: Applied `relative z-20 pointer-events-auto` to the Hero content wrapper.
+    - **Background Animation Upgrade**:
+        - **Disabled Bubbles**: Commented out `FloatingParticles` for a cleaner look.
+        - **Overlapping Ripples**:
+            - Refactored `BackgroundRippleEffect` to use the **Web Animations API** instead of React state.
+            - This enables **simultaneous, overlapping ripples** (e.g., auto-trigger + manual click) without grid resets.
+            - Adjusted auto-ripple interval to **5 seconds**.
 
 ## Recent Changes (Session History - Jan 9 2026)
 - **Visual Overhaul (White Theme)**:
