@@ -14,6 +14,23 @@ body {
   font-family: 'Outfit', sans-serif;
 }
 
+/* Allow grid clicks through main content */
+main {
+  pointer-events: none;
+}
+
+/* Re-enable pointer events for all interactive elements */
+main a,
+main button,
+main input,
+main textarea,
+main select,
+main [role="button"],
+main [onclick],
+main label {
+  pointer-events: auto;
+}
+
 /* Typography Overrides */
 h1,
 h2,

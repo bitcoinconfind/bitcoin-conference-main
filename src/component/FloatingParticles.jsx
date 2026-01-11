@@ -70,9 +70,9 @@ const FloatingParticles = () => {
             }
         }
 
-        // Create particles
+        // Create particles - responsive count
         const particles = [];
-        const particleCount = 50;
+        const particleCount = window.innerWidth < 768 ? 20 : 50; // 20 on mobile, 50 on desktop
 
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
