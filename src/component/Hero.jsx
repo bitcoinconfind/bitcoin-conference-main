@@ -44,7 +44,7 @@ const Hero = () => {
 
             <div className="z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-12">
                 {/* Content Section - Left Side */}
-                <div className="flex flex-col items-center lg:items-start w-full lg:w-[55%]">
+                <div className="flex flex-col items-center lg:items-start w-full lg:w-[55%] relative z-20 pointer-events-auto">
                     <FadeIn direction="up" delay={400} duration={800} className="w-full">
                         <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 font-light leading-relaxed text-center lg:text-left">
                             India's premier Bitcoin gathering is coming to Hyderabad. <br />

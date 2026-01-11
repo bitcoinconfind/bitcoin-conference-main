@@ -8,7 +8,7 @@ const Background = () => {
             {/* Non-interactive background elements at z-[-1] - BEHIND everything */}
             <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#ffffff] pointer-events-none">
                 {/* Floating Particles - White bubbles */}
-                <FloatingParticles />
+                {/* <FloatingParticles /> */}
 
                 {/* Subtle gradient overlay at top */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#f5f5f5_0%,transparent_50%)]" />
