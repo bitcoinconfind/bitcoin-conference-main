@@ -141,20 +141,35 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
 
       {/* Floating Dropdown for Mobile */}
       {open && (
-        <div className="absolute top-12 right-0 w-56 bg-[#111] border border-white/10 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="absolute top-12 right-0 w-56 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col p-2 gap-1">
+            {/* Get Tickets Button */}
             <button
-              onClick={() => { setOpen(false); handleWinFreeTickets(); }}
-              className="block px-4 py-3 text-sm text-[#ff6501] font-bold hover:bg-white/5 rounded-xl transition-all text-center mb-1 border border-[#ff6501]/30"
+              onClick={() => {
+                handleWinFreeTickets();
+                setOpen(false);
+              }}
+              className="w-full px-4 py-3 bg-[#ff6501] text-black font-bold rounded-xl hover:bg-[#e65a00] transition-colors"
             >
               Get Tickets
             </button>
-            <div className="h-[1px] bg-white/10 mx-2 my-1"></div>
-            <MobileLink onClick={(e) => { setOpen(false); goToId(e, 'speakers'); }} href="/#speakers">Speakers</MobileLink>
-            <MobileLink onClick={(e) => { setOpen(false); goToId(e, 'sponsors-cta'); }} href="/#sponsors-cta">Sponsors</MobileLink>
-            <MobileLink to="/media" onClick={() => setOpen(false)}>Partnerships</MobileLink>
-            <MobileLink to="/student-volunteer" onClick={() => setOpen(false)}>Volunteer</MobileLink>
-            <MobileLink to="/contact" onClick={() => setOpen(false)}>Contact Us</MobileLink>
+
+            {/* Menu Items */}
+            <button onClick={() => { goToId('speakers'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-gray-700 hover:text-[#ff6501] hover:bg-gray-50 rounded-lg transition-colors">
+              Speakers
+            </button>
+            <button onClick={() => { goToId('sponsors'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-gray-700 hover:text-[#ff6501] hover:bg-gray-50 rounded-lg transition-colors">
+              Sponsors
+            </button>
+            <button onClick={() => { goToId('partnerships'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-gray-700 hover:text-[#ff6501] hover:bg-gray-50 rounded-lg transition-colors">
+              Partnerships
+            </button>
+            <button onClick={() => { goToId('volunteer'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-gray-700 hover:text-[#ff6501] hover:bg-gray-50 rounded-lg transition-colors">
+              Volunteer
+            </button>
+            <button onClick={() => { goToId('contact'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-gray-700 hover:text-[#ff6501] hover:bg-gray-50 rounded-lg transition-colors">
+              Contact Us
+            </button>
           </div>
         </div>
       )}
