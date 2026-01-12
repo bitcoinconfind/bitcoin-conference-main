@@ -100,9 +100,9 @@ const LiveRegistrationCounter = () => {
         <div className="relative flex-grow lg:w-2/3 group">
           <div className="absolute inset-0 bg-[#ff6501] blur-[60px] opacity-10 rounded-full"></div>
 
-          <div className="relative h-full bg-white backdrop-blur-xl border-2 border-[#ff6501] p-8 md:p-12 overflow-hidden
+          <div className="relative h-full bg-black/60 backdrop-blur-xl border border-[#ff6501]/30 p-8 md:p-12 overflow-hidden
                           lg:rounded-l-[3rem] lg:rounded-tr-[1rem] lg:rounded-br-[5rem] rounded-3xl
-                          shadow-[0_0_40px_rgba(0,0,0,0.5)] transition-all duration-500">
+                          shadow-[0_0_40px_rgba(255,101,1,0.1)] transition-all duration-500">
 
 
 
@@ -161,11 +161,11 @@ const LiveRegistrationCounter = () => {
 // Reusable "Pill" Component for the stack
 // eslint-disable-next-line react/display-name
 const StatsPill = React.forwardRef(({ value, label, delay }, ref) => (
-  <div ref={ref} className="group relative bg-white hover:bg-white border-2 border-[#ff6501] hover:border-[#ff6501] p-5 rounded-2xl transition-all duration-300 hover:translate-x-2 shadow-lg">
+  <div ref={ref} className="group relative bg-black/50 hover:bg-black/70 border border-[#ff6501]/30 hover:border-[#ff6501]/50 p-5 rounded-2xl transition-all duration-300 hover:translate-x-2 shadow-lg backdrop-blur-sm">
     <div className="flex items-center justify-between">
       <div>
         <div className="text-2xl font-bold text-[#ff6501] group-hover:text-[#ff6501] transition-colors">{value}</div>
-        <div className="text-xs text-gray-500 uppercase tracking-wider">{label}</div>
+        <div className="text-xs text-gray-400 uppercase tracking-wider">{label}</div>
       </div>
       <div className="h-8 w-1 bg-[#ff6501] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
     </div>

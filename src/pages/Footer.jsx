@@ -11,7 +11,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="w-full border-t border-[#ff6501] bg-white pt-12 pb-8">
+    <footer className="w-full border-t border-[#ff6501]/30 bg-[#050505]/90 backdrop-blur-sm pt-12 pb-8">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
 
         {/* Main Footer Content */}
@@ -38,7 +38,7 @@ const Footer = () => {
         {/* Disclaimer Section */}
         <div className="flex flex-col items-center text-center border-t border-[#ff6501]/10 pt-8">
           <h4 className="text-[#ff6501] text-xs font-bold uppercase tracking-[0.2em] mb-4">Disclaimer</h4>
-          <p className="text-[#ff6501]/80 text-xs md:text-sm font-light max-w-3xl leading-relaxed">
+          <p className="text-gray-400 text-xs md:text-sm font-light max-w-3xl leading-relaxed">
             Bitcoin Forum India is an independent event dedicated to
             promoting Bitcoin education and adoption in India. We are not
             affiliated with any specific Bitcoin company or organization. All

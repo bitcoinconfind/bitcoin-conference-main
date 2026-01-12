@@ -6,9 +6,9 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: #050505;
   overflow-x: hidden;
-  color: #1a1a1a;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   font-family: 'Outfit', sans-serif;
@@ -68,7 +68,7 @@ h6,
 }
 
 .btn-secondary {
-  @apply border border-[#333] px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:border-[#ff6501] hover:text-[#ff6501] bg-transparent text-[#1a1a1a];
+  @apply border border-[#333] px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:border-[#ff6501] hover:text-[#ff6501] bg-transparent text-[#ffffff];
 }
 
 /* Prevent disabled buttons from being faded out */
@@ -179,11 +179,11 @@ button[disabled] {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: #1a1a1a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: #333;
   border-radius: 4px;
 }
 
@@ -227,28 +227,28 @@ button[disabled] {
   }
 }
 
-/* Global override: Change all white text to black */
-.text-white {
+/* Global override: Change all white text to black - REMOVED */
+/* .text-white {
   color: #1a1a1a !important;
-}
+} */
 
-/* Override white colors in backgrounds to maintain visibility */
-.bg-black {
+/* Override white colors in backgrounds to maintain visibility - REMOVED */
+/* .bg-black {
   background-color: #ffffff !important;
-}
+} */
 
-/* Override gray text colors for better visibility */
+/* Override gray text colors for better visibility - REMOVED/UPDATED */
 .text-gray-400,
 .placeholder-gray-400::placeholder {
-  color: #666666 !important;
+  color: #9ca3af !important;
 }
 
 .text-gray-300 {
-  color: #555555 !important;
+  color: #d1d5db !important;
 }
 
 .text-gray-200 {
-  color: #444444 !important;
+  color: #e5e7eb !important;
 }
 
 /* Custom Scrollbar for Ticket Section */

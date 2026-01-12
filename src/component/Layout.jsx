@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "./Navigation";
+import Background from "./Background";
 
 const GA_MEASUREMENT_ID = "G-X5FR6VSP9X";
 
@@ -61,6 +62,7 @@ const Layout = () => {
 
   return (
     <>
+      <Background />
       <Navigation />
       <main className="relative z-10">
         <Outlet />

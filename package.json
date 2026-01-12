@@ -11,9 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/fiber": "^9.5.0",
     "@supabase/supabase-js": "^2.58.0",
     "@tailwindcss/vite": "^4.1.13",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.25.0",
     "motion": "^12.25.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
@@ -21,7 +23,8 @@
     "react-router-dom": "^7.9.1",
     "resend": "^6.2.0",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.13",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.35.0",

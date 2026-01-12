@@ -27,15 +27,54 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
     - Call-to-Action buttons with hover effects.
 
 ### 3. Backgrounds
-- **Starfield**: Canvas-based animated stars (`StarfieldBackground.jsx`).
-- **Genesis Grid**: 3D grid effect.
-- **Golden Aurora**: Subtle golden gradient overlays.
+- **Molten Aurora** (`src/component/MoltenAurora.jsx`): Premium dark gradient with animated orange/amber orbs.
+  - Deep black base (`#050505` to `#0A0A0A`)
+  - 4 animated gradient orbs in Bitcoin orange/amber colors
+  - Subtle noise texture and hero spotlight effect
+  - CSS keyframe animations (18-25s cycles)
+- *(Deprecated)* Starfield, Genesis Grid, BitcoinRevealBackground - replaced by Molten Aurora
 
 ### 4. Interactive Sections
 - **Ticket Tiers**: Cascading cards with glass effects (`TicketTiersSection.jsx`).
 - **Live Counter**: Real-time ticker for registrations.
 - **FAQ**: Accordion-style questions.
 - **Sponsors**: Auto-scrolling marquee.
+
+## Recent Changes (Session History - Jan 12 2026)
+- **Background Reversion (Match Live)**:
+    - **Reverted to Live Background**: Restored `Background.jsx` and `BackgroundRippleEffect.jsx` from `origin/main`.
+    - **Theme Revert**: Restored `index.css` to the "live" version (White Theme overrides), replacing the Dark/Molten Aurora theme.
+    - **Layout Update**: Swapped `<MoltenAurora />` for `<Background />` in `Layout.jsx`.
+    - **Files Modified**: `Layout.jsx`, `index.css`, `Background.jsx` (restored), `BackgroundRippleEffect.jsx` (restored).
+    - **Files Unused**: `MoltenAurora.jsx` (retained but inactive).
+
+- **Dark Theme Conversion**:
+    - **Global Revert**: Updated `index.css` to restore Dark Mode base (`bg-[#050505]`, text white), removing the temporary white theme overrides.
+    - **Background Update**: Modified `Background.jsx` to use a dark base and compatible gradient, while keeping the "Live" structure.
+    - **Visuals**: Enhanced contrast for the restored background on dark mode.
+
+
+- **Major Theme Overhaul (Dark Mode with Molten Aurora)**:
+    - **Removed Loading Screen**: Eliminated `LoadingScreen.jsx` from App.jsx for instant page load.
+    - **New Background Design**: Created `MoltenAurora.jsx` component:
+        - Premium dark gradient background replacing white theme
+        - 4 animated floating orbs in Bitcoin orange/amber colors (`#ff6501`, `#f7931a`, `#cc5200`)
+        - Subtle noise texture overlay for depth
+        - Hero spotlight effect to draw focus
+    - **Global CSS Updates** (`index.css`):
+        - Body background changed from white (`#ffffff`) to near-black (`#050505`)
+        - Default text color changed to white
+        - Added aurora animation keyframes (`aurora-1` through `aurora-4`)
+        - Fixed gray text classes for dark theme visibility
+        - Updated scrollbar colors for dark theme
+    - **Component Theme Updates**:
+        - `Navigation.jsx`: Dark glassmorphism header (`bg-black/60 backdrop-blur-xl`)
+        - `Footer.jsx`: Dark background with proper text contrast
+        - `TicketTiersSection.jsx`: Dark glassmorphism cards replacing white
+        - `LiveRegistrationCounter.jsx`: Dark glassmorphism panels
+    - **Files Modified**: `App.jsx`, `Layout.jsx`, `index.css`, `Navigation.jsx`, `Footer.jsx`, `TicketTiersSection.jsx`, `LiveRegistrationCounter.jsx`
+    - **Files Created**: `MoltenAurora.jsx`
+    - **Files Now Unused**: `LoadingScreen.jsx`, `Background.jsx`, `BitcoinRevealBackground.jsx`
 
 ## Recent Changes (Session History - Jan 11 2026)
 - **Visual & Functional Fixes**:

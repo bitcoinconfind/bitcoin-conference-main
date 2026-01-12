@@ -75,18 +75,18 @@ const Speakers = () => {
             {/* Card Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#ff6501]/10 to-purple-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            <div className="relative bg-white border-2 border-[#ff6501] rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#ff6501] transition-colors">
+            <div className="relative bg-black/60 backdrop-blur-xl border border-[#ff6501]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#ff6501] transition-colors">
               {/* Top Status Bar */}
 
 
               <h4 className="text-xl text-[#ff6501] font-bold mb-2">Ready to Speak?</h4>
-              <p className="text-black text-sm mb-8 font-medium">Join the ranks of industry leaders defining the Bitcoin narrative.</p>
+              <p className="text-gray-300 text-sm mb-8 font-medium">Join the ranks of industry leaders defining the Bitcoin narrative.</p>
 
               <a href="/apply/speaker" className="block">
                 <Button
                   label="Apply Now"
                   variant="primary"
-                  className="w-full !py-4 text-lg font-bold shadow-[0_0_20px_rgba(255,101,1,0.2)] hover:shadow-[0_0_40px_rgba(255,101,1,0.4)]"
+                  className="w-full !py-4 text-lg font-bold shadow-[0_0_20px_rgba(255,101,1,0.2)] hover:shadow-[0_0_40px_rgba(255,101,1,0.4)] text-black"
                 />
               </a>
             </div>
