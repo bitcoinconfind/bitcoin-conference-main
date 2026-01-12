@@ -29,15 +29,20 @@ export const useCountUp = (end, options = {}) => {
       const stringValue = value.toString();
 
       // Handle cases like "50k+", "150+", "2 days", "1.4+"
-      const match = stringValue.match(/^(\d+(?:\.\d+)?)\s*([kKmM]?)(.*)$/);
+      const match = stringValue.match(/^(\d+(?:\.\d+)?)([kKmM]?)(.*)$/);
       if (match) {
         let number = parseFloat(match[1]);
         const mult = match[2].toLowerCase();
-        const suff = match[3]; // Only the part after k/m (e.g., "+" or " days")
+        let suff = match[3]; // Only the part after k/m (e.g., "+" or " days")
 
         // Convert k/m to actual numbers for animation
         if (mult === 'k') number *= 1000;
         if (mult === 'm') number *= 1000000;
+
+        // If there's no multiplier but there's a suffix that starts with a letter, add space
+        if (!mult && suff && /^[a-zA-Z]/.test(suff)) {
+          suff = ' ' + suff;
+        }
 
         return { targetNumber: number, suffix: suff, multiplier: mult };
       }

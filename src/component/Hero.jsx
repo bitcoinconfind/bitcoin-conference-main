@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import FadeIn from "./ui/FadeIn";
+import { useCountUpOnScroll } from '../hooks/useCountUp';
 
 const Hero = () => {
     const [tilt, setTilt] = useState({ x: 0, y: 0 });
+
+    // Count up animations for mobile stats
+    const { ref: attendeesRef, count: attendeesCount } = useCountUpOnScroll("50k+", { duration: 2000, delay: 0 });
+    const { ref: speakersRef, count: speakersCount } = useCountUpOnScroll("150+", { duration: 2000, delay: 100 });
+    const { ref: sponsorsRef, count: sponsorsCount } = useCountUpOnScroll("100+", { duration: 2000, delay: 200 });
+    const { ref: daysRef, count: daysCount } = useCountUpOnScroll("2 days", { duration: 2000, delay: 300 });
 
     const handleMouseMove = (e) => {
         const card = e.currentTarget;
@@ -57,6 +64,31 @@ const Hero = () => {
                         </p>
                     </FadeIn>
 
+                    {/* Mobile-Only Enhanced Description */}
+                    <FadeIn direction="up" delay={500} duration={800} className="lg:hidden w-full mt-8 space-y-4">
+                        <div className="grid grid-cols-2 gap-3 max-w-xl mx-auto">
+                            <div ref={attendeesRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
+                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{attendeesCount}</div>
+                                <div className="text-gray-300 text-sm uppercase tracking-wide">Expected Attendees</div>
+                            </div>
+                            <div ref={speakersRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
+                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{speakersCount}</div>
+                                <div className="text-gray-300 text-sm uppercase tracking-wide">Global Speakers</div>
+                            </div>
+                            <div ref={sponsorsRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
+                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{sponsorsCount}</div>
+                                <div className="text-gray-300 text-sm uppercase tracking-wide">Industry Sponsors</div>
+                            </div>
+                            <div ref={daysRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
+                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{daysCount}</div>
+                                <div className="text-gray-300 text-sm uppercase tracking-wide">Days of Networking</div>
+                            </div>
+                        </div>
+                        <p className="text-gray-400 text-sm text-center leading-relaxed max-w-xl mx-auto px-2">
+                            Join the movement shaping India's Bitcoin future through technology, education, and innovation
+                        </p>
+                    </FadeIn>
+
                     <FadeIn direction="up" delay={600} duration={800} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mt-8 lg:mt-10">
                         <Button
                             label="Get Tickets"
@@ -74,8 +106,8 @@ const Hero = () => {
                     </FadeIn>
                 </div>
 
-                {/* Bitcoin Image - Right Side (Refined size and 3D Tilt Position) */}
-                <FadeIn direction="up" delay={200} className="relative w-[45%] sm:w-[40%] lg:w-[40%] lg:max-w-[500px] lg:-mt-12 perspective-1000 mb-8 lg:mb-0">
+                {/* Bitcoin Image - Right Side (Refined size and 3D Tilt Position) - Hidden on Mobile */}
+                <FadeIn direction="up" delay={200} className="hidden lg:block relative w-[45%] sm:w-[40%] lg:w-[40%] lg:max-w-[500px] lg:-mt-12 perspective-1000 mb-8 lg:mb-0">
                     <div
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}

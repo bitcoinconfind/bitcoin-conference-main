@@ -143,8 +143,8 @@ const LiveRegistrationCounter = () => {
           </div>
         </div>
 
-        {/* 2. THE FLOATING STACK (Sub-stats) - Detached & Vertical */}
-        <div className="flex flex-col gap-4 lg:w-1/3 justify-center">
+        {/* 2. THE FLOATING STACK (Sub-stats) - Detached & Vertical - Hidden on Mobile */}
+        <div className="hidden lg:flex flex-col gap-4 lg:w-1/3 justify-center">
 
           <StatsPill ref={attendeesRef} value={attendeesCount} label="Expected Attendees" delay={0} />
           <StatsPill ref={speakersRef} value={speakersCount} label="Global Speakers" delay={100} />

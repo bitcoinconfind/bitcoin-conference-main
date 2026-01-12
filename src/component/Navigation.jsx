@@ -69,6 +69,15 @@ const Navigation = () => {
       {/* Mobile Logo - Top Left Standalone */}
 
 
+      {/* Mobile Bitcoin Logo - Top Left Standalone */}
+      <div className="md:hidden fixed top-6 left-4 z-50">
+        <img
+          src="/assets/imgs/logo/logo.svg"
+          alt="Bitcoin India Forum"
+          className="w-16 h-16 drop-shadow-[0_0_30px_rgba(255,153,0,0.4)]"
+        />
+      </div>
+
       <div className={`fixed top-6 z-50 transition-all duration-500 ease-out right-4 left-auto translate-x-0 md:left-1/2 md:right-auto md:-translate-x-1/2 ${isScrolled ? 'w-auto md:w-[85%] lg:w-[75%]' : 'w-auto md:w-[90%] lg:w-[85%]'}`}>
         {/* Main Header Pill - Contains Logo, Nav, and Button */}
         <header
