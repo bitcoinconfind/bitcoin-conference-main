@@ -59,7 +59,7 @@ const Hero = () => {
 
                     <FadeIn direction="up" delay={600} duration={800} className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 mt-8 lg:mt-10">
                         <Button
-                            label="Get Free Tickets"
+                            label="Get Tickets"
                             variant="primary"
                             className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold shadow-[0_0_20px_rgba(255,153,0,0.4)] hover:shadow-[0_0_30px_rgba(255,153,0,0.6)] transition-all duration-300 transform hover:-translate-y-1"
                             onClick={handleWinFreeTickets}
@@ -86,8 +86,8 @@ const Hero = () => {
                         className="w-full h-auto cursor-pointer pointer-events-auto"
                     >
                         <img
-                            src="/assets/imgs/logo/bitcoin.svg"
-                            alt="Bitcoin"
+                            src="/assets/imgs/logo/logo.svg"
+                            alt="Bitcoin India Forum"
                             className="w-full h-auto drop-shadow-[0_0_60px_rgba(255,153,0,0.5)] animate-float-fast pointer-events-none"
                         />
                     </div>

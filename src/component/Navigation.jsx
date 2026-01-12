@@ -67,15 +67,7 @@ const Navigation = () => {
   return (
     <>
       {/* Mobile Logo - Top Left Standalone */}
-      <div className="md:hidden fixed top-6 left-6 z-50">
-        <Link to="/">
-          <img
-            src="/assets/imgs/logo/wib.svg"
-            alt="Bitcoin India Forum"
-            className={`w-auto transition-all duration-300 ${isScrolled ? 'h-12' : 'h-16'}`}
-          />
-        </Link>
-      </div>
+
 
       <div className={`fixed top-6 z-50 transition-all duration-500 ease-out right-4 left-auto translate-x-0 md:left-1/2 md:right-auto md:-translate-x-1/2 ${isScrolled ? 'w-auto md:w-[85%] lg:w-[75%]' : 'w-auto md:w-[90%] lg:w-[85%]'}`}>
         {/* Main Header Pill - Contains Logo, Nav, and Button */}
@@ -88,15 +80,7 @@ const Navigation = () => {
         >
           <div className="px-4 md:px-10 flex items-center justify-between gap-4 relative z-10 w-full">
             {/* Logo - Left (visible only on Desktop now) */}
-            <div className="flex-shrink-0 hidden md:block">
-              <Link to="/">
-                <img
-                  src="/assets/imgs/logo/wib.svg"
-                  alt="Bitcoin India Forum"
-                  className={`w-auto transition-all duration-300 hover:scale-105 ${isScrolled ? 'h-9 md:h-12 lg:h-14' : 'h-10 md:h-14 lg:h-16'}`}
-                />
-              </Link>
-            </div>
+
 
             {/* Desktop Nav - Center */}
             <nav className="hidden md:flex items-center gap-1 flex-1 justify-center">

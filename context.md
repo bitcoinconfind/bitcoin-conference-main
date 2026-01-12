@@ -40,7 +40,24 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
 - **FAQ**: Accordion-style questions.
 - **Sponsors**: Auto-scrolling marquee.
 
-## Recent Changes (Session History - Jan 12 2026)
+## Recent Changes (Session History - Jan 12 2026 - Part 2)
+- **UI Refinements & Fixes**:
+    - **Header**:
+        - **Mobile Layout**: Split layout with independent logo (Top-Left) and hamburger menu (Top-Right).
+        - **Visuals**: Removed empty space in the middle of the header pill; increased mobile logo size (`h-16`).
+    - **Footer**:
+        - **Mobile Layout**: Compacted design with links *below* social icons (using `flex-row-reverse` on mobile).
+        - **Height**: Reduced top padding for a slimmer profile.
+        - **Alignment**: Standardized alignment (Socials Left, Links Right) across devices.
+    - **Typography**:
+        - **Standardization**: Enforced `Outfit` font for all website headings (`h1` through `h6`), removing `Space Grotesk` override.
+    - **Hero Section**:
+        - **Interaction Fix**: Removed `pointer-events-auto` from text wrapper to allow click-through to background.
+        - **Clickable Elements**: Whitelisted `main img` (and buttons) locally and globally (`index.css`) to ensure interactivity where needed.
+    - **Forms**:
+        - **Empty Button Fix**: Solved invisible text issue in `ApplySpeaker`, `ApplySponsor`, `ContactMediaPartnership`, and `ContactStudentVolunteer` by clearing default background gradients (`!bg-none`).
+
+
 - **Background Reversion (Match Live)**:
     - **Reverted to Live Background**: Restored `Background.jsx` and `BackgroundRippleEffect.jsx` from `origin/main`.
     - **Theme Revert**: Restored `index.css` to the "live" version (White Theme overrides), replacing the Dark/Molten Aurora theme.
