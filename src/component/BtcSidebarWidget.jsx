@@ -130,7 +130,7 @@ const BtcSidebarWidget = () => {
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
-      <div className="border border-[#FF9900]/20 bg-black/90 p-4 rounded-lg shadow-[0_0_15px_rgba(255,153,0,0.2)] hover:border-[#FF9900]/50 transition-colors">
+      <div className="border border-[#E68A00]/20 bg-black/90 p-4 rounded-lg shadow-[0_0_15px_rgba(230,138,0,0.2)] hover:border-[#E68A00]/50 transition-colors">
         {/* Collapsed state - Just logo */}
         {!isExpanded && (
           <div className="flex items-center justify-center">
@@ -155,7 +155,7 @@ const BtcSidebarWidget = () => {
               {btcData.loading ? (
                 <div className="h-6 w-24 bg-[#2a2a2a] animate-pulse rounded"></div>
               ) : (
-                <span className="text-[#FF9900] font-bold">BTC Price: {formatPrice(btcData.price)}</span>
+                <span className="text-[#E68A00] font-bold">BTC Price: {formatPrice(btcData.price)}</span>
               )}
             </div>
           </div>
@@ -166,6 +166,8 @@ const BtcSidebarWidget = () => {
 };
 
 export default BtcSidebarWidget;
+
+
 
 
 

@@ -23,10 +23,10 @@ const IndianStatesSection = () => {
           <FadeIn direction="right" duration={800}>
             <div>
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black mb-6 leading-[0.9] tracking-tighter uppercase font-heading">
-                Participating <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#FF9900]">States</span> <br />
-                One <span className="text-[#FF9900]">Mission</span>
+                Participating <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E68A00] to-[#E68A00]">States</span> <br />
+                One <span className="text-[#E68A00]">Mission</span>
               </h2>
-              <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-xl border-l-2 border-[#FF9900] pl-6">
+              <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-xl border-l-2 border-[#E68A00] pl-6">
                 Regional Node Bitcoin Conferences across all 27 States & 8 Union Territories in their vernacular languages, spreading Bitcoin awareness and education Nationwide.
               </p>
             </div>
@@ -35,38 +35,38 @@ const IndianStatesSection = () => {
           {/* Asymmetric Stats Grid - 2x2 Aligned */}
           <div className="grid grid-cols-2 gap-4 lg:gap-6 w-full max-w-lg">
             <FadeIn direction="up" delay={200} duration={800}>
-              <div ref={statesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF9900]/10 p-6 transition-all hover:border-[#FF9900]/30 hover:bg-[#FF9900]/15 h-full flex flex-col justify-center min-h-[160px]">
+              <div ref={statesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#E68A00]/10 p-6 transition-all hover:border-[#E68A00]/30 hover:bg-[#E68A00]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
                   <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{statesCount}</div>
-                  <div className="text-[#FF9900] uppercase tracking-wider text-xs font-bold">States & UTs</div>
+                  <div className="text-[#E68A00] uppercase tracking-wider text-xs font-bold">States & UTs</div>
                 </div>
                 {/* Decorative Blob */}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#FF9900]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#E68A00]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </FadeIn>
             <FadeIn direction="up" delay={300} duration={800}>
-              <div ref={languagesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF9900]/10 p-6 transition-all hover:border-[#FF9900]/30 hover:bg-[#FF9900]/15 h-full flex flex-col justify-center min-h-[160px]">
+              <div ref={languagesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#E68A00]/10 p-6 transition-all hover:border-[#E68A00]/30 hover:bg-[#E68A00]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
                   <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{languagesCount}</div>
-                  <div className="text-[#FF9900] uppercase tracking-wider text-xs font-bold">Languages</div>
+                  <div className="text-[#E68A00] uppercase tracking-wider text-xs font-bold">Languages</div>
                 </div>
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF9900] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#E68A00] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
               </div>
             </FadeIn>
             <FadeIn direction="up" delay={400} duration={800}>
-              <div ref={peopleRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF9900]/10 p-6 transition-all hover:border-[#FF9900]/30 hover:bg-[#FF9900]/15 h-full flex flex-col justify-center min-h-[160px]">
+              <div ref={peopleRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#E68A00]/10 p-6 transition-all hover:border-[#E68A00]/30 hover:bg-[#E68A00]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
                   <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{peopleCount}</div>
-                  <div className="text-[#FF9900] uppercase tracking-wider text-xs font-bold">Billion People</div>
+                  <div className="text-[#E68A00] uppercase tracking-wider text-xs font-bold">Billion People</div>
                 </div>
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF9900] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#E68A00] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
               </div>
             </FadeIn>
             <FadeIn direction="up" delay={500} duration={800}>
-              <div ref={educationRef} className="relative group overflow-hidden rounded-3xl border border-[#FF9900] bg-[#FF9900] p-6 transition-all hover:bg-[#FF9900]/90 h-full flex flex-col justify-center min-h-[160px] shadow-[0_0_30px_rgba(255,153,0,0.3)]">
+              <div ref={educationRef} className="relative group overflow-hidden rounded-3xl border border-[#E68A00] bg-[#E68A00] p-6 transition-all hover:bg-[#E68A00]/90 h-full flex flex-col justify-center min-h-[160px] shadow-[0_0_30px_rgba(230,138,0,0.3)]">
                 <div className="relative z-10">
                   <div className="text-2xl md:text-3xl font-black text-black mb-2 font-heading leading-tight">{educationText}</div>
-                  <span className="text-3xl font-black text-[#FF9900]/30 group-hover:text-[#FF9900] transition-colors duration-300 mr-4"></span>
+                  <span className="text-3xl font-black text-[#E68A00]/30 group-hover:text-[#E68A00] transition-colors duration-300 mr-4"></span>
                   <div className="text-black uppercase tracking-wider text-xs font-bold">Of Education</div>
                 </div>
               </div>
@@ -79,10 +79,10 @@ const IndianStatesSection = () => {
           <FadeIn direction="left" delay={200} duration={1000} className="relative z-20">
             <div className="relative aspect-square w-full pointer-events-auto">
               <IndiaMapSvg
-                className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(255,153,0,0.15)] scale-105 lg:scale-110 origin-center translate-x-12 lg:translate-x-24 relative z-20"
+                className="w-full h-full object-contain drop-shadow-[0_0_50px_rgba(230,138,0,0.15)] scale-105 lg:scale-110 origin-center translate-x-12 lg:translate-x-24 relative z-20"
               />
               {/* Dynamic Back Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-to-tr from-[#FF9900]/10 to-transparent rounded-full blur-[80px] -z-10"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 bg-gradient-to-tr from-[#E68A00]/10 to-transparent rounded-full blur-[80px] -z-10"></div>
             </div>
           </FadeIn>
         </div>
@@ -93,6 +93,8 @@ const IndianStatesSection = () => {
 };
 
 export default IndianStatesSection;
+
+
 
 
 

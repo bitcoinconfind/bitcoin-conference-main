@@ -75,7 +75,7 @@ export const BackgroundRippleEffect = ({
             className={cn(
                 "absolute inset-0 h-full w-full",
                 // Bitcoin orange color scheme
-                "[--cell-border-color:#FF9900] [--cell-fill-color:rgba(255,153,0,0.05)] [--cell-shadow-color:#ff9501]"
+                "[--cell-border-color:#E68A00] [--cell-fill-color:rgba(230,138,0,0.05)] [--cell-shadow-color:#ff9501]"
             )}
         >
             <div className="relative h-auto w-auto overflow-hidden">
@@ -110,6 +110,8 @@ export const BackgroundRippleEffect = ({
 };
 
 export default BackgroundRippleEffect;
+
+
 
 
 

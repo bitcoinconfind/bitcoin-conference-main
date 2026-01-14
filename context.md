@@ -40,6 +40,19 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
 - **FAQ**: Accordion-style questions.
 - **Sponsors**: Auto-scrolling marquee.
 
+## Recent Changes (Session History - Jan 14 2026)
+- **Hero Section Refinement & UI Color Update**:
+    -### 1. Hero Section Refinements
+- **Desktop Heading**: Replaced "INDIA'S PREMIER BITCOIN GATHERING" with "Where **INDIA** meets **BITCOIN**" as the primary `h1` on laptop/desktop views.
+- **Logo Integration (Mobile)**: Replaced the heading text with the official `logo.svg` image on mobile devices.
+- **Logo Sizing**: Adjusted the mobile logo height to `h-64` for maximum impact.
+- **Tagline**: Standardized the tagline "Where **INDIA** meets **BITCOIN**" across both mobile and desktop.
+- **Improved Spacing**: Reduced the top padding on mobile to `pt-20`, bringing the content closer to the header for a tighter layout.ion**:
+        - **Mobile Header**: Removed the standalone Bitcoin logo in the top-left to clean up the UI.
+    - **Global Styling**:
+        - **Color Theme**: Updated the primary orange color from `#FF9900` to a slightly darker, more premium `#E68A00` across the entire application (Hex and RGB values).
+    - **Files Modified**: `src/component/Hero.jsx`, `src/component/Navigation.jsx`, `src/index.css`, and all files containing primary orange colors.
+
 ## Recent Changes (Session History - Jan 12 2026 - Part 2)
 - **UI Refinements & Fixes**:
     - **Header**:

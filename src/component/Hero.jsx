@@ -47,7 +47,7 @@ const Hero = () => {
 
     return (
 
-        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-end px-4 sm:px-8 lg:px-24 overflow-hidden pt-32 lg:pt-48 pb-12 lg:pb-24">
+        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-end px-4 sm:px-8 lg:px-24 overflow-hidden pt-24 lg:pt-48 pb-12 lg:pb-24">
 
             <div className="z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
                 {/* Content Section - Left Side */}
@@ -58,39 +58,49 @@ const Hero = () => {
                             <img
                                 src="/assets/imgs/logo/logo.svg"
                                 alt="Bitcoin India Forum"
-                                className="h-52 w-auto drop-shadow-[0_0_30px_rgba(255,153,0,0.4)]"
+                                className="h-64 w-auto drop-shadow-[0_0_30px_rgba(230,138,0,0.4)]"
                             />
                         </div>
 
                         {/* Original Text - Desktop Only */}
                         <h1 className="hidden lg:block text-4xl sm:text-6xl lg:text-8xl font-black mb-8 lg:mb-6 leading-[0.9] tracking-tighter text-center lg:text-left font-heading text-white">
-                            INDIA'S PREMIER <br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF9900] to-[#FFC04D] drop-shadow-[0_0_20px_rgba(255,153,0,0.3)]">
+                            Where <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E68A00] to-[#FFC04D] drop-shadow-[0_0_20px_rgba(230,138,0,0.3)]">
+                                INDIA
+                            </span> <br />
+                            meets <br />
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E68A00] to-[#FFC04D] drop-shadow-[0_0_20px_rgba(230,138,0,0.3)]">
                                 BITCOIN
-                            </span> GATHERING
+                            </span>
                         </h1>
+
+                        {/* Tagline - Mobile Only on Desktop View */}
+                        <p className="lg:hidden text-white text-xl sm:text-2xl lg:text-3xl font-medium mb-6 lg:mb-8 text-center lg:text-left tracking-wide">
+                            Where <span className="text-[#E68A00] font-bold">INDIA</span> meets <span className="text-[#E68A00] font-bold">BITCOIN</span>
+                        </p>
+
                         <p className="text-gray-300 text-lg sm:text-xl lg:text-2xl font-light leading-relaxed text-center lg:text-left max-w-2xl mx-auto lg:mx-0">
-                            Here in Hyderabad. Join <span className="text-[#FF9900] font-bold">50,000+</span> attendees, <span className="text-[#FF9900] font-bold">150+</span> speakers, and industry leaders for a historic event.
+                            Here in Hyderabad. Join <span className="text-[#E68A00] font-bold">50,000+</span> attendees, <span className="text-[#E68A00] font-bold">150+</span> speakers, and industry leaders for a historic event.
                         </p>
                     </FadeIn>
 
                     {/* Mobile-Only Enhanced Description */}
                     <FadeIn direction="up" delay={500} duration={800} className="lg:hidden w-full mt-10 space-y-6">
                         <div className="grid grid-cols-2 gap-4 max-w-xl mx-auto">
-                            <div ref={attendeesRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
-                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{attendeesCount}</div>
+                            <div ref={attendeesRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#E68A00]/10">
+                                <div className="text-2xl font-bold text-[#E68A00] mb-1">{attendeesCount}</div>
                                 <div className="text-gray-300 text-sm uppercase tracking-wide">Expected Attendees</div>
                             </div>
-                            <div ref={speakersRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
-                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{speakersCount}</div>
+                            <div ref={speakersRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#E68A00]/10">
+                                <div className="text-2xl font-bold text-[#E68A00] mb-1">{speakersCount}</div>
                                 <div className="text-gray-300 text-sm uppercase tracking-wide">Global Speakers</div>
                             </div>
-                            <div ref={sponsorsRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
-                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{sponsorsCount}</div>
+                            <div ref={sponsorsRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#E68A00]/10">
+                                <div className="text-2xl font-bold text-[#E68A00] mb-1">{sponsorsCount}</div>
                                 <div className="text-gray-300 text-sm uppercase tracking-wide">Industry Sponsors</div>
                             </div>
-                            <div ref={daysRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#FF9900]/10">
-                                <div className="text-2xl font-bold text-[#FF9900] mb-1">{daysCount}</div>
+                            <div ref={daysRef} className="text-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-[#E68A00]/10">
+                                <div className="text-2xl font-bold text-[#E68A00] mb-1">{daysCount}</div>
                                 <div className="text-gray-300 text-sm uppercase tracking-wide">Days of Networking</div>
                             </div>
                         </div>
@@ -103,14 +113,14 @@ const Hero = () => {
                         <Button
                             label="Get Tickets"
                             variant="primary"
-                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold shadow-[0_0_20px_rgba(255,153,0,0.4)] hover:shadow-[0_0_30px_rgba(255,153,0,0.6)] transition-all duration-300 transform hover:-translate-y-1"
+                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold shadow-[0_0_20px_rgba(230,138,0,0.4)] hover:shadow-[0_0_30px_rgba(230,138,0,0.6)] transition-all duration-300 transform hover:-translate-y-1"
                             onClick={handleWinFreeTickets}
                         />
                         <a href="/#sponsors-cta">
                             <Button
                                 label="Become a Sponsor"
                                 variant="secondary"
-                                className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold border-2 border-[#FF9900] text-[#FF9900] hover:bg-[#FF9900] hover:text-black transition-all duration-300"
+                                className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold border-2 border-[#E68A00] text-[#E68A00] hover:bg-[#E68A00] hover:text-black transition-all duration-300"
                             />
                         </a>
                     </FadeIn>
@@ -130,7 +140,7 @@ const Hero = () => {
                         <img
                             src="/assets/imgs/logo/logo.svg"
                             alt="Bitcoin India Forum"
-                            className="w-full h-auto drop-shadow-[0_0_60px_rgba(255,153,0,0.5)] animate-float-fast pointer-events-none"
+                            className="w-full h-auto drop-shadow-[0_0_60px_rgba(230,138,0,0.5)] animate-float-fast pointer-events-none"
                         />
                     </div>
                 </FadeIn>
@@ -141,6 +151,8 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
 
 
 

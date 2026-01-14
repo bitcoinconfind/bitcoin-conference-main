@@ -9,7 +9,7 @@ const BitcoinRevealBackground = () => {
 
     useEffect(() => {
         const handleGlobalMouseMove = (e) => {
-            if (char === '₿') ctx.shadowColor = '#FF9900';
+            if (char === '₿') ctx.shadowColor = '#E68A00';
             mouseX.set(e.clientX);
             mouseY.set(e.clientY);
         };
@@ -69,6 +69,8 @@ const BitcoinRevealBackground = () => {
 };
 
 export default BitcoinRevealBackground;
+
+
 
 
 
