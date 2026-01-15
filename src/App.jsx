@@ -1,4 +1,4 @@
-import "./App.css";
+﻿import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./component/Layout";
 import Index from "./pages/Index";
@@ -46,6 +46,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 

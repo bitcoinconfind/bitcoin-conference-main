@@ -1,4 +1,4 @@
-// Email service using Vercel API routes to avoid CORS issues
+﻿// Email service using Vercel API routes to avoid CORS issues
 
 // Email service helper functions
 export const emailService = {
@@ -142,6 +142,8 @@ export const emailService = {
     }
   }
 };
+
+
 
 
 

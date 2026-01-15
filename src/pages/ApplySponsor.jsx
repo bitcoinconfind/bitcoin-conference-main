@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../component/Button";
 import { dbHelpers } from "../lib/supabase";
@@ -150,7 +150,7 @@ const ApplySponsor = () => {
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
-          <Link to="/" className="text-[#E68A00] hover:text-[#CC7A00] transition-colors flex items-center gap-2 mb-8">
+          <Link to="/" className="text-[#FF6501] hover:text-[#CC7A00] transition-colors flex items-center gap-2 mb-8">
             <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
@@ -160,16 +160,16 @@ const ApplySponsor = () => {
 
         <div className="text-center mb-16 relative">
           {/* Background decoration */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#E68A00]/20 blur-[80px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF6501]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
-            Become a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E68A00] to-[#E68A00]">Sponsor</span>
+            Become a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6501] to-[#FF6501]">Sponsor</span>
           </h1>
 
-          <div className="flex items-center justify-center gap-4 text-[#E68A00]/80 mb-4">
-            <div className="h-[1px] w-12 bg-[#E68A00]"></div>
+          <div className="flex items-center justify-center gap-4 text-[#FF6501]/80 mb-4">
+            <div className="h-[1px] w-12 bg-[#FF6501]"></div>
             <span className="text-sm font-mono tracking-[0.3em] uppercase">Partner With Us</span>
-            <div className="h-[1px] w-12 bg-[#E68A00]"></div>
+            <div className="h-[1px] w-12 bg-[#FF6501]"></div>
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
@@ -178,11 +178,11 @@ const ApplySponsor = () => {
           </p>
         </div>
 
-        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#E68A00] transition-all duration-500">
+        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF6501] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#E68A00] mb-4">Company Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#FF6501] mb-4">Company Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="companyName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -194,7 +194,7 @@ const ApplySponsor = () => {
                     name="companyName"
                     value={formData.companyName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent ${errors.companyName ? 'border-red-500' : 'border-[#585858]'
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent ${errors.companyName ? 'border-red-500' : 'border-[#585858]'
                       }`}
                     placeholder="Enter your company name"
                   />
@@ -212,7 +212,7 @@ const ApplySponsor = () => {
                     name="website"
                     value={formData.website}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent"
                     placeholder="https://yourcompany.com"
                   />
                 </div>
@@ -221,7 +221,7 @@ const ApplySponsor = () => {
 
             {/* Contact Information */}
             <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#E68A00] mb-4">Contact Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#FF6501] mb-4">Contact Information</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="contactName" className="block text-sm font-inter-semiBold text-white mb-2">
@@ -233,7 +233,7 @@ const ApplySponsor = () => {
                     name="contactName"
                     value={formData.contactName}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent ${errors.contactName ? 'border-red-500' : 'border-[#585858]'
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent ${errors.contactName ? 'border-red-500' : 'border-[#585858]'
                       }`}
                     placeholder="Enter contact person's name"
                   />
@@ -250,7 +250,7 @@ const ApplySponsor = () => {
                     name="contactEmail"
                     value={formData.contactEmail}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent ${errors.contactEmail ? 'border-red-500' : 'border-[#585858]'
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent ${errors.contactEmail ? 'border-red-500' : 'border-[#585858]'
                       }`}
                     placeholder="Enter contact email address"
                   />
@@ -267,7 +267,7 @@ const ApplySponsor = () => {
                     name="contactPhone"
                     value={formData.contactPhone}
                     onChange={handleInputChange}
-                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent ${errors.contactPhone ? 'border-red-500' : 'border-[#585858]'
+                    className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent ${errors.contactPhone ? 'border-red-500' : 'border-[#585858]'
                       }`}
                     placeholder="Enter contact phone number"
                   />
@@ -285,7 +285,7 @@ const ApplySponsor = () => {
                     name="linkedin"
                     value={formData.linkedin}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent"
+                    className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent"
                     placeholder="https://linkedin.com/company/yourcompany"
                   />
                 </div>
@@ -294,7 +294,7 @@ const ApplySponsor = () => {
 
             {/* Additional Information */}
             <div>
-              <h2 className="text-xl md:text-2xl font-bold text-[#E68A00] mb-4">Additional Information</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-[#FF6501] mb-4">Additional Information</h2>
               <div>
                 <label htmlFor="message" className="block text-sm font-inter-semiBold text-white mb-2">
                   Additional Information *
@@ -305,7 +305,7 @@ const ApplySponsor = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E68A00] focus:border-transparent resize-vertical ${errors.message ? 'border-red-500' : 'border-[#585858]'
+                  className={`w-full px-4 py-3 bg-[#2a2a2a] border rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6501] focus:border-transparent resize-vertical ${errors.message ? 'border-red-500' : 'border-[#585858]'
                     }`}
                   placeholder="Tell us more about your company, specific requirements, or any questions you have about sponsorship opportunities..."
                 />
@@ -317,14 +317,14 @@ const ApplySponsor = () => {
             {validationNotice && (
               <div className="mt-2 mb-4 p-4 bg-yellow-900/20 border border-yellow-500/50 rounded-lg">
                 <p className="text-yellow-400 font-inter-semiBold">
-                  ⚠️ {validationNotice}
+                  âš ï¸ {validationNotice}
                 </p>
               </div>
             )}
             {submitStatus === "success" && (
               <div className="mt-2 mb-4 p-4 bg-green-900/20 border border-green-500/50 rounded-lg">
                 <p className="text-green-400 font-inter-semiBold">
-                  ✅ Thank you for your interest! Our sponsorship team will review your inquiry and get back to you within 2 business days.
+                  âœ… Thank you for your interest! Our sponsorship team will review your inquiry and get back to you within 2 business days.
                 </p>
               </div>
             )}
@@ -332,18 +332,13 @@ const ApplySponsor = () => {
             {submitStatus === "error" && (
               <div className="mt-2 mb-4 p-4 bg-red-900/20 border border-red-500/50 rounded-lg">
                 <p className="text-red-400 font-inter-semiBold">
-                  ❌ Something went wrong. Please try again later.
+                  âŒ Something went wrong. Please try again later.
                 </p>
               </div>
             )}
 
             <div className="pt-2">
-              <Button
-                type="submit"
-                label={isSubmitting ? "Submitting Inquiry..." : "Submit Sponsorship Inquiry"}
-                className="w-full bg-[#E68A00] hover:bg-[#CC7A00] text-black font-bold py-4 rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-[0_0_20px_rgba(230,138,0,0.3)] hover:shadow-[0_0_30px_rgba(230,138,0,0.5)] disabled:opacity-50 disabled:cursor-not-allowed group"
-                disabled={isSubmitting}
-              />
+              <Button type="submit" label={isSubmitting ? 'Submitting...' : 'Apply as Sponsor'} className="w-full py-4 text-xl font-bold transition-all duration-300" disabled={isSubmitting} />
             </div>
           </form>
 
@@ -352,7 +347,7 @@ const ApplySponsor = () => {
               Questions? Contact our sponsorship team at{" "}
               <a
                 href="mailto:sponsors@btcindia.media"
-                className="text-[#E68A00] hover:underline"
+                className="text-[#FF6501] hover:underline"
               >
                 sponsors@btcindia.media
               </a>
@@ -368,6 +363,8 @@ const ApplySponsor = () => {
 };
 
 export default ApplySponsor;
+
+
 
 
 

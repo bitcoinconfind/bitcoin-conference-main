@@ -1,4 +1,4 @@
-const Loader = () => {
+﻿const Loader = () => {
     return (
         <svg
             aria-hidden="true"
@@ -20,4 +20,6 @@ const Loader = () => {
 }
 
 export default Loader
+
+
 

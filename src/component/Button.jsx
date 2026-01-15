@@ -1,4 +1,4 @@
-import { StarBorder } from "./ui/StarBorder";
+﻿import { StarBorder } from "./ui/StarBorder";
 import { useState } from "react";
 
 const Button = ({
@@ -16,10 +16,10 @@ const Button = ({
   const [ripples, setRipples] = useState([]);
   const baseStyles = "inline-flex items-center justify-center transition-all duration-300";
   const variants = {
-    primary: "btn-primary text-black font-bold",
+    primary: "btn-primary",
     secondary: "btn-secondary",
-    general: "bg-[#1F1F1F] text-white font-bold hover:bg-[#333] transition-colors rounded-lg",
-    comman: "bg-[#F78D1E] text-white font-bold hover:bg-[#d6720f] transition-colors rounded-lg",
+    general: "bg-black border-2 border-[#FF6501] text-white font-bold hover:bg-[#FF6501]/10 px-8 py-4 rounded-xl transition-all",
+    comman: "bg-black border-2 border-[#FF6501] text-white font-bold hover:bg-[#FF6501]/10 px-8 py-4 rounded-xl transition-all",
     animatedBtn: "btn-primary", // Fallback to primary
   };
 
@@ -80,6 +80,8 @@ const Button = ({
 };
 
 export default Button;
+
+
 
 
 

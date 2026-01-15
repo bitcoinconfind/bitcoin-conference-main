@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import Button from "../component/Button";
 import FadeIn from "../component/ui/FadeIn";
 
@@ -33,16 +33,16 @@ const Speakers = () => {
       <FadeIn direction="up" duration={800}>
         <div className="text-center mb-20 relative">
           {/* Background decoration */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-[#E68A00]/15 blur-[100px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-[#FF6501]/15 blur-[100px] rounded-full pointer-events-none"></div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10 font-heading">
-            World Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E68A00] to-[#E68A00]">Voices</span>
+            World Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6501] to-[#FF6501]">Voices</span>
           </h1>
 
-          <div className="flex items-center justify-center gap-4 text-[#E68A00]/80 mb-8">
-            <div className="h-[1px] w-12 bg-[#E68A00]"></div>
+          <div className="flex items-center justify-center gap-4 text-[#FF6501]/80 mb-8">
+            <div className="h-[1px] w-12 bg-[#FF6501]"></div>
             <span className="text-sm font-mono tracking-[0.3em] uppercase">Applications Open</span>
-            <div className="h-[1px] w-12 bg-[#E68A00]"></div>
+            <div className="h-[1px] w-12 bg-[#FF6501]"></div>
           </div>
         </div>
       </FadeIn>
@@ -52,11 +52,11 @@ const Speakers = () => {
 
         {/* Left: The Manifesto */}
         <FadeIn direction="right" delay={200} duration={800}>
-          <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#E68A00]/10 p-8 transition-all hover:border-[#E68A00]/30 hover:bg-[#E68A00]/15">
+          <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl text-white font-bold mb-6 leading-tight">
                 Shape the Future of <br />
-                <span className="text-[#E68A00]">Global Finance</span>
+                <span className="text-[#FF6501]">Global Finance</span>
               </h3>
 
               <p className="text-gray-400 text-lg leading-relaxed mb-6 font-light">
@@ -73,20 +73,20 @@ const Speakers = () => {
         <FadeIn direction="left" delay={400} duration={800}>
           <div className="relative group">
             {/* Card Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#E68A00]/10 to-[#E68A00]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#FF6501]/10 to-[#FF6501]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            <div className="relative bg-black/60 backdrop-blur-xl border border-[#E68A00]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#E68A00] transition-colors">
+            <div className="relative bg-black/60 backdrop-blur-xl border border-[#FF6501]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#FF6501] transition-colors">
               {/* Top Status Bar */}
 
 
-              <h4 className="text-xl text-[#E68A00] font-bold mb-2">Ready to Speak?</h4>
+              <h4 className="text-xl text-[#FF6501] font-bold mb-2">Ready to Speak?</h4>
               <p className="text-gray-300 text-sm mb-8 font-medium">Join the ranks of industry leaders defining the Bitcoin narrative.</p>
 
               <a href="/apply/speaker" className="block">
                 <Button
-                  label="Apply Now"
+                  label="Learn More"
                   variant="primary"
-                  className="w-full !py-4 text-lg font-bold shadow-[0_0_20px_rgba(230,138,0,0.2)] hover:shadow-[0_0_40px_rgba(230,138,0,0.4)] text-black"
+                  className="px-8 py-3 text-lg"
                 />
               </a>
             </div>
@@ -99,7 +99,7 @@ const Speakers = () => {
       {/* Separation Line - HIDDEN since quotes are hidden */}
       {/* 
       <div className="w-full flex justify-center mt-16 sm:mt-24 mb-16">
-        <div className="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#E68A00]/30 to-transparent"></div>
+        <div className="w-full max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#FF6501]/30 to-transparent"></div>
       </div> 
       */}
 
@@ -148,7 +148,7 @@ const Speakers = () => {
                 >
                   <div
                     className={`h-1 transition-all duration-500 ease-out ${currentQuote === index
-                      ? "w-24 bg-[#E68A00]"
+                      ? "w-24 bg-[#FF6501]"
                       : "w-12 bg-gray-600 group-hover:bg-gray-400 group-hover:w-16"
                       }`}
                   />
@@ -165,6 +165,8 @@ const Speakers = () => {
 };
 
 export default Speakers;
+
+
 
 
 

@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+﻿import { useRef, useEffect } from 'react';
 
 /**
  * Custom hook for magnetic button effect
@@ -62,6 +62,8 @@ export const useMagneticEffect = (options = {}) => {
 
   return { ref: buttonRef };
 };
+
+
 
 
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
+﻿import { useEffect, useRef, useState, useMemo } from 'react';
 
 /**
  * Custom hook for count-up animations
@@ -165,6 +165,8 @@ export const useCountUpOnScroll = (end, options = {}) => {
 
   return { ref: elementRef, count };
 };
+
+
 
 
 

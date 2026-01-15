@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+﻿import { useEffect, useRef } from 'react';
 
 const FloatingParticles = () => {
     const canvasRef = useRef(null);
@@ -109,6 +109,8 @@ const FloatingParticles = () => {
 };
 
 export default FloatingParticles;
+
+
 
 
 

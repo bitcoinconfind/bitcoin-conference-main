@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+﻿import React, { useState, useEffect } from "react";
 import { CanvasRevealEffect } from "./CanvasRevealEffect";
 import { useMotionValue, motion, useMotionTemplate } from "framer-motion";
 
@@ -9,7 +9,7 @@ const BitcoinRevealBackground = () => {
 
     useEffect(() => {
         const handleGlobalMouseMove = (e) => {
-            if (char === '₿') ctx.shadowColor = '#E68A00';
+            if (char === 'â‚¿') ctx.shadowColor = '#FF6501';
             mouseX.set(e.clientX);
             mouseY.set(e.clientY);
         };
@@ -69,6 +69,8 @@ const BitcoinRevealBackground = () => {
 };
 
 export default BitcoinRevealBackground;
+
+
 
 
 

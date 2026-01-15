@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 /**
@@ -61,6 +61,8 @@ const FadeIn = ({
 };
 
 export default FadeIn;
+
+
 
 
 

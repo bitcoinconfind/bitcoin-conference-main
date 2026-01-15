@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 /**
  * MoltenAurora - Premium dark gradient background with animated aurora orbs
@@ -83,6 +83,8 @@ const MoltenAurora = () => {
 };
 
 export default MoltenAurora;
+
+
 
 
 

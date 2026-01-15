@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 const AnimatedGradientWaves = () => {
     return (
@@ -17,6 +17,8 @@ const AnimatedGradientWaves = () => {
 };
 
 export default AnimatedGradientWaves;
+
+
 
 
 

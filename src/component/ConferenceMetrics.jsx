@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { FaVideo, FaCalendarAlt, FaHandshake, FaUsers, FaMicrophone, FaBuilding } from 'react-icons/fa';
 import { useCountUpOnScroll } from '../hooks/useCountUp';
 import { useStaggeredScrollAnimation } from '../hooks/useScrollAnimation';
@@ -73,9 +73,9 @@ const ConferenceMetrics = () => {
       <h2 id="conference-metrics" className="sr-only">Bitcoin Forum India 2026 Statistics and Metrics</h2>
 
       {/* Metrics Container with Elegant Glowing Border */}
-      <div className="relative bg-black border-2 border-[#E68A00] rounded-2xl p-8 shadow-2xl card-hover-lift">
+      <div className="relative bg-black border-2 border-[#FF6501] rounded-2xl p-8 shadow-2xl card-hover-lift">
         {/* Glowing border effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#E68A00] via-[#E68A00] to-[#E68A00] rounded-2xl opacity-20 blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#FF6501] via-[#FF6501] to-[#FF6501] rounded-2xl opacity-20 blur-sm"></div>
 
         {/* Content */}
         <div className="relative z-10" ref={containerRef}>
@@ -98,6 +98,8 @@ const ConferenceMetrics = () => {
 };
 
 export default ConferenceMetrics;
+
+
 
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+﻿import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "./Navigation";
 import Background from "./Background";
@@ -64,7 +64,7 @@ const Layout = () => {
     <>
       <Background />
       <Navigation />
-      <main className="relative z-10">
+      <main className="relative z-10 min-h-screen bg-transparent">
         <Outlet />
       </main>
     </>
@@ -72,6 +72,8 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
 
 
 

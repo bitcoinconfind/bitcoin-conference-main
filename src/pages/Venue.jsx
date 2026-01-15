@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 
 const venueeBg = "/assets/imgs/others/Venue_bg.png";
 const venueHero2 = "/assets/imgs/others/venue_hero_2.png";
@@ -33,7 +33,7 @@ const Venue = () => {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
-  // Must-visit places in Hyderabad (used by the carousel) — declare BEFORE hooks
+  // Must-visit places in Hyderabad (used by the carousel) â€” declare BEFORE hooks
   const venues = [
     {
       id: 1,
@@ -96,12 +96,12 @@ const Venue = () => {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
               <span className="text-white">Venue Announcement</span>
               <br />
-              <span className="text-[#E68A00]">Coming Soon</span>
+              <span className="text-[#FF6501]">Coming Soon</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-white mb-5 sm:mb-6">
               We're securing an iconic location in Hyderabad that will perfectly complement the scale and significance of India's premier Bitcoin conference.
             </p>
-            <button className="px-6 py-3 bg-transparent hover:bg-[#E68A00]/20 border-2 border-[#E68A00] rounded-full text-sm sm:text-base font-semibold gradient-text transition-all duration-300 shadow-[0_0_15px_rgba(230,138,0,0.4)] hover:shadow-[0_0_30px_rgba(230,138,0,0.7)] hover:scale-105">
+            <button className="px-6 py-3 bg-transparent hover:bg-[#FF6501]/20 border-2 border-[#FF6501] rounded-full text-sm sm:text-base font-semibold gradient-text transition-all duration-300 shadow-[0_0_15px_rgba(255,101,1,0.4)] hover:shadow-[0_0_30px_rgba(255,101,1,0.7)] hover:scale-105">
               Stay tuned for the big reveal
             </button>
           </div>
@@ -110,7 +110,7 @@ const Venue = () => {
 
       {/* Separation Line */}
       <div className="w-full flex justify-center mt-8 sm:mt-10 mb-8 sm:mb-10 px-5">
-        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#E68A00]/30 to-transparent"></div>
+        <div className="w-[95%] sm:w-[90%] md:w-[85%] lg:w-[78%] max-w-4xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-[#FF6501]/30 to-transparent"></div>
       </div>
 
       {/* Removed moving desktop carousel; static grid below shows places */}
@@ -164,6 +164,8 @@ const Venue = () => {
 };
 
 export default Venue;
+
+
 
 
 

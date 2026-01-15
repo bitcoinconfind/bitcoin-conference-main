@@ -1,14 +1,15 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 #root {
   width: 100%;
   min-height: 100vh;
 }
 
+html,
 body {
-  background-color: #050505;
+  background-color: #000000 !important;
+  color: #ffffff !important;
   overflow-x: hidden;
-  color: #ffffff;
   margin: 0;
   padding: 0;
   font-family: 'Outfit', sans-serif;
@@ -46,10 +47,26 @@ h6,
 
 /* Premium Buttons */
 .btn-primary {
-  @apply relative overflow-hidden px-8 py-4 rounded-xl font-bold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg;
-  background: linear-gradient(135deg, #E68A00 0%, #E68A00 100%);
-  color: #000;
-  box-shadow: 0 4px 15px rgba(230, 138, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #FF6501 !important;
+  box-shadow: 0 4px 15px rgba(255, 101, 1, 0.3);
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(255, 101, 1, 0.4);
+  background-color: rgba(255, 101, 1, 0.1) !important;
 }
 
 .btn-primary::after {
@@ -69,7 +86,22 @@ h6,
 }
 
 .btn-secondary {
-  @apply border border-[#333] px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:border-[#E68A00] hover:text-[#E68A00] bg-transparent text-[#ffffff];
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid #FF6501 !important;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 101, 1, 0.1) !important;
 }
 
 /* Prevent disabled buttons from being faded out */
@@ -96,14 +128,14 @@ button[disabled] {
 }
 
 .premium-card:hover {
-  border-color: #E68A00;
+  border-color: #FF6501;
   transform: translateY(-5px);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Text Effects */
 .gradient-text-gold {
-  background: linear-gradient(135deg, #E68A00 0%, #E68A00 50%, #E68A00 100%);
+  background: linear-gradient(135deg, #FF6501 0%, #FF6501 50%, #FF6501 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -189,7 +221,7 @@ button[disabled] {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E68A00;
+  background: #FF6501;
 }
 
 .fade-in-up {
@@ -263,7 +295,7 @@ button[disabled] {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #E68A00;
+  background: #FF6501;
   border-radius: 10px;
 }
 
@@ -289,4 +321,3 @@ button[disabled] {
 .animate-cell-ripple {
   animation: cell-ripple var(--duration, 200ms) ease-out none 1 var(--delay, 0ms);
 }
-

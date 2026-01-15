@@ -1,4 +1,4 @@
-import { cn } from "../../lib/utils"
+﻿import { cn } from "../../lib/utils"
 
 export function StarBorder({
   as,
@@ -9,7 +9,7 @@ export function StarBorder({
   ...props
 }) {
   const Component = as || "div"
-  const defaultColor = color || "#E68A00"
+  const defaultColor = color || "#FF6501"
 
   return (
     <Component
@@ -44,6 +44,8 @@ export function StarBorder({
     </Component>
   )
 }
+
+
 
 
 

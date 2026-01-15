@@ -1,30 +1,29 @@
-import React from 'react';
-import BackgroundRippleEffect from './ui/BackgroundRippleEffect';
-import FloatingParticles from './FloatingParticles';
+﻿import PlexusBackground from "./PlexusBackground";
+import StarfieldBackground from './StarfieldBackground';
 
 const Background = () => {
     return (
-        <>
-            {/* Non-interactive background elements at z-[-1] - BEHIND everything */}
-            <div className="fixed inset-0 z-[-1] overflow-hidden bg-[#050505] pointer-events-none">
-                {/* Floating Particles - White bubbles */}
-                {/* <FloatingParticles /> */}
+        <div className="fixed inset-0 z-0 overflow-hidden bg-[#000000] pointer-events-none">
+            {/* Subtle gradient overlay at top for depth */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0a0a0a_0%,transparent_55%)]" />
 
-                {/* Subtle gradient overlay at top */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1a1a1a_0%,transparent_50%)]" />
-            </div>
+            {/* Digital Network Layer (Plexus) */}
+            <PlexusBackground />
 
-            {/* Interactive grid at z-10 - between background and content */}
-            <div className="fixed inset-0 z-10 overflow-hidden pointer-events-none">
-                <div className="pointer-events-auto">
-                    <BackgroundRippleEffect rows={20} cols={60} cellSize={40} />
-                </div>
-            </div>
-        </>
+            {/* Twinkling Stars Layer - Commented out for now */}
+            {/* <StarfieldBackground /> */}
+
+            {/* Interactive grid - can be re-enabled if needed but kept clean for now */}
+            {/* <div className="absolute inset-0 z-10">
+                <BackgroundRippleEffect rows={20} cols={60} cellSize={40} />
+            </div> */}
+        </div>
     );
 };
 
 export default Background;
+
+
 
 
 

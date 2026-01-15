@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { cn } from "../../lib/utils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import React, { useMemo, useRef } from "react";
@@ -265,6 +265,8 @@ const Shader = ({ source, uniforms, maxFps = 60 }) => {
 };
 
 export default CanvasRevealEffect;
+
+
 
 
 

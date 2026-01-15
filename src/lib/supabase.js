@@ -1,4 +1,4 @@
-// Supabase configuration
+﻿// Supabase configuration
 // Fail fast if env vars are missing in production to surface clear error to users
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
@@ -14,7 +14,7 @@ export const supabase = (SUPABASE_URL && SUPABASE_ANON_KEY)
 
 // Warn in development if Supabase is not configured
 if (!supabase && import.meta.env.DEV) {
-  console.warn('⚠️ Supabase not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env file to enable database features.');
+  console.warn('âš ï¸ Supabase not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in .env file to enable database features.');
 }
 
 // Database helper functions
@@ -181,6 +181,8 @@ export const dbHelpers = {
     return result;
   }
 };
+
+
 
 
 
