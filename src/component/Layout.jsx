@@ -1,6 +1,7 @@
 ﻿import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "./Navigation";
+import RebrandingBanner from "./RebrandingBanner";
 import Background from "./Background";
 
 const GA_MEASUREMENT_ID = "G-X5FR6VSP9X";
@@ -8,6 +9,9 @@ const GA_MEASUREMENT_ID = "G-X5FR6VSP9X";
 const Layout = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [showBanner, setShowBanner] = React.useState(true);
+
+
 
   useEffect(() => {
     // Load Google Analytics once for the entire app shell
@@ -63,7 +67,8 @@ const Layout = () => {
   return (
     <>
       <Background />
-      <Navigation />
+      {showBanner && <RebrandingBanner onClose={() => setShowBanner(false)} />}
+      <Navigation showBanner={showBanner} />
       <main className="relative z-10 min-h-screen bg-transparent">
         <Outlet />
       </main>

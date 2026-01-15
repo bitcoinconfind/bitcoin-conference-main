@@ -7,7 +7,7 @@ import { BorderBeam } from "./ui/BorderBeam";
 // Using the same logo asset
 const logo = "/assets/imgs/logo/BitLogo.png";
 
-const Navigation = () => {
+const Navigation = ({ showBanner = false }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,7 +66,7 @@ const Navigation = () => {
 
   return (
     <>
-      <div className={`fixed top-6 z-50 transition-all duration-500 ease-out right-4 left-auto translate-x-0 md:left-1/2 md:right-auto md:-translate-x-1/2 ${isScrolled ? 'w-auto md:w-[85%] lg:w-[75%]' : 'w-auto md:w-[90%] lg:w-[85%]'}`}>
+      <div className={`fixed z-50 transition-all duration-500 ease-out right-4 left-auto translate-x-0 md:left-1/2 md:right-auto md:-translate-x-1/2 ${showBanner ? 'top-14' : 'top-6'} ${isScrolled ? 'w-auto md:w-[85%] lg:w-[75%]' : 'w-auto md:w-[90%] lg:w-[85%]'}`}>
         {/* Main Header Pill - Contains Logo, Nav, and Button */}
         <header
           className={`transition-all duration-500 ease-out 
