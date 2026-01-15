@@ -51,7 +51,7 @@ const Hero = () => {
 
             <div className="z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
                 {/* Content Section - Left Side */}
-                <div className="flex flex-col items-center lg:items-start w-full lg:w-[60%] relative z-20">
+                <div className="flex flex-col items-center lg:items-start w-full lg:w-[55%] relative z-20">
                     <FadeIn direction="up" delay={400} duration={800} className="w-full">
                         {/* Logo Image - Mobile Only */}
                         <div className="lg:hidden flex justify-center mb-8">
@@ -130,7 +130,7 @@ const Hero = () => {
                 </div>
 
                 {/* Bitcoin Image - Right Side (Refined size and 3D Tilt Position) - Hidden on Mobile */}
-                <FadeIn direction="up" delay={200} className="hidden lg:block relative w-[45%] sm:w-[40%] lg:w-[40%] lg:max-w-[500px] lg:-mt-12 perspective-1000 mb-8 lg:mb-0">
+                <FadeIn direction="up" delay={200} className="hidden lg:block relative lg:w-[35%] lg:max-w-[500px] lg:-mt-12 perspective-1000 mb-8 lg:mb-0">
                     <div
                         onMouseMove={handleMouseMove}
                         onMouseLeave={handleMouseLeave}
