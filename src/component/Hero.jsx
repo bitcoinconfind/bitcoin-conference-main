@@ -47,7 +47,7 @@ const Hero = () => {
 
     return (
 
-        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-start px-4 sm:px-8 lg:px-24 overflow-hidden pt-20 lg:pt-24 pb-12 lg:pb-24">
+        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-start px-4 sm:px-8 lg:px-24 overflow-hidden pt-28 lg:pt-40 pb-12 lg:pb-24">
 
             <div className="z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
                 {/* Content Section - Left Side */}
