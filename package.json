@@ -3,6 +3,10 @@
   "description": "Bitcoin Forum India 2026 - The world's largest Bitcoin conference coming to India for the first time. Join 50,000+ attendees, 150+ speakers, and 200+ partners for an unprecedented gathering of Bitcoin enthusiasts, developers, investors, and industry leaders.",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": ">=18",
+    "yarn": "1.22.x"
+  },
   "private": true,
   "scripts": {
     "dev": "vite",
