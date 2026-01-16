@@ -43,8 +43,8 @@ const MediaInfo = () => {
             <p className="metric-label">Press lounge, scheduled interview slots, and stage-side access for approved crews.</p>
           </div>
           <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF6501] transition-all duration-500">
-            <div className="text-xl md:text-2xl font-bold text-[#FF6501] mb-2">Coâ€‘Branded Moments</div>
-            <p className="metric-label">Partner segments, onâ€‘ground activations, and content integrations amplified on our channels.</p>
+            <div className="text-xl md:text-2xl font-bold text-[#FF6501] mb-2">Co-Branded Moments</div>
+            <p className="metric-label">Partner segments, on-ground activations, and content integrations amplified on our channels.</p>
           </div>
           <div className="bg-black border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF6501] transition-all duration-500">
             <div className="text-xl md:text-2xl font-bold text-[#FF6501] mb-2">Content Support</div>

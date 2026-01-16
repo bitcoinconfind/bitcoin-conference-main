@@ -40,6 +40,14 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
 - **FAQ**: Accordion-style questions.
 - **Sponsors**: Auto-scrolling marquee.
 
+## Recent Changes (Session History - Jan 16 2026)
+- **Admin Panel UI Improvements**:
+    - **Header Removal**: Modified `Layout.jsx` to conditionally hide `Navigation` and `RebrandingBanner` on all routes starting with `/admin`. This provides a focused, distraction-free interface for the admin panel.
+- **Text Encoding Fixes**:
+    - **Sponsors Section**: Corrected corrupted text characters (mojibake) in `SponsorsSection.jsx` where hyphens were displaying as `â€‘`.
+    - **Media Page**: Fixed similar encoding issues in `MediaInfo.jsx` ("Co-Branded", "on-ground").
+    - **Files Modified**: `src/component/Layout.jsx`, `src/component/SponsorsSection.jsx`, `src/pages/MediaInfo.jsx`.
+
 ## Recent Changes (Session History - Jan 14 2026)
 - **Hero Tagline Update (Mobile View)**:
     - Replaced the stat-heavy tagline in the mobile hero section with: "Where **INDIA** meets **BITCOIN**. The historic gathering of the global community in Hyderabad."

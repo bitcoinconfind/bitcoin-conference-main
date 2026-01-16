@@ -39,21 +39,21 @@ const SponsorsSection = () => {
           <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
             <div className="relative z-10">
               <h3 className="text-[#FF6501] font-sora font-semibold text-lg sm:text-xl mb-4 tracking-tight">Unmatched Exposure</h3>
-              <p className="metric-label">Headline stage slots, highâ€‘visibility branding at key touchpoints, and alwaysâ€‘on digital presence before, during, and after the event.</p>
+              <p className="metric-label">Headline stage slots, high-visibility branding at key touchpoints, and always-on digital presence before, during, and after the event.</p>
             </div>
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6501] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
           </div>
           <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
             <div className="relative z-10">
-              <h3 className="text-[#FF6501] font-sora font-semibold text-lg sm:text-xl mb-4 tracking-tight">Highâ€‘Intent Audience</h3>
-              <p className="metric-label">Decisionâ€‘makers across exchanges, infra, wallets, dev tools, VC, media and enterprise, preâ€‘qualified and ready for real conversations.</p>
+              <h3 className="text-[#FF6501] font-sora font-semibold text-lg sm:text-xl mb-4 tracking-tight">High-Intent Audience</h3>
+              <p className="metric-label">Decision-makers across exchanges, infra, wallets, dev tools, VC, media and enterprise, pre-qualified and ready for real conversations.</p>
             </div>
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6501] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
           </div>
           <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
             <div className="relative z-10">
               <h3 className="text-[#FF6501] font-sora font-semibold text-lg sm:text-xl mb-4 tracking-tight">Measurable Results</h3>
-              <p className="metric-label">Qualified lead capture, preâ€‘scheduled buyer meetings, product demo sessions, and postâ€‘event followâ€‘ups that translate conversations into opportunities.</p>
+              <p className="metric-label">Qualified lead capture, pre-scheduled buyer meetings, product demo sessions, and post-event follow-ups that translate conversations into opportunities.</p>
             </div>
             <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF6501] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
           </div>
@@ -66,7 +66,7 @@ const SponsorsSection = () => {
           <div ref={onSiteRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 text-center transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
             <div className="relative z-10">
               <div className="text-[#FF6501] font-sora text-2xl sm:text-3xl font-bold leading-none tracking-tight">{onSiteCount}</div>
-              <div className="metric-label mt-2">Onâ€‘site Attendees</div>
+              <div className="metric-label mt-2">On-site Attendees</div>
             </div>
           </div>
           <div ref={speakersRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 text-center transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
@@ -89,13 +89,13 @@ const SponsorsSection = () => {
         <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF6501]/10 p-8 mb-10 transition-all hover:border-[#FF6501]/30 hover:bg-[#FF6501]/15">
           <div className="relative z-10">
             <p className="metric-label mb-4">
-              Showcase your brand at the epicenter of Bitcoin in Asia. Beyond floor space, we design outcomeâ€‘driven
+              Showcase your brand at the epicenter of Bitcoin in Asia. Beyond floor space, we design outcome-driven
               activations that accelerate brand awareness, partnerships, and revenue.
             </p>
             <ul className="list-disc list-inside metric-label space-y-2">
               <li>Keynotes, launches, and press moments amplified across official and partner channels</li>
-              <li>Conversionâ€‘focused booth placement and attendee flow mapping</li>
-              <li>Curated investor and enterprise introductions with tracked followâ€‘ups</li>
+              <li>Conversion-focused booth placement and attendee flow mapping</li>
+              <li>Curated investor and enterprise introductions with tracked follow-ups</li>
               <li>Content capture: reels, interviews, and snackable clips for your campaigns</li>
             </ul>
           </div>

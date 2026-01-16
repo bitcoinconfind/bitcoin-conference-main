@@ -67,8 +67,12 @@ const Layout = () => {
   return (
     <>
       <Background />
-      {showBanner && <RebrandingBanner onClose={() => setShowBanner(false)} />}
-      <Navigation showBanner={showBanner} />
+      {!location.pathname.startsWith('/admin') && (
+        <>
+          {showBanner && <RebrandingBanner onClose={() => setShowBanner(false)} />}
+          <Navigation showBanner={showBanner} />
+        </>
+      )}
       <main className="relative z-10 min-h-screen bg-transparent">
         <Outlet />
       </main>
