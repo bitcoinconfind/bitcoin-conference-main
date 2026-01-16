@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Button from "./Button";
 
 const ConferenceForm = ({ onClose, isModal = false }) => {
@@ -22,15 +22,15 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
   const formContent = (
     <div className={`${isModal ? 'bg-black p-6 rounded-lg max-w-2xl mx-auto' : 'w-full'}`}>
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-2xl font-bold text-[#FF6501] font-familjen">
+        <h2 className="text-2xl font-bold text-[#FF8000] font-familjen">
           Sign Up & Get Free Tickets!
         </h2>
         {isModal && onClose && (
           <button
             onClick={onClose}
-            className="text-white hover:text-[#FF6501] text-2xl font-bold"
+            className="text-white hover:text-[#FF8000] text-2xl font-bold"
           >
-            Ã—
+            ×
           </button>
         )}
       </div>
@@ -38,7 +38,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
       <div className="text-center space-y-6">
         <div className="mb-8">
           <h3 className="text-xl text-white font-semibold mb-4">
-            ðŸŽŸï¸ Win FREE GA Pass Tickets + Exclusive Bitcoin Merchandise!
+            🎟️ Win FREE GA Pass Tickets + Exclusive Bitcoin Merchandise!
           </h3>
           <p className="text-gray-300 text-lg">
             Join India's Premier Bitcoin conference!
@@ -48,7 +48,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
         <div className="flex flex-col sm:flex-row gap-4 pt-4">
           <Button
             type="button"
-            label="ðŸŽŸï¸ Claim Your FREE Tickets!"
+            label="🎟️ Claim Your FREE Tickets!"
             variant="primary"
             onClick={handleSubmit}
             className="flex-1 py-4 text-xl font-bold"
@@ -81,6 +81,9 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
 };
 
 export default ConferenceForm;
+
+
+
 
 
 

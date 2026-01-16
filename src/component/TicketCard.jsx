@@ -1,4 +1,4 @@
-﻿import Button from './Button';
+import Button from './Button';
 
 const TicketCard = ({ tier, index, isPopular, className = "" }) => {
   const { title, price, currency, features, image } = tier;
@@ -10,7 +10,7 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
         {/* Popular Badge */}
         {isPopular && (
           <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-            <span className="bg-[#FF6501] text-black px-4 py-1 rounded-full text-sm font-semibold">
+            <span className="bg-[#FF8000] text-black px-4 py-1 rounded-full text-sm font-semibold">
               Most Valuable
             </span>
           </div>
@@ -27,7 +27,7 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
             />
           )}
           <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{tier.title}</h4>
-          <div className="text-3xl md:text-4xl font-bold text-[#FF6501] mb-2">
+          <div className="text-3xl md:text-4xl font-bold text-[#FF8000] mb-2">
             ${tier.price}
             <span className="text-base md:text-lg text-gray-400 ml-1">{tier.currency}</span>
           </div>
@@ -38,7 +38,7 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
             <li key={featureIndex} className="flex items-start text-gray-300">
               <svg
                 className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0"
-                fill="#FF6501"
+                fill="#FF8000"
                 viewBox="0 0 20 20"
                 style={{ minWidth: '20px', minHeight: '20px' }}
               >
@@ -63,6 +63,9 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
 };
 
 export default TicketCard;
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Button from "../component/Button";
 import Hero from "../component/Hero";
 
@@ -13,6 +13,9 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
 
 
 

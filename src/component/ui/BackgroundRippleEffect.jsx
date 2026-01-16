@@ -1,4 +1,4 @@
-﻿import React, { useMemo, useRef, useEffect } from "react";
+import React, { useMemo, useRef, useEffect } from "react";
 import { cn } from "../../lib/utils";
 
 export const BackgroundRippleEffect = ({
@@ -75,7 +75,7 @@ export const BackgroundRippleEffect = ({
             className={cn(
                 "absolute inset-0 h-full w-full",
                 // Bitcoin orange color scheme
-                "[--cell-border-color:#FF6501] [--cell-fill-color:rgba(255,101,1,0.05)] [--cell-shadow-color:#ff9501]"
+                "[--cell-border-color:#FF8000] [--cell-fill-color:rgba(255,128,0,0.05)] [--cell-shadow-color:#ff9501]"
             )}
         >
             <div className="relative h-auto w-auto overflow-hidden">
@@ -110,6 +110,9 @@ export const BackgroundRippleEffect = ({
 };
 
 export default BackgroundRippleEffect;
+
+
+
 
 
 

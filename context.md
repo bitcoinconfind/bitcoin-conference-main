@@ -40,6 +40,16 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
 - **FAQ**: Accordion-style questions.
 - **Sponsors**: Auto-scrolling marquee.
 
+## Recent Changes (Session History - Jan 16 2026 - Part 2)
+- **Mobile Hero Optimization**:
+    - **Compact Layout**: Reduced vertical spacing, padding, and logo size in `Hero.jsx` to ensure "Get Tickets" buttons are visible above the fold on mobile devices.
+    - **Logo Sizing**: Adjusted mobile logo height to `h-52` for better visibility while maintaining compactness.
+    - **Stats Grid**: Refined padding and text sizes for mobile stats to balance readability and space efficiency.
+- **Visual & UI Refinement**:
+    - **Static Background**: Refactored `PlexusBackground.jsx` to be purely static (removed animation loop and velocity) while retaining the "Digital Network" aesthetic.
+    - **Color Palette Update**: Changed primary orange accent from `#FF6501` (Deep Orange) to `#FF8000` (Safety Orange) across `index.css`, `Hero.jsx`, and `PlexusBackground.jsx` for a lighter, brighter look.
+    - **Files Modified**: `src/component/Hero.jsx`, `src/component/PlexusBackground.jsx`, `src/index.css`.
+
 ## Recent Changes (Session History - Jan 16 2026)
 - **Admin Panel UI Improvements**:
     - **Header Removal**: Modified `Layout.jsx` to conditionally hide `Navigation` and `RebrandingBanner` on all routes starting with `/admin`. This provides a focused, distraction-free interface for the admin panel.

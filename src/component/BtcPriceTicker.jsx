@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BiTrendingUp, BiTrendingDown } from 'react-icons/bi';
 
 const btcLogo = "/assets/imgs/logo/bitcoinwala.svg";
@@ -32,7 +32,7 @@ const BtcPriceTicker = () => {
 
             if (data.rates && data.rates.INR) {
               setUsdToInrRate(data.rates.INR);
-              console.log('âœ“ USD to INR rate fetched:', data.rates.INR);
+              console.log('✓ USD to INR rate fetched:', data.rates.INR);
               return;
             }
           } catch (error) {
@@ -92,11 +92,11 @@ const BtcPriceTicker = () => {
             loading: false,
             error: false
           });
-          console.log('âœ“ CoinGecko successful:', data.bitcoin.usd);
+          console.log('✓ CoinGecko successful:', data.bitcoin.usd);
           return; // Success, exit early
         }
       } catch (error) {
-        console.warn('âœ— CoinGecko failed:', error.message);
+        console.warn('✗ CoinGecko failed:', error.message);
       }
 
       // API 2: Coinbase
@@ -112,11 +112,11 @@ const BtcPriceTicker = () => {
             loading: false,
             error: false
           });
-          console.log('âœ“ Coinbase successful:', data.data.amount);
+          console.log('✓ Coinbase successful:', data.data.amount);
           return; // Success, exit early
         }
       } catch (error) {
-        console.warn('âœ— Coinbase failed:', error.message);
+        console.warn('✗ Coinbase failed:', error.message);
       }
 
       // API 3: Blockchain.info
@@ -132,11 +132,11 @@ const BtcPriceTicker = () => {
             loading: false,
             error: false
           });
-          console.log('âœ“ Blockchain.info successful:', data.USD.last);
+          console.log('✓ Blockchain.info successful:', data.USD.last);
           return; // Success, exit early
         }
       } catch (error) {
-        console.warn('âœ— Blockchain.info failed:', error.message);
+        console.warn('✗ Blockchain.info failed:', error.message);
       }
 
       // API 4: Binance
@@ -152,11 +152,11 @@ const BtcPriceTicker = () => {
             loading: false,
             error: false
           });
-          console.log('âœ“ Binance successful:', data.price);
+          console.log('✓ Binance successful:', data.price);
           return; // Success, exit early
         }
       } catch (error) {
-        console.warn('âœ— Binance failed:', error.message);
+        console.warn('✗ Binance failed:', error.message);
       }
 
       // API 5: Kraken
@@ -172,15 +172,15 @@ const BtcPriceTicker = () => {
             loading: false,
             error: false
           });
-          console.log('âœ“ Kraken successful:', data.result.XXBTZUSD.c[0]);
+          console.log('✓ Kraken successful:', data.result.XXBTZUSD.c[0]);
           return; // Success, exit early
         }
       } catch (error) {
-        console.warn('âœ— Kraken failed:', error.message);
+        console.warn('✗ Kraken failed:', error.message);
       }
 
       // All APIs failed
-      console.error('âœ— All APIs failed to fetch BTC price');
+      console.error('✗ All APIs failed to fetch BTC price');
       setBtcData(prev => ({ ...prev, loading: false }));
     };
 
@@ -244,7 +244,7 @@ const BtcPriceTicker = () => {
           {/* Price Display with Auto Animation */}
           <div className="flex flex-col items-center gap-1">
             <span className="text-white text-[10px] sm:text-xs font-bold">
-              <span className="text-[#FF6501]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
+              <span className="text-[#FF8000]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
             </span>
 
             {btcData.loading ? (
@@ -252,13 +252,13 @@ const BtcPriceTicker = () => {
             ) : (
               <div className="relative w-48 sm:w-64 flex justify-center">
                 {/* USD Price */}
-                <span className={`text-[#FF6501] font-bold text-2xl sm:text-3xl transition-all duration-500 transform ${showInr ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
+                <span className={`text-[#FF8000] font-bold text-2xl sm:text-3xl transition-all duration-500 transform ${showInr ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
                   }`}>
                   {formatPrice(btcData.price, 'USD')}
                 </span>
 
                 {/* INR Price */}
-                <span className={`absolute top-0 left-0 w-full text-center text-[#FF6501] font-bold text-2xl sm:text-3xl transition-all duration-500 transform ${showInr ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+                <span className={`absolute top-0 left-0 w-full text-center text-[#FF8000] font-bold text-2xl sm:text-3xl transition-all duration-500 transform ${showInr ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                   }`}>
                   {formatPrice(getInrPrice(), 'INR')}
                 </span>
@@ -292,7 +292,7 @@ const BtcPriceTicker = () => {
           {/* Price Display with Auto Animation */}
           <div className="flex flex-col items-center gap-1 -ml-6">
             <span className="text-white text-sm font-bold">
-              <span className="text-[#FF6501]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
+              <span className="text-[#FF8000]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
             </span>
 
             {btcData.loading ? (
@@ -300,13 +300,13 @@ const BtcPriceTicker = () => {
             ) : (
               <div className="relative w-40 flex justify-center">
                 {/* USD Price */}
-                <span className={`text-[#FF6501] font-bold text-2xl transition-all duration-500 transform ${showInr ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
+                <span className={`text-[#FF8000] font-bold text-2xl transition-all duration-500 transform ${showInr ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
                   }`}>
                   {formatPrice(btcData.price, 'USD')}
                 </span>
 
                 {/* INR Price */}
-                <span className={`absolute top-0 left-0 w-full text-center text-[#FF6501] font-bold text-2xl transition-all duration-500 transform ${showInr ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
+                <span className={`absolute top-0 left-0 w-full text-center text-[#FF8000] font-bold text-2xl transition-all duration-500 transform ${showInr ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
                   }`}>
                   {formatPrice(getInrPrice(), 'INR')}
                 </span>
@@ -320,6 +320,9 @@ const BtcPriceTicker = () => {
 };
 
 export default BtcPriceTicker;
+
+
+
 
 
 

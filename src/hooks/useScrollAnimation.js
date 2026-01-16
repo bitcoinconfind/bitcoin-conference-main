@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * Custom hook for scroll-triggered fade-in animations
@@ -109,6 +109,9 @@ export const useStaggeredScrollAnimation = (itemCount, options = {}) => {
 
   return { containerRef, getItemProps };
 };
+
+
+
 
 
 

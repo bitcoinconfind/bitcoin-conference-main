@@ -1,4 +1,4 @@
-﻿@import "tailwindcss";
+@import "tailwindcss";
 
 #root {
   width: 100%;
@@ -58,15 +58,15 @@ h6,
   transition: all 0.3s ease;
   background-color: #000000 !important;
   color: #ffffff !important;
-  border: 2px solid #FF6501 !important;
-  box-shadow: 0 4px 15px rgba(255, 101, 1, 0.3);
+  border: 2px solid #FF8000 !important;
+  box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);
   cursor: pointer;
 }
 
 .btn-primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(255, 101, 1, 0.4);
-  background-color: rgba(255, 101, 1, 0.1) !important;
+  box-shadow: 0 8px 25px rgba(255, 128, 0, 0.4);
+  background-color: rgba(255, 128, 0, 0.1) !important;
 }
 
 .btn-primary::after {
@@ -96,12 +96,12 @@ h6,
   transition: all 0.3s ease;
   background-color: transparent !important;
   color: #ffffff !important;
-  border: 2px solid #FF6501 !important;
+  border: 2px solid #FF8000 !important;
   cursor: pointer;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 101, 1, 0.1) !important;
+  background-color: rgba(255, 128, 0, 0.1) !important;
 }
 
 /* Prevent disabled buttons from being faded out */
@@ -128,14 +128,14 @@ button[disabled] {
 }
 
 .premium-card:hover {
-  border-color: #FF6501;
+  border-color: #FF8000;
   transform: translateY(-5px);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 /* Text Effects */
 .gradient-text-gold {
-  background: linear-gradient(135deg, #FF6501 0%, #FF6501 50%, #FF6501 100%);
+  background: linear-gradient(135deg, #FF8000 0%, #FF8000 50%, #FF8000 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -221,7 +221,7 @@ button[disabled] {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF6501;
+  background: #FF8000;
 }
 
 .fade-in-up {
@@ -295,7 +295,7 @@ button[disabled] {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #FF6501;
+  background: #FF8000;
   border-radius: 10px;
 }
 

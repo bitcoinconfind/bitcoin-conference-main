@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaUsers, FaChartLine } from 'react-icons/fa';
 import { useCountUpOnScroll } from '../hooks/useCountUp';
 
@@ -98,18 +98,18 @@ const LiveRegistrationCounter = () => {
 
         {/* 1. THE GLASS SHARD (Main Counter) - Asymmetric & Dominant */}
         <div className="relative flex-grow lg:w-2/3 group">
-          <div className="absolute inset-0 bg-[#FF6501] blur-[60px] opacity-10 rounded-full"></div>
+          <div className="absolute inset-0 bg-[#FF8000] blur-[60px] opacity-10 rounded-full"></div>
 
-          <div className="relative h-full bg-black/60 backdrop-blur-xl border border-[#FF6501]/30 p-8 md:p-12 overflow-hidden
+          <div className="relative h-full bg-black/60 backdrop-blur-xl border border-[#FF8000]/30 p-8 md:p-12 overflow-hidden
                           lg:rounded-l-[3rem] lg:rounded-tr-[1rem] lg:rounded-br-[5rem] rounded-3xl
-                          shadow-[0_0_40px_rgba(255,101,1,0.1)] transition-all duration-500">
+                          shadow-[0_0_40px_rgba(255,128,0,0.1)] transition-all duration-500">
 
 
 
             <div className="flex flex-col justify-between h-full relative z-10">
               <div className="flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className={`p-3 rounded-xl bg-[#FF6501]/10 text-[#FF6501] ${showPulse ? 'animate-pulse' : ''}`}>
+                  <div className={`p-3 rounded-xl bg-[#FF8000]/10 text-[#FF8000] ${showPulse ? 'animate-pulse' : ''}`}>
                     <FaUsers className="text-2xl" />
                   </div>
                   <div>
@@ -123,7 +123,7 @@ const LiveRegistrationCounter = () => {
               </div>
 
               <div className="mt-8">
-                <div className={`text-6xl sm:text-7xl lg:text-8xl font-black text-[#FF6501] tracking-[0.05em] transition-all duration-300 ${showPulse ? 'scale-105' : 'scale-100'}`}>
+                <div className={`text-6xl sm:text-7xl lg:text-8xl font-black text-[#FF8000] tracking-[0.05em] transition-all duration-300 ${showPulse ? 'scale-105' : 'scale-100'}`}>
                   {formatNumber(registrationCount)}
                 </div>
 
@@ -135,9 +135,9 @@ const LiveRegistrationCounter = () => {
                 )}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[#FF6501]/30 flex items-center justify-between text-sm text-gray-400">
+              <div className="mt-8 pt-6 border-t border-[#FF8000]/30 flex items-center justify-between text-sm text-gray-400">
                 <p>Join the revolution.</p>
-                <span className="text-[#FF6501]">Bitcoin Forum India 2026</span>
+                <span className="text-[#FF8000]">Bitcoin Forum India 2026</span>
               </div>
             </div>
           </div>
@@ -161,18 +161,21 @@ const LiveRegistrationCounter = () => {
 // Reusable "Pill" Component for the stack
 // eslint-disable-next-line react/display-name
 const StatsPill = React.forwardRef(({ value, label, delay }, ref) => (
-  <div ref={ref} className="group relative bg-black/50 hover:bg-black/70 border border-[#FF6501]/30 hover:border-[#FF6501]/50 p-5 rounded-2xl transition-all duration-300 hover:translate-x-2 shadow-lg backdrop-blur-sm">
+  <div ref={ref} className="group relative bg-black/50 hover:bg-black/70 border border-[#FF8000]/30 hover:border-[#FF8000]/50 p-5 rounded-2xl transition-all duration-300 hover:translate-x-2 shadow-lg backdrop-blur-sm">
     <div className="flex items-center justify-between">
       <div>
-        <div className="text-2xl font-bold text-[#FF6501] group-hover:text-[#FF6501] transition-colors">{value}</div>
+        <div className="text-2xl font-bold text-[#FF8000] group-hover:text-[#FF8000] transition-colors">{value}</div>
         <div className="text-xs text-gray-400 uppercase tracking-wider">{label}</div>
       </div>
-      <div className="h-8 w-1 bg-[#FF6501] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+      <div className="h-8 w-1 bg-[#FF8000] rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
     </div>
   </div>
 ));
 
 export default LiveRegistrationCounter;
+
+
+
 
 
 

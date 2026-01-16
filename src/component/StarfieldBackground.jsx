@@ -40,7 +40,7 @@ const StarfieldBackground = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             stars.forEach((star) => {
-                const color = star.colorType === 'orange' ? '255, 101, 1' : '255, 255, 255';
+                const color = star.colorType === 'orange' ? '255, 128, 0' : '255, 255, 255';
 
                 ctx.beginPath();
                 ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
@@ -83,3 +83,6 @@ const StarfieldBackground = () => {
 };
 
 export default StarfieldBackground;
+
+
+

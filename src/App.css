@@ -1,4 +1,4 @@
-﻿/* body {
+/* body {
   background-color: black;
   color: white;
 } */
@@ -37,7 +37,7 @@
   position: relative;
   padding: 12px 24px;
   border-radius: 12px;
-  background: #FF6501;
+  background: #FF8000;
   color: black;
   font-weight: 600;
   font-family: 'Familjen', sans-serif;
@@ -69,7 +69,7 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background: #FF6501;
+  background: #FF8000;
   border-radius: inherit;
   z-index: -1;
 }
@@ -84,4 +84,7 @@
     background-position: 100% 50%;
   }
 }
+
+
+
 

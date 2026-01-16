@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const FloatingParticles = () => {
     const canvasRef = useRef(null);
@@ -61,9 +61,9 @@ const FloatingParticles = () => {
                     this.x, this.y, 0,
                     this.x, this.y, this.size * 2
                 );
-                gradient.addColorStop(0, `rgba(255, 101, 1, ${currentOpacity})`);
-                gradient.addColorStop(0.5, `rgba(255, 101, 1, ${currentOpacity * 0.5})`);
-                gradient.addColorStop(1, `rgba(255, 101, 1, 0)`);
+                gradient.addColorStop(0, `rgba(255, 128, 0, ${currentOpacity})`);
+                gradient.addColorStop(0.5, `rgba(255, 128, 0, ${currentOpacity * 0.5})`);
+                gradient.addColorStop(1, `rgba(255, 128, 0, 0)`);
 
                 ctx.fillStyle = gradient;
                 ctx.fill();
@@ -109,6 +109,9 @@ const FloatingParticles = () => {
 };
 
 export default FloatingParticles;
+
+
+
 
 
 

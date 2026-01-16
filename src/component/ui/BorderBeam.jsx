@@ -1,11 +1,11 @@
-﻿import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export const BorderBeam = ({
     className,
     duration = 15,
     borderWidth = 3,
-    colorFrom = "#FF6501",
-    colorTo = "#FF6501",
+    colorFrom = "#FF8000",
+    colorTo = "#FF8000",
     delay = 0,
 }) => {
     const containerRef = useRef(null);
@@ -118,6 +118,9 @@ export const BorderBeam = ({
 };
 
 export default BorderBeam;
+
+
+
 
 
 

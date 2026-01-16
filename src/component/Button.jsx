@@ -1,4 +1,4 @@
-﻿import { StarBorder } from "./ui/StarBorder";
+import { StarBorder } from "./ui/StarBorder";
 import { useState } from "react";
 
 const Button = ({
@@ -18,8 +18,8 @@ const Button = ({
   const variants = {
     primary: "btn-primary",
     secondary: "btn-secondary",
-    general: "bg-black border-2 border-[#FF6501] text-white font-bold hover:bg-[#FF6501]/10 px-8 py-4 rounded-xl transition-all",
-    comman: "bg-black border-2 border-[#FF6501] text-white font-bold hover:bg-[#FF6501]/10 px-8 py-4 rounded-xl transition-all",
+    general: "bg-black border-2 border-[#FF8000] text-white font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
+    comman: "bg-black border-2 border-[#FF8000] text-white font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
     animatedBtn: "btn-primary", // Fallback to primary
   };
 
@@ -80,6 +80,9 @@ const Button = ({
 };
 
 export default Button;
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import Navigation from "./Navigation";
 import RebrandingBanner from "./RebrandingBanner";
@@ -81,6 +81,9 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
+
 
 
 

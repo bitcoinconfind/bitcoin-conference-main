@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const btcLogo = "/assets/imgs/logo/bitcoinwala.png";
 
@@ -130,7 +130,7 @@ const BtcSidebarWidget = () => {
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
     >
-      <div className="border border-[#FF6501]/20 bg-black/90 p-4 rounded-lg shadow-[0_0_15px_rgba(255,101,1,0.2)] hover:border-[#FF6501]/50 transition-colors">
+      <div className="border border-[#FF8000]/20 bg-black/90 p-4 rounded-lg shadow-[0_0_15px_rgba(255,128,0,0.2)] hover:border-[#FF8000]/50 transition-colors">
         {/* Collapsed state - Just logo */}
         {!isExpanded && (
           <div className="flex items-center justify-center">
@@ -155,7 +155,7 @@ const BtcSidebarWidget = () => {
               {btcData.loading ? (
                 <div className="h-6 w-24 bg-[#2a2a2a] animate-pulse rounded"></div>
               ) : (
-                <span className="text-[#FF6501] font-bold">BTC Price: {formatPrice(btcData.price)}</span>
+                <span className="text-[#FF8000] font-bold">BTC Price: {formatPrice(btcData.price)}</span>
               )}
             </div>
           </div>
@@ -166,6 +166,9 @@ const BtcSidebarWidget = () => {
 };
 
 export default BtcSidebarWidget;
+
+
+
 
 
 

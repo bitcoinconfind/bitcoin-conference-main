@@ -8,43 +8,29 @@ const PlexusBackground = () => {
         if (!canvas) return;
 
         const ctx = canvas.getContext('2d');
-        let animationFrameId;
 
-        const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        };
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        // Points configuration
+        // Configuration
         const points = [];
         const pointCount = window.innerWidth < 768 ? 40 : 80;
         const connectionDistance = 200;
-        const orangeColor = '255, 101, 1'; // #FF6501
+        const orangeColor = '255, 128, 0'; // #FF8000
 
+        // Initialize points without velocity (Static)
         for (let i = 0; i < pointCount; i++) {
             points.push({
-                x: Math.random() * canvas.width,
-                y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.4,
-                vy: (Math.random() - 0.5) * 0.4,
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
                 radius: Math.random() * 2.5 + 1.2,
             });
         }
 
-        const animate = () => {
+        const draw = () => {
+            if (!canvas) return;
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Update and draw points
+            // Draw points
             points.forEach((p, i) => {
-                p.x += p.vx;
-                p.y += p.vy;
-
-                // Bounce off edges
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                // Bounce logic removed (no movement)
 
                 // Draw point
                 ctx.beginPath();
@@ -63,23 +49,28 @@ const PlexusBackground = () => {
                         ctx.beginPath();
                         ctx.moveTo(p.x, p.y);
                         ctx.lineTo(p2.x, p2.y);
-                        // Opacity based on distance - SIGNIFICANTLY BOOSTED
+                        // Opacity based on distance
                         const opacity = (1 - dist / connectionDistance);
-                        ctx.strokeStyle = `rgba(${orangeColor}, ${opacity * 0.9})`; // Higher base opacity per line
-                        ctx.lineWidth = 2.5; // Thicker lines (reverted to 2.5px)
+                        ctx.strokeStyle = `rgba(${orangeColor}, ${opacity * 0.9})`;
+                        ctx.lineWidth = 2.5;
                         ctx.stroke();
                     }
                 }
             });
-
-            animationFrameId = requestAnimationFrame(animate);
         };
 
-        animate();
+        const resizeCanvas = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            draw();
+        };
+
+        resizeCanvas(); // Sets size and draws initial state
+        window.addEventListener('resize', resizeCanvas);
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
-            cancelAnimationFrame(animationFrameId);
+            // No animation frame to cancel
         };
     }, []);
 
@@ -93,3 +84,6 @@ const PlexusBackground = () => {
 };
 
 export default PlexusBackground;
+
+
+
