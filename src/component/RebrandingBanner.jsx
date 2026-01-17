@@ -4,7 +4,7 @@ const RebrandingBanner = ({ onClose }) => {
     return (
         <div className="fixed top-0 left-0 w-full z-[60] bg-black border-b border-[#FF8000]/30 text-white py-2 px-4 shadow-md flex items-center justify-between md:justify-center gap-4">
             <p className="text-sm md:text-base font-medium text-center flex-1">
-                We have rebranded from Bitcoin Conference India to <span className="text-[#FF8000] font-bold uppercase ml-1">Bitcoin Forum India</span>
+                Bitcoin conference India is now <span className="text-[#FF8000] font-bold uppercase ml-1">Bitcoin Forum India</span>
             </p>
             <button
                 onClick={onClose}
