@@ -44,11 +44,11 @@ const FAQSection = () => {
             <div className="h-[1px] w-12 bg-[#FF8000]"></div>
           </div>
 
-          <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-black text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
             Everything you need to know about <span className="text-black font-semibold">Bitcoin Forum India 2026</span>
           </p>
         </div>
-      </FadeIn>
+      </FadeIn >
 
       <div className="space-y-4 max-w-3xl mx-auto">
         {faqs.map((faq, index) => (
@@ -90,7 +90,7 @@ const FAQSection = () => {
           </FadeIn>
         ))}
       </div>
-    </div>
+    </div >
   );
 };
 

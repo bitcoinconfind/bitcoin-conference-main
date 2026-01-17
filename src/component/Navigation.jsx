@@ -92,7 +92,7 @@ const Navigation = ({ showBanner = false }) => {
                 label="Get Tickets"
                 variant="primary"
                 className={`!rounded-xl transition-all duration-300 hover:!text-black ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'}`}
-                onClick={(e) => goToId(e, 'tickets')}
+                onClick={() => window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true"}
               />
             </div>
 
@@ -136,7 +136,7 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
             {/* Get Tickets Button */}
             <button
               onClick={() => {
-                goToId(null, 'tickets');
+                window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
                 setOpen(false);
               }}
               className="w-full px-4 py-3 bg-[#FFFCFA] border-2 border-[#FF8000] text-black font-bold rounded-xl hover:bg-[#FF8000]/10 transition-all"

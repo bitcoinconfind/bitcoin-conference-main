@@ -107,7 +107,7 @@ const Hero = () => {
                                 <div className="text-gray-600 text-xs uppercase tracking-wide">Days of Networking</div>
                             </div>
                         </div>
-                        <p className="text-gray-600 text-sm text-center leading-relaxed max-w-xl mx-auto px-2">
+                        <p className="text-black text-sm text-center leading-relaxed max-w-xl mx-auto px-2">
                             Join the movement shaping India's Bitcoin future through technology, education, and innovation
                         </p>
                     </FadeIn>
@@ -119,8 +119,7 @@ const Hero = () => {
                             className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 transform hover:-translate-y-1 hover:!text-black"
                             onClick={(e) => {
                                 e.preventDefault();
-                                const el = document.getElementById('tickets');
-                                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
                             }}
                         />
                         <Button
