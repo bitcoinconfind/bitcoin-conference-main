@@ -107,7 +107,7 @@ const Hero = () => {
                                 <div className="text-gray-600 text-xs uppercase tracking-wide">Days of Networking</div>
                             </div>
                         </div>
-                        <p className="text-gray-400 text-sm text-center leading-relaxed max-w-xl mx-auto px-2">
+                        <p className="text-gray-600 text-sm text-center leading-relaxed max-w-xl mx-auto px-2">
                             Join the movement shaping India's Bitcoin future through technology, education, and innovation
                         </p>
                     </FadeIn>
