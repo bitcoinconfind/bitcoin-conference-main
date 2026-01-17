@@ -28,35 +28,35 @@ const Terms = () => {
         <div className="prose prose-invert max-w-none">
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">1. Acceptance of Terms</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-black leading-relaxed">
               By accessing and using the Bitcoin Forum India website and services, you accept and agree to be bound by the terms and provision of this agreement.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">2. Event Information</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-black leading-relaxed">
               Bitcoin Forum India is an independent event dedicated to promoting Bitcoin education and adoption in India. All information provided is for educational purposes only and should not be considered as financial advice.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">3. Registration and Tickets</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-black leading-relaxed">
               Event registration and ticket purchases are subject to availability. We reserve the right to refuse service to anyone for any reason at any time. All sales are final unless otherwise specified.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">4. Limitation of Liability</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-black leading-relaxed">
               Bitcoin Forum India shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.
             </p>
           </section>
 
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">5. Privacy</h2>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-black leading-relaxed">
               Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the website, to understand our practices.
             </p>
           </section>

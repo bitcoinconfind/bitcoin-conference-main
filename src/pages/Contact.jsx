@@ -155,7 +155,7 @@ const Contact = () => {
             <div className="h-[1px] w-12 bg-[#FF8000]"></div>
           </div>
 
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-8">
+          <p className="text-black text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed mb-8">
             Reach us directly or fill the form.
           </p>
 
