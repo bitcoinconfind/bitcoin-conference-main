@@ -26,9 +26,9 @@ const Footer = () => {
 
           {/* Right: Social Icons (Grid 3x2) */}
           <div className="grid grid-cols-3 gap-x-6 gap-y-3">
-            <a href="https://t.me/BitcoinConfIND" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaTelegram /></a>
-            <a href="https://x.com/BitcoinConfIND" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaXTwitter /></a>
-            <a href="https://www.instagram.com/bitcoinconfind" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaInstagram /></a>
+            <a href="https://t.me/BitcoinForumIndia" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaTelegram /></a>
+            <a href="https://x.com/BTCforumIndia" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaXTwitter /></a>
+            <a href="https://www.instagram.com/bitcoinforumindia?igsh=MTgyenZodHFvdDkzeA==" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaInstagram /></a>
             <a href="https://youtube.com/@bitcoinconferenceindia" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaYoutube /></a>
             <a href="https://www.linkedin.com/company/bitcoinconfind/" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaLinkedin /></a>
             <a href="https://discord.gg/UNsh7qhXs5" target="_blank" rel="noreferrer" className="text-[#FF8000] text-xl hover:opacity-80 transition-opacity flex justify-center"><FaDiscord /></a>
@@ -52,6 +52,10 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
 
 
 

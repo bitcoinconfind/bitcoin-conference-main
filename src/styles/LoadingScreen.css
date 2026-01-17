@@ -65,7 +65,7 @@
   text-shadow: 0 0 30px rgba(255, 128, 0, 0.3);
 }
 
-.loading-text .text-white {
+.loading-text .text-black {
   color: #FFFFFF !important;
   display: inline-block;
 }
@@ -480,6 +480,8 @@
     transition: none !important;
   }
 }
+
+
 
 
 

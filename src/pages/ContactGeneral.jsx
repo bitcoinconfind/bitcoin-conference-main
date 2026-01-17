@@ -50,7 +50,7 @@ const ContactGeneral = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-black relative overflow-hidden">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#FFFCFA] relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
@@ -69,7 +69,7 @@ const ContactGeneral = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             General <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Queries</span>
           </h1>
 
@@ -84,7 +84,7 @@ const ContactGeneral = () => {
           </p>
         </div>
 
-        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
+        <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div>
@@ -204,7 +204,7 @@ const ContactGeneral = () => {
               <Button
                 type="submit"
                 label={isSubmitting ? "Submitting..." : "Send Message"}
-                className="w-full py-4 text-xl font-bold transition-all duration-300"
+                className="w-full py-4 text-xl font-bold transition-all duration-300 hover:!text-black"
                 disabled={isSubmitting}
               />
             </div>
@@ -216,6 +216,10 @@ const ContactGeneral = () => {
 };
 
 export default ContactGeneral;
+
+
+
+
 
 
 

@@ -75,8 +75,8 @@ const TicketTiersSection = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
-            Grab Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FFC04D]">Tickets</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
+            Grab Your <span className="text-[#FF8000]">Tickets</span>
           </h2>
 
           <div className="flex items-center justify-center gap-4 text-[#FF8000]/80 mb-4">
@@ -85,8 +85,8 @@ const TicketTiersSection = () => {
             <div className="h-[1px] w-12 bg-[#FF8000]"></div>
           </div>
 
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Choose your level of access to <span className="text-white font-semibold">India's Definitive Bitcoin Experience</span>.
+          <p className="text-gray-800 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+            Choose your level of access to <span className="text-black font-semibold">India's Definitive Bitcoin Experience</span>.
           </p>
         </div>
       </FadeIn>
@@ -95,7 +95,7 @@ const TicketTiersSection = () => {
 
         {/* LEFT PANEL: The "Power View" (Details) */}
         <div className="lg:w-2/3 h-full">
-          <div className="relative h-full bg-black/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-3xl p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-8 transition-all duration-500 shadow-2xl">
+          <div className="relative h-full bg-[#FFFCFA]/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-3xl p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-8 transition-all duration-500 shadow-2xl">
 
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF8000]/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -109,7 +109,7 @@ const TicketTiersSection = () => {
               />
               <div className="mt-6 text-center">
                 <div className="text-4xl font-bold text-[#FF8000] mb-1"><span className="text-[#FF8000]">$</span>{activeTier.price}</div>
-                <div className="text-sm text-gray-400 uppercase tracking-widest">{activeTier.currency}</div>
+                <div className="text-sm text-gray-600 uppercase tracking-widest">{activeTier.currency}</div>
               </div>
             </div>
 
@@ -121,7 +121,7 @@ const TicketTiersSection = () => {
                 {activeTier.features.map((feature, idx) => (
                   <div key={idx} className="flex items-start gap-3 group">
                     <div className="mt-2.5 w-1.5 h-1.5 rounded-full bg-[#FF8000] group-hover:shadow-[0_0_8px_#FF8000] transition-all flex-shrink-0"></div>
-                    <span className="text-gray-200 text-lg leading-relaxed">{feature}</span>
+                    <span className="text-gray-700 text-lg leading-relaxed">{feature}</span>
                   </div>
                 ))}
               </div>
@@ -130,7 +130,7 @@ const TicketTiersSection = () => {
                 label="Coming Soon"
                 variant="primary"
                 disabled={true}
-                className="w-full lg:w-auto self-start mt-auto !bg-[#FF8000] !text-black font-bold text-lg px-8 py-4 opacity-70 cursor-not-allowed"
+                className="w-full lg:w-auto self-start mt-auto !bg-[#FF8000] !text-white font-bold text-lg px-8 py-4 opacity-70 cursor-not-allowed"
               />
             </div>
           </div>
@@ -146,8 +146,8 @@ const TicketTiersSection = () => {
                 onClick={() => setActiveTierIndex(index)}
                 className={`relative p-6 rounded-2xl text-left transition-all duration-300 group border backdrop-blur-sm
                    ${isActive
-                    ? 'bg-black/70 border-[#FF8000] shadow-[0_0_30px_rgba(255,128,0,0.15)] scale-105 z-10'
-                    : 'bg-black/40 border-[#FF8000]/30 hover:bg-black/60 hover:border-[#FF8000]/50 opacity-70 hover:opacity-100'
+                    ? 'bg-[#FFFCFA]/70 border-[#FF8000] shadow-[0_0_30px_rgba(255,128,0,0.15)] scale-105 z-10'
+                    : 'bg-[#FFFCFA]/40 border-[#FF8000]/30 hover:bg-[#FFFCFA]/60 hover:border-[#FF8000]/50 opacity-70 hover:opacity-100'
                   }
                  `}
               >
@@ -156,7 +156,7 @@ const TicketTiersSection = () => {
                     <div className={`text-xl font-bold mb-1 transition-colors text-[#FF8000]`}>
                       {tier.title}
                     </div>
-                    <div className="text-white font-bold font-mono">${tier.price}</div>
+                    <div className="text-black font-bold font-mono">${tier.price}</div>
                   </div>
                 </div>
               </button>
@@ -169,7 +169,7 @@ const TicketTiersSection = () => {
       {/* Event Details Footer */}
       <FadeIn direction="up" delay={400} duration={800}>
         <div className="mt-20 text-center">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-white max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-black max-w-4xl mx-auto">
             <div className="text-center card-hover-lift">
               <div className="text-[#FF8000] font-sora font-bold text-3xl mb-2">Hyderabad</div>
               <div className="metric-label text-sm">Location</div>
@@ -195,6 +195,10 @@ const TicketTiersSection = () => {
 };
 
 export default TicketTiersSection;
+
+
+
+
 
 
 

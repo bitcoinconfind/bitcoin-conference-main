@@ -9,7 +9,7 @@ const WhyAttend = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Attend</span> ?
           </h2>
 
@@ -20,7 +20,7 @@ const WhyAttend = () => {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            What to expect at <span className="text-white font-semibold">Bitcoin Forum India 2026</span>
+            What to expect at <span className="text-black font-semibold">Bitcoin Forum India 2026</span>
           </p>
         </div>
       </FadeIn>
@@ -113,6 +113,10 @@ const WhyAttend = () => {
 };
 
 export default WhyAttend;
+
+
+
+
 
 
 

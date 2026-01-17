@@ -163,7 +163,7 @@ const ApplySpeaker = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-black relative overflow-hidden">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#FFFCFA] relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
@@ -182,7 +182,7 @@ const ApplySpeaker = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             Apply to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Speak</span>
           </h1>
 
@@ -193,12 +193,12 @@ const ApplySpeaker = () => {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Share your expertise with the <span className="text-white font-semibold">Bitcoin community</span> at India's premier conference.
+            Share your expertise with the <span className="text-black font-semibold">Bitcoin community</span> at India's premier conference.
             We're looking for thought leaders, innovators, and industry experts.
           </p>
         </div>
 
-        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
+        <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div>
@@ -426,18 +426,18 @@ const ApplySpeaker = () => {
             )}
 
             <div className="pt-2">
-              <Button type="submit" label={isSubmitting ? 'Submitting...' : 'Submit Speaker Application'} className="w-full py-4 text-xl font-bold transition-all duration-300" disabled={isSubmitting} />
+              <Button type="submit" label={isSubmitting ? 'Submitting...' : 'Submit Speaker Application'} className="w-full py-4 text-xl font-bold transition-all duration-300 hover:!text-black" disabled={isSubmitting} />
             </div>
           </form>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-[#FFFFFF80]">
+            <p className="text-sm text-black/80">
               Questions? Contact us at{" "}
               <a
-                href="mailto:speakers@btcindia.media"
+                href="mailto:contact@bitcoinforumindia.com"
                 className="text-[#FF8000] hover:underline"
               >
-                speakers@btcindia.media
+                contact@bitcoinforumindia.com
               </a>
             </p>
           </div>
@@ -448,6 +448,10 @@ const ApplySpeaker = () => {
 };
 
 export default ApplySpeaker;
+
+
+
+
 
 
 

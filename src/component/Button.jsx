@@ -18,8 +18,8 @@ const Button = ({
   const variants = {
     primary: "btn-primary",
     secondary: "btn-secondary",
-    general: "bg-black border-2 border-[#FF8000] text-white font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
-    comman: "bg-black border-2 border-[#FF8000] text-white font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
+    general: "bg-[#FFFCFA] border-2 border-[#FF8000] text-black font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
+    comman: "bg-[#FFFCFA] border-2 border-[#FF8000] text-black font-bold hover:bg-[#FF8000]/10 px-8 py-4 rounded-xl transition-all",
     animatedBtn: "btn-primary", // Fallback to primary
   };
 
@@ -80,6 +80,10 @@ const Button = ({
 };
 
 export default Button;
+
+
+
+
 
 
 

@@ -114,10 +114,10 @@ const ImageSlideReveal = ({
       </div>
 
       {/* Optional: Labels */}
-      <div className="absolute bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded text-sm backdrop-blur-sm">
+      <div className="absolute bottom-4 left-4 bg-[#FFFCFA]/50 text-black px-3 py-1 rounded text-sm backdrop-blur-sm">
         {topImageAlt}
       </div>
-      <div className="absolute bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded text-sm backdrop-blur-sm">
+      <div className="absolute bottom-4 right-4 bg-[#FFFCFA]/50 text-black px-3 py-1 rounded text-sm backdrop-blur-sm">
         {bottomImageAlt}
       </div>
     </div>
@@ -125,6 +125,10 @@ const ImageSlideReveal = ({
 };
 
 export default ImageSlideReveal;
+
+
+
+
 
 
 

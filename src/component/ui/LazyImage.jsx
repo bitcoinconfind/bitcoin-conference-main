@@ -54,7 +54,7 @@ const LazyImage = ({
 
   if (hasError) {
     return (
-      <div className={`${className} flex items-center justify-center bg-[#1F1F1F] text-white/50`}>
+      <div className={`${className} flex items-center justify-center bg-[#1F1F1F] text-black/50`}>
         <span>Failed to load image</span>
       </div>
     );
@@ -78,6 +78,10 @@ const LazyImage = ({
 };
 
 export default LazyImage;
+
+
+
+
 
 
 

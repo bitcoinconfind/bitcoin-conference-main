@@ -26,7 +26,7 @@ const IndianStatesSection = () => {
                 Participating <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">States</span> <br />
                 One <span className="text-[#FF8000]">Mission</span>
               </h2>
-              <p className="text-gray-400 text-lg lg:text-xl font-light leading-relaxed max-w-xl border-l-2 border-[#FF8000] pl-6">
+              <p className="text-gray-800 text-lg lg:text-xl font-light leading-relaxed max-w-xl border-l-2 border-[#FF8000] pl-6">
                 Regional Node Bitcoin Conferences across all 27 States & 8 Union Territories in their vernacular languages, spreading Bitcoin awareness and education Nationwide.
               </p>
             </div>
@@ -37,7 +37,7 @@ const IndianStatesSection = () => {
             <FadeIn direction="up" delay={200} duration={800}>
               <div ref={statesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF8000]/10 p-6 transition-all hover:border-[#FF8000]/30 hover:bg-[#FF8000]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{statesCount}</div>
+                  <div className="text-4xl md:text-5xl font-black text-black mb-2 font-heading">{statesCount}</div>
                   <div className="text-[#FF8000] uppercase tracking-wider text-xs font-bold">States & UTs</div>
                 </div>
                 {/* Decorative Blob */}
@@ -47,7 +47,7 @@ const IndianStatesSection = () => {
             <FadeIn direction="up" delay={300} duration={800}>
               <div ref={languagesRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF8000]/10 p-6 transition-all hover:border-[#FF8000]/30 hover:bg-[#FF8000]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{languagesCount}</div>
+                  <div className="text-4xl md:text-5xl font-black text-black mb-2 font-heading">{languagesCount}</div>
                   <div className="text-[#FF8000] uppercase tracking-wider text-xs font-bold">Languages</div>
                 </div>
                 <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF8000] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
@@ -56,7 +56,7 @@ const IndianStatesSection = () => {
             <FadeIn direction="up" delay={400} duration={800}>
               <div ref={peopleRef} className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF8000]/10 p-6 transition-all hover:border-[#FF8000]/30 hover:bg-[#FF8000]/15 h-full flex flex-col justify-center min-h-[160px]">
                 <div className="relative z-10">
-                  <div className="text-4xl md:text-5xl font-black text-white mb-2 font-heading">{peopleCount}</div>
+                  <div className="text-4xl md:text-5xl font-black text-black mb-2 font-heading">{peopleCount}</div>
                   <div className="text-[#FF8000] uppercase tracking-wider text-xs font-bold">Billion People</div>
                 </div>
                 <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#FF8000] rounded-full mix-blend-screen filter blur-[60px] opacity-[0.1] group-hover:opacity-20 transition-opacity"></div>
@@ -93,6 +93,10 @@ const IndianStatesSection = () => {
 };
 
 export default IndianStatesSection;
+
+
+
+
 
 
 

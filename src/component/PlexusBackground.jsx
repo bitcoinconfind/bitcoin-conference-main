@@ -11,7 +11,7 @@ const PlexusBackground = () => {
 
         // Configuration
         const points = [];
-        const pointCount = window.innerWidth < 768 ? 40 : 80;
+        const pointCount = window.innerWidth < 768 ? 20 : 40;
         const connectionDistance = 200;
         const orangeColor = '255, 128, 0'; // #FF8000
 
@@ -84,6 +84,10 @@ const PlexusBackground = () => {
 };
 
 export default PlexusBackground;
+
+
+
+
 
 
 

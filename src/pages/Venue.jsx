@@ -85,7 +85,7 @@ const Venue = () => {
                     className="w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover object-center"
                   />
                   {/* Dark overlay for better text readability */}
-                  <div className="absolute inset-0 bg-black/60"></div>
+                  <div className="absolute inset-0 bg-[#FFFCFA]/60"></div>
                 </div>
               ))}
             </div>
@@ -94,11 +94,11 @@ const Venue = () => {
           {/* Text Overlay - Centered on Carousel */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6 sm:px-10 md:px-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-3 sm:mb-4">
-              <span className="text-white">Venue Announcement</span>
+              <span className="text-black">Venue Announcement</span>
               <br />
               <span className="text-[#FF8000]">Coming Soon</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-white mb-5 sm:mb-6">
+            <p className="text-sm sm:text-base md:text-lg max-w-2xl mx-auto text-black mb-5 sm:mb-6">
               We're securing an iconic location in Hyderabad that will perfectly complement the scale and significance of India's premier Bitcoin conference.
             </p>
             <button className="px-6 py-3 bg-transparent hover:bg-[#FF8000]/20 border-2 border-[#FF8000] rounded-full text-sm sm:text-base font-semibold gradient-text transition-all duration-300 shadow-[0_0_15px_rgba(255,128,0,0.4)] hover:shadow-[0_0_30px_rgba(255,128,0,0.7)] hover:scale-105">
@@ -121,7 +121,7 @@ const Venue = () => {
         {venues.map((venue) => (
           <div
             key={venue.id}
-            className="w-full max-w-sm mx-auto rounded-lg border border-gray-500 overflow-hidden bg-black"
+            className="w-full max-w-sm mx-auto rounded-lg border border-gray-500 overflow-hidden bg-[#FFFCFA]"
           >
             <div className="overflow-hidden">
               <img
@@ -130,7 +130,7 @@ const Venue = () => {
                 className="w-full h-[28rem] object-cover object-top"
               />
             </div>
-            <div className="p-4 text-white">
+            <div className="p-4 text-black">
               <h3 className="text-xl font-familjen mb-2">{venue.title}</h3>
               <p className="text-sm font-inter text-gray-300">{venue.description}</p>
             </div>
@@ -143,7 +143,7 @@ const Venue = () => {
         {venues.map((venue) => (
           <div
             key={venue.id}
-            className="w-[calc(50%-12px)] lg:w-[calc(25%-18px)] rounded-lg border border-gray-500 overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer bg-black"
+            className="w-[calc(50%-12px)] lg:w-[calc(25%-18px)] rounded-lg border border-gray-500 overflow-hidden transition-transform duration-300 hover:scale-105 cursor-pointer bg-[#FFFCFA]"
           >
             <div className="overflow-hidden">
               <img
@@ -152,7 +152,7 @@ const Venue = () => {
                 className="w-full h-56 lg:h-[32rem] object-cover object-top transition-transform duration-500 hover:scale-110"
               />
             </div>
-            <div className="p-4 text-white">
+            <div className="p-4 text-black">
               <h3 className="text-xl font-familjen mb-2">{venue.title}</h3>
               <p className="text-sm font-inter text-gray-300">{venue.description}</p>
             </div>
@@ -164,6 +164,10 @@ const Venue = () => {
 };
 
 export default Venue;
+
+
+
+
 
 
 

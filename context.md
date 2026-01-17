@@ -48,6 +48,7 @@ A high-performance, visually stunning landing page for the "Bitcoin India" confe
 - **Visual & UI Refinement**:
     - **Static Background**: Refactored `PlexusBackground.jsx` to be purely static (removed animation loop and velocity) while retaining the "Digital Network" aesthetic.
     - **Color Palette Update**: Changed primary orange accent from `#FF6501` (Deep Orange) to `#FF8000` (Safety Orange) across `index.css`, `Hero.jsx`, and `PlexusBackground.jsx` for a lighter, brighter look.
+    - **Logo Update**: Replaced `logo2.svg` with `logo3.svg` in `Hero.jsx` (Mobile & Desktop).
     - **Files Modified**: `src/component/Hero.jsx`, `src/component/PlexusBackground.jsx`, `src/index.css`.
 
 ## Recent Changes (Session History - Jan 16 2026)

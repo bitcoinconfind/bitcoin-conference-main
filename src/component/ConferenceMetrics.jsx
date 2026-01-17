@@ -14,17 +14,17 @@ const MetricItem = ({ icon, value, label, index }) => {
       aria-label={`${value} ${label} for Bitcoin Forum India 2026`}
     >
       {/* Icon */}
-      <div className="text-white mb-4 icon-hover-pulse" aria-hidden="true">
+      <div className="text-black mb-4 icon-hover-pulse" aria-hidden="true">
         {icon}
       </div>
 
       {/* Value with count-up animation */}
-      <div className="text-3xl md:text-4xl font-bold text-white mb-2 font-familjen">
+      <div className="text-3xl md:text-4xl font-bold text-black mb-2 font-familjen">
         {count}
       </div>
 
       {/* Label */}
-      <div className="text-sm md:text-base text-white/80 font-medium">
+      <div className="text-sm md:text-base text-black/80 font-medium">
         {label}
       </div>
     </div>
@@ -73,7 +73,7 @@ const ConferenceMetrics = () => {
       <h2 id="conference-metrics" className="sr-only">Bitcoin Forum India 2026 Statistics and Metrics</h2>
 
       {/* Metrics Container with Elegant Glowing Border */}
-      <div className="relative bg-black border-2 border-[#FF8000] rounded-2xl p-8 shadow-2xl card-hover-lift">
+      <div className="relative bg-[#FFFCFA] border-2 border-[#FF8000] rounded-2xl p-8 shadow-2xl card-hover-lift">
         {/* Glowing border effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#FF8000] via-[#FF8000] to-[#FF8000] rounded-2xl opacity-20 blur-sm"></div>
 
@@ -98,6 +98,10 @@ const ConferenceMetrics = () => {
 };
 
 export default ConferenceMetrics;
+
+
+
+
 
 
 

@@ -146,7 +146,7 @@ const ApplySponsor = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-black relative overflow-hidden">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#FFFCFA] relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
@@ -162,7 +162,7 @@ const ApplySponsor = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             Become a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Sponsor</span>
           </h1>
 
@@ -173,12 +173,12 @@ const ApplySponsor = () => {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Partner with <span className="text-white font-semibold">Bitcoin Forum India</span> and reach a dedicated audience of crypto enthusiasts,
+            Partner with <span className="text-black font-semibold">Bitcoin Forum India</span> and reach a dedicated audience of crypto enthusiasts,
             investors, and industry leaders. Let's create something unforgettable together.
           </p>
         </div>
 
-        <div className="bg-black border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
+        <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div>
@@ -338,21 +338,21 @@ const ApplySponsor = () => {
             )}
 
             <div className="pt-2">
-              <Button type="submit" label={isSubmitting ? 'Submitting...' : 'Apply as Sponsor'} className="w-full py-4 text-xl font-bold transition-all duration-300" disabled={isSubmitting} />
+              <Button type="submit" label={isSubmitting ? 'Submitting...' : 'Apply as Sponsor'} className="w-full py-4 text-xl font-bold transition-all duration-300 hover:!text-black" disabled={isSubmitting} />
             </div>
           </form>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-[#FFFFFF80]">
+            <p className="text-sm text-black/80">
               Questions? Contact our sponsorship team at{" "}
               <a
-                href="mailto:sponsors@btcindia.media"
+                href="mailto:contact@bitcoinforumindia.com"
                 className="text-[#FF8000] hover:underline"
               >
-                sponsors@btcindia.media
+                contact@bitcoinforumindia.com
               </a>
             </p>
-            <p className="text-xs text-[#FFFFFF60] mt-2">
+            <p className="text-xs text-black/60 mt-2">
               Custom opportunities available. Limited inventory.
             </p>
           </div>
@@ -363,6 +363,10 @@ const ApplySponsor = () => {
 };
 
 export default ApplySponsor;
+
+
+
+
 
 
 

@@ -34,7 +34,7 @@ const FAQSection = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             Frequently <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#F69415]">Asked</span> Questions
           </h2>
 
@@ -45,7 +45,7 @@ const FAQSection = () => {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
-            Everything you need to know about <span className="text-white font-semibold">Bitcoin Forum India 2026</span>
+            Everything you need to know about <span className="text-black font-semibold">Bitcoin Forum India 2026</span>
           </p>
         </div>
       </FadeIn>
@@ -66,12 +66,12 @@ const FAQSection = () => {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-8 py-6 flex justify-between items-center text-left focus:outline-none"
               >
-                <span className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${openIndex === index ? 'text-[#FF8000]' : 'text-white group-hover:text-[#FF8000]'}`}>
+                <span className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${openIndex === index ? 'text-[#FF8000]' : 'text-black group-hover:text-[#FF8000]'}`}>
                   {faq.question}
                 </span>
                 <div className={`
                    w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-300
-                   ${openIndex === index ? 'border-[#FF8000] bg-[#FF8000] text-black rotate-180' : 'border-white/20 text-white group-hover:border-[#FF8000]'}
+                   ${openIndex === index ? 'border-[#FF8000] bg-[#FF8000] text-black rotate-180' : 'border-white/20 text-black group-hover:border-[#FF8000]'}
                 `}>
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -82,7 +82,7 @@ const FAQSection = () => {
                 className={`transition-all duration-300 ease-in-out ${openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   }`}
               >
-                <div className="px-8 pb-6 text-gray-300 text-base md:text-lg leading-relaxed border-t border-[#FF8000]/30 pt-4 mt-2">
+                <div className="px-8 pb-6 text-gray-700 text-base md:text-lg leading-relaxed border-t border-[#FF8000]/30 pt-4 mt-2">
                   {faq.answer}
                 </div>
               </div>
@@ -95,6 +95,10 @@ const FAQSection = () => {
 };
 
 export default FAQSection;
+
+
+
+
 
 
 

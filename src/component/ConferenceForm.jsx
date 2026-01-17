@@ -20,7 +20,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
   };
 
   const formContent = (
-    <div className={`${isModal ? 'bg-black p-6 rounded-lg max-w-2xl mx-auto' : 'w-full'}`}>
+    <div className={`${isModal ? 'bg-[#FFFCFA] p-6 rounded-lg max-w-2xl mx-auto' : 'w-full'}`}>
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-bold text-[#FF8000] font-familjen">
           Sign Up & Get Free Tickets!
@@ -28,7 +28,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
         {isModal && onClose && (
           <button
             onClick={onClose}
-            className="text-white hover:text-[#FF8000] text-2xl font-bold"
+            className="text-black hover:text-[#FF8000] text-2xl font-bold"
           >
             ×
           </button>
@@ -37,7 +37,7 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
 
       <div className="text-center space-y-6">
         <div className="mb-8">
-          <h3 className="text-xl text-white font-semibold mb-4">
+          <h3 className="text-xl text-black font-semibold mb-4">
             🎟️ Win FREE GA Pass Tickets + Exclusive Bitcoin Merchandise!
           </h3>
           <p className="text-gray-300 text-lg">
@@ -69,8 +69,8 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
 
   if (isModal) {
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-        <div className="bg-black rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="fixed inset-0 bg-[#FFFCFA] bg-opacity-75 flex items-center justify-center z-50 p-4">
+        <div className="bg-[#FFFCFA] rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
           {formContent}
         </div>
       </div>
@@ -81,6 +81,10 @@ const ConferenceForm = ({ onClose, isModal = false }) => {
 };
 
 export default ConferenceForm;
+
+
+
+
 
 
 

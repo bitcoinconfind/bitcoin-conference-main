@@ -35,7 +35,7 @@ const Speakers = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[150px] bg-[#FF8000]/15 blur-[100px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10 font-heading">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10 font-heading">
             World Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Voices</span>
           </h1>
 
@@ -54,12 +54,12 @@ const Speakers = () => {
         <FadeIn direction="right" delay={200} duration={800}>
           <div className="relative group overflow-hidden rounded-3xl border border-white/10 bg-[#FF8000]/10 p-8 transition-all hover:border-[#FF8000]/30 hover:bg-[#FF8000]/15">
             <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl text-white font-bold mb-6 leading-tight">
+              <h3 className="text-2xl md:text-3xl text-black font-bold mb-6 leading-tight">
                 Shape the Future of <br />
                 <span className="text-[#FF8000]">Global Finance</span>
               </h3>
 
-              <p className="text-gray-400 text-lg leading-relaxed mb-6 font-light">
+              <p className="text-gray-800 text-lg leading-relaxed mb-6 font-light">
                 Share your expertise with a high-intent audience of builders, investors, and media.
                 Our top speaker lineup is being curated and will be revealed soon.
               </p>
@@ -75,12 +75,12 @@ const Speakers = () => {
             {/* Card Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF8000]/10 to-[#FF8000]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            <div className="relative bg-black/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#FF8000] transition-colors">
+            <div className="relative bg-[#FFFCFA]/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#FF8000] transition-colors">
               {/* Top Status Bar */}
 
 
               <h4 className="text-xl text-[#FF8000] font-bold mb-2">Ready to Speak?</h4>
-              <p className="text-gray-300 text-sm mb-8 font-medium">Join the ranks of industry leaders defining the Bitcoin narrative.</p>
+              <p className="text-gray-600 text-sm mb-8 font-medium">Join the ranks of industry leaders defining the Bitcoin narrative.</p>
 
               <a href="/apply/speaker" className="block">
                 <Button
@@ -165,6 +165,10 @@ const Speakers = () => {
 };
 
 export default Speakers;
+
+
+
+
 
 
 

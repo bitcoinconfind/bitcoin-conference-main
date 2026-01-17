@@ -7,8 +7,8 @@
 
 html,
 body {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+  background-color: #FFFCFA !important;
+  color: #000000 !important;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -56,7 +56,7 @@ h6,
   border-radius: 0.75rem;
   font-weight: 700;
   transition: all 0.3s ease;
-  background-color: #000000 !important;
+  background-color: #FF8000 !important;
   color: #ffffff !important;
   border: 2px solid #FF8000 !important;
   box-shadow: 0 4px 15px rgba(255, 128, 0, 0.3);
@@ -77,13 +77,28 @@ h6,
   width: 50%;
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: 0.5s;
   transform: skewX(-25deg);
+  animation: shine-loop 3s infinite;
 }
 
-.btn-primary:hover::after {
-  left: 100%;
+@keyframes shine-loop {
+  0% {
+    left: -100%;
+  }
+
+  60% {
+    left: 200%;
+  }
+
+  100% {
+    left: 200%;
+  }
 }
+
+/* Removed hover specific transition as it's now looping */
+/* .btn-primary:hover::after {
+  left: 100%;
+} */
 
 .btn-secondary {
   position: relative;
@@ -195,7 +210,7 @@ button[disabled] {
 
 /* Background Gradients */
 .bg-premium-dark {
-  background: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 100%);
+  background: radial-gradient(circle at 50% 0%, #ffffff 0%, #f7f7f7 100%);
 }
 
 .glow-point {
@@ -261,12 +276,12 @@ button[disabled] {
 }
 
 /* Global override: Change all white text to black - REMOVED */
-/* .text-white {
+/* .text-black {
   color: #1a1a1a !important;
 } */
 
 /* Override white colors in backgrounds to maintain visibility - REMOVED */
-/* .bg-black {
+/* .bg-[#FFFCFA] {
   background-color: #ffffff !important;
 } */
 

@@ -108,7 +108,7 @@ const AdminLogin = () => {
 
   return (
     <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
-      <div className="max-w-md w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-white">
+      <div className="max-w-md w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-black">
         <h1 className="text-3xl font-familjen mb-6 text-center">Admin Login</h1>
 
         {status === "success" && (
@@ -126,13 +126,13 @@ const AdminLogin = () => {
         {phase === 'request' && (
           <form onSubmit={handleRequest} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-inter-semiBold text-white mb-2">Work Email</label>
+              <label htmlFor="email" className="block text-sm font-inter-semiBold text-black mb-2">Work Email</label>
               <input
                 id="email"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-transparent"
+                className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-transparent"
                 placeholder="you@company.com"
               />
             </div>
@@ -148,7 +148,7 @@ const AdminLogin = () => {
         {phase === 'verify' && (
           <form onSubmit={handleVerify} className="space-y-4">
             <div>
-              <label htmlFor="otp" className="block text-sm font-inter-semiBold text-white mb-2">Enter OTP</label>
+              <label htmlFor="otp" className="block text-sm font-inter-semiBold text-black mb-2">Enter OTP</label>
               <input
                 id="otp"
                 type="text"
@@ -156,7 +156,7 @@ const AdminLogin = () => {
                 pattern="[0-9]*"
                 value={otp}
                 onChange={(e) => setOtp(e.target.value)}
-                className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-transparent"
+                className="w-full px-4 py-3 bg-[#2a2a2a] border border-[#585858] rounded-lg text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF8000] focus:border-transparent"
                 placeholder="6-digit code"
               />
             </div>
@@ -191,6 +191,10 @@ const AdminLogin = () => {
 };
 
 export default AdminLogin;
+
+
+
+
 
 
 

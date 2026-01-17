@@ -3,9 +3,9 @@ import StarfieldBackground from './StarfieldBackground';
 
 const Background = () => {
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden bg-[#000000] pointer-events-none">
-            {/* Subtle gradient overlay at top for depth */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#0a0a0a_0%,transparent_55%)]" />
+        <div className="fixed inset-0 z-0 overflow-hidden bg-[#FFFCFA] pointer-events-none">
+            {/* Subtle light gradient for depth */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#ffffff_0%,transparent_55%)]" />
 
             {/* Digital Network Layer (Plexus) */}
             <PlexusBackground />
@@ -22,6 +22,8 @@ const Background = () => {
 };
 
 export default Background;
+
+
 
 
 

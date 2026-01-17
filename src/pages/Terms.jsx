@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen bg-black text-white py-20 px-4 sm:px-8 lg:px-20">
+    <div className="min-h-screen bg-[#FFFCFA] text-black py-20 px-4 sm:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-8">
@@ -63,8 +63,8 @@ const Terms = () => {
 
           <section className="mb-8">
             <h2 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-4">6. Contact Information</h2>
-            <p className="text-gray-300 leading-relaxed">
-              If you have any questions about these Terms & Conditions, please contact us at contact@btcindia.media
+            <p className="text-black leading-relaxed">
+              If you have any questions about these Terms & Conditions, please contact us at contact@bitcoinforumindia.com
             </p>
           </section>
         </div>
@@ -74,6 +74,10 @@ const Terms = () => {
 };
 
 export default Terms;
+
+
+
+
 
 
 

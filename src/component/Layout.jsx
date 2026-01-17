@@ -49,19 +49,22 @@ const Layout = () => {
     }
 
     // Smooth scroll to hash targets when present
+    // Always scroll to top on route change/refresh to provide a fresh start
+    window.scrollTo(0, 0);
+
+    /* hash scrolling disabled to prevent "stuck on refresh" issues
     if (location.hash) {
       const id = location.hash.replace('#', '');
       const el = document.getElementById(id);
       if (el) {
-        // slight delay to ensure layout is stable
         setTimeout(() => {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
     } else {
-      // No hash: scroll to top INSTANTLY on route changes/refresh to prevent jumpiness
       window.scrollTo(0, 0);
     }
+    */
   }, [location.pathname, location.hash]);
 
   return (
@@ -81,6 +84,10 @@ const Layout = () => {
 };
 
 export default Layout;
+
+
+
+
 
 
 

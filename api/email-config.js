@@ -5,7 +5,7 @@ export const EMAIL_CONFIG = {
   // Contact form configuration
   contact: {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['contact@btcindia.media'],
+    to: ['contact@bitcoinforumindia.com'],
     getSubject: (formData) => `Contact Form: ${formData.subject}`,
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
@@ -41,7 +41,7 @@ export const EMAIL_CONFIG = {
   // Speaker application configuration
   speaker: {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['speakers@btcindia.media'],
+    to: ['contact@bitcoinforumindia.com'],
     getSubject: (formData) => `Speaker Application: ${formData.topicTitle || formData.name || 'New Application'}`,
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
@@ -93,7 +93,7 @@ export const EMAIL_CONFIG = {
   // Sponsor application configuration
   sponsor: {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['sponsors@btcindia.media'],
+    to: ['contact@bitcoinforumindia.com'],
     getSubject: (formData) => `Sponsor Application: ${formData.companyName || formData.contactName || 'New Application'}`,
     getReplyTo: (formData) => formData.contactEmail,
     getHtml: (formData) => `
@@ -136,7 +136,7 @@ export const EMAIL_CONFIG = {
   // Student/Volunteer application configuration
   'student-volunteer': {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['satoshi@btcindia.media'],
+    to: ['contact@bitcoinforumindia.com'],
     getSubject: (formData) => `Student/Volunteer Application: ${formData.name}`,
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `
@@ -180,7 +180,7 @@ export const EMAIL_CONFIG = {
   // Media partnership configuration
   'media-partnership': {
     from: process.env.VITE_FROM_EMAIL || 'noreply@bitcoinconferenceindia.com',
-    to: ['partnerships@btcindia.media'],
+    to: ['contact@bitcoinforumindia.com'],
     getSubject: (formData) => `Media Partnership Inquiry: ${formData.organization}`,
     getReplyTo: (formData) => formData.email,
     getHtml: (formData) => `

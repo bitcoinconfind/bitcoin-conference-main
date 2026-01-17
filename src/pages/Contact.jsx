@@ -126,7 +126,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-[70vh] w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 text-white bg-black relative overflow-hidden">
+    <section className="min-h-[70vh] w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 text-black bg-[#FFFCFA] relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-6">
@@ -145,7 +145,7 @@ const Contact = () => {
           {/* Background decoration */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tighter uppercase relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-6 tracking-tighter uppercase relative z-10">
             Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF8000] to-[#FF8000]">Us</span>
           </h1>
 
@@ -161,26 +161,26 @@ const Contact = () => {
 
           {/* Unified cards: email first, then CTA */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
-              <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-[#FF8000] transition-colors">General Inquiries</h2>
-              <div className="metric-label mb-4">
-                Reach us directly at <a href="mailto:contact@btcindia.media" className="text-[#FF8000] hover:underline">contact@btcindia.media</a>
+            <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
+              <h2 className="text-2xl font-bold text-[#FF8000] mb-2 group-hover:text-[#FF8000] transition-colors">General Inquiries</h2>
+              <div className="metric-label !text-black mb-4">
+                Reach us directly at <a href="mailto:contact@bitcoinforumindia.com" className="text-[#FF8000] hover:underline">contact@bitcoinforumindia.com</a>
               </div>
               <p className="metric-label mb-4">Ask us anything about the conference.</p>
               <button onClick={() => window.location.href = '/contact/general'} className="w-full bg-transparent border-2 border-[#FF8000] text-[#FF8000] font-semibold py-2 rounded-md mt-auto shadow-[0_0_10px_rgba(255,128,0,0.3)] hover:bg-[#FF8000]/10 hover:shadow-[0_0_20px_rgba(255,128,0,0.6)] transition-all duration-300">Fill the form</button>
             </div>
-            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
+            <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
               <h3 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-2">Speaker Applications</h3>
-              <div className="metric-label mb-4">
-                Reach us directly at <a href="mailto:speakers@btcindia.media" className="text-[#FF8000] hover:underline">speakers@btcindia.media</a>
+              <div className="metric-label !text-black mb-4">
+                Reach us directly at <a href="mailto:contact@bitcoinforumindia.com" className="text-[#FF8000] hover:underline">contact@bitcoinforumindia.com</a>
               </div>
               <p className="metric-label mb-4">Apply to speak at the conference and share your expertise.</p>
               <button onClick={() => window.location.href = '/apply/speaker'} className="w-full bg-transparent border-2 border-[#FF8000] text-[#FF8000] font-semibold py-2 rounded-md mt-auto shadow-[0_0_10px_rgba(255,128,0,0.3)] hover:bg-[#FF8000]/10 hover:shadow-[0_0_20px_rgba(255,128,0,0.6)] transition-all duration-300">Apply to Speak</button>
             </div>
-            <div className="bg-black border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
+            <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 flex flex-col min-h-[260px] hover:border-[#FF8000] transition-all duration-500">
               <h3 className="text-xl md:text-2xl font-bold text-[#FF8000] mb-2">Sponsor Inquiries</h3>
-              <div className="metric-label mb-4">
-                Reach us directly at <a href="mailto:sponsors@btcindia.media" className="text-[#FF8000] hover:underline">sponsors@btcindia.media</a>
+              <div className="metric-label !text-black mb-4">
+                Reach us directly at <a href="mailto:contact@bitcoinforumindia.com" className="text-[#FF8000] hover:underline">contact@bitcoinforumindia.com</a>
               </div>
               <p className="metric-label mb-4">Partner with us and reach the Bitcoin community.</p>
               <button onClick={() => window.location.href = '/apply/sponsor'} className="w-full bg-transparent border-2 border-[#FF8000] text-[#FF8000] font-semibold py-2 rounded-lg mt-auto shadow-[0_0_10px_rgba(255,128,0,0.3)] hover:bg-[#FF8000]/10 hover:shadow-[0_0_20px_rgba(255,128,0,0.6)] transition-all duration-300">Become a Sponsor</button>
@@ -193,6 +193,10 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
 
 
 

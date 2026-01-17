@@ -26,7 +26,7 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
               loading="lazy"
             />
           )}
-          <h4 className="text-xl md:text-2xl font-bold text-white mb-2">{tier.title}</h4>
+          <h4 className="text-xl md:text-2xl font-bold text-black mb-2">{tier.title}</h4>
           <div className="text-3xl md:text-4xl font-bold text-[#FF8000] mb-2">
             ${tier.price}
             <span className="text-base md:text-lg text-gray-400 ml-1">{tier.currency}</span>
@@ -63,6 +63,10 @@ const TicketCard = ({ tier, index, isPopular, className = "" }) => {
 };
 
 export default TicketCard;
+
+
+
+
 
 
 

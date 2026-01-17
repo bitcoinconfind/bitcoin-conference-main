@@ -243,8 +243,8 @@ const BtcPriceTicker = () => {
 
           {/* Price Display with Auto Animation */}
           <div className="flex flex-col items-center gap-1">
-            <span className="text-white text-[10px] sm:text-xs font-bold">
-              <span className="text-[#FF8000]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
+            <span className="text-black text-[10px] sm:text-xs font-bold">
+              <span className="text-[#FF8000]">BTC</span><span className="!text-black">/</span><span className="!text-black">{showInr ? 'INR' : 'USD'}</span>
             </span>
 
             {btcData.loading ? (
@@ -291,8 +291,8 @@ const BtcPriceTicker = () => {
 
           {/* Price Display with Auto Animation */}
           <div className="flex flex-col items-center gap-1 -ml-6">
-            <span className="text-white text-sm font-bold">
-              <span className="text-[#FF8000]">BTC</span><span className="!text-white">/</span><span className="!text-white">{showInr ? 'INR' : 'USD'}</span>
+            <span className="text-black text-sm font-bold">
+              <span className="text-[#FF8000]">BTC</span><span className="!text-black">/</span><span className="!text-black">{showInr ? 'INR' : 'USD'}</span>
             </span>
 
             {btcData.loading ? (
@@ -320,6 +320,10 @@ const BtcPriceTicker = () => {
 };
 
 export default BtcPriceTicker;
+
+
+
+
 
 
 

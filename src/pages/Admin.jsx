@@ -177,7 +177,7 @@ const Admin = () => {
   if (loading) {
     return (
       <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
-        <p className="text-white">Loading...</p>
+        <p className="text-black">Loading...</p>
       </section>
     );
   }
@@ -185,7 +185,7 @@ const Admin = () => {
   if (authorized === false) {
     return (
       <section className="min-h-[70vh] w-full flex items-center justify-center px-4 sm:px-8 lg:px-20 py-20">
-        <div className="max-w-md w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-white text-center">
+        <div className="max-w-md w-full bg-[#1F1F1F] border border-[#2a2a2a] rounded-2xl p-6 sm:p-8 text-black text-center">
           <h1 className="metric-value mb-2">Access denied</h1>
           <p className="mb-6">You must be an admin and signed in to view this page.</p>
           <a href="/admin/login" className="text-[#FF8000] hover:underline">Go to Admin Login</a>
@@ -195,8 +195,8 @@ const Admin = () => {
   }
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 py-4 sm:py-20 bg-black">
-      <div className="max-w-6xl mx-auto text-white">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 py-4 sm:py-20 bg-[#FFFCFA]">
+      <div className="max-w-6xl mx-auto text-black">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-4">
           <h1 className="metric-value">Admin Dashboard</h1>
           <div className="flex gap-2">
@@ -283,7 +283,7 @@ const Admin = () => {
                 <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-3 sm:p-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
                     <div className="flex-1">
-                      <h3 className="text-white font-semibold text-base sm:text-lg">{r.name}</h3>
+                      <h3 className="text-black font-semibold text-base sm:text-lg">{r.name}</h3>
                       <p className="text-[#FFFFFF80] text-sm sm:text-base break-all">{r.email}</p>
                       {r.phone && <p className="text-[#FFFFFF80] text-sm">Phone: {r.phone}</p>}
                     </div>
@@ -300,12 +300,12 @@ const Admin = () => {
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Subject:</h4>
-                    <p className="text-white text-sm sm:text-base break-words">{r.subject}</p>
+                    <p className="text-black text-sm sm:text-base break-words">{r.subject}</p>
                   </div>
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Message:</h4>
-                    <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.message}</p>
+                    <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.message}</p>
                   </div>
 
                   <button
@@ -331,7 +331,7 @@ const Admin = () => {
                 <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-3 sm:p-4">
                   <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3 gap-2">
                     <div className="flex-1">
-                      <h3 className="text-white font-semibold text-base sm:text-lg">{r.name}</h3>
+                      <h3 className="text-black font-semibold text-base sm:text-lg">{r.name}</h3>
                       <p className="text-[#FFFFFF80] text-sm sm:text-base break-all">{r.email}</p>
                       <p className="text-[#FFFFFF80] text-sm">Phone: {r.phone}</p>
                       {r.company && <p className="text-[#FFFFFF80] text-sm">Company: {r.company}</p>}
@@ -350,33 +350,33 @@ const Admin = () => {
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Topic Title:</h4>
-                    <p className="text-white font-medium text-sm sm:text-base break-words">{r.topic_title}</p>
+                    <p className="text-black font-medium text-sm sm:text-base break-words">{r.topic_title}</p>
                   </div>
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Topic Abstract:</h4>
-                    <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.topic_abstract}</p>
+                    <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.topic_abstract}</p>
                   </div>
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Bio:</h4>
-                    <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.bio}</p>
+                    <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.bio}</p>
                   </div>
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Experience:</h4>
-                    <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.experience}</p>
+                    <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.experience}</p>
                   </div>
 
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Target Audience:</h4>
-                    <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.audience}</p>
+                    <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.audience}</p>
                   </div>
 
                   {r.previous_speaking && (
                     <div className="mb-3">
                       <h4 className="text-[#FF8000] font-medium mb-1 text-sm sm:text-base">Previous Speaking:</h4>
-                      <p className="text-white whitespace-pre-wrap text-sm sm:text-base break-words">{r.previous_speaking}</p>
+                      <p className="text-black whitespace-pre-wrap text-sm sm:text-base break-words">{r.previous_speaking}</p>
                     </div>
                   )}
 
@@ -422,7 +422,7 @@ const Admin = () => {
                 <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-white font-semibold text-lg">{r.name}</h3>
+                      <h3 className="text-black font-semibold text-lg">{r.name}</h3>
                       <p className="text-[#FFFFFF80]">{r.email}</p>
                       {r.phone && <p className="text-[#FFFFFF80] text-sm">Phone: {r.phone}</p>}
                       {r.university && <p className="text-[#FFFFFF80] text-sm">University: {r.university}</p>}
@@ -439,19 +439,19 @@ const Admin = () => {
                     {r.role_interest && (
                       <div>
                         <h4 className="text-[#FF8000] font-medium mb-1">Role Interest:</h4>
-                        <p className="text-white">{r.role_interest}</p>
+                        <p className="text-black">{r.role_interest}</p>
                       </div>
                     )}
                     {r.availability && (
                       <div>
                         <h4 className="text-[#FF8000] font-medium mb-1">Availability:</h4>
-                        <p className="text-white">{r.availability}</p>
+                        <p className="text-black">{r.availability}</p>
                       </div>
                     )}
                   </div>
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1">Message:</h4>
-                    <p className="text-white whitespace-pre-wrap">{r.message}</p>
+                    <p className="text-black whitespace-pre-wrap">{r.message}</p>
                   </div>
                   <button onClick={() => toggleStatus(r.id, r.status || 'pending')} className={`px-3 py-2 rounded border text-sm ${(r.status || 'pending') === 'pending' ? 'border-green-600 text-green-400' : 'border-yellow-600 text-yellow-400'
                     }`}>
@@ -471,7 +471,7 @@ const Admin = () => {
                 <div key={r.id} className="bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4">
                   <div className="flex justify-between items-start mb-3">
                     <div>
-                      <h3 className="text-white font-semibold text-lg">{r.name}</h3>
+                      <h3 className="text-black font-semibold text-lg">{r.name}</h3>
                       <p className="text-[#FFFFFF80]">{r.email}</p>
                       {r.organization && <p className="text-[#FFFFFF80] text-sm">Org: {r.organization}</p>}
                       {r.website && <p className="text-[#FFFFFF80] text-sm break-all">Website: {r.website}</p>}
@@ -488,19 +488,19 @@ const Admin = () => {
                     {r.partnership_type && (
                       <div>
                         <h4 className="text-[#FF8000] font-medium mb-1">Type:</h4>
-                        <p className="text-white">{r.partnership_type}</p>
+                        <p className="text-black">{r.partnership_type}</p>
                       </div>
                     )}
                     {r.phone && (
                       <div>
                         <h4 className="text-[#FF8000] font-medium mb-1">Phone:</h4>
-                        <p className="text-white">{r.phone}</p>
+                        <p className="text-black">{r.phone}</p>
                       </div>
                     )}
                   </div>
                   <div className="mb-3">
                     <h4 className="text-[#FF8000] font-medium mb-1">Message:</h4>
-                    <p className="text-white whitespace-pre-wrap">{r.message}</p>
+                    <p className="text-black whitespace-pre-wrap">{r.message}</p>
                   </div>
                   <button onClick={() => toggleStatus(r.id, r.status || 'pending')} className={`px-3 py-2 rounded border text-sm ${(r.status || 'pending') === 'pending' ? 'border-green-600 text-green-400' : 'border-yellow-600 text-yellow-400'
                     }`}>
@@ -517,6 +517,10 @@ const Admin = () => {
 };
 
 export default Admin;
+
+
+
+
 
 
 
