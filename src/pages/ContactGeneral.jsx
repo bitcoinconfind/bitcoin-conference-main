@@ -50,7 +50,7 @@ const ContactGeneral = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#FFFCFA] relative overflow-hidden">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#000000] relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
@@ -84,7 +84,7 @@ const ContactGeneral = () => {
           </p>
         </div>
 
-        <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
+        <div className="bg-[#000000] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Personal Information */}
             <div>

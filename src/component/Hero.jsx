@@ -47,7 +47,7 @@ const Hero = () => {
 
     return (
 
-        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-start px-4 sm:px-8 lg:px-24 overflow-hidden pt-24 lg:pt-48 pb-12 lg:pb-24">
+        <section className="relative w-full min-h-[65vh] lg:min-h-[85vh] flex flex-col justify-start px-4 sm:px-8 lg:px-24 overflow-hidden pt-20 lg:pt-36 pb-12 lg:pb-24">
 
             <div className="z-10 w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16">
                 {/* Content Section - Left Side */}
@@ -56,7 +56,7 @@ const Hero = () => {
                         {/* Logo Image - Mobile Only */}
                         <div className="lg:hidden flex justify-center mb-6">
                             <img
-                                src="/assets/imgs/logo/logo3.svg"
+                                src="/assets/imgs/logo/logo.svg"
                                 alt="Bitcoin India Forum"
                                 className="h-52 w-auto"
                             />
@@ -116,7 +116,7 @@ const Hero = () => {
                         <Button
                             label="Get Tickets"
                             variant="primary"
-                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 transform hover:-translate-y-1 hover:!text-black"
+                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 transform hover:-translate-y-1 hover:!text-white"
                             onClick={(e) => {
                                 e.preventDefault();
                                 window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
@@ -130,7 +130,7 @@ const Hero = () => {
                                 const el = document.getElementById('sponsors-cta');
                                 if (el) el.scrollIntoView({ behavior: 'smooth' });
                             }}
-                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 !border-[#FF8000] !text-black hover:!bg-[#FF8000]/10"
+                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 !border-[#FF8000] !text-white hover:!bg-[#FF8000]/10"
                         />
                     </FadeIn>
                 </div>
@@ -147,7 +147,7 @@ const Hero = () => {
                         className="w-full h-auto cursor-pointer pointer-events-auto"
                     >
                         <img
-                            src="/assets/imgs/logo/logo3.svg"
+                            src="/assets/imgs/logo/logo.svg"
                             alt="Bitcoin India Forum"
                             className="w-full h-auto animate-float-fast pointer-events-none"
                         />

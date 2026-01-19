@@ -85,7 +85,7 @@ const ContactMediaPartnership = () => {
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[100px] bg-[#FF8000]/20 blur-[80px] rounded-full pointer-events-none"></div>
 
-      <div className="max-w-2xl w-full bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 text-black hover:border-[#FF8000] transition-all duration-500 relative z-10">
+      <div className="max-w-2xl w-full bg-[#000000] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 text-white hover:border-[#FF8000] transition-all duration-500 relative z-10">
         <div className="mb-8 p-4 relative z-10">
           <Link to="/contact" className="inline-flex items-center text-[#FF8000] hover:text-[#FF8000] transition-colors mb-6 group">
             <svg className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -70,8 +70,8 @@ const Navigation = ({ showBanner = false }) => {
         <header
           className={`w-full transition-all duration-300 md:border-b md:border-[#FF8000]
             ${isScrolled
-              ? 'md:bg-[#fffcfa]/90 md:backdrop-blur-md md:py-3'
-              : 'md:bg-[#fffcfa] md:py-4'
+              ? 'md:bg-[#000000]/90 md:backdrop-blur-md md:py-3'
+              : 'md:bg-[#000000] md:py-4'
             }`}
         >
           <div className="max-w-7xl mx-auto px-4 md:px-10 flex items-center justify-end md:justify-between gap-4 relative z-10 w-full">
@@ -91,7 +91,7 @@ const Navigation = ({ showBanner = false }) => {
               <Button
                 label="Get Tickets"
                 variant="primary"
-                className={`!rounded-xl transition-all duration-300 hover:!text-black ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'}`}
+                className={`!rounded-xl transition-all duration-300 hover:!text-white ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'}`}
                 onClick={() => window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true"}
               />
             </div>
@@ -109,7 +109,7 @@ const Navigation = ({ showBanner = false }) => {
 
 // Helper for nav links with hover effect
 const NavLink = ({ children, to, href, onClick, isScrolled }) => {
-  const baseClasses = `relative ${isScrolled ? 'px-3 py-2 text-base' : 'px-4 py-3 text-lg'} font-medium text-black hover:text-[#FF8000] transition-all duration-300`;
+  const baseClasses = `relative ${isScrolled ? 'px-3 py-2 text-base' : 'px-4 py-3 text-lg'} font-medium text-white hover:text-[#FF8000] transition-all duration-300`;
 
   if (to) {
     return <Link to={to} className={baseClasses}>{children}</Link>;
@@ -123,7 +123,7 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
 
   return (
     <div className="relative mt-2">
-      <button onClick={() => setOpen(!open)} className={`p-2 transition-colors ${open ? 'text-[#FF8000]' : 'text-black hover:text-[#FF8000]'}`}>
+      <button onClick={() => setOpen(!open)} className={`p-2 transition-colors ${open ? 'text-[#FF8000]' : 'text-white hover:text-[#FF8000]'}`}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-9 h-9">
           <path strokeLinecap="round" strokeLinejoin="round" d={open ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"} />
         </svg>
@@ -131,7 +131,7 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
 
       {/* Floating Dropdown for Mobile */}
       {open && (
-        <div className="absolute top-12 right-0 w-56 bg-[#fffcfa] border border-[#FF8000]/30 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="absolute top-12 right-0 w-56 bg-[#000000] border border-[#FF8000]/30 rounded-2xl shadow-2xl overflow-hidden animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col p-2 gap-1">
             {/* Get Tickets Button */}
             <button
@@ -139,25 +139,25 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
                 window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
                 setOpen(false);
               }}
-              className="w-full px-4 py-3 bg-[#FFFCFA] border-2 border-[#FF8000] text-black font-bold rounded-xl hover:bg-[#FF8000]/10 transition-all"
+              className="w-full px-4 py-3 bg-[#000000] border-2 border-[#FF8000] text-white font-bold rounded-xl hover:bg-[#FF8000]/10 transition-all"
             >
               Get Tickets
             </button>
 
             {/* Menu Items */}
-            <button onClick={() => { goToId(null, 'speakers'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-black hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
+            <button onClick={() => { goToId(null, 'speakers'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-white hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
               Speakers
             </button>
-            <button onClick={() => { goToId(null, 'sponsors-cta'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-black hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
+            <button onClick={() => { goToId(null, 'sponsors-cta'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-white hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
               Sponsors
             </button>
-            <button onClick={() => { navigate('/media'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-black hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
+            <button onClick={() => { navigate('/media'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-white hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
               Partnerships
             </button>
-            <button onClick={() => { navigate('/student-volunteer'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-black hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
+            <button onClick={() => { navigate('/student-volunteer'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-white hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
               Volunteer
             </button>
-            <button onClick={() => { navigate('/contact'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-black hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
+            <button onClick={() => { navigate('/contact'); setOpen(false); }} className="w-full px-4 py-2.5 text-left text-white hover:text-[#FF8000] hover:bg-[#FF8000]/10 rounded-lg transition-colors">
               Contact Us
             </button>
           </div>

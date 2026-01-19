@@ -3,12 +3,12 @@ import StarfieldBackground from './StarfieldBackground';
 
 const Background = () => {
     return (
-        <div className="fixed inset-0 z-0 overflow-hidden bg-[#FFFCFA] pointer-events-none">
-            {/* Subtle light gradient for depth */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#ffffff_0%,transparent_55%)]" />
+        <div className="fixed inset-0 z-0 overflow-hidden bg-[#000000] pointer-events-none">
+            {/* Subtle dark gradient for depth */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1a1a1a_0%,transparent_55%)]" />
 
-            {/* Digital Network Layer (Plexus) */}
-            <PlexusBackground />
+            {/* Digital Network Layer (Plexus) - Commented out */}
+            {/* <PlexusBackground /> */}
 
             {/* Twinkling Stars Layer - Commented out for now */}
             {/* <StarfieldBackground /> */}

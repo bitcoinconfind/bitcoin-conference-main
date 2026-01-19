@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen bg-[#FFFCFA] text-black py-20 px-4 sm:px-8 lg:px-20">
+    <div className="min-h-screen bg-[#000000] text-white py-20 px-4 sm:px-8 lg:px-20">
       <div className="max-w-4xl mx-auto">
         {/* Back Button */}
         <div className="mb-8">

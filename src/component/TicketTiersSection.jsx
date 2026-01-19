@@ -95,7 +95,7 @@ const TicketTiersSection = () => {
 
         {/* LEFT PANEL: The "Power View" (Details) */}
         <div className="lg:w-2/3 h-full">
-          <div className="relative h-full bg-[#FFFCFA]/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-3xl p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-8 transition-all duration-500 shadow-2xl">
+          <div className="relative h-full bg-[#000000]/80 backdrop-blur-xl border border-[#FF8000]/30 rounded-3xl p-8 lg:p-12 overflow-hidden flex flex-col lg:flex-row gap-8 transition-all duration-500 shadow-2xl">
 
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#FF8000]/10 blur-[100px] rounded-full pointer-events-none"></div>
@@ -146,8 +146,8 @@ const TicketTiersSection = () => {
                 onClick={() => setActiveTierIndex(index)}
                 className={`relative p-6 rounded-2xl text-left transition-all duration-300 group border backdrop-blur-sm
                    ${isActive
-                    ? 'bg-[#FFFCFA]/70 border-[#FF8000] shadow-[0_0_30px_rgba(255,128,0,0.15)] scale-105 z-10'
-                    : 'bg-[#FFFCFA]/40 border-[#FF8000]/30 hover:bg-[#FFFCFA]/60 hover:border-[#FF8000]/50 opacity-70 hover:opacity-100'
+                    ? 'bg-[#000000]/90 border-[#FF8000] shadow-[0_0_30px_rgba(255,128,0,0.15)] scale-105 z-10'
+                    : 'bg-[#000000]/60 border-[#FF8000]/30 hover:bg-[#000000]/80 hover:border-[#FF8000]/50 opacity-70 hover:opacity-100'
                   }
                  `}
               >

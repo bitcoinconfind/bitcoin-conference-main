@@ -146,7 +146,7 @@ const ApplySponsor = () => {
   };
 
   return (
-    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#FFFCFA] relative overflow-hidden">
+    <section className="min-h-screen w-full px-4 sm:px-8 lg:px-20 pt-36 pb-20 bg-[#000000] relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-8">
@@ -178,7 +178,7 @@ const ApplySponsor = () => {
           </p>
         </div>
 
-        <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
+        <div className="bg-[#000000] border-2 border-[#585858] rounded-2xl p-6 sm:p-8 hover:border-[#FF8000] transition-all duration-500">
           <form onSubmit={handleSubmit} className="space-y-8">
             {/* Company Information */}
             <div>
@@ -343,7 +343,7 @@ const ApplySponsor = () => {
           </form>
 
           <div className="mt-8 text-center">
-            <p className="text-sm text-black/80">
+            <p className="text-sm text-white/80">
               Questions? Contact our sponsorship team at{" "}
               <a
                 href="mailto:contact@bitcoinforumindia.com"
@@ -352,7 +352,7 @@ const ApplySponsor = () => {
                 contact@bitcoinforumindia.com
               </a>
             </p>
-            <p className="text-xs text-black/60 mt-2">
+            <p className="text-xs text-white/60 mt-2">
               Custom opportunities available. Limited inventory.
             </p>
           </div>

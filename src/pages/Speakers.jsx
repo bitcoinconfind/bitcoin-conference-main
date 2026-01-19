@@ -75,7 +75,7 @@ const Speakers = () => {
             {/* Card Glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#FF8000]/10 to-[#FF8000]/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            <div className="relative bg-[#FFFCFA]/60 backdrop-blur-xl border border-[#FF8000]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#FF8000] transition-colors">
+            <div className="relative bg-[#000000]/80 backdrop-blur-xl border border-[#FF8000]/30 rounded-2xl p-8 md:p-10 shadow-2xl overflow-hidden hover:border-[#FF8000] transition-colors">
               {/* Top Status Bar */}
 
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const MediaInfo = () => {
   return (
-    <section className="min-h-[70vh] w-full px-4 sm:px-8 lg:px-20 pt-36 pb-16 text-black bg-[#FFFCFA] relative overflow-hidden">
+    <section className="min-h-[70vh] w-full px-4 sm:px-8 lg:px-20 pt-36 pb-16 text-white bg-[#000000] relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative z-10">
         {/* Back Button */}
         <div className="mb-6">
@@ -38,15 +38,15 @@ const MediaInfo = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
+          <div className="bg-[#000000] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
             <div className="text-xl md:text-2xl font-bold text-[#FF8000] mb-2">Priority Access</div>
             <p className="metric-label">Press lounge, scheduled interview slots, and stage-side access for approved crews.</p>
           </div>
-          <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
+          <div className="bg-[#000000] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
             <div className="text-xl md:text-2xl font-bold text-[#FF8000] mb-2">Co-Branded Moments</div>
             <p className="metric-label">Partner segments, on-ground activations, and content integrations amplified on our channels.</p>
           </div>
-          <div className="bg-[#FFFCFA] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
+          <div className="bg-[#000000] border-2 border-[#585858] rounded-xl p-6 hover:border-[#FF8000] transition-all duration-500">
             <div className="text-xl md:text-2xl font-bold text-[#FF8000] mb-2">Content Support</div>
             <p className="metric-label">Access to media kits, speaker quotes, and highlight reels for fast turnarounds.</p>
           </div>
@@ -60,7 +60,7 @@ const MediaInfo = () => {
 
         {/* Email support */}
         <div className="mt-8 text-center">
-          <p className="metric-label !text-black">
+          <p className="metric-label !text-white">
             Prefer email? Reach us at {" "}
             <a href="mailto:contact@bitcoinforumindia.com" className="text-[#FF8000] hover:underline">contact@bitcoinforumindia.com</a>.
           </p>
