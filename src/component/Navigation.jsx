@@ -91,8 +91,8 @@ const Navigation = ({ showBanner = false }) => {
               <Button
                 label="Get Tickets"
                 variant="primary"
-                className={`!rounded-xl transition-all duration-300 hover:!text-white ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'}`}
-                onClick={() => window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true"}
+                className={`!rounded-xl transition-all duration-300 opacity-50 cursor-not-allowed ${isScrolled ? 'px-6 py-2 text-sm' : 'px-8 py-3 text-base'}`}
+                onClick={(e) => e.preventDefault()}
               />
             </div>
 
@@ -135,11 +135,10 @@ const Hamburger = ({ goToId, handleWinFreeTickets }) => {
           <div className="flex flex-col p-2 gap-1">
             {/* Get Tickets Button */}
             <button
-              onClick={() => {
-                window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
-                setOpen(false);
+              onClick={(e) => {
+                e.preventDefault();
               }}
-              className="w-full px-4 py-3 bg-[#000000] border-2 border-[#FF8000] text-white font-bold rounded-xl hover:bg-[#FF8000]/10 transition-all"
+              className="w-full px-4 py-3 bg-[#000000] border-2 border-[#FF8000] text-white font-bold rounded-xl opacity-50 cursor-not-allowed transition-all"
             >
               Get Tickets
             </button>

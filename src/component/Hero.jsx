@@ -116,10 +116,9 @@ const Hero = () => {
                         <Button
                             label="Get Tickets"
                             variant="primary"
-                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 transform hover:-translate-y-1 hover:!text-white"
+                            className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-lg font-bold transition-all duration-300 opacity-50 cursor-not-allowed"
                             onClick={(e) => {
                                 e.preventDefault();
-                                window.location.href = "https://rewards.bitcoinforumindia.com/login?redirected=true";
                             }}
                         />
                         <Button
