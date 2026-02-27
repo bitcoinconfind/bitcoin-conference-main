@@ -34,3 +34,8 @@ Thumbs.db
 # Prevent nested duplicate directory
 bitcoin-conference-main-main/
 
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
