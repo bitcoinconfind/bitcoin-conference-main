@@ -4,6 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'fs'
 import path from 'path'
 
+import { cloudflare } from "@cloudflare/vite-plugin";
+
 // https://vite.dev/config/
 // Minimal SEO injection plugin: reads src/seo.config.json and injects into index.html
 function seoInjectionPlugin() {
@@ -69,7 +71,7 @@ function replaceOrInsertMeta(html, attr, key, value) {
 }
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), seoInjectionPlugin()],
+  plugins: [react(), tailwindcss(), seoInjectionPlugin(), cloudflare()],
   server: {
     host: true,
     proxy: {
